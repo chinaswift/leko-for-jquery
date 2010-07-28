@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="" />
+<title>LEKO&trade;</title>
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" type="text/css" href="leko.css" />
+<link rel="stylesheet" type="text/css" href="leko.doc.css" />
+<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
+<script src="jquery.js"></script><script src="leko.js"></script>
+<style>
+
+a#test,a#test:hover{color:#000;text-decoration:none;}
+
+</style>
+
+<script src="leko.color.js"></script>
+
+<script>
+
+$(function(){
+
+	$("#test").colorHover();
+
+	$("#test").hover(function(){
+		$(this).animate({color:"green"},"slow");
+	},function(){}).colorHover({duration:'normal'});
+
+	$("a").colorHover();
+	//$("section").colorHover(2);
+
+});
+
+</script>
+
+</head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
+<section><a href="#" id="test" _="colorHover:{duration:'fast'}">测试一下</a></section>
+
+<footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>

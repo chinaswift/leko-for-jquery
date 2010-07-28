@@ -1,0 +1,49 @@
+[OPTIONS]
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=Leko-1.0.chm
+Contents file=Leko-1.0.hhc
+Default Font=微软雅黑,9,134
+Default Window=Handbook
+Default topic=index.html
+Display compile progress=Yes
+Error log file=Leko-1.0.log
+Full-text search=Yes
+Language=0x804 中文(简体，中国)
+Title=Leko 1.0 - The Best User Interface Library for jQuery
+
+[WINDOWS]
+Handbook="Leko 1.0 - The Best User Interface Library for jQuery","Leko-1.0.hhc",,"index.html","http://www.lekolite.cn/",,"网站",,,0x63520,,0x387e,[0,0,800,600],,,,,,,0
+
+[FILES]
+apple-touch-icon.png
+favicon.ico
+jQuery.fn.colorHover.0.html
+jQuery.fn.colorHover.html
+jQuery.fn.html
+jQuery.html
+jQuery.isBoolean.html
+jQuery.isDate.html
+jQuery.isNumber.html
+jQuery.isObject.html
+jQuery.isString.html
+jquery.js
+jQuery.support.html
+jQuery.support.rgba.html
+Leko.average.html
+leko.color.js
+leko.css
+leko.doc.css
+Leko.fit.html
+Leko.html
+leko.js
+Leko.mozilla.html
+Leko.msie.html
+Leko.noConflict.html
+Leko.opera.html
+Leko.rgba.0.html
+Leko.rgba.html
+Leko.ver.html
+Leko.webkit.html
+
+[INFOTYPES]
