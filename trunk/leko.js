@@ -60,12 +60,16 @@
 		document.createElement(v);
 	});
 
-	$.fn.ini=function(f){
+	$.fn.ini=function(f,v){
 		var
-			o=this.eq(0)
-			n=f.fn,
-			d=o.data(n)||eval("({"+(o.attr("_")||"")+"})")[n];
-		o.data(n,d=$.extend(1,{},f.ini,d,f.arguments[0]));
+			o=this.eq(0),
+			b=$.isFunction(f),
+			n=b?f.fn:f,
+			d=n&&(o.data(n)||eval("({"+(o.attr("_")||"")+"})")[n]||{})||this;
+		if(n){
+			if(!b)f=$.fn[f];
+			o.data(n,d=$.extend(true,f.ini,d,v||f.arguments[0]));
+		}
 		return d;
 	}
 

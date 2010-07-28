@@ -13,7 +13,8 @@ a#test,a#test:hover{color:#000;text-decoration:none;}
 $(function(){
 
 	$("a").colorFadeIn();
-
+	$("a").ini($.fn.colorFadeIn,{duration:'normal'});
+	$("a").colorFadeIn();
 	/*
 	$("#test").hover(function(){
 		$(this).animate({color:"green"},"slow");
