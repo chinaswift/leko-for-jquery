@@ -31,7 +31,7 @@
 			fx.elem.style[v]="rgb"+(b?"a(":"(")+z+")";
 		}
 	});
-	
+
 	_.fn(
 		n+"In",
 		function(){
