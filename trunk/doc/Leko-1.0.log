@@ -1,0 +1,41 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling e:\Develop\Projects\Leko\trunk\doc\Leko-1.0.chm
+
+apple-touch-icon.png
+favicon.ico
+jQuery.fn.colorHover.0.html
+jQuery.fn.colorHover.html
+jQuery.fn.html
+jQuery.html
+jQuery.isBoolean.html
+jQuery.isDate.html
+jQuery.isNumber.html
+jQuery.isObject.html
+jQuery.isString.html
+jquery.js
+jQuery.support.html
+jQuery.support.rgba.html
+Leko.average.html
+leko.color.js
+leko.css
+leko.doc.css
+Leko.fit.html
+Leko.html
+leko.js
+Leko.mozilla.html
+Leko.msie.html
+Leko.noConflict.html
+Leko.opera.html
+Leko.rgba.0.html
+Leko.rgba.html
+Leko.ver.html
+Leko.webkit.html
+HHC5003: Error: Compilation failed while compiling index.html.
+Leko-1.0.hhc
+HHC5003: Error: Compilation failed while compiling http:\www.lekolite.cn\.
+
+
+The following files were not compiled:
+index.html
+http:\www.lekolite.cn\
