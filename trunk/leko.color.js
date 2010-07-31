@@ -32,24 +32,9 @@
 	});
 
 	_.fn(
-		"liveColorShade",
-		function(o,v,d){
-			var
-				p=v.properties;
-			//o.delegate(v.selector,);
-		},
-		{
-			hover:1,
-			duration:500,
-			easing:"linear"
-		}
-	);
-
-	_.fn(
 		"colorShade",
 		function(o,v,d){
 			var
-				i,
 				b,
 				t,
 				h=v.hover,
@@ -58,15 +43,18 @@
 				z="mouseover mouseout",
 				m=h?z:x,
 				n=h?"z":"x";
-			d._={};
-			d.$={};
-			for(i in p){
-				d._[i]=o.css( i);
-				d.$[i]=a(o[0],i);
-			}
 			o.unbind(m,d[n]).bind(m,d[n]=function(e){
 				t=e.type;
 				b=t=="mouseout"||t=="blur";
+				if(!b){
+					d._={};
+					d.$={};
+					for(var i in p){
+						d._[i]=o.css( i);
+						d.$[i]=a(o[0],i);
+					}
+				}
+				console.log(d);
 				o.stop(true).animate(b?d.$:p,v.duration,v.easing,function(){
 					if(b)for(var i in d._)o.css(i,d._[i]);
 				});
