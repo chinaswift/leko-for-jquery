@@ -44,7 +44,7 @@
 									o=$(this),
 									n=l.fn,
 									d=o.conf(n);
-								f(o,$.extend(true,{},l.ini,l.arguments[0],d),d,n);
+								return f(o,$.extend(true,{},l.ini,l.arguments[0],d),d,n)!==false;
 							});
 						}
 					})(a[m+1]);
@@ -59,7 +59,7 @@
 		var
 			o=this,
 			d=o.data(n);
-		if(!d)o.data(n,d=eval("({"+(o.attr("_")||"")+"})")[n]||{});
+		if(!d)o.data(n,d=eval("({"+(o.attr(n)||"")+"})"));
 		return d;
 	}
 	

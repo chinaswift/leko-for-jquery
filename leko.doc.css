@@ -16,8 +16,10 @@ section{margin:4em 0;}
 #page{padding:25px 50px;width:auto;}
 #foot{text-align:right;color:#999;margin-top:6em;}
 #foot h6{letter-spacing:1px;}
-#foot a{font-size:10px;color:#aaa;font-family:"lucida console";}
+#foot a{font-size:10px;color:#aaa;}
 
 li.within a,mark{color:#ff436f;}
 
-.en,.en *{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';}
+#foot a,.en,.en *{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';}
+
+pre{font-family:'Courier New';}

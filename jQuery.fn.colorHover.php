@@ -34,7 +34,7 @@ $(function(){
 
 <br /><br />
 
-<a style="color:red;" _="colorShade:{properties:{color:'green',backgroundColor:'red'}}">测试一下</a>
+<a style="color:red;" colorShade="properties:{color:'green',backgroundColor:'red'}">测试一下</a>
 
 </section>
 
