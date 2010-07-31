@@ -33,7 +33,7 @@
 				return this;
 			},
 			fn:function(){
-				for(var m=0,a=arguments,x=a.length,n,f;m<x;m+=3){
+				for(var m=0,a=arguments,x=a.length,n,f;m<x;m+=4){
 					n=a[m];
 					f=(function(f){
 						return function(){
@@ -43,9 +43,8 @@
 								var
 									o=$(this),
 									n=l.fn,
-									d=o.data(n);
-								if(!d)o.data(n,d=eval("({"+(o.attr("_")||"")+"})")[n]);
-								f(o,$.extend(true,{},l.ini,d,l.arguments[0]),d);
+									d=o.conf(n);
+								f(o,$.extend(true,{},l.ini,l.arguments[0],d),d,n);
 							});
 						}
 					})(a[m+1]);
@@ -55,6 +54,14 @@
 				}
 			}
 		};
+	
+	$.fn.conf=function(n){
+		var
+			o=this,
+			d=o.data(n);
+		if(!d)o.data(n,d=eval("({"+(o.attr("_")||"")+"})")[n]||{});
+		return d;
+	}
 	
 	window.Leko=window._=_;
 

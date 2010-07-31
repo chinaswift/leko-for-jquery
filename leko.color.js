@@ -33,32 +33,41 @@
 
 	_.fn(
 		"colorShade",
-		function(o,v,d){
+		function(o,v,d,c){
 			var
-				b,
-				t,
 				h=v.hover,
-				p=v.properties,
+				s=v.selector,
+				l=v.live,
 				x="focus blur",
 				z="mouseover mouseout",
 				m=h?z:x,
-				n=h?"z":"x";
-			o.unbind(m,d[n]).bind(m,d[n]=function(e){
-				t=e.type;
-				b=t=="mouseout"||t=="blur";
-				if(!b){
-					d._={};
-					d.$={};
-					for(var i in p){
-						d._[i]=o.css( i);
-						d.$[i]=a(o[0],i);
-					}
-				}
-				console.log(d);
-				o.stop(true).animate(b?d.$:p,v.duration,v.easing,function(){
-					if(b)for(var i in d._)o.css(i,d._[i]);
-				});
-			});
+				n=h?"z":"x",
+				f=function(e){
+					var
+						t=e.type,
+						b=t=="mouseout"||t=="blur",
+						o=$(this),
+						q=l?o.conf(c):d,
+						w=l?$.extend(true,{},v,q):v,
+						p=w.properties;
+					if(!b&&!q._){
+						q._={};
+						q.$={};
+						for(var i in p){
+							q._[i]=o.css( i);
+							q.$[i]=a(o[0],i);
+						}
+					}					
+					o.stop(true).animate(b?q.$:p,w.duration,w.easing,function(){
+						if(b){
+							delete q.$;
+							for(var i in q._)o.css(i,q._[i]);
+							delete q._;
+						}
+					});
+				};
+			if(l)o.undelegate(s,m,d[n]).delegate(s,m,d[n]=f);
+			else o.unbind(m,d[n]).bind(m,d[n]=f);
 		},
 		{
 			hover:1,

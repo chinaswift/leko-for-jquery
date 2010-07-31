@@ -11,8 +11,15 @@
 
 $(function(){
 
-	$("#test").colorShade({properties:{color:"red",backgroundColor:"green"}});
-	$("#test").colorShade({properties:{color:"green",backgroundColor:"red"}});
+	$("#shit").colorShade({
+		live:1,
+		selector:"a",
+		properties:{color:"red",backgroundColor:"green"}
+	});
+
+	
+	//$("#test").colorShade({properties:{color:"red",backgroundColor:"green"}});
+	//$("#test").colorShade({properties:{color:"green",backgroundColor:"red"}});
 
 });
 
@@ -21,6 +28,14 @@ $(function(){
 <?php include 'leko.neck.inc'; ?>
 <?php include 'leko.demo.neck.inc'; ?>
 
-<section style="background:url();"><a style="color:red;" id="test" _="colorShade:{}">测试一下</a></section>
+<section id="shit">
+
+<a style="color:red;" id="test">测试一下</a>
+
+<br /><br />
+
+<a style="color:red;" _="colorShade:{properties:{color:'green',backgroundColor:'red'}}">测试一下</a>
+
+</section>
 
 <?php include 'leko.foot.inc'; ?>
