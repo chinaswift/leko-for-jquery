@@ -11,9 +11,10 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="webkit"><param name="Local" value="Leko.webkit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="opera"><param name="Local" value="Leko.opera.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rgba"><param name="Local" value="Leko.rgba.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="jQuery"><param name="Local" value="jQuery.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="jQuery.fn.html"></OBJECT>
-<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorHover"><param name="Local" value="jQuery.fn.colorHover.html"></OBJECT>
+<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="conf"><param name="Local" value="jQuery.fn.conf.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="support"><param name="Local" value="jQuery.support.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rgba"><param name="Local" value="jQuery.support.rgba.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isNumber"><param name="Local" value="jQuery.isNumber.html"></OBJECT>

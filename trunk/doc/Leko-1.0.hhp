@@ -18,8 +18,7 @@ Handbook="Leko 1.0 - The Best User Interface Library for jQuery","Leko-1.0.hhc",
 [FILES]
 apple-touch-icon.png
 favicon.ico
-jQuery.fn.colorHover.0.html
-jQuery.fn.colorHover.html
+jQuery.fn.conf.html
 jQuery.fn.html
 jQuery.html
 jQuery.isBoolean.html
@@ -35,6 +34,7 @@ leko.color.js
 leko.css
 leko.doc.css
 Leko.fit.html
+Leko.fn.html
 Leko.html
 leko.js
 Leko.mozilla.html

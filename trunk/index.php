@@ -113,7 +113,8 @@ function run($i,$n){
 				$html.=$rh;
 			}
 			else if($tag=='method'){
-				$fn=preg_match("/\.fn\.$/",$n);
+				$jf=preg_match("/\.fn\.$/",$n);
+				$fn=$jf&&$node->hasAttribute("fn");
 				$params =$xsl->query('param' ,$node);
 				$returns=$xsl->query('return',$node);
 				$html.='<section><h4><b>语法</b></h4><code>';
@@ -136,7 +137,7 @@ function run($i,$n){
 					$rh='<section><h4><b>返回</b></h4><table border="0" cellspacing="0" cellpadding="0"><thead><tr class="row2"><th class="col2">数据类型</th><th class="col2">可能的取值</th><th>说明</th></tr></thead><tbody>'.$rh.'</tbody></table></section>';
 					$html.=' = ';
 				}
-				$html.='<strong>'.$full.'</strong>(';
+				$html.=$jf?'<strong>jQuery</strong>(<i>selector</i>).'.'<strong>'.$name.'</strong>(':'<strong>'.$full.'</strong>(';
 				$hh='';
 				if($params ->length){
 
@@ -179,7 +180,7 @@ function run($i,$n){
 				$html.='<script>$(function(){$("button").click(function(){eval($(this).prev().prev().text());});});</script><section><h4><b>示例</b></h4>';
 				foreach($codes as $x=>$code){
 					if($x)$html.='<br />';
-					$html.='<pre>'.$code->nodeValue.'</pre>';
+					$html.='<pre>'.htmlspecialchars($code->nodeValue,ENT_QUOTES).'</pre>';
 					if($code->hasAttribute('canrun'))$html.='<br /><button>运行上面的代码</button><br />';
 				}
 				$html.='</section>';
