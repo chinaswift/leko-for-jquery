@@ -2,8 +2,6 @@
 
 <style>
 
-a#test,a#test:hover{color:#000;text-decoration:none;}
-a#test:hover{color:#f30;text-decoration:underline;}
 
 </style>
 
@@ -13,18 +11,9 @@ a#test:hover{color:#f30;text-decoration:underline;}
 
 $(function(){
 
-	$("#test").colorShade();
-	$("#test").colorShade({x:'normal'});
-	$("#test").colorShade();
-	//$("section").colorShade({x:'normal'});
-	
-	/*
-	$("#test").hover(function(){
-		$(this).animate({color:"green"},"slow");
-	},function(){}).colorFadeHover({duration:'normal'});
+	$("#test").colorShade({properties:{color:"red",backgroundColor:"green"}});
+	$("#test").colorShade({properties:{color:"green",backgroundColor:"red"}});
 
-	$("a").colorFadeHover();
-	*/
 });
 
 </script>
@@ -32,6 +21,6 @@ $(function(){
 <?php include 'leko.neck.inc'; ?>
 <?php include 'leko.demo.neck.inc'; ?>
 
-<section><a href="#" id="test" _="colorShade:{duration:'fast'}">测试一下</a></section>
+<section style="background:url();"><a style="color:red;" id="test" _="colorShade:{}">测试一下</a></section>
 
 <?php include 'leko.foot.inc'; ?>

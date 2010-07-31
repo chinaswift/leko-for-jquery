@@ -6,11 +6,11 @@
 				r;
 			do{
 				r=$.curCSS(e,a);
-				if(r&&r!='transparent'||$.nodeName(e,"html"))break;
+				if(r&&r!='transparent'||$.nodeName(e,"html"))break;else r="#fff";
 				a=p[1];
 			}
 			while(e=e.parentNode);
-			return _.rgba(r||"#fff");
+			return r;
 		},
 		b=$.support.rgba,
 		p=['color','backgroundColor','borderBottomColor','borderLeftColor','borderRightColor','borderTopColor','outlineColor'],
@@ -19,7 +19,7 @@
 	$.each(p,function(i,v){
 		$.fx.step[v]=function(fx){
 			if(fx.state==0){
-				fx.start=a(fx.elem,v);
+				fx.start=_.rgba(a(fx.elem,v));
 				fx.end=_.rgba(fx.end);
 			}
 			var
@@ -32,18 +32,50 @@
 	});
 
 	_.fn(
-		"colorShade",
+		"liveColorShade",
 		function(o,v,d){
-			
-			d.ee=3;
-			console.log(o.data(n));
-			console.log(d);
-
-			
-			//o.animate({color:"red"},"slow");
+			var
+				p=v.properties;
+			//o.delegate(v.selector,);
 		},
 		{
-			hover:1
+			hover:1,
+			duration:500,
+			easing:"linear"
+		}
+	);
+
+	_.fn(
+		"colorShade",
+		function(o,v,d){
+			var
+				i,
+				b,
+				t,
+				h=v.hover,
+				p=v.properties,
+				x="focus blur",
+				z="mouseover mouseout",
+				m=h?z:x,
+				n=h?"z":"x";
+			d._={};
+			d.$={};
+			for(i in p){
+				d._[i]=o.css( i);
+				d.$[i]=a(o[0],i);
+			}
+			o.unbind(m,d[n]).bind(m,d[n]=function(e){
+				t=e.type;
+				b=t=="mouseout"||t=="blur";
+				o.stop(true).animate(b?d.$:p,v.duration,v.easing,function(){
+					if(b)for(var i in d._)o.css(i,d._[i]);
+				});
+			});
+		},
+		{
+			hover:1,
+			duration:500,
+			easing:"linear"
 		}
 	);
 
