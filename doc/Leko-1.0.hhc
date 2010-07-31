@@ -15,6 +15,7 @@
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="jQuery"><param name="Local" value="jQuery.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="jQuery.fn.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="conf"><param name="Local" value="jQuery.fn.conf.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorShade"><param name="Local" value="jQuery.fn.colorShade.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="support"><param name="Local" value="jQuery.support.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rgba"><param name="Local" value="jQuery.support.rgba.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isNumber"><param name="Local" value="jQuery.isNumber.html"></OBJECT>
