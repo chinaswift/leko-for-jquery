@@ -27,7 +27,7 @@
 					return fx.pos*(fx.end[i]-v)+v;
 			}));
 			if(!b)z.pop();
-			fx.elem.style[v]="rgb"+(b?"a(":"(")+z+")";
+			fx.elem.style[v]="rgb"+(b?"a(":"(")+z+")";console.log(z);
 		}
 	});
 
@@ -38,14 +38,14 @@
 				h=v.focus,
 				s=v.selector,
 				l=v.live,
-				x="focus blur",
-				z="mouseover mouseout",
+				x="focusin focusout",
+				z="mouseenter mouseleave",
 				m=h?x:z,
 				n=h?"x":"z",
 				f=function(e){
 					var
 						t=e.type,
-						b=t=="mouseout"||t=="blur",
+						b=/(?:t|e)$/.test(t),
 						o=$(this),
 						q=l?o.conf(c):d,
 						w=l?$.extend(true,{},v,q):v,
@@ -79,8 +79,8 @@
 			else o.unbind(m,d[n]).bind(m,d[n]=f);
 		},
 		{
-			duration:500,
-			easing:"linear"
+			duration:800,
+			easing:"swing"
 		}
 	);
 
