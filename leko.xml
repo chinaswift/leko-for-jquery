@@ -401,16 +401,16 @@ $("a").colorShade();
 				<param name="properties">
 					<vartype name="object">
 						<varvalue>
-							<brief><![CDATA[要应用动态转换效果的样式表属性及其目标值的键值对。支持下列属性：<br /><br /><ol class="en">
-<li>color</li>
-<li>backgroundColor</li>
-<li>borderColor</li>
-<li>borderBottomColor</li>
-<li>borderLeftColor</li>
-<li>borderRightColor</li>
-<li>borderTopColor</li>
-<li>outlineColor</li>
-</ol><br />注意：元素如果在:hover和:focus等Pseudo-classes中也定义了相应属性，会干扰动态效果的正常运行。]]></brief>
+							<brief>要应用动态转换效果的样式表属性及其目标值的键值对。支持下列属性：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;color&lt;/li&gt;
+&lt;li&gt;backgroundColor&lt;/li&gt;
+&lt;li&gt;borderColor&lt;/li&gt;
+&lt;li&gt;borderBottomColor&lt;/li&gt;
+&lt;li&gt;borderLeftColor&lt;/li&gt;
+&lt;li&gt;borderRightColor&lt;/li&gt;
+&lt;li&gt;borderTopColor&lt;/li&gt;
+&lt;li&gt;outlineColor&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;&lt;mark&gt;注意：元素如果在:hover和:focus等Pseudo-classes中也定义了相应属性，会干扰动态效果的正常运行。&lt;/mark&gt;</brief>
 						</varvalue>
 					</vartype>
 				</param>

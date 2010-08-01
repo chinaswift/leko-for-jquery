@@ -7,8 +7,8 @@ body{line-height:1.5;color:#111;text-align:center;}
 body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","LiHei Pro","Helvetica Neue",Helvetica,Arial;}
 textarea{width:377px;height:102px;line-height:normal;_line-height:1.4;}
 textarea,td,th,select,input.txt,.frame{background:#fff;border:1px solid #ddd;}
-textarea,select,input.txt{padding:3px;vertical-align:middle;}
-button,input.btn{}
+textarea,button,select,input.txt,input.btn{padding:3px;vertical-align:middle;}
+button,input.btn{padding:3px 12px;*padding:2px 0;}
 th,td{padding:5px;}
 th,caption{text-align:left;font-weight:bold;}
 pre{white-space:pre;}
@@ -44,4 +44,7 @@ br.clear,.tr:after{content:"\0020";display:block;height:0;font-size:1px;line-hei
 color  : red\9; <=IE8
 *color : green; <=IE7
 _color : green; <=IE6
+
+IE6 unsupported *:hover,*:focus
+IE7 unsupported *:focus
 */
