@@ -30,11 +30,11 @@ $(function(){
 
 <section id="shit">
 
-<a style="color:red;" id="test">测试一下</a>
+<a style="color:red;border:2px solid #fff;" id="test">测试一下</a>
 
 <br /><br />
 
-<a style="color:red;" colorShade="properties:{color:'green',backgroundColor:'red'}">测试一下</a>
+<a style="color:red;border:2px solid #fff;" colorShade="properties:{color:'green',backgroundColor:'red',borderColor:'blue'}">测试一下</a>
 
 </section>
 

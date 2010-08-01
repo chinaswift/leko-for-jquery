@@ -398,61 +398,111 @@ $("a").colorShade();
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.color.js</srcfile>
-				<param name="live">
+				<param name="properties">
+					<vartype name="object">
+						<varvalue>
+							<brief><![CDATA[要应用动态转换效果的样式表属性及其目标值的键值对。支持下列属性：<br /><br /><ol class="en">
+<li>color</li>
+<li>backgroundColor</li>
+<li>borderColor</li>
+<li>borderBottomColor</li>
+<li>borderLeftColor</li>
+<li>borderRightColor</li>
+<li>borderTopColor</li>
+<li>outlineColor</li>
+</ol><br />注意：元素如果在:hover和:focus等Pseudo-classes中也定义了相应属性，会干扰动态效果的正常运行。]]></brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="live" optional="1">
+					<default>false</default>
 					<vartype name="boolean">
 						<varvalue>
-							<brief>插件名称。</brief>
+							<value>true</value>
+							<brief>效果将以jQuery的live方式绑定到当前序列对象的由selector指定的子对象————包括当前已有的和未来创建的。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>效果将绑定到当前序列对象。</brief>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="selector">
+				<param name="selector" optional="1">
 					<vartype name="string">
 						<varvalue>
-							<brief>插件名称。</brief>
+							<brief>对当前序列对象的子对象进行筛选的选择符。仅当live为true时才有效。</brief>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="properties">
+				<param name="focus" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>效果绑定到鼠标移入移出(focus|blur)事件对。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>效果绑定到鼠标移入移出(mouseover|mouseout)事件对。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="duration" optional="1">
+					<default>400ms</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>插件名称。</brief>
+							<value>slow</value>
+							<brief>预设的速度级别。相当于600ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>normal</value>
+							<brief>预设的速度级别。相当于400ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>fast</value>
+							<brief>预设的速度级别。相当于200ms</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="number">
+						<varvalue>
+							<brief>精确指定速度的整数数值。单位为毫秒。</brief>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="hover">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>插件名称。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="duration">
-					<vartype name="string">
-						<varvalue>
-							<brief>插件名称。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="easing">
-					<vartype name="string">
-						<varvalue>
-							<brief>插件名称。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="object">
+				<return name="jQuery">
 					<varvalue>
-						<brief>对获取到的对象的引用。</brief>
+						<brief>jQuery对象。</brief>
 					</varvalue>
 				</return>
-				<code><![CDATA[<a colorShade="color:'red',complete:function(){alert('OK');}">Test</a>
-
-<script>
-
-$("a").conf("colorShade").color="blue";
-$("a").colorShade();
-
-</script>]]></code>
+				<code><![CDATA[$("div#me").colorShade({
+    properties:{
+        color:"green"
+    }
+});]]></code>
+				<code><![CDATA[$("body").colorShade({
+    live:true,
+    selector:"a",
+    properties:{
+        color:"red",
+        backgroundColor:"blue"
+    }
+});]]></code>
+				<code><![CDATA[$("form").colorShade({
+    live:true,
+    selector:"input:text",
+    focus:true,
+    properties:{
+        borderColor:"green"
+    }
+});]]></code>
 			</method>
 		</object>
 		<object name="support">
