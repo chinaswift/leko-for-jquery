@@ -394,7 +394,7 @@ $("a").colorShade();
 </script>]]></code>
 			</method>
 			<method name="colorShade" fn="1">
-				<brief>为元素提供当鼠标移入移出(mouseover|mouseout)或焦点获得失去(focus|blur)时的由一个或一组CSS属性指定的颜色渐渐变换的动态效果。</brief>
+				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色渐渐变换的动态效果。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.color.js</srcfile>
@@ -439,16 +439,16 @@ $("a").colorShade();
 					<vartype name="boolean">
 						<varvalue>
 							<value>true</value>
-							<brief>效果绑定到鼠标移入移出(focus|blur)事件对。</brief>
+							<brief>效果绑定到鼠标移入移出(focusin|focusout)事件对。</brief>
 						</varvalue>
 						<varvalue>
 							<value>false</value>
-							<brief>效果绑定到鼠标移入移出(mouseover|mouseout)事件对。</brief>
+							<brief>效果绑定到鼠标移入移出(mouseenter|mouseleave)事件对。</brief>
 						</varvalue>
 					</vartype>
 				</param>
 				<param name="duration" optional="1">
-					<default>400ms</default>
+					<default>800</default>
 					<vartype name="string">
 						<varvalue>
 							<value>slow</value>

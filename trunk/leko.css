@@ -4,7 +4,7 @@ article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
 html{-webkit-text-size-adjust:none;background:#fff;}
 html,textarea{overflow-y:scroll;}
 body{line-height:1.5;color:#111;text-align:center;}
-body,textarea{font-size:12px;font-family:"微软雅黑","LiHei Pro","Helvetica Neue",Helvetica,Arial;}
+body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","LiHei Pro","Helvetica Neue",Helvetica,Arial;}
 textarea{width:377px;height:102px;line-height:normal;_line-height:1.4;}
 textarea,td,th,select,input.txt,.frame{background:#fff;border:1px solid #ddd;}
 textarea,select,input.txt{padding:3px;vertical-align:middle;}

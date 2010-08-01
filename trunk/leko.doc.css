@@ -1,7 +1,7 @@
 a{color:#08c;}
 a:focus,a:active,a:hover{text-decoration:underline;color:#ff436f;}
 
-th,h1,h2,h3,h4{color:#666;}
+th{color:#666;}
 th,code,pre{background:#f5f5f5;}
 
 tr.row1 th{background:#ffc;}
