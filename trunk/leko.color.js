@@ -54,10 +54,9 @@
 						i=3;
 					if(j){
 						delete g[p[2]];
-						do{
+						while(i<7){
 							g[p[i++]]=j;
 						}
-						while(i<7);
 					}					
 					if(!b&&!q._){
 						q._={};
