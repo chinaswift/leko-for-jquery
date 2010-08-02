@@ -266,6 +266,7 @@ $echo=array();
 $cmd=HHC_PATH.' '.realpath(DOC_PATH).'\\'.DOC_BOOK.'.hhp';
 exec($cmd,$echo);
 foreach($echo as $line)echo $line.'<br />';
+echo '<br /><a href="'.DOC_PATH.DOC_BOOK.'.chm" target="_blank">'.DOC_PATH.DOC_BOOK.'.chm</a><br />';
 
 echo '</pre>';
 
