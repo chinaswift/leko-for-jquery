@@ -84,6 +84,29 @@ alert(x);</code>
 			<code canrun="">var x=_.fit(3,3.5,5);
 alert(x);</code>
 		</method>
+		<method name="unique">
+			<brief>检查一个简单数据类型数组，去除掉所有重复元素。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="array">
+				<varvalue>
+					<brief>处理后的数组。</brief>
+				</varvalue>
+			</return>
+			<param name="array">
+				<vartype name="array">
+					<varvalue>
+						<brief>要检查的数组。注意：该数组的项目只能是数字、字符串、布尔值，不可以有对象、函数、数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code canrun="">var x=[3,3,4,"x","X",4,5,5];
+x=_.unique(x);
+alert(x);</code>
+			<code canrun="">var x=[true,0,false,1,NaN];
+x=_.unique(x);
+alert(x);</code>
+		</method>
 		<method name="average">
 			<brief>计算多个数值的平均数。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -105,8 +128,16 @@ alert(x);</code>
 			<code canrun="">var x=_.average(4,5);
 alert(x);</code>
 		</method>
+		<method name="pseudoClass">
+			<brief>解决IE6不支持CSS伪类&lt;mark class="en"&gt; :hover &lt;/mark&gt;和IE7不支持&lt;mark class="en"&gt; :focus &lt;/mark&gt;定义的浏览器兼容性问题。在DOMReady之后执行一次这个函数，一切都会自动解决。就是这么简单。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<code>$(function(){
+    _.pseudoClass();
+});</code>
+		</method>
 		<method name="noConflict">
-			<brief>将Leko的缩写的变量引用名称"_"的使用权交还给先前的脚本定义。</brief>
+			<brief>将Leko的缩写的变量引用名称"&lt;mark class="en"&gt; _ &lt;/mark&gt;(下划线)"的使用权交还给先前的脚本定义。</brief>
 			<srcfile>jquery.js</srcfile>
 			<srcfile within="">leko.js</srcfile>
 			<return name="object">
@@ -291,14 +322,22 @@ alert(X.msie(5.5));</code>
 			<code>if(_.opera(10))alert("您当前使用的浏览器是Opera，版本不低于10。");</code>
 		</method>
 		<method name="rgba">
-			<brief>将各种CSS3语法格式的颜色定义转换为存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
+			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[Red, Green, Blue, Alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
 			<srcfile>jquery.js</srcfile>
 			<srcfile>leko.js</srcfile>
 			<srcfile within="">leko.color.js</srcfile>
 			<param name="color">
 				<vartype name="string">
 					<varvalue>
-						<brief>各种符合CSS3语法格式的颜色定义。详见实例。</brief>
+						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
 					</varvalue>
 				</vartype>
 				<vartype name="array">
@@ -394,7 +433,7 @@ $("a").colorShade();
 </script>]]></code>
 			</method>
 			<method name="colorShade" fn="1">
-				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色渐渐变换的动态效果。</brief>
+				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.color.js</srcfile>

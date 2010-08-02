@@ -4,7 +4,9 @@
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="Leko"><param name="Local" value="Leko.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="ver"><param name="Local" value="Leko.ver.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fit"><param name="Local" value="Leko.fit.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="unique"><param name="Local" value="Leko.unique.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="average"><param name="Local" value="Leko.average.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="pseudoClass"><param name="Local" value="Leko.pseudoClass.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="noConflict"><param name="Local" value="Leko.noConflict.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="msie"><param name="Local" value="Leko.msie.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="mozilla"><param name="Local" value="Leko.mozilla.html"></OBJECT>
