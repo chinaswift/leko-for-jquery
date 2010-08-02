@@ -19,6 +19,14 @@
 			fit:function(n,i,a){
 				return Math.max(Math.min(n,a),i);
 			},
+			unique:function(a){
+				var
+					n,
+					x={},
+					i=a.length;
+				while(i--)if(x[n=a[i]])a.splice(i,1);else x[n]=1;
+				return a;
+			},
 			average:function(){
 				var
 					v=arguments,
@@ -52,6 +60,36 @@
 					$.fn[n]=f;
 					f['ini']=a[m+2];
 				}
+			},
+			pseudoClass:function(){
+				var
+					a=window.document.styleSheets,
+					x=[],
+					w=_.msie(7,1),
+					p=w?"hover":"focus",
+					t=w?"mouseenter mouseleave":"focusin focusout",
+					z=":"+p,
+					b,c,d,e,f,g,h,k;
+				if(_.msie(8,1))for(b=0;b<a.length;b++){
+					k=a[b];
+					c=k.rules;
+					d=c.length;
+					while(d--){
+						e=c[d];
+						f=e.selectorText;
+						g=e.style.cssText;
+						if(new RegExp(z).test(f)){
+							h=f.replace(z,"");
+							if(!w||!/\ba\b/i.test(h)){					
+								k.addRule(f.replace(":","."),g,d);
+								x.unshift(h);
+							}
+						}
+					}
+				}
+				if(x.length)$(_.unique(x).join(",")).live(t,function(){
+					$(this).toggleClass(p);
+				});			
 			}
 		},
 		b=$.browser,
