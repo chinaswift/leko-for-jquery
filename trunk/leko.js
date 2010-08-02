@@ -90,6 +90,13 @@
 				if(x.length)$(_.unique(x).join(",")).live(t,function(){
 					$(this).toggleClass(p);
 				});			
+			},
+			html5Tag:function(){
+				if(_.msie(9,1)){
+					$.each("article,aside,audio,canvas,datalist,details,eventsource,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,time,video".split(','),function(i,v){
+						document.createElement(v);
+					});
+				}
 			}
 		},
 		b=$.browser,
@@ -112,10 +119,6 @@
 	});
 	s.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);
 
-	if(_.msie(9,1)){
-		$.each("article,aside,audio,canvas,datalist,details,eventsource,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,time,video".split(','),function(i,v){
-			document.createElement(v);
-		});
-	}
+	_.html5Tag();
 
 })(window,window.document,jQuery);

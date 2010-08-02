@@ -2,6 +2,322 @@
 <leko>
 	<object name="Leko">
 		<brief>是Leko for jQuery的全局核心对象。可以简写为_。</brief>
+		<method name="average">
+			<brief>计算多个数值的平均数。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="number...">
+				<vartype name="number">
+					<varvalue>
+						<brief>要计算平均值的各个数值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="number">
+				<varvalue>
+					<brief>计算出的平均值。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var x=_.average(3,4,5);
+alert(x);</code>
+			<code canrun="">var x=_.average(4,5);
+alert(x);</code>
+		</method>
+		<method name="fit">
+			<brief>对指定数值进行上下边界范围检查。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="number">
+				<varvalue>
+					<brief>边界校正后的数值。</brief>
+				</varvalue>
+			</return>
+			<param name="number">
+				<vartype name="number">
+					<varvalue>
+						<brief>要校正的数值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="min">
+				<vartype name="number">
+					<varvalue>
+						<brief>允许的最小值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="max">
+				<vartype name="number">
+					<varvalue>
+						<brief>允许的最大值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code canrun="">var x=_.fit(3.5,3,5);
+alert(x);</code>
+			<code canrun="">var x=_.fit(3,3.5,5);
+alert(x);</code>
+		</method>
+		<method name="fn">
+			<brief>基于特定规则用更简洁的语法为jQuery创建插件的内部函数。如果你不是对进一步扩展这个库感兴趣的脚本开发者，你完全不必关心这个函数怎么用，因为你永远用不着它。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="plugin-name">
+				<vartype name="string">
+					<varvalue>
+						<brief>插件名称。即将添加为jQuery.fn的子函数的字段名称。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="plugin-func">
+				<vartype name="function">
+					<varvalue>
+						<brief><![CDATA[实现插件功能的回调函数。这个函数将接受四个参数。<br />
+第一个是插件执行时使用this.each()循环到的每一个元素，已包装成jQuery对象。<br />
+第二个是已经使用$.extend递归合并插件参数和插件默认设置后的最终应用设置的键值对对象。<br />
+第三个是对每个要处理元素用jQuery的data方法绑定的键值对对象，供插件用来存取运行时的私有数据。<br />
+第四个是插件的字符串名称，即plugin-name。]]></brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="plugin-defs" optional="1">
+				<vartype name="object">
+					<varvalue>
+						<brief><![CDATA[插件的默认设置的字段集合。]]></brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code>_.fn(
+    "color",
+    function(o,v,d,n){
+        o.css("color",v.color);
+    },
+    {color:"red"}
+);
+
+$(function(){
+    $("a").color();
+});</code>
+		</method>
+		<method name="html5Tag">
+			<brief>解决IE9(?)以下版本不支持HTML5新增标签的浏览器兼容性问题。在页面开始解析之前执行一次这个函数，一切都会自动解决。注意：此函数默认会自动执行。如果你不需要使用新增的HTML5标签，可以从脚本源文件中手工删除掉相应代码。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<code>_.html5Tag();</code>
+		</method>
+		<method name="mozilla">
+			<brief>检查当前用户浏览器是否是Mozilla Gecko内核，及版本号是否符合要求。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="ver" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>检查要求的版本号。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="number">
+					<varvalue>
+						<brief>会被自动转换为字符串。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="less-than" optional="1">
+				<default>false</default>
+				<vartype name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>内核版本号要求小于ver。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>内核版本号要求大于或等于ver。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>当前用户浏览器是Mozilla Gecko内核，且版本号符合要求。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>当前用户浏览器不是Mozilla Gecko内核，或版本号不符合要求。</brief>
+				</varvalue>
+			</return>
+			<code>if(_.mozilla(1.9,1))alert("您当前使用的浏览器是Mozilla Gecko内核，版本低于1.9。");</code>
+			<code>if(_.mozilla(1.9))alert("您当前使用的浏览器是Mozilla Gecko内核，版本不低于1.9。");</code>
+		</method>
+		<method name="msie">
+			<brief>检查当前用户浏览器是否是Microsoft Internet Explorer，及版本号是否符合要求。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="ver" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>检查要求的版本号。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="number">
+					<varvalue>
+						<brief>会被自动转换为字符串。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="less-than" optional="1">
+				<default>false</default>
+				<vartype name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>版本号要求小于ver。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>版本号要求大于或等于ver。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>当前用户浏览器是Microsoft Internet Explorer，且版本号符合要求。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>当前用户浏览器不是Microsoft Internet Explorer，或版本号不符合要求。</brief>
+				</varvalue>
+			</return>
+			<code>if(_.msie(9,1))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本低于9。");</code>
+			<code>if(_.msie(9))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本不低于9。");</code>
+		</method>
+		<method name="noConflict">
+			<brief>将Leko的缩写的变量引用名称"&lt;mark class="en"&gt; _ &lt;/mark&gt;(下划线)"的使用权交还给先前的脚本定义。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="object">
+				<varvalue>
+					<value>Leko</value>
+					<brief>在转让变量名称的使用权之前返回对Leko的引用。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var X=Leko.noConflict();
+alert(X.msie(5.5));</code>
+		</method>
+		<method name="opera">
+			<brief>检查当前用户浏览器是否是Opera，及版本号是否符合要求。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="ver" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>检查要求的版本号。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="number">
+					<varvalue>
+						<brief>会被自动转换为字符串。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="less-than" optional="1">
+				<default>false</default>
+				<vartype name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>版本号要求小于ver。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>版本号要求大于或等于ver。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>当前用户浏览器是Opera，且版本号符合要求。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>当前用户浏览器不是Opera，或版本号不符合要求。</brief>
+				</varvalue>
+			</return>
+			<code>if(_.opera(10,1))alert("您当前使用的浏览器是Opera，版本低于10。");</code>
+			<code>if(_.opera(10))alert("您当前使用的浏览器是Opera，版本不低于10。");</code>
+		</method>
+		<method name="pseudoClass">
+			<brief>解决IE6不支持CSS伪类&lt;mark class="en"&gt; :hover &lt;/mark&gt;和IE7不支持&lt;mark class="en"&gt; :focus &lt;/mark&gt;定义的浏览器兼容性问题。在DOMReady之后执行一次这个函数，一切都会自动解决。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<code>$(function(){
+    _.pseudoClass();
+});</code>
+		</method>
+		<method name="rgba">
+			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[Red, Green, Blue, Alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile>leko.js</srcfile>
+			<srcfile within="">leko.color.js</srcfile>
+			<param name="color">
+				<vartype name="string">
+					<varvalue>
+						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="array">
+					<varvalue>
+						<brief>要被校验元素取值范围的RGBA数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="array">
+				<varvalue>
+					<value></value>
+					<brief>转换成功或数据校验完成。该返回的数组包含四个数字项，前三个为0-255之间的正整数，分别对应RGB通道，最后一个为0-1之间的浮点数，对应Alpha通道。</brief>
+				</varvalue>
+			</return>
+			<return name="undefined">
+				<varvalue>
+					<value></value>
+					<brief>转换失败。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var a=_.rgba("rgb(127,255,212)");
+alert(a);</code>
+		</method>
+		<method name="unique">
+			<brief>检查一个简单数据类型数组，去除掉所有重复元素。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="array">
+				<varvalue>
+					<brief>处理后的数组。</brief>
+				</varvalue>
+			</return>
+			<param name="array">
+				<vartype name="array">
+					<varvalue>
+						<brief>要检查的数组。注意：该数组的项目只能是数字、字符串、布尔值，不可以有对象、函数、数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code canrun="">var x=[3,3,4,"x","X",4,5,5];
+x=_.unique(x);
+alert(x);</code>
+			<code canrun="">var x=[true,0,false,1,NaN];
+x=_.unique(x);
+alert(x);</code>
+		</method>
 		<method name="ver">
 			<brief>检查版本号是否满足最低兼容性要求。对于如 a.b.c.d 形式的多级版本号，将从高位向低位逐级比较。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -49,192 +365,6 @@ alert(x);</code>
 			<code canrun="">var x=_.ver("1.10.2","1.9.3");
 alert(x);</code>
 		</method>
-		<method name="fit">
-			<brief>对指定数值进行上下边界范围检查。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<return name="number">
-				<varvalue>
-					<brief>边界校正后的数值。</brief>
-				</varvalue>
-			</return>
-			<param name="number">
-				<vartype name="number">
-					<varvalue>
-						<brief>要校正的数值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="min">
-				<vartype name="number">
-					<varvalue>
-						<brief>允许的最小值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="max">
-				<vartype name="number">
-					<varvalue>
-						<brief>允许的最大值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<code canrun="">var x=_.fit(3.5,3,5);
-alert(x);</code>
-			<code canrun="">var x=_.fit(3,3.5,5);
-alert(x);</code>
-		</method>
-		<method name="unique">
-			<brief>检查一个简单数据类型数组，去除掉所有重复元素。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<return name="array">
-				<varvalue>
-					<brief>处理后的数组。</brief>
-				</varvalue>
-			</return>
-			<param name="array">
-				<vartype name="array">
-					<varvalue>
-						<brief>要检查的数组。注意：该数组的项目只能是数字、字符串、布尔值，不可以有对象、函数、数组。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<code canrun="">var x=[3,3,4,"x","X",4,5,5];
-x=_.unique(x);
-alert(x);</code>
-			<code canrun="">var x=[true,0,false,1,NaN];
-x=_.unique(x);
-alert(x);</code>
-		</method>
-		<method name="average">
-			<brief>计算多个数值的平均数。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="number...">
-				<vartype name="number">
-					<varvalue>
-						<brief>要计算平均值的各个数值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="number">
-				<varvalue>
-					<brief>计算出的平均值。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var x=_.average(3,4,5);
-alert(x);</code>
-			<code canrun="">var x=_.average(4,5);
-alert(x);</code>
-		</method>
-		<method name="pseudoClass">
-			<brief>解决IE6不支持CSS伪类&lt;mark class="en"&gt; :hover &lt;/mark&gt;和IE7不支持&lt;mark class="en"&gt; :focus &lt;/mark&gt;定义的浏览器兼容性问题。在DOMReady之后执行一次这个函数，一切都会自动解决。就是这么简单。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<code>$(function(){
-    _.pseudoClass();
-});</code>
-		</method>
-		<method name="noConflict">
-			<brief>将Leko的缩写的变量引用名称"&lt;mark class="en"&gt; _ &lt;/mark&gt;(下划线)"的使用权交还给先前的脚本定义。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<return name="object">
-				<varvalue>
-					<value>Leko</value>
-					<brief>在转让变量名称的使用权之前返回对Leko的引用。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var X=Leko.noConflict();
-alert(X.msie(5.5));</code>
-		</method>
-		<method name="msie">
-			<brief>检查当前用户浏览器是否是Microsoft Internet Explorer，及版本号是否符合要求。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="ver" optional="1">
-				<default><![CDATA[0]]></default>
-				<vartype name="string">
-					<varvalue>
-						<brief>检查要求的版本号。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="number">
-					<varvalue>
-						<brief>会被自动转换为字符串。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="less-than" optional="1">
-				<default>false</default>
-				<vartype name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>版本号要求小于ver。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>版本号要求大于或等于ver。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>当前用户浏览器是Microsoft Internet Explorer，且版本号符合要求。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>当前用户浏览器不是Microsoft Internet Explorer，或版本号不符合要求。</brief>
-				</varvalue>
-			</return>
-			<code>if(_.msie(9,1))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本低于9。");</code>
-			<code>if(_.msie(9))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本不低于9。");</code>
-		</method>
-		<method name="mozilla">
-			<brief>检查当前用户浏览器是否是Mozilla Gecko内核，及版本号是否符合要求。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="ver" optional="1">
-				<default><![CDATA[0]]></default>
-				<vartype name="string">
-					<varvalue>
-						<brief>检查要求的版本号。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="number">
-					<varvalue>
-						<brief>会被自动转换为字符串。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="less-than" optional="1">
-				<default>false</default>
-				<vartype name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>内核版本号要求小于ver。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>内核版本号要求大于或等于ver。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>当前用户浏览器是Mozilla Gecko内核，且版本号符合要求。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>当前用户浏览器不是Mozilla Gecko内核，或版本号不符合要求。</brief>
-				</varvalue>
-			</return>
-			<code>if(_.mozilla(1.9,1))alert("您当前使用的浏览器是Mozilla Gecko内核，版本低于1.9。");</code>
-			<code>if(_.mozilla(1.9))alert("您当前使用的浏览器是Mozilla Gecko内核，版本不低于1.9。");</code>
-		</method>
 		<method name="webkit">
 			<brief>检查当前用户浏览器是否是Webkit内核，及版本号是否符合要求。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -278,160 +408,11 @@ alert(X.msie(5.5));</code>
 			<code>if(_.webkit(525,1))alert("您当前使用的浏览器是Webkit内核，版本低于525。");</code>
 			<code>if(_.webkit(525))alert("您当前使用的浏览器是Webkit内核，版本不低于525。");</code>
 		</method>
-		<method name="opera">
-			<brief>检查当前用户浏览器是否是Opera，及版本号是否符合要求。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="ver" optional="1">
-				<default><![CDATA[0]]></default>
-				<vartype name="string">
-					<varvalue>
-						<brief>检查要求的版本号。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="number">
-					<varvalue>
-						<brief>会被自动转换为字符串。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="less-than" optional="1">
-				<default>false</default>
-				<vartype name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>版本号要求小于ver。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>版本号要求大于或等于ver。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>当前用户浏览器是Opera，且版本号符合要求。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>当前用户浏览器不是Opera，或版本号不符合要求。</brief>
-				</varvalue>
-			</return>
-			<code>if(_.opera(10,1))alert("您当前使用的浏览器是Opera，版本低于10。");</code>
-			<code>if(_.opera(10))alert("您当前使用的浏览器是Opera，版本不低于10。");</code>
-		</method>
-		<method name="rgba">
-			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[Red, Green, Blue, Alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile>leko.js</srcfile>
-			<srcfile within="">leko.color.js</srcfile>
-			<param name="color">
-				<vartype name="string">
-					<varvalue>
-						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="array">
-					<varvalue>
-						<brief>要被校验元素取值范围的RGBA数组。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="array">
-				<varvalue>
-					<value></value>
-					<brief>转换成功或数据校验完成。该返回的数组包含四个数字项，前三个为0-255之间的正整数，分别对应RGB通道，最后一个为0-1之间的浮点数，对应Alpha通道。</brief>
-				</varvalue>
-			</return>
-			<return name="undefined">
-				<varvalue>
-					<value></value>
-					<brief>转换失败。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var a=_.rgba("rgb(127,255,212)");
-alert(a);</code>
-		</method>
-		<method name="fn">
-			<brief>基于特定规则用更简洁的语法为jQuery创建插件的内部函数。如果你不是对进一步扩展这个库感兴趣的脚本开发者，你完全不必关心这个函数怎么用，因为你永远用不着它。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="plugin-name">
-				<vartype name="string">
-					<varvalue>
-						<brief>插件名称。即将添加为jQuery.fn的子函数的字段名称。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="plugin-func">
-				<vartype name="function">
-					<varvalue>
-						<brief><![CDATA[实现插件功能的回调函数。这个函数将接受四个参数。<br />
-第一个是插件执行时使用this.each()循环到的每一个元素，已包装成jQuery对象。<br />
-第二个是已经使用$.extend递归合并插件参数和插件默认设置后的最终应用设置的键值对对象。<br />
-第三个是对每个要处理元素用jQuery的data方法绑定的键值对对象，供插件用来存取运行时的私有数据。<br />
-第四个是插件的字符串名称，即plugin-name。]]></brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="plugin-defs" optional="1">
-				<vartype name="object">
-					<varvalue>
-						<brief><![CDATA[插件的默认设置的字段集合。]]></brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<code>_.fn(
-    "color",
-    function(o,v,d,n){
-        o.css("color",v.color);
-    },
-    {color:"red"}
-);
-
-$(function(){
-    $("a").color();
-});</code>
-		</method>
 	</object>
 	<object name="jQuery">
 		<brief>是jQuery的全局核心对象。可以简写为$。</brief>
 		<object name="fn">
 			<brief>用于为jQuery安装功能扩展插件的接口对象。</brief>
-			<method name="conf">
-				<brief><![CDATA[获取某HTML Element对应于某插件的隐含对象。该隐含对象使用jQuery的data("plugin-name")方法创建，通过读取并解析该Element在HTML代码的Tag声明中使用JSON语法设置的对应于插件名称的自定义属性值，为插件的初始化提供该对象的私有默认设置(优先权高于插件的全局默认设置和插件的运行时参数设置)。此外，该隐含对象还用于插件在针对该Element的工作中存取私有变量。]]></brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="plugin-name">
-					<vartype name="string">
-						<varvalue>
-							<brief>插件名称。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="object">
-					<varvalue>
-						<brief>对获取到的对象的引用。</brief>
-					</varvalue>
-				</return>
-				<code><![CDATA[<a colorShade="color:'red',complete:function(){alert('OK');}">Test</a>
-
-<script>
-
-$("a").conf("colorShade").color="blue";
-$("a").colorShade();
-
-</script>]]></code>
-			</method>
 			<method name="colorShade" fn="1">
 				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -543,6 +524,31 @@ $("a").colorShade();
     }
 });]]></code>
 			</method>
+			<method name="conf">
+				<brief><![CDATA[获取某HTML Element对应于某插件的隐含对象。该隐含对象使用jQuery的data("plugin-name")方法创建，通过读取并解析该Element在HTML代码的Tag声明中使用JSON语法设置的对应于插件名称的自定义属性值，为插件的初始化提供该对象的私有默认设置(优先权高于插件的全局默认设置和插件的运行时参数设置)。此外，该隐含对象还用于插件在针对该Element的工作中存取私有变量。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="plugin-name">
+					<vartype name="string">
+						<varvalue>
+							<brief>插件名称。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="object">
+					<varvalue>
+						<brief>对获取到的对象的引用。</brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[<a colorShade="color:'red',complete:function(){alert('OK');}">Test</a>
+
+<script>
+
+$("a").conf("colorShade").color="blue";
+$("a").colorShade();
+
+</script>]]></code>
+			</method>
 		</object>
 		<object name="support">
 			<brief>反映当前用户浏览器内核特性的一系列属性的集合。</brief>
@@ -562,50 +568,6 @@ $("a").colorShade();
 				<srcfile within="">leko.js</srcfile>
 			</property>
 		</object>
-		<method name="isNumber">
-			<brief>检查变量是否是数字，且不是NaN。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="var">
-				<vartype name="">
-					<varvalue>
-						<brief>要检查的变量。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>是数字。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>不是数字。</brief>
-				</varvalue>
-			</return>
-		</method>
-		<method name="isString">
-			<brief>检查变量是否是字符串。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="var">
-				<vartype name="">
-					<varvalue>
-						<brief>要检查的变量。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>是字符串。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>不是字符串。</brief>
-				</varvalue>
-			</return>
-		</method>
 		<method name="isBoolean">
 			<brief>检查变量是否是布尔值。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -625,6 +587,50 @@ $("a").colorShade();
 				<varvalue>
 					<value>false</value>
 					<brief>不是布尔值。</brief>
+				</varvalue>
+			</return>
+		</method>
+		<method name="isDate">
+			<brief>检查变量是否是日期对象。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="var">
+				<vartype name="">
+					<varvalue>
+						<brief>要检查的变量。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>是日期对象。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>不是日期对象。</brief>
+				</varvalue>
+			</return>
+		</method>
+		<method name="isNumber">
+			<brief>检查变量是否是数字，且不是NaN。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="var">
+				<vartype name="">
+					<varvalue>
+						<brief>要检查的变量。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>是数字。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>不是数字。</brief>
 				</varvalue>
 			</return>
 		</method>
@@ -656,8 +662,8 @@ alert(isObject(a));</code>
 			<code canrun="">var a=new Date();
 alert(isObject(a));</code>
 		</method>
-		<method name="isDate">
-			<brief>检查变量是否是日期对象。</brief>
+		<method name="isString">
+			<brief>检查变量是否是字符串。</brief>
 			<srcfile>jquery.js</srcfile>
 			<srcfile within="">leko.js</srcfile>
 			<param name="var">
@@ -670,11 +676,11 @@ alert(isObject(a));</code>
 			<return name="boolean">
 				<varvalue>
 					<value>true</value>
-					<brief>是日期对象。</brief>
+					<brief>是字符串。</brief>
 				</varvalue>
 				<varvalue>
 					<value>false</value>
-					<brief>不是日期对象。</brief>
+					<brief>不是字符串。</brief>
 				</varvalue>
 			</return>
 		</method>
