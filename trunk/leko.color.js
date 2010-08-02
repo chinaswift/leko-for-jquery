@@ -27,7 +27,7 @@
 					return fx.pos*(fx.end[i]-v)+v;
 			}));
 			if(!b)z.pop();
-			fx.elem.style[v]="rgb"+(b?"a(":"(")+z+")";console.log(z);
+			fx.elem.style[v]="rgb"+(b?"a(":"(")+z+")";
 		}
 	});
 
