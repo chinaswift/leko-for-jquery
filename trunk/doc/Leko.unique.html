@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="" />
+<title>LEKO&trade;</title>
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" type="text/css" href="leko.css" />
+<link rel="stylesheet" type="text/css" href="leko.doc.css" />
+<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
+<script src="jquery.js"></script><script src="leko.js"></script></head><body><div id="page" class="table"><header><nav></nav></header><h2 class="en">Leko.unique</h2><hr />检查一个简单数据类型数组，去除掉所有重复元素。<section><h4><b>语法</b></h4><code><i>array</i> = <strong>Leko.unique</strong>(<i>array</i>)</code></section><section><h4><b>参数</b></h4><table border="0" cellspacing="0" cellpadding="0"><thead><tr class="row1"><th class="col2">参数名</th><th class="col2">是否可选</th><th class="col2">缺省值</th><th class="col2">数据类型</th><th class="col2">可能的取值</th><th>说明</th></tr></thead><tbody><tr><td rowspan="1" class="en">array</td><td class="en" rowspan="1"></td><td class="en" rowspan="1"></td><td rowspan="1" class="en">array</td><td class="en"></td><td>要检查的数组。注意：该数组的项目只能是数字、字符串、布尔值，不可以有对象、函数、数组。</td></tr></tbody></table></section><section><h4><b>返回</b></h4><table border="0" cellspacing="0" cellpadding="0"><thead><tr class="row2"><th class="col2">数据类型</th><th class="col2">可能的取值</th><th>说明</th></tr></thead><tbody><tr><td rowspan="1" class="en">array</td><td class="en"></td><td>处理后的数组。</td></tr></tbody></table></section><script>$(function(){$("button").click(function(){eval($(this).prev().prev().text());});});</script><section><h4><b>示例</b></h4><pre>var x=[3,3,4,&quot;x&quot;,&quot;X&quot;,4,5,5];
+x=_.unique(x);
+alert(x);</pre><br /><button>运行上面的代码</button><br /><br /><pre>var x=[true,0,false,1,NaN];
+x=_.unique(x);
+alert(x);</pre><br /><button>运行上面的代码</button><br /></section><section><h4><b>文件</b></h4><ol class="en"><li><a href="jquery.js">jquery.js</a> (70.48KB)</li><li class="within"><a href="leko.js">leko.js</a> (2.72KB)</li></ol></section><footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>
