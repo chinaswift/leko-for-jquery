@@ -411,6 +411,1479 @@ alert(x);</code>
 	</object>
 	<object name="jQuery">
 		<brief>是jQuery的全局核心对象。可以简写为$。</brief>
+		<object name="easing">
+			<brief>用于为jQuery扩展缓动函数类型的接口对象。</brief>
+			<method name="inquad">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outquad">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutquad">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="incubic">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outcubic">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutcubic">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inquart">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outquart">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutquart">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inquint">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outquint">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutquint">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="insine">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outsine">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutsine">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inexpo">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outexpo">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutexpo">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="incirc">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outcirc">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutcirc">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inelastic">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outelastic">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutelastic">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inback">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outback">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutback">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inbounce">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="outbounce">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+			<method name="inoutbounce">
+				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.easing.js</srcfile>
+				<param name="extra">
+					<vartype name="">
+						<varvalue>
+							<brief>附加的参数。</brief>
+							<value>null</value>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="current-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>当前时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="start-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>开始值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="end-value">
+					<vartype name="number">
+						<varvalue>
+							<brief>结束值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="total-time">
+					<vartype name="number">
+						<varvalue>
+							<brief>总动画时间。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="number">
+					<varvalue>
+						<brief></brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
+				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+			</method>
+		</object>
 		<object name="fn">
 			<brief>用于为jQuery安装功能扩展插件的接口对象。</brief>
 			<method name="colorShade" fn="1">
