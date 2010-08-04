@@ -1,4 +1,5 @@
 <?php include 'leko.head.inc'; ?>
+<?php include 'leko.demo.head.inc'; ?>
 
 <style>
 

@@ -8,6 +8,6 @@
 <link rel="icon" type="image/ico" href="favicon.ico" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="stylesheet" type="text/css" href="leko.css" />
-<link rel="stylesheet" type="text/css" href="leko.doc.css" />
+<link rel="stylesheet" type="text/css" href="leko.demo.css" />
 <link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
 <script src="jquery.js"></script><script src="leko.js"></script>
