@@ -1972,7 +1972,7 @@ alert(x);</code>
 				</param>
 				<return name="jQuery">
 					<varvalue>
-						<brief>jQuery对象。</brief>
+						<brief>this</brief>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("div#me").colorShade({
@@ -2022,19 +2022,155 @@ $("a").colorShade();
 
 </script>]]></code>
 			</method>
+			<method name="shadow" fn="1">
+				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.popup.js</srcfile>
+				<param name="properties">
+					<vartype name="object">
+						<varvalue>
+							<brief>要应用动态转换效果的样式表属性及其目标值的键值对。支持下列属性：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;color&lt;/li&gt;
+&lt;li&gt;backgroundColor&lt;/li&gt;
+&lt;li&gt;borderColor&lt;/li&gt;
+&lt;li&gt;borderBottomColor&lt;/li&gt;
+&lt;li&gt;borderLeftColor&lt;/li&gt;
+&lt;li&gt;borderRightColor&lt;/li&gt;
+&lt;li&gt;borderTopColor&lt;/li&gt;
+&lt;li&gt;outlineColor&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;&lt;mark&gt;注意：元素如果在:hover和:focus等Pseudo-classes中也定义了相应属性，会干扰动态效果的正常运行。&lt;/mark&gt;</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="live" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>效果将以jQuery的live方式绑定到当前序列对象的由selector指定的子对象————包括当前已有的和未来创建的。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>效果将绑定到当前序列对象。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="selector" optional="1">
+					<vartype name="string">
+						<varvalue>
+							<brief>对当前序列对象的子对象进行筛选的选择符。仅当live为true时才有效。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="focus" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>效果绑定到鼠标移入移出(focusin|focusout)事件对。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>效果绑定到鼠标移入移出(mouseenter|mouseleave)事件对。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="duration" optional="1">
+					<default>800</default>
+					<vartype name="string">
+						<varvalue>
+							<value>slow</value>
+							<brief>预设的速度级别。相当于600ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>normal</value>
+							<brief>预设的速度级别。相当于400ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>fast</value>
+							<brief>预设的速度级别。相当于200ms</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="number">
+						<varvalue>
+							<brief>精确指定速度的整数数值。单位为毫秒。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="easing" optional="1">
+					<default>swing</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>要应用的缓动函数名称。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<brief>this</brief>
+					</varvalue>
+				</return>
+				<code><![CDATA[$("div#me").colorShade({
+    properties:{
+        color:"green"
+    }
+});]]></code>
+				<code><![CDATA[$("body").colorShade({
+    live:true,
+    selector:"a",
+    properties:{
+        color:"red",
+        backgroundColor:"blue"
+    }
+});]]></code>
+				<code><![CDATA[$("form").colorShade({
+    live:true,
+    selector:"input:text",
+    focus:true,
+    properties:{
+        borderColor:"green"
+    }
+});]]></code>
+			</method>
 		</object>
 		<object name="support">
 			<brief>反映当前用户浏览器内核特性的一系列属性的集合。</brief>
 			<property name="rgba" readonly="1">
-				<brief>是否支持CSS3的rgba色彩定义。</brief>
+				<brief>当前浏览器是否支持CSS3的rgba色彩定义。</brief>
 				<vartype name="boolean">
 					<varvalue>
 						<value>true</value>
-						<brief>支持rgba。</brief>
+						<brief>当前浏览器支持。</brief>
 					</varvalue>
 					<varvalue>
 						<value>false</value>
-						<brief>不支持rgba。</brief>
+						<brief>当前浏览器不支持。</brief>
+					</varvalue>
+				</vartype>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+			</property>
+			<property name="shadow" readonly="1">
+				<brief>当前浏览器是否支持CSS3的box-shadow定义。</brief>
+				<vartype name="string">
+					<varvalue>
+						<value>boxShadow</value>
+						<brief>当前浏览器是支持此定义的Opera或MSIE内核版本，所使用的属性名称。</brief>
+					</varvalue>
+					<varvalue>
+						<value>MozBoxShadow</value>
+						<brief>当前浏览器是支持此定义的Mozilla Gecko内核版本，所使用的属性名称。</brief>
+					</varvalue>
+					<varvalue>
+						<value>WebkitBoxShadow</value>
+						<brief>当前浏览器是支持此定义的Webkit内核版本，所使用的属性名称。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="boolean">
+					<varvalue>
+						<value>false</value>
+						<brief>当前浏览器不支持。</brief>
 					</varvalue>
 				</vartype>
 				<srcfile>jquery.js</srcfile>

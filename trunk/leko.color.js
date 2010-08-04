@@ -6,7 +6,7 @@
 				r;
 			do{
 				r=$.curCSS(e,a);
-				if(r&&r!='transparent'||$.nodeName(e,"html"))break;else r="#fff";
+				if(r&&r!='transparent'||$.nodeName(e,"body")&&(r="#fff"))break;
 				a=p[1];
 			}
 			while(e=e.parentNode);

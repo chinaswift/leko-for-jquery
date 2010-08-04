@@ -18,7 +18,10 @@ Handbook="Leko 1.0 - The Best User Interface Library for jQuery","Leko-1.0.hhc",
 [FILES]
 apple-touch-icon.png
 bk01.gif
+btn.png
 favicon.ico
+firebug-lite.js
+jquery.boxshadow.js
 jQuery.easing.html
 jQuery.easing.inback.html
 jQuery.easing.inbounce.html
@@ -54,6 +57,8 @@ jQuery.fn.colorShade.0.html
 jQuery.fn.colorShade.html
 jQuery.fn.conf.html
 jQuery.fn.html
+jQuery.fn.shadow.0.html
+jQuery.fn.shadow.html
 jQuery.html
 jQuery.isBoolean.html
 jQuery.isDate.html
@@ -63,10 +68,12 @@ jQuery.isString.html
 jquery.js
 jQuery.support.html
 jQuery.support.rgba.html
+jQuery.support.shadow.html
+jquery.textshadow.js
 Leko.average.html
 leko.color.js
 leko.css
-leko.doc.css
+leko.demo.css
 Leko.easing.0.html
 leko.easing.js
 Leko.fit.html
@@ -78,6 +85,7 @@ Leko.mozilla.html
 Leko.msie.html
 Leko.noConflict.html
 Leko.opera.html
+leko.popup.js
 Leko.pseudoClass.0.html
 Leko.pseudoClass.html
 Leko.rgba.0.html
