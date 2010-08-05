@@ -22,14 +22,24 @@
 				fx.start=_.rgba(a(fx.elem,v));
 				fx.end=_.rgba(fx.end);
 			}
-			var
-				z=_.rgba($.map(fx.start,function(v,i){
+			fx.elem.style[v]=_.color($.map(fx.start,function(v,i){
 					return fx.pos*(fx.end[i]-v)+v;
 			}));
-			if(!b)z.pop();
-			fx.elem.style[v]="rgb"+(b?"a(":"(")+z+")";
 		}
 	});
+
+	_.color=function(v){
+		v=v&&_.rgba(v);
+		if(v){
+			var
+				i=0,
+				n=b?4:3,
+				x="rgb";
+			if(b)x+="a";
+			for(;i<n;i++)x+=(i?",":"(")+v[i];
+			return x+")";
+		}
+	}
 
 	_.fn(
 		"colorShade",

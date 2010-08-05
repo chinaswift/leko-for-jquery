@@ -18,7 +18,7 @@ pre{width:250px;}
 $(function(){
 	$("select").change(function(){
 		var
-			v=$("select option:selected").first().text(),
+			v=$("select option:selected").text(),
 			a=_.rgba(v),
 			b=$.support.rgba,
 			t="rgb";

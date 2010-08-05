@@ -3,6 +3,7 @@
 <OBJECT type="text/site properties"><param name="Window Styles" value="0x800025"><param name="Font" value="Lucida Console,9,1"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="Leko"><param name="Local" value="Leko.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="average"><param name="Local" value="Leko.average.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="color"><param name="Local" value="Leko.color.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fit"><param name="Local" value="Leko.fit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="html5Tag"><param name="Local" value="Leko.html5Tag.html"></OBJECT>

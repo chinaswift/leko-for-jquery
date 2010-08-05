@@ -93,7 +93,7 @@
 			},
 			html5Tag:function(){
 				if(_.msie(9,1)){
-					$.each("article,aside,audio,canvas,datalist,details,eventsource,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,time,video".split(','),function(i,v){
+					$.each("article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,summary,time,video".split(','),function(i,v){
 						document.createElement(v);
 					});
 				}
