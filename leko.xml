@@ -23,6 +23,48 @@ alert(x);</code>
 			<code canrun="">var x=_.average(4,5);
 alert(x);</code>
 		</method>
+		<method name="color">
+			<brief>将CSS3语法的色彩定义值或RGBA数组转换为当前用户浏览器适用的色彩定义值。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile>leko.js</srcfile>
+			<srcfile within="">leko.color.js</srcfile>
+			<param name="color">
+				<vartype name="string">
+					<varvalue>
+						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="array">
+					<varvalue>
+						<brief>包含RGBA四个通道数值的数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="string">
+				<varvalue>
+					<value></value>
+					<brief>当前用户浏览器适用的色彩定义值。视当前浏览器的兼容性，可能是rgba()也可能是rgb()定义。</brief>
+				</varvalue>
+			</return>
+			<return name="undefined">
+				<varvalue>
+					<value></value>
+					<brief>转换失败。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var x=_.color([255,100,50,0.5]);
+alert(x);</code>
+			<code canrun="">var x=_.color("rgba(255,100,50,0.5)");
+alert(x);</code>
+		</method>
 		<method name="fit">
 			<brief>对指定数值进行上下边界范围检查。</brief>
 			<srcfile>jquery.js</srcfile>

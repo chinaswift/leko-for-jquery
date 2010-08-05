@@ -3,7 +3,7 @@ article,aside,dialog,figure,footer,header,hgroup,nav,section{margin:0;padding:0;
 article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
 html{-webkit-text-size-adjust:none;background:#fff;}
 html,textarea{overflow-y:scroll;}
-body{line-height:1.5;color:#111;text-align:center;}
+body{line-height:1.5;color:#111;text-align:center;position:relative;}
 body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","LiHei Pro","Helvetica Neue",Helvetica,Arial;}
 textarea{width:377px;height:102px;line-height:normal;_line-height:1.4;}
 textarea,td,th,select,input.txt,.frame{background:#fff;border:1px solid #ddd;}
@@ -12,7 +12,7 @@ th,td{padding:5px;}
 th,caption{text-align:left;font-weight:bold;}
 pre{white-space:pre;}
 pre,code{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';padding:0.5em 1em;}
-hr{background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:1px;margin:0 0 1.45em;border:none;*margin:-8px auto 11px;}
+hr{background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:1px;margin:0 0 1.45em;border:none;*margin:-8px 0 0 0;}
 hr.space{background:#fff;color:#fff;visibility:hidden;}
 table{border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%;}
 table,td,th{vertical-align:middle;}
@@ -28,6 +28,7 @@ h6 .en{font-family:"small fonts";font-size:10px;}
 ol,ul{list-style:none;}
 a{text-decoration:none;zoom:1;}
 a,label,button,.btn{cursor:pointer;}
+label{margin-right:5px;}
 *:focus{outline:0;}
 *::-moz-focus-inner{border:0;}
 button,.btn{
@@ -43,8 +44,8 @@ blockquote:before,blockquote:after,q:before,q:after{content:"";}
 
 .en,.en *{font-family:"Helvetica Neue",Helvetica,Arial;}
 .tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
-.td{float:left;_overflow-x:hidden;}
-.tr,.td{display:block;overflow:hidden;zoom:1;_display:inline-block;_height:1%;}
+.td{float:left;_overflow-x:hidden;overflow:hidden;}
+.tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
 
 /*
 color  : red\9; <=IE8
