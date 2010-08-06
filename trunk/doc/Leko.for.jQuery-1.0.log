@@ -1,12 +1,13 @@
 Microsoft HTML Help Compiler 4.74.8702
 
-Compiling e:\Develop\Projects\Leko\trunk\doc\Leko-1.0.chm
+Compiling e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm
 
 apple-touch-icon.png
 bk01.gif
 btn.png
 favicon.ico
 firebug-lite.js
+index.html
 jQuery.easing.html
 jQuery.easing.inback.html
 jQuery.easing.inbounce.html
@@ -54,7 +55,6 @@ jquery.js
 jQuery.support.html
 jQuery.support.rgba.html
 jQuery.support.shadow.html
-jquery.textshadow.js
 Leko.average.html
 Leko.color.html
 leko.color.js
@@ -79,11 +79,14 @@ Leko.rgba.html
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
-HHC5003: Error: Compilation failed while compiling index.html.
-Leko-1.0.hhc
-HHC5003: Error: Compilation failed while compiling http:\www.lekolite.cn\.
+Leko.for.jQuery-1.0.hhc
+
+Compile time: 0 minutes, 1 second
+66	Topics
+209	Local links
+65	Internet links
+0	Graphics
 
 
-The following files were not compiled:
-index.html
-http:\www.lekolite.cn\
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 271,023 bytes
+Compression decreased file by 569,765 bytes.

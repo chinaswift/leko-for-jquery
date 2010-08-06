@@ -4,22 +4,7 @@ include 'leko.head.inc';
 include 'leko.neck.inc';
 include 'cssmin.php';
 include 'jsmin.php';
-
-define('DOC_PATH'  ,'doc/');
-define('HHC_PATH'  ,'E:\Develop\Server\HtmlHelp\hhc');
-define('LIB_VER'   ,'1.0');
-define('LIB_NAME'  ,'Leko');
-define('HOMESITE'  ,'http://www.lekolite.cn/');
-define('DOC_BOOK'  ,LIB_NAME.'-'.LIB_VER);
-define('BOOK_TITLE',LIB_NAME.' '.LIB_VER.' - The Best User Interface Library for jQuery');
-define('COPYRIGHT','/*!'."\n".
-' * Leko for jQuery v'.LIB_VER."\n".
-' * '.HOMESITE."\n".
-' *'."\n".
-' * 苏昱(苏小雨)作品'."\n".
-' * Copyright 2010, Rainer Su'."\n".
-' * Dual licensed under the MIT or GPL Version 2 licenses.'."\n".
-' */'."\n");
+include 'define.php';
 
 echo '<br /><hr />开始发布内核：<br /><br /><pre>';
 if($dir=opendir(DOC_PATH)){
@@ -43,7 +28,7 @@ if($dir=opendir('.')){
 				file_put_contents(DOC_PATH.$file,COPYRIGHT.(cssmin::minify(file_get_contents($file))));
 				echo DOC_PATH.$file.'(<mark>'.sprintf("%01.2f",filesize(DOC_PATH.$file)/1024).'KB</mark>/'.sprintf("%01.2f",filesize($file)/1024).'KB'.')<br />';
 			}
-			else if(in_array($ext,array('ico','jpg','png','gif')))echo DOC_PATH.$file.(copy($file,DOC_PATH.$file)?'':' - Shit Error').'<br />';
+			else if(in_array($ext,array('ico','jpg','png','gif','html')))echo DOC_PATH.$file.(copy($file,DOC_PATH.$file)?'':' - Shit Error').'<br />';
 		}
 	};
 	closedir();
@@ -53,6 +38,19 @@ echo '</pre><br /><hr />开始创建文档：<br /><br /><pre>';
 $doc=new DOMDocument('1.0','utf-8');
 $doc->load('leko.xml',LIBXML_NOBLANKS);
 $xsl=new DOMXPath($doc);
+
+$src='default.php';
+if(file_exists($src)){
+	$tgt=DOC_PATH.'index.html';
+	ob_start();
+	include $src;
+	$htm=ob_get_contents();
+	ob_end_clean();
+	file_put_contents($tgt,$htm,FILE_TEXT);
+	if(file_exists($tgt)){
+		echo '<a href="'.$tgt.'" target="_blank">'.$tgt.'</a><br />';
+	}
+}
 
 $hhc='<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <HTML><HEAD><meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.74"></HEAD><BODY>
@@ -247,7 +245,7 @@ Error log file='.DOC_BOOK.'.log
 Full-text search=Yes
 Language=0x804 中文(简体，中国)
 Title='.BOOK_TITLE."\n\n".'[WINDOWS]
-Handbook="'.BOOK_TITLE.'","'.DOC_BOOK.'.hhc",,"index.html","'.HOMESITE.'",,"网站",,,0x63520,,0x387e,[0,0,800,600],,,,,,,0'."\n\n".'[FILES]';
+Handbook="'.BOOK_TITLE.'","'.DOC_BOOK.'.hhc",,"index.html","index.html",,"网站",,,0x63520,,0x387e,[0,0,800,600],,,,,,,0'."\n\n".'[FILES]';
 if($dir=opendir(DOC_PATH)){
 	while($file=readdir($dir)){
 		if(is_file(DOC_PATH.$file))$hhp.="\n".$file;

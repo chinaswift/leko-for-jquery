@@ -19,13 +19,22 @@ if(!_.mozilla()){
 </script>
 <style>
 
-#demo1{
+#demo1,#demo2,#demo3{
+	background:#f5f5f5;padding:25px;
+}
+#demo1 div#box{
 	width:160px;height:160px;background:#1A1819 url("bk01.gif");
 }
-#demo1 div{
+#demo1 div#block{
 	width:100px;height:100px;padding:20px;border:10px solid #00B8EE;color:#fff;
 }
-#demo1 div h3{
+#demo1 div#config{
+	padding-left:25px;
+}
+#demo1 li{
+	padding-bottom:5px;
+}
+#demo1 h3{
 	color:#EC108D;
 }
 #demo2 a{
@@ -41,20 +50,39 @@ if(!_.mozilla()){
 </style>
 
 <script src="leko.color.js"></script>
+<script src="leko.easing.js"></script>
 
 <script>
 
 $(function(){
 
-	$("#demo1 div").colorShade({
-		properties:{
-			color:"black",
-			borderColor:"#EC108D",
-			backgroundColor:"rgba(245,206,222,0.5)"
-		},
-		duration:1000
-	});
-	
+	$("select").change(function(){
+		var
+			e=eval("("+$("#enabled option:selected").text()+")"),
+			d=Number($("#duration option:selected").text()),
+			a=$("#easing option:selected").text(),
+			c=$("#color option:selected").text(),
+			b=$("#borderColor option:selected").text(),
+			k=$("#backgroundColor option:selected").text();
+		$("#block").colorShade({
+			properties:{
+				color:c,
+				borderColor:b,
+				backgroundColor:k
+			},
+			enabled:e,		
+			duration:d,
+			easing:a
+		});
+		$("#code").html('$("#block").colorShade({properties:{color:<mark>'
+		               +c+'</mark>,borderColor:<mark>'
+					   +b+'</mark>,backgroundColor:<mark>'
+					   +k+'</mark>},enabled:<mark>'
+					   +e+'</mark>,duration:<mark>'
+					   +d+'</mark>,easing:<mark>'
+					   +a+'</mark>})');
+	}).change();
+
 	$("#demo2").colorShade({
 		live:1,
 		selector:"a",
@@ -87,7 +115,77 @@ $(function(){
 </script>
 
 </head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
-<section><h4>例一：请将鼠标移入再移出下面的块元素区域</h4><div id="demo1"><div><h3>标题</h3>这里有一些文本。</div></div></section>
+<section><h4>例一：请尝试修改参数，然后将鼠标移入移出下面的块元素区域查看效果</h4>
+<div id="demo1" class="tr"><div class="td" id="box"><div id="block"><h3>标题</h3>这里有一些文本。</div></div>
+<div class="td" id="config"><ol>
+<li><label for="enabled">enabled:</a></label><select class="en" id="enabled">
+<option selected>true</option>
+<option>false</option>
+</select></li>
+<li><label for="duration">duration:</a></label><select class="en" id="duration">
+<option>200</option>
+<option>400</option>
+<option>600</option>
+<option selected>800</option>
+<option>1000</option>
+<option>2000</option>
+</select></li>
+<li><label for="easing">easing:</a></label><select class="en" id="easing">
+<option selected>swing</option>
+<option>inquad</option>
+<option>outquad</option>
+<option>inoutquad</option>
+<option>incubic</option>
+<option>outcubic</option>
+<option>inoutcubic</option>
+<option>inquart</option>
+<option>outquart</option>
+<option>inoutquart</option>
+<option>inquint</option>
+<option>outquint</option>
+<option>inoutquint</option>
+<option>insine</option>
+<option>outsine</option>
+<option>inoutsine</option>
+<option>inexpo</option>
+<option>outexpo</option>
+<option>inoutexpo</option>
+<option>incirc</option>
+<option>outcirc</option>
+<option>inoutcirc</option>
+<option>inelastic</option>
+<option>outelastic</option>
+<option>inoutelastic</option>
+<option>inback</option>
+<option>outback</option>
+<option>inoutback</option>
+<option>inbounce</option>
+<option>outbounce</option>
+<option>inoutbounce</option>
+<option>swing</option>
+<option>linear</option>
+</select></li>
+<li><label for="color">color:</a></label><select class="en" id="color">
+<option>black</option>
+<option selected>#000</option>
+<option>red</option>
+<option>rgba(0,0,0,0.5)</option>
+</select></li>
+<li><label for="borderColor">borderColor:</a></label><select class="en" id="borderColor">
+<option>#F8A530</option>
+<option>#00B8EE</option>
+<option selected>#EC108D</option>
+<option>#EC108D</option>
+<option>#9CCD4A</option>
+</select></li>
+<li><label for="backgroundColor">backgroundColor:</a></label><select class="en" id="backgroundColor">
+<option>#F8A530</option>
+<option selected>rgba(245,206,222,0.5)</option>
+<option>#EC108D</option>
+</select></li>
+</ol></div></div></section>
+
+<section><code id="code">&nbsp;</code></section>
 
 <hr />
 

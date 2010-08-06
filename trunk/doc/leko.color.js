@@ -14,10 +14,10 @@ while(e=e.parentNode);return r;},b=$.support.rgba,p=['color','backgroundColor','
 fx.elem.style[v]=_.color($.map(fx.start,function(v,i){return fx.pos*(fx.end[i]-v)+v;}));}});_.color=function(v){v=v&&_.rgba(v);if(v){var
 i=0,n=b?4:3,x="rgb";if(b)x+="a";for(;i<n;i++)x+=(i?",":"(")+v[i];return x+")";}}
 _.fn("colorShade",function(o,v,d,c){var
-h=v.focus,s=v.selector,l=v.live,x="focusin focusout",z="mouseenter mouseleave",m=h?x:z,n=h?"x":"z",f=function(e){var
+h=v.focus,s=v.selector,l=v.live,x="focusin focusout",z="mouseenter mouseleave",m=h?x:z,n=h?"x":"z",f=function(e){if(v.enabled){var
 t=e.type,b=/(?:t|e)$/.test(t),o=$(this),q=l?o.conf(c):d,w=l?$.extend(true,{},v,q):v,g=w.properties,j=g[p[2]],i=3;if(j){delete g[p[2]];while(i<7){g[p[i++]]=j;}}
 if(!b&&!q._){q._={};q.$={};for(i in g){q._[i]=o.css(i);q.$[i]=a(o[0],i);}}
-o.stop(true).animate(b?q.$:g,w.duration,w.easing,function(){if(b){delete q.$;for(var i in q._)o.css(i,q._[i]);delete q._;}});};if(l)o.undelegate(s,m,d[n]).delegate(s,m,d[n]=f);else o.unbind(m,d[n]).bind(m,d[n]=f);},{duration:800,easing:"swing"});_.rgba=function(v){var
+o.stop(true).animate(b?q.$:g,w.duration,w.easing,function(){if(b){delete q.$;for(var i in q._)o.css(i,q._[i]);delete q._;}});}};if(l)o.undelegate(s,m,d[n]).delegate(s,m,d[n]=f);else o.unbind(m,d[n]).bind(m,d[n]=f);},{enabled:1,duration:800,easing:"swing"});_.rgba=function(v){var
 a,b,r,i;if($.isArray(v))a=v;else if($.isString(v)){v=v.toLowerCase().replace(/\s/g,"");if(/^#/.test(v)){a=[];b=v.length>4;r=new RegExp("\\w{"+(b+1)+"}","g");while(i=r.exec(v))a.push(parseInt(b?i:i+i,16));}
 else if(i=/^(rgb|hsl)a?\(([^\)]+)\)/.exec(v)){r=RegExp;a=r.$2.split(",");b=r.$1=="rgb";i=a.length;while(i--){r=a[i];a[i]=(/%$/.test(r)?(b?2.55:0.01):1)*parseFloat(r);}
 if(!b){var

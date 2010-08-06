@@ -42,6 +42,13 @@ select{margin-right:20px;}
 $(function(){
 
 	$("select").change(function(){
+		var
+			e=eval("("+$("#enabled option:selected").text()+")"),
+			x=Number($("#x option:selected").text()),
+			y=Number($("#y option:selected").text()),
+			b=Number($("#blur option:selected").text()),
+			p=Number($("#opacity option:selected").text());
+
 		$("div.shadow").each(function(i,o){
 			o=$(o);
 			i=o.position();
@@ -50,12 +57,13 @@ $(function(){
 				  +"zIndex : <mark>"+o.css("zIndex")+"</mark>"
 			);
 		}).shadow({
-			enabled:eval("("+$("#enabled option:selected").text()+")"),
-			x:Number($("#x option:selected").text()),
-			y:Number($("#y option:selected").text()),
-			blur:Number($("#blur option:selected").text()),
-			opacity:Number($("#opacity option:selected").text())
+			enabled:e,
+			x:x,
+			y:y,
+			blur:b,
+			opacity:p
 		});
+		$("#code").html('$("div.shadow").shadow({enabled:<mark>'+e+'</mark> , x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , opacity:<mark>'+p+'</mark>})');
 	}).change();
 
 });
@@ -75,29 +83,58 @@ $(function(){
 <option>false</option>
 </select>
 <label for="x">x:</a></label><select class="en" id="x">
+<option>-6</option>
+<option>-5</option>
 <option>-4</option>
+<option>-3</option>
 <option>-2</option>
+<option>-1</option>
 <option>0</option>
+<option>1</option>
 <option selected>2</option>
+<option>3</option>
 <option>4</option>
+<option>5</option>
+<option>6</option>
 </select>
 <label for="y">y:</a></label><select class="en" id="y">
+<option>-6</option>
+<option>-5</option>
 <option>-4</option>
+<option>-3</option>
 <option>-2</option>
+<option>-1</option>
 <option>0</option>
+<option>1</option>
 <option selected>2</option>
+<option>3</option>
 <option>4</option>
+<option>5</option>
+<option>6</option>
 </select>
 <label for="blur">blur:</a></label><select class="en" id="blur">
+<option>-6</option>
+<option>-5</option>
+<option>-4</option>
+<option>-3</option>
+<option>-2</option>
+<option>-1</option>
 <option>0</option>
 <option>1</option>
 <option>2</option>
 <option selected>3</option>
 <option>4</option>
+<option>5</option>
+<option>6</option>
 </select>
 <label for="opacity">opacity:</a></label><select class="en" id="opacity">
+<option>0.2</option>
 <option>0.25</option>
 <option selected>0.3</option>
+<option>0.35</option>
+<option>0.4</option>
+<option>0.45</option>
+<option>0.5</option>
 <option>0.75</option>
 <option>1</option>
 </select>
@@ -106,5 +143,7 @@ $(function(){
 <section>
 <div class="box tr"><div id="block1" class="td shadow">&nbsp;</div><div id="block2" class="td shadow">&nbsp;</div><div id="block3" class="td shadow">&nbsp;</div><div id="block4" class="td shadow">&nbsp;</div></div>
 </section>
+
+<section><code id="code">&nbsp;</code></section>
 
 <?php include 'leko.foot.inc'; ?>
