@@ -1933,6 +1933,19 @@ alert(x);</code>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.color.js</srcfile>
+				<param name="enabled">
+					<default>true</default>
+					<vartype name="boolean" optional="1">
+						<varvalue>
+							<value>true</value>
+							<brief>应用色彩渐变动态效果。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>禁用色彩渐变动态效果。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="properties">
 					<vartype name="object">
 						<varvalue>
@@ -2063,6 +2076,69 @@ $("a").conf("colorShade").color="blue";
 $("a").colorShade();
 
 </script>]]></code>
+			</method>
+			<method name="popup" fn="1">
+				<brief>为元素创建阴影效果。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.popup.js</srcfile>
+				<param name="enabled">
+					<default>true</default>
+					<vartype name="boolean" optional="1">
+						<varvalue>
+							<value>true</value>
+							<brief>应用阴影效果。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>取消阴影效果。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="x">
+					<default>2</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>相对元素左上角的横坐标偏移量。单位为像素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="x">
+					<default>2</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>相对元素左上角的纵坐标偏移量。单位为像素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="blur">
+					<default>3</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>模糊级别。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="opacity">
+					<default>0.3</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>透明度。取值范围为0-1之间最多两位有效数字的浮点数。0为完全透明。1为完全不透明。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code><![CDATA[$(".shadow").shadow();]]></code>
+				<code><![CDATA[$(".shadow").shadow({
+    x:3,
+    y:3,
+    blur:5,
+    opacity:0.75
+});]]></code>
 			</method>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>

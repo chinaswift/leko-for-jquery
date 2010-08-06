@@ -20,7 +20,7 @@ if($dir=opendir('.')){
 			$info=pathinfo($file);
 			$ext=$info['extension'];
 			if($ext=='js'){
-				if($file=='jquery.js')copy($file,DOC_PATH.$file);
+				if($file=='jquery.js'||$file=='firebug-lite.js')copy($file,DOC_PATH.$file);
 				else file_put_contents(DOC_PATH.$file, COPYRIGHT.(jsmin::minify(file_get_contents($file))));
 				echo DOC_PATH.$file.'(<mark>'.sprintf("%01.2f",filesize(DOC_PATH.$file)/1024).'KB</mark>/'.sprintf("%01.2f",filesize($file)/1024).'KB'.')<br />';
 			}

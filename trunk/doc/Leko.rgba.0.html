@@ -44,8 +44,8 @@ $(function(){
 		if(b)t+="a";else a.pop();
 		b=b||!(/^(?:rgba|hsl)/.test(v));
 		with($("pre")){
-			eq(0).html("Leko.rgba(\""+v+"\")");
-			eq(1).html("background-color:"+t+"("+a+")");
+			eq(0).html("Leko.rgba(\""+v+"\");");
+			eq(1).html("background-color:"+t+"("+a+");");
 		}
 		with($(".frame")){
 			eq(0).css("background-color",b?v:"#fff").children("h6").html(b?"":"当前浏览器不支持此种CSS3语法");
