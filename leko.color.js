@@ -53,41 +53,44 @@
 				m=h?x:z,
 				n=h?"x":"z",
 				f=function(e){
-					var
-						t=e.type,
-						b=/(?:t|e)$/.test(t),
-						o=$(this),
-						q=l?o.conf(c):d,
-						w=l?$.extend(true,{},v,q):v,
-						g=w.properties,
-						j=g[p[2]],
-						i=3;
-					if(j){
-						delete g[p[2]];
-						while(i<7){
-							g[p[i++]]=j;
-						}
-					}					
-					if(!b&&!q._){
-						q._={};
-						q.$={};
-						for(i in g){
-							q._[i]=o.css( i);
-							q.$[i]=a(o[0],i);
-						}
-					}					
-					o.stop(true).animate(b?q.$:g,w.duration,w.easing,function(){
-						if(b){
-							delete q.$;
-							for(var i in q._)o.css(i,q._[i]);
-							delete q._;
-						}
-					});
+					if(v.enabled){
+						var
+							t=e.type,
+							b=/(?:t|e)$/.test(t),
+							o=$(this),
+							q=l?o.conf(c):d,
+							w=l?$.extend(true,{},v,q):v,
+							g=w.properties,
+							j=g[p[2]],
+							i=3;
+						if(j){
+							delete g[p[2]];
+							while(i<7){
+								g[p[i++]]=j;
+							}
+						}					
+						if(!b&&!q._){
+							q._={};
+							q.$={};
+							for(i in g){
+								q._[i]=o.css( i);
+								q.$[i]=a(o[0],i);
+							}
+						}					
+						o.stop(true).animate(b?q.$:g,w.duration,w.easing,function(){
+							if(b){
+								delete q.$;
+								for(var i in q._)o.css(i,q._[i]);
+								delete q._;
+							}
+						});
+					}
 				};
 			if(l)o.undelegate(s,m,d[n]).delegate(s,m,d[n]=f);
 			else o.unbind(m,d[n]).bind(m,d[n]=f);
 		},
 		{
+			enabled:1,
 			duration:800,
 			easing:"swing"
 		}

@@ -20,23 +20,25 @@
 				r=v.blur,
 				e=d.$,
 				s=_.msie(),
+				c="position",
+				u="absolute",
 				p,q;
 			if(b)o.css(b,n?x+"px "+y+"px "+r+"px "+_.color([0,0,0,a]):"none");
 			else{
 				if(!e){
-					q=o.css("position")!="absolute";
-					o.add(o.parent()).css("position",function(i,v){
+					q=o.css(c)!=u;
+					o.add(o.parent()).css(c,function(i,v){
 						return q&&v=="static"?"relative":v;
 					});
-					e=d.$=$("<div />").css({
-						position:"absolute",
+					d.$=e=$("<div />").css({
+						position:u,
 						float:"none",
 						border:0,
 						margin:0,
 						padding:0
 					}).insertBefore(o);
 				}				
-				p=o.position();
+				p=o[c]();
 				e.height(o.outerHeight()).width(o.outerWidth()).css({
 					zIndex:o.css("zIndex"),
 					top :p.top +y-r+(y>0?-1:y<0?1:0)+"px",
