@@ -9,10 +9,33 @@
 	})();
 
 	_.fn(
+		"popup",
+		function(o,v,d,c){
+			var
+				f=$(v.target),
+				s=Math.round,
+				w,h,m,n,x,y,p;
+			if(f.length){
+				o.css({
+					position:"absolute"
+				}).insertAfter(f).show();
+				w=f.outerWidth( );
+				h=f.outerHeight();
+				m=o.outerWidth( );
+				n=o.outerHeight();
+				p=f.position();
+				o.css({
+					left:p.left+[-m,0,s(w/2-m),s((w-m)/2),s(w/2),w-m,w][v.posX||0]+(v.offsetX||0)+"px",
+					top :p.top +[-n,0,s(h/2-n),s((h-n)/2),s(h/2),h-n,h][v.posY||0]+(v.offsetY||0)+"px"
+				});
+				//console.log(m);
+			}			
+		},
+		{},
 		"shadow",
 		function(o,v,d,c){
 			var
-				n=v.enabled,
+				n=!!v.enabled,
 				a=v.opacity,
 				b=$.support.shadow,
 				x=v.x,

@@ -41,7 +41,7 @@
 				return this;
 			},
 			fn:function(){
-				for(var m=0,a=arguments,x=a.length,n,f;m<x;m+=4){
+				for(var m=0,a=arguments,x=a.length,n,f;m<x;m+=3){
 					n=a[m];
 					f=(function(f){
 						return function(){

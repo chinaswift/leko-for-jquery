@@ -64,7 +64,7 @@ $(function(){
 					   +k+'</mark>},enabled:<mark>'
 					   +e+'</mark>,duration:<mark>'
 					   +d+'</mark>,easing:<mark>'
-					   +a+'</mark>})');
+					   +a+'</mark>});');
 	}).change();
 
 	$("#demo2").colorShade({
@@ -104,11 +104,11 @@ $(function(){
 <section><h4>例一：请尝试修改参数，然后将鼠标移入移出下面的块元素区域查看效果</h4>
 <div id="demo1" class="tr"><div class="td" id="box"><div id="block"><h3>标题</h3>这里有一些文本。</div></div>
 <div class="td" id="config"><ol>
-<li><label for="enabled">enabled:</a></label><select class="en" id="enabled">
+<li><label class="en" for="enabled">enabled:</a></label><select class="en" id="enabled">
 <option selected>true</option>
 <option>false</option>
 </select></li>
-<li><label for="duration">duration:</a></label><select class="en" id="duration">
+<li><label class="en" for="duration">duration:</a></label><select class="en" id="duration">
 <option>200</option>
 <option>400</option>
 <option>600</option>
@@ -116,7 +116,7 @@ $(function(){
 <option>1000</option>
 <option>2000</option>
 </select></li>
-<li><label for="easing">easing:</a></label><select class="en" id="easing">
+<li><label class="en" for="easing">easing:</a></label><select class="en" id="easing">
 <option selected>swing</option>
 <option>inquad</option>
 <option>outquad</option>
@@ -151,20 +151,20 @@ $(function(){
 <option>swing</option>
 <option>linear</option>
 </select></li>
-<li><label for="color">color:</a></label><select class="en" id="color">
+<li><label class="en" for="color">color:</a></label><select class="en" id="color">
 <option>black</option>
 <option selected>#000</option>
 <option>red</option>
 <option>rgba(0,0,0,0.5)</option>
 </select></li>
-<li><label for="borderColor">borderColor:</a></label><select class="en" id="borderColor">
+<li><label class="en" for="borderColor">borderColor:</a></label><select class="en" id="borderColor">
 <option>#F8A530</option>
 <option>#00B8EE</option>
 <option selected>#EC108D</option>
 <option>#EC108D</option>
 <option>#9CCD4A</option>
 </select></li>
-<li><label for="backgroundColor">backgroundColor:</a></label><select class="en" id="backgroundColor">
+<li><label class="en" for="backgroundColor">backgroundColor:</a></label><select class="en" id="backgroundColor">
 <option>#F8A530</option>
 <option selected>rgba(245,206,222,0.5)</option>
 <option>#EC108D</option>

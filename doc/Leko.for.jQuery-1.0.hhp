@@ -57,6 +57,8 @@ jQuery.fn.colorShade.0.html
 jQuery.fn.colorShade.html
 jQuery.fn.conf.html
 jQuery.fn.html
+jQuery.fn.popup.0.html
+jQuery.fn.popup.html
 jQuery.fn.shadow.0.html
 jQuery.fn.shadow.html
 jQuery.html
@@ -90,6 +92,7 @@ Leko.pseudoClass.0.html
 Leko.pseudoClass.html
 Leko.rgba.0.html
 Leko.rgba.html
+leko.text.js
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
