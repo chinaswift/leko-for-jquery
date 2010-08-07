@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <leko>
 	<object name="Leko">
 		<brief>是Leko for jQuery的全局核心对象。可以简写为_。</brief>
@@ -459,7 +459,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -508,7 +508,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -557,7 +557,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -606,7 +606,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -655,7 +655,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -704,7 +704,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -753,7 +753,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -802,7 +802,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -851,7 +851,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -900,7 +900,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -949,7 +949,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -998,7 +998,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1047,7 +1047,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1096,7 +1096,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1145,7 +1145,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1194,7 +1194,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1243,7 +1243,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1292,7 +1292,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1341,7 +1341,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1390,7 +1390,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1439,7 +1439,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1488,7 +1488,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1537,7 +1537,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1586,7 +1586,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1635,7 +1635,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1684,7 +1684,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1733,7 +1733,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1782,7 +1782,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1831,7 +1831,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1880,7 +1880,7 @@ alert(x);</code>
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.easing.js</srcfile>
+				<srcfile within="">leko.effect.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>

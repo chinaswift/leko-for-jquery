@@ -1,7 +1,7 @@
 <?php include 'leko.head.inc'; ?>
 <?php include 'leko.demo.head.inc'; ?>
 
-<script src="leko.easing.js"></script>
+<script src="leko.effect.js"></script>
 
 <style>
 

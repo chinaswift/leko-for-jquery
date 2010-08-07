@@ -63,7 +63,7 @@ leko.color.js
 leko.css
 leko.demo.css
 Leko.easing.0.html
-leko.easing.js
+leko.effect.js
 Leko.fit.html
 Leko.fn.html
 Leko.html
@@ -78,7 +78,6 @@ Leko.pseudoClass.0.html
 Leko.pseudoClass.html
 Leko.rgba.0.html
 Leko.rgba.html
-leko.text.js
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
@@ -92,4 +91,4 @@ Compile time: 0 minutes, 1 second
 
 
 Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 273,423 bytes
-Compression decreased file by 584,144 bytes.
+Compression decreased file by 583,968 bytes.

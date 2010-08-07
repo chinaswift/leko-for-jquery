@@ -77,7 +77,7 @@ leko.color.js
 leko.css
 leko.demo.css
 Leko.easing.0.html
-leko.easing.js
+leko.effect.js
 Leko.fit.html
 Leko.fn.html
 Leko.html
@@ -92,7 +92,6 @@ Leko.pseudoClass.0.html
 Leko.pseudoClass.html
 Leko.rgba.0.html
 Leko.rgba.html
-leko.text.js
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
