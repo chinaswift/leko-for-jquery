@@ -60,7 +60,7 @@
 					})(a[m+1]);
 					f.fn=n;
 					$.fn[n]=f;
-					$.leko[n]=a[m+2];
+					$.leko[n]=$.extend({enabled:1},a[m+2]);
 				}
 			},
 			pseudoClass:function(){
@@ -118,12 +118,23 @@
 	window.Leko=window._=_;
 	_.html5Tag();
 
-	$.fn.leko=function(n){
-		var
-			o=this,
-			d=o.data(n);
-		if(!d)o.data(n,d=eval("({"+(o.attr(n)||"")+"})"));
-		return d;
-	}
+	$.fn.extend({
+		leko:function(n){
+			var
+				o=this,
+				d=o.data(n);
+			if(!d)o.data(n,d=eval("({"+(o.attr(n)||"")+"})"));
+			return d;
+		},
+		visible:function(f){
+			var
+				o=this,
+				b=o.css("display")!="none"&&o.outerHeight()*o.outerWidth();
+			return f?b&&o.css("visibility")!="hidden":!!b;
+		},
+		transparent:function(b){
+			return this.css({visibility:b?"hidden":"visible"}).show();
+		},
+	});
 
 })(window,window.document,jQuery);

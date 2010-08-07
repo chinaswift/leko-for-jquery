@@ -47,6 +47,8 @@ jQuery.fn.popup.0.html
 jQuery.fn.popup.html
 jQuery.fn.shadow.0.html
 jQuery.fn.shadow.html
+jQuery.fn.transparent.html
+jQuery.fn.visible.html
 jQuery.html
 jQuery.isBoolean.html
 jQuery.isDate.html
@@ -85,11 +87,11 @@ Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 1 second
-69	Topics
-216	Local links
-68	Internet links
+71	Topics
+222	Local links
+70	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 273,645 bytes
-Compression decreased file by 585,658 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 275,693 bytes
+Compression decreased file by 590,558 bytes.
