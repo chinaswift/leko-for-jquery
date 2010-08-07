@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <leko>
 	<object name="Leko">
 		<brief>是Leko for jQuery的全局核心对象。可以简写为_。</brief>
@@ -2052,7 +2052,7 @@ alert(x);</code>
     }
 });]]></code>
 			</method>
-			<method name="conf">
+			<method name="leko">
 				<brief><![CDATA[获取某HTML Element对应于某插件的隐含对象。该隐含对象使用jQuery的data("plugin-name")方法创建，通过读取并解析该Element在HTML代码的Tag声明中使用JSON语法设置的对应于插件名称的自定义属性值，为插件的初始化提供该对象的私有默认设置(优先权高于插件的全局默认设置和插件的运行时参数设置)。此外，该隐含对象还用于插件在针对该Element的工作中存取私有变量。]]></brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
@@ -2068,14 +2068,14 @@ alert(x);</code>
 						<brief>对获取到的对象的引用。</brief>
 					</varvalue>
 				</return>
-				<code><![CDATA[<a colorShade="color:'red',complete:function(){alert('OK');}">Test</a>
+				<code>&lt;a colorShade="{color:'red'}"&gt;Test&lt;/a&gt;
 
-<script>
+&lt;script&gt;
 
-$("a").conf("colorShade").color="blue";
+$("a").leko("colorShade").color="blue";
 $("a").colorShade();
 
-</script>]]></code>
+&lt;/script&gt;</code>
 			</method>
 			<method name="popup" fn="1">
 				<brief>为元素创建阴影效果。</brief>
@@ -2203,6 +2203,9 @@ $("a").colorShade();
     opacity:0.75
 });]]></code>
 			</method>
+		</object>
+		<object name="leko">
+			<brief>用于Leko为jQuery安装的功能扩展插件存储全局默认设置的接口对象。</brief>
 		</object>
 		<object name="support">
 			<brief>反映当前用户浏览器内核特性的一系列属性的集合。</brief>

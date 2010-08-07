@@ -1,6 +1,9 @@
 <?php include 'leko.head.inc'; ?>
 <?php include 'leko.demo.head.inc'; ?>
 
+<script src="leko.color.js"></script>
+<script src="leko.effect.js"></script>
+
 <style>
 
 #demo1,#demo2,#demo3{
@@ -32,9 +35,6 @@
 }
 
 </style>
-
-<script src="leko.color.js"></script>
-<script src="leko.easing.js"></script>
 
 <script>
 
