@@ -134,7 +134,7 @@
 		},
 		transparent:function(b){
 			return this.css({visibility:b?"hidden":"visible"}).show();
-		},
+		}
 	});
 
 })(window,window.document,jQuery);

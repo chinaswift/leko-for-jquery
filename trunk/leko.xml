@@ -2077,35 +2077,6 @@ $("a").colorShade();
 
 &lt;/script&gt;</code>
 			</method>
-			<method name="visible">
-				<brief>判断第一个元素是否可见。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="opaque">
-					<default>false</default>
-					<vartype name="boolean">
-						<varvalue>
-							<value>true</value>
-							<brief>完全可见。完全可见的定义是：它的&lt;mark class="en"&gt; visibility &lt;/mark&gt;不为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; display &lt;/mark&gt;不为&lt;mark class="en"&gt; none &lt;/mark&gt;，并且具有实际占位的高和宽。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>布局可见。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>可见。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>不可见。</brief>
-					</varvalue>
-				</return>
-				<code canrun=""><![CDATA[alert($("body").visible());]]></code>
-			</method>
 			<method name="popup" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -2256,9 +2227,38 @@ $("a").colorShade();
 				</return>
 				<code>$("a").transparent();</code>
 			</method>
+			<method name="visible">
+				<brief>判断第一个元素是否可见。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="opaque">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>完全可见。完全可见的定义是：它的&lt;mark class="en"&gt; visibility &lt;/mark&gt;不为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; display &lt;/mark&gt;不为&lt;mark class="en"&gt; none &lt;/mark&gt;，并且具有实际占位的高和宽。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>布局可见。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>可见。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>不可见。</brief>
+					</varvalue>
+				</return>
+				<code canrun=""><![CDATA[alert($("body").visible());]]></code>
+			</method>
 		</object>
 		<object name="leko">
-			<brief>用于Leko为jQuery安装的功能扩展插件存储全局默认设置的接口对象。</brief>
+			<brief>用于修改Leko为jQuery安装的功能扩展插件的全局默认设置的接口对象。</brief>
 		</object>
 		<object name="support">
 			<brief>反映当前用户浏览器内核特性的一系列属性的集合。</brief>
