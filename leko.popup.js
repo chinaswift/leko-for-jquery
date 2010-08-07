@@ -41,10 +41,15 @@
 					top :p.top +[-n,0,s(h/2-n),s((h-n)/2),s(h/2),h-n,h][v.posY||0]+(v.offsetY||0)+"px"
 				});
 				if(a)o.shadow(a);
-				console.log(o.data("shadow").$);
+				o.animate({top:"+=20px"});
+				o.data("shadow").$.animate({top:"+=20px"});
+				//o.css({top:"120px"});
+				//o.data("shadow")._();
 			}			
 		},
-		{},
+		{
+			shadow:{}
+		},
 		"shadow",
 		function(o,v,d,c){
 			var
@@ -72,15 +77,23 @@
 						border:0,
 						margin:0,
 						padding:0
-					}).insertBefore(o);
-				}				
-				p=o[c]();
-				e.height(o.outerHeight()).width(o.outerWidth()).css({
-					zIndex:o.css("zIndex"),
-					top :p.top +y-r+(y>0?-1:y<0?1:0)+"px",
-					left:p.left+x-r+(x>0?-1:x<0?1:0)+"px",
-					background:"#000",
+					});
+				}
+				delete d._;
+				d._=function(){
+					if(n){
+						p=o[c]();
+						e.height(o.outerHeight()).width(o.outerWidth()).css({
+							top :p.top +y-r+(y>0?-1:y<0?1:0)+"px",
+							left:p.left+x-r+(x>0?-1:x<0?1:0)+"px",
+							zIndex:o.css("zIndex")
+						}).insertBefore(o);
+					}
+				}
+				d._();
+				e.css({
 					opacity:a,
+					background:"#000",
 					filter:s?"progid:DXImageTransform.Microsoft.blur(pixelradius="+r+",makeshadow='true',ShadowOpacity="+a+")":""					
 				}).toggle(n);
 			}

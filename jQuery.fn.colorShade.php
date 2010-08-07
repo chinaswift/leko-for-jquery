@@ -40,7 +40,7 @@
 
 $(function(){
 
-	$("select").change(function(){
+	var x=$("select").change(function(){
 		var
 			e=eval("("+$("#enabled option:selected").text()+")"),
 			d=Number($("#duration option:selected").text()),
@@ -65,7 +65,9 @@ $(function(){
 					   +e+'</mark>,duration:<mark>'
 					   +d+'</mark>,easing:<mark>'
 					   +a+'</mark>});');
-	}).change();
+	});
+	
+	x.first().change();
 
 	$("#demo2").colorShade({
 		live:1,

@@ -37,16 +37,15 @@ $(function(){
 			x=Number($("#offsetX option:selected").text()),
 			y=Number($("#offsetY option:selected").text());
 
-	$("#txt1").html('$("#block").popup({posX:<mark>'+a+'</mark>,posY:'+b+'</mark>,offsetX:<mark>'+x+'</mark>,offsetY:<mark>'+y+'</mark>,target:<mark>#txt1</mark>,shadow:{}});').shadow();
+		$("#txt1").html('$("#block").popup({posX:<mark>'+a+'</mark>,posY:'+b+'</mark>,offsetX:<mark>'+x+'</mark>,offsetY:<mark>'+y+'</mark>,target:<mark>#txt1</mark>});').shadow();
 
-	$("#block").popup({
-		posX:a,
-		posY:b,
-		offsetX:x,
-		offsetY:y,
-		target:"#txt1",
-		shadow:{}
-	});
+		$("#block").popup({
+			posX:a,
+			posY:b,
+			offsetX:x,
+			offsetY:y,
+			target:"#txt1"
+		});
 
 	});
 	

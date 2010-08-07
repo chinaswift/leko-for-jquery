@@ -40,7 +40,7 @@ select{margin-right:20px;}
 
 $(function(){
 
-	$("select").change(function(){
+	var x=$("select").change(function(){
 		var
 			e=eval("("+$("#enabled option:selected").text()+")"),
 			x=Number($("#x option:selected").text()),
@@ -51,7 +51,7 @@ $(function(){
 		$("div.shadow").each(function(i,o){
 			o=$(o);
 			i=o.position();
-			o.html("position : <mark>"+o.css("position")+" - "+i.left+" , "+i.top+"</mark><br />"
+			o.html("position : <mark>"+o.css("position")+"|"+i.left+","+i.top+"</mark><br />"
 				  +"offsetParent : <mark>"+o.offsetParent().attr("tagName").toLowerCase()+"</mark><br />"
 				  +"zIndex : <mark>"+o.css("zIndex")+"</mark>"
 			);
@@ -63,7 +63,9 @@ $(function(){
 			opacity:p
 		});
 		$("#code").html('$("div.shadow").shadow({enabled:<mark>'+e+'</mark> , x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , opacity:<mark>'+p+'</mark>})');
-	}).change();
+	});
+
+	x.first().change();
 
 });
 
