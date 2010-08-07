@@ -1,6 +1,8 @@
 <?php include 'leko.head.inc'; ?>
 <?php include 'leko.demo.head.inc'; ?>
 
+<script src="leko.color.js"></script>
+
 <style>
 
 input{width:24px;}
@@ -10,8 +12,6 @@ pre{width:250px;}
 .td1{width:300px;}
 
 </style>
-
-<script src="leko.color.js"></script>
 
 <script>
 

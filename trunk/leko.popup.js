@@ -8,12 +8,24 @@
 		}
 	})();
 
+	$.fn.extend({
+		resetShadow:function(){
+			return this.each(function(){
+				var
+					o=$(this),
+					d=o.data("shadow");
+
+			});
+		}
+	});
+
 	_.fn(
 		"popup",
 		function(o,v,d,c){
 			var
 				f=$(v.target),
 				s=Math.round,
+				a=v.shadow,
 				w,h,m,n,x,y,p;
 			if(f.length){
 				o.css({
@@ -28,7 +40,8 @@
 					left:p.left+[-m,0,s(w/2-m),s((w-m)/2),s(w/2),w-m,w][v.posX||0]+(v.offsetX||0)+"px",
 					top :p.top +[-n,0,s(h/2-n),s((h-n)/2),s(h/2),h-n,h][v.posY||0]+(v.offsetY||0)+"px"
 				});
-				//console.log(m);
+				if(a)o.shadow(a);
+				console.log(o.data("shadow").$);
 			}			
 		},
 		{},

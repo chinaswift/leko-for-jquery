@@ -4,6 +4,8 @@
 		$["is"+v]=new Function("v","return v==v&&v!==null&&v!==void(0)&&v.constructor=="+v);
 	});
 
+	$.leko={};
+
 	var
 		_$=window._,
 		_={
@@ -51,14 +53,14 @@
 								var
 									o=$(this),
 									n=l.fn,
-									d=o.conf(n);
-								return f(o,$.extend(true,{},l.ini,l.arguments[0],d),d,n)!==false;
+									d=o.leko(n);
+								return f(o,$.extend(true,{},$.leko[n],l.arguments[0],d),d,n)!==false;
 							});
 						}
 					})(a[m+1]);
 					f.fn=n;
 					$.fn[n]=f;
-					f['ini']=a[m+2];
+					$.leko[n]=a[m+2];
 				}
 			},
 			pseudoClass:function(){
@@ -99,24 +101,24 @@
 				}
 			}
 		},
-		b=$.browser,
-		s=$.support,
-		d;
+		$b=$.browser,
+		$s=$.support,
+		$d;
 
 	$.each(["webkit","opera","msie","mozilla"],function(i,v){
 		_[v]=function(n,m){
-			return !!(b[v]&&_.ver(b.version,n)!=(m||0));
+			return !!($b[v]&&_.ver($b.version,n)!=(m||0));
 		}
 	});
 
-	s.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);
-	d=_.msie(9)&&1||_.mozilla("1.9.1")&&2||_.webkit(522)&&3||_.opera(10.5)&&1;
-	s.shadow=d&&["b","MozB","WebkitB"][d-1]+"oxShadow";
+	$s.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);
+	$d=_.msie(9)&&1||_.mozilla("1.9.1")&&2||_.webkit(522)&&3||_.opera(10.5)&&1;
+	$s.shadow=$d&&["b","MozB","WebkitB"][$d-1]+"oxShadow";
 	
 	window.Leko=window._=_;
 	_.html5Tag();
 
-	$.fn.conf=function(n){
+	$.fn.leko=function(n){
 		var
 			o=this,
 			d=o.data(n);

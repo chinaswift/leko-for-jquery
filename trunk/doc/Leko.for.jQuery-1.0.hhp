@@ -55,8 +55,8 @@ jQuery.easing.outquint.html
 jQuery.easing.outsine.html
 jQuery.fn.colorShade.0.html
 jQuery.fn.colorShade.html
-jQuery.fn.conf.html
 jQuery.fn.html
+jQuery.fn.leko.html
 jQuery.fn.popup.0.html
 jQuery.fn.popup.html
 jQuery.fn.shadow.0.html
@@ -68,6 +68,7 @@ jQuery.isNumber.html
 jQuery.isObject.html
 jQuery.isString.html
 jquery.js
+jQuery.leko.html
 jQuery.support.html
 jQuery.support.rgba.html
 jQuery.support.shadow.html

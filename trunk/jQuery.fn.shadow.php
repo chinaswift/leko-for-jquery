@@ -1,14 +1,17 @@
 <?php include 'leko.head.inc'; ?>
 <?php include 'leko.demo.head.inc'; ?>
 
+<script src="leko.color.js"></script>
+<script src="leko.popup.js"></script>
+
 <style>
 
 .box{
 	background:#efefef;width:800px;height:50px;padding:25px;
 }
 .shadow{
-	width:150px;height:40px;margin-right:25px;padding:5px;Monaco,Menlo,Consolas,"lucida console",'Courier New';font-size:10px;line-height:1.2;color:#fff;
-	/*box-shadow:2px 2px 4px rgba(0,0,0,0.3);-moz-box-shadow:2px 2px 4px rgba(0,0,0,0.3);-webkit-box-shadow:2px 2px 4px rgba(0,0,0,0.3);position:relative; */
+	width:150px;height:40px;margin-right:25px;padding:5px;font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';font-size:10px;line-height:1.2;color:#fff;
+	/*box-shadow:2px 2px 4px rgba(0,0,0,0.3);-moz-box-shadow:2px 2px 4px rgba(0,0,0,0.3);-webkit-box-shadow:2px 2px 4px rgba(0,0,0,0.3);*/
 }
 .shadow mark{color:#111;}
 #block1{
@@ -24,8 +27,7 @@
 	background:#9CCD4A;
 }
 #box1{
-	width:100%;text-align:center;
-	position:relative;
+	width:auto;text-align:center;position:relative;
 }
 #block5{background:#9CCD4A;position:absolute;left:75px; top:175px;}
 #block6{background:#EC108D;position:absolute;left:220px;top:165px;}
@@ -34,9 +36,6 @@
 select{margin-right:20px;}
 #x,#y,#blur{width:60px;}
 </style>
-
-<script src="leko.color.js"></script>
-<script src="leko.popup.js"></script>
 <script>
 
 $(function(){

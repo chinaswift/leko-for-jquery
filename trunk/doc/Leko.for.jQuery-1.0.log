@@ -41,8 +41,8 @@ jQuery.easing.outquint.html
 jQuery.easing.outsine.html
 jQuery.fn.colorShade.0.html
 jQuery.fn.colorShade.html
-jQuery.fn.conf.html
 jQuery.fn.html
+jQuery.fn.leko.html
 jQuery.fn.popup.0.html
 jQuery.fn.popup.html
 jQuery.fn.shadow.0.html
@@ -54,6 +54,7 @@ jQuery.isNumber.html
 jQuery.isObject.html
 jQuery.isString.html
 jquery.js
+jQuery.leko.html
 jQuery.support.html
 jQuery.support.rgba.html
 jQuery.support.shadow.html
@@ -84,11 +85,11 @@ Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 1 second
-68	Topics
-213	Local links
-67	Internet links
+69	Topics
+216	Local links
+68	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 273,423 bytes
-Compression decreased file by 583,968 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 273,597 bytes
+Compression decreased file by 585,567 bytes.
