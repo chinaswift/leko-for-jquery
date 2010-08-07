@@ -25,7 +25,7 @@ $(function(){
 			"left":(b=b=="+"?"-":"+")+"=700px"
 		},1200,v);
 		$("#code").html('$("#block").animate({"left":"'+b+'=700px"},1200,"<mark>'+v+'</mark>");');
-	}).change().next().click(function(){
+	}).change().next("button").click(function(){
 		$("select").change();
 	});
 

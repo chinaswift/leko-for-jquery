@@ -4,7 +4,7 @@
 <style>
 
 .popup{
-	/*display:none;*/
+	display:none;
 }
 .box{
 	background:#efefef;width:800px;height:50px;padding:25px;

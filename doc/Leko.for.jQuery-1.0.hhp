@@ -61,6 +61,8 @@ jQuery.fn.popup.0.html
 jQuery.fn.popup.html
 jQuery.fn.shadow.0.html
 jQuery.fn.shadow.html
+jQuery.fn.transparent.html
+jQuery.fn.visible.html
 jQuery.html
 jQuery.isBoolean.html
 jQuery.isDate.html
