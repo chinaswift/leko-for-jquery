@@ -26,6 +26,12 @@
 					return fx.pos*(fx.end[i]-v)+v;
 			}));
 		}
+		$.fn[v+"To"]=function(d,c,f){
+			var
+				o={};
+			o[v]=c;
+			return this.animate(o,d||800,f);
+		}
 	});
 
 	_.color=function(v){

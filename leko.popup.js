@@ -42,7 +42,7 @@
 				if(a)o.shadow(a);
 
 				o.transparent( );
-				o.data("shadow")._();
+				//o.data("shadow")._();
 				//o.show();
 				//o.animate({top:"+=20px"});
 				//o.data("shadow").$.animate({top:"+=20px"});

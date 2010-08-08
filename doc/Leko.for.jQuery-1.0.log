@@ -39,10 +39,20 @@ jQuery.easing.outquad.html
 jQuery.easing.outquart.html
 jQuery.easing.outquint.html
 jQuery.easing.outsine.html
+jQuery.fn.backgroundColorTo.html
+jQuery.fn.borderBottomColorTo.html
+jQuery.fn.borderColorTo.html
+jQuery.fn.borderLeftColorTo.html
+jQuery.fn.borderRightColorTo.html
+jQuery.fn.borderTopColorTo.html
 jQuery.fn.colorShade.0.html
 jQuery.fn.colorShade.html
+jQuery.fn.colorTo.0.html
+jQuery.fn.colorTo.1.html
+jQuery.fn.colorTo.html
 jQuery.fn.html
 jQuery.fn.leko.html
+jQuery.fn.outlineColorTo.html
 jQuery.fn.popup.0.html
 jQuery.fn.popup.html
 jQuery.fn.shadow.0.html
@@ -87,11 +97,11 @@ Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 1 second
-71	Topics
-222	Local links
-70	Internet links
+81	Topics
+255	Local links
+80	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 275,705 bytes
-Compression decreased file by 590,552 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 282,663 bytes
+Compression decreased file by 625,705 bytes.
