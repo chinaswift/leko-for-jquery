@@ -71,17 +71,13 @@ $(function(){
 <option>2</option>
 <option>3</option>
 <option>4</option>
-<option>5</option>
-<option>6</option>
 </select>
 <label class="en" for="posY">posY:</a></label><select class="en" id="posY">
 <option>0</option>
 <option>1</option>
 <option>2</option>
 <option>3</option>
-<option>4</option>
-<option>5</option>
-<option selected>6</option>
+<option selected>4</option>
 </select>
 <label class="en" for="offsetX">offsetX:</a></label><select class="en" id="offsetX">
 <option>-6</option>
@@ -104,8 +100,8 @@ $(function(){
 <option>-4</option>
 <option>-3</option>
 <option>-2</option>
-<option selected>-1</option>
-<option>0</option>
+<option>-1</option>
+<option selected>0</option>
 <option>1</option>
 <option>2</option>
 <option>3</option>

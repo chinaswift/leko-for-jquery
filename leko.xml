@@ -2724,7 +2724,7 @@ $("a").colorShade();
 &lt;/script&gt;</code>
 			</method>
 			<method name="transparent">
-				<brief>切换元素的CSS属性&lt;mark class="en"&gt; visibility &lt;/mark&gt;的值。同时将&lt;mark class="en"&gt; display &lt;/mark&gt;属性设为可见。</brief>
+				<brief>切换元素的CSS属性&lt;mark class="en"&gt; visibility &lt;/mark&gt;的值。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
 				<param name="invisible">
@@ -2751,30 +2751,13 @@ $("a").colorShade();
 				<brief>判断第一个元素是否可见。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<param name="opaque">
-					<default>false</default>
-					<vartype name="boolean">
-						<varvalue>
-							<value>true</value>
-							<brief>完全可见。完全可见的定义是：它的&lt;mark class="en"&gt; visibility &lt;/mark&gt;不为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; display &lt;/mark&gt;不为&lt;mark class="en"&gt; none &lt;/mark&gt;，并且具有实际占位的高和宽。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>布局可见。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="boolean">
+				<return name="object">
 					<varvalue>
-						<value>true</value>
-						<brief>可见。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>不可见。</brief>
+						<value>{d,v}</value>
+						<brief>&lt;mark class="en"&gt; v &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; visibility &lt;/mark&gt;是否为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; d &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; display &lt;/mark&gt;是否为&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
 					</varvalue>
 				</return>
-				<code canrun=""><![CDATA[alert($("body").visible());]]></code>
+				<code canrun=""><![CDATA[alert($("body").visible().d);]]></code>
 			</method>
 		</object>
 		<object name="leko">

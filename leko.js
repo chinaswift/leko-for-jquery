@@ -126,14 +126,14 @@
 			if(!d)o.data(n,d=eval("({"+(o.attr(n)||"")+"})"));
 			return d;
 		},
-		visible:function(f){
-			var
-				o=this,
-				b=o.css("display")!="none"&&o.outerHeight()*o.outerWidth();
-			return f?b&&o.css("visibility")!="hidden":!!b;
+		visible:function(){
+			with(this)return{
+				d:css("display")!="none",
+				v:css("visibility")!="hidden"
+			};
 		},
 		transparent:function(b){
-			return this.css({visibility:b?"hidden":"visible"}).show();
+			return this.css({visibility:b?"hidden":"visible"});
 		}
 	});
 
