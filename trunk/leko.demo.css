@@ -20,7 +20,7 @@ section{margin:4em 0;}
 
 li.within a,mark{color:#ff436f;}
 
-#foot a,.en,.en *{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';}
+code,#foot a,.en,.en *{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';}
 
 pre{font-family:'Courier New';}
 

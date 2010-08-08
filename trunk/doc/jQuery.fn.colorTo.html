@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="" />
+<title>LEKO&trade;</title>
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" type="text/css" href="leko.css" />
+<link rel="stylesheet" type="text/css" href="leko.demo.css" />
+<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
+<script src="jquery.js"></script><script src="leko.js"></script><script src="leko.color.js"></script></head><body><div id="page" class="table"><header><nav></nav></header><h2 class="en">jQuery.fn.colorTo</h2><hr />以动态效果转变元素的颜色。<section><h4><b>语法</b></h4><code><i>jQuery</i> = <strong>jQuery</strong>(<i>selector</i>).<strong>colorTo</strong>(<i>duration</i> , <i>color</i> , [<i>callback</i>])</code></section><section><h4><b>参数</b></h4><table border="0" cellspacing="0" cellpadding="0"><thead><tr class="row1"><th class="col2">参数名</th><th class="col2">是否可选</th><th class="col2">缺省值</th><th class="col2">数据类型</th><th class="col2">可能的取值</th><th>说明</th></tr></thead><tbody><tr><td rowspan="4" class="en">duration</td><td class="en" rowspan="4"></td><td class="en" rowspan="4">800</td><td rowspan="3" class="en">string</td><td class="en">slow</td><td>预设的速度级别。相当于600ms</td></tr><tr><td class="en">normal</td><td>预设的速度级别。相当于400ms</td></tr><tr><td class="en">fast</td><td>预设的速度级别。相当于200ms</td></tr><tr><td rowspan="1" class="en">number</td><td class="en"></td><td>精确指定速度的整数数值。单位为毫秒。</td></tr><tr class="odd"><td rowspan="2" class="en">color</td><td class="en" rowspan="2"></td><td class="en" rowspan="2"></td><td rowspan="1" class="en">string</td><td class="en"></td><td>各种符合CSS3语法格式的颜色定义。包括：<br /><br /><ol class="en">
+<li>rgb (R,G,B)</li>
+<li>rgba(R,G,B,A)</li>
+<li>hsl (H,S,L)</li>
+<li>hsla(H,S,L,A)</li>
+<li>#RGB</li>
+<li>#RRGGBB</li>
+<li>...</li>
+</ol></td></tr><tr class="odd"><td rowspan="1" class="en">array</td><td class="en"></td><td>包含分别对应RGBA四个通道数值的数组。</td></tr><tr><td rowspan="1" class="en">callback</td><td class="en" rowspan="1">√</td><td class="en" rowspan="1"></td><td rowspan="1" class="en">function</td><td class="en"></td><td>动画完成后的回调函数。</td></tr></tbody></table></section><section><h4><b>返回</b></h4><table border="0" cellspacing="0" cellpadding="0"><thead><tr class="row2"><th class="col2">数据类型</th><th class="col2">可能的取值</th><th>说明</th></tr></thead><tbody><tr><td rowspan="1" class="en">jQuery</td><td class="en">this</td><td></td></tr></tbody></table></section><script>$(function(){$("button").click(function(){eval($(this).prev().prev().text());});});</script><section><h4><b>示例</b></h4><pre>$(&quot;a&quot;).colorTo(1000,&quot;#f30&quot;);</pre><br /><pre>$(&quot;a&quot;).colorTo(&quot;slow&quot;,[255,0,0,0.25],function(){
+    alert(&quot;Animation complete.&quot;);
+});</pre></section><section><h4><b>实例</b></h4><ol><li><a href="jQuery.fn.colorTo.0.html">全部颜色渐变动画效果的演示</a></li><li><a href="jQuery.fn.colorTo.1.html">测试用例演示</a></li></section><section><h4><b>文件</b></h4><ol class="en"><li><a href="jquery.js">jquery.js</a> (70.48KB)</li><li><a href="leko.js">leko.js</a> (3.24KB)</li><li class="within"><a href="leko.color.js">leko.color.js</a> (6.12KB)</li></ol></section><footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>
