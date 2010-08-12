@@ -114,9 +114,6 @@
 	$s.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);
 	$d=_.msie(9)&&1||_.mozilla("1.9.1")&&2||_.webkit(522)&&3||_.opera(10.5)&&1;
 	$s.shadow=$d&&["b","MozB","WebkitB"][$d-1]+"oxShadow";
-	
-	window.Leko=window._=_;
-	_.html5Tag();
 
 	$.fn.extend({
 		leko:function(n){
@@ -132,9 +129,60 @@
 				v:css("visibility")!="hidden"
 			};
 		},
+		getShadow:function(){
+			var
+				d=$b.msie&&$(this).data("shadow");
+			return d&&d.$?d:{};
+		},
+		andShadow:function(){
+			with(this)return add(getShadow().$);
+		},
 		transparent:function(b){
 			return this.css({visibility:b?"hidden":"visible"});
 		}
 	});
+
+	$.each(["To","By"],function(i,v){
+		$.fn["move"+v]=function(x,y){
+			var
+				m=$.isNumber(x),
+				n=$.isNumber(y);
+			return this.each(function(z,o){
+				o=$(o);
+				z=o.position();
+				if(m)o.css({
+					left:(i?z.left+x:x)+"px"
+				});
+				if(n)o.css({
+					top :(i?z.top +y:y)+"px"
+				});
+			});
+		};
+		$.fn["resize"+v]=function(w,h,b){
+			var
+				m=$.isNumber(w),
+				n=$.isNumber(h);
+			return this.each(function(z,o){
+				o=$(o);
+				if(m)o.width (function(n,x){
+					return i?w+x:b?w+x-o.outerWidth() :w;
+				});
+				if(h)o.height(function(n,x){
+					return i?h+x:b?h+x-o.outerHeight():h;
+				});
+			});
+		};
+	});
+
+	$.fn.bubble=(function(){
+		var
+			i=0;
+		return function(){
+			return i++;
+		}
+	})();
+	
+	window.Leko=window._=_;
+	_.html5Tag();
 
 })(window,window.document,jQuery);

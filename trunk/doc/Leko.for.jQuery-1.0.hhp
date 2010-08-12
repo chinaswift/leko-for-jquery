@@ -66,9 +66,17 @@ jQuery.fn.colorTo.1.html
 jQuery.fn.colorTo.html
 jQuery.fn.html
 jQuery.fn.leko.html
+jQuery.fn.moveBy.0.html
+jQuery.fn.moveBy.html
+jQuery.fn.moveTo.0.html
+jQuery.fn.moveTo.html
 jQuery.fn.outlineColorTo.html
 jQuery.fn.popup.0.html
 jQuery.fn.popup.html
+jQuery.fn.resizeBy.0.html
+jQuery.fn.resizeBy.html
+jQuery.fn.resizeTo.0.html
+jQuery.fn.resizeTo.html
 jQuery.fn.shadow.0.html
 jQuery.fn.shadow.html
 jQuery.fn.transparent.html

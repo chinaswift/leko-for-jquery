@@ -204,7 +204,7 @@ function run($i,$n){
 						file_put_contents($tgt,$htm,FILE_TEXT);
 						if(file_exists($tgt)){
 							echo '<a href="'.$tgt.'" target="_blank">'.$tgt.'</a><br />';
-							$html.='<li><a href="'.$tge.'">'.$file['name'].'</a></li>';
+							$html.='<li><a href="'.$tge.'">'.($file['name']==''?'测试用例演示':$file['name']).'</a></li>';
 						}
 					}
 				}
