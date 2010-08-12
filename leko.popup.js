@@ -77,25 +77,4 @@
 		}
 	);
 
-
-
-
-	$.fn.bubble=(function(){
-		var
-			i=0;
-		return function(){
-			return i++;
-		}
-	})();
-
-	$.fn.extend({
-		addShadow:function(){
-			return this.each(function(){
-				var
-					o=$(this),
-					d=o.data("shadow");
-			});
-		}
-	});
-
 })(Leko,jQuery);

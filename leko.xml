@@ -2120,7 +2120,7 @@ alert(x);</code>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.popup.js</srcfile>
-				<param name="enabled">
+				<param name="enabled" optional="1">
 					<default>true</default>
 					<vartype name="boolean" optional="1">
 						<varvalue>
@@ -2133,7 +2133,7 @@ alert(x);</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="x">
+				<param name="x" optional="1">
 					<default>2</default>
 					<vartype name="number" optional="1">
 						<varvalue>
@@ -2141,7 +2141,7 @@ alert(x);</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="x">
+				<param name="y" optional="1">
 					<default>2</default>
 					<vartype name="number" optional="1">
 						<varvalue>
@@ -2149,7 +2149,7 @@ alert(x);</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="blur">
+				<param name="blur" optional="1">
 					<default>3</default>
 					<vartype name="number" optional="1">
 						<varvalue>
@@ -2157,7 +2157,7 @@ alert(x);</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="opacity">
+				<param name="opacity" optional="1">
 					<default>0.3</default>
 					<vartype name="number" optional="1">
 						<varvalue>
@@ -2714,14 +2714,138 @@ alert(x);</code>
 						<brief>对获取到的对象的引用。</brief>
 					</varvalue>
 				</return>
-				<code>&lt;a colorShade="{color:'red'}"&gt;Test&lt;/a&gt;
+				<code>&lt;a colorShade="properties:{color:'red'}"&gt;Test&lt;/a&gt;
 
 &lt;script&gt;
 
-$("a").leko("colorShade").color="blue";
+$("a").leko("colorShade").properties.color="blue";
 $("a").colorShade();
 
 &lt;/script&gt;</code>
+			</method>
+			<method name="moveTo">
+				<brief>移动元素相对于其&lt;mark&gt; offsetParent &lt;/mark&gt;的位置。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="left" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角横坐标。如果不是有效的数字，则维持原有横坐标。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="top" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角纵坐标。如果不是有效的数字，则维持原有纵坐标。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").moveTo(300,200);</code>
+			</method>
+			<method name="moveBy">
+				<brief>以元素的当前位置为基础移动元素相对于其&lt;mark&gt; offsetParent &lt;/mark&gt;的位置。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="x-offset" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角横坐标移动增量。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="y-offset" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角纵坐标移动增量。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").moveBy(30,20);</code>
+				<code>$("#box").shadow().andShadow().moveBy(30,20);</code>
+			</method>
+			<method name="resizeTo">
+				<brief>改变元素的高宽。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="width" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的数字宽度。如果不是有效的数字，则维持原有宽度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="height" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的数字高度。如果不是有效的数字，则维持原有高度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="outer" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>设置元素的最终实际占位高宽，也就是包含&lt;mark class="en"&gt; padding &lt;/mark&gt;和&lt;mark class="en"&gt; border &lt;/mark&gt;的尺寸。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>设置元素的样式表定义的高宽。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").resizeTo(300,200);</code>
+				<code>$("#box").resizeTo(300,"",1);</code>
+			</method>
+			<method name="resizeBy">
+				<brief>以元素的当前尺寸为基础改变元素的高宽。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="x-offset" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>在元素当前的宽度上以像素为单位调整的数值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="y-offset" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>在元素当前的高度上以像素为单位调整的数值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").resizeBy(30,-20);</code>
+				<code>$("#box").resizeBy(0,-120);</code>
 			</method>
 			<method name="transparent">
 				<brief>切换元素的CSS属性&lt;mark class="en"&gt; visibility &lt;/mark&gt;的值。</brief>
