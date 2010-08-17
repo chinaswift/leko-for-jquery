@@ -42,7 +42,6 @@ $(function(){
 
 	var x=$("select").change(function(){
 		var
-			e=eval("("+$("#enabled option:selected").text()+")"),
 			x=Number($("#x option:selected").text()),
 			y=Number($("#y option:selected").text()),
 			b=Number($("#blur option:selected").text()),
@@ -56,13 +55,12 @@ $(function(){
 				  +"zIndex : <mark>"+o.css("zIndex")+"</mark>"
 			);
 		}).shadow({
-			enabled:e,
 			x:x,
 			y:y,
 			blur:b,
 			opacity:p
-		});
-		$("#code").html('$("div.shadow").shadow({enabled:<mark>'+e+'</mark> , x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , opacity:<mark>'+p+'</mark>})');
+		}).resetShadow();
+		$("#code").html('$("div.shadow").shadow({x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , opacity:<mark>'+p+'</mark>})');
 	});
 
 	x.first().change();
@@ -79,10 +77,6 @@ $(function(){
 </section>
 
 <section>
-<label class="en" for="enabled">enabled:</a></label><select class="en" id="enabled">
-<option selected>true</option>
-<option>false</option>
-</select>
 <label class="en" for="x">x:</a></label><select class="en" id="x">
 <option>-6</option>
 <option>-5</option>

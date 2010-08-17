@@ -1933,19 +1933,6 @@ alert(x);</code>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.color.js</srcfile>
-				<param name="enabled">
-					<default>true</default>
-					<vartype name="boolean" optional="1">
-						<varvalue>
-							<value>true</value>
-							<brief>应用色彩渐变动态效果。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>禁用色彩渐变动态效果。</brief>
-						</varvalue>
-					</vartype>
-				</param>
 				<param name="properties">
 					<vartype name="object">
 						<varvalue>
@@ -2057,19 +2044,6 @@ alert(x);</code>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.popup.js</srcfile>
-				<param name="enabled">
-					<default>true</default>
-					<vartype name="boolean" optional="1">
-						<varvalue>
-							<value>true</value>
-							<brief>应用阴影效果。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>取消阴影效果。</brief>
-						</varvalue>
-					</vartype>
-				</param>
 				<param name="x">
 					<default>2</default>
 					<vartype name="number" optional="1">
@@ -2120,19 +2094,6 @@ alert(x);</code>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.popup.js</srcfile>
-				<param name="enabled" optional="1">
-					<default>true</default>
-					<vartype name="boolean" optional="1">
-						<varvalue>
-							<value>true</value>
-							<brief>应用阴影效果。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>取消阴影效果。</brief>
-						</varvalue>
-					</vartype>
-				</param>
 				<param name="x" optional="1">
 					<default>2</default>
 					<vartype name="number" optional="1">

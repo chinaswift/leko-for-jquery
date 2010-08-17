@@ -60,7 +60,7 @@
 					})(a[m+1]);
 					f.fn=n;
 					$.fn[n]=f;
-					$.leko[n]=$.extend({enabled:1},a[m+2]);
+					$.leko[n]=$.extend({},a[m+2]);
 				}
 			},
 			pseudoClass:function(){
@@ -129,16 +129,10 @@
 				v:css("visibility")!="hidden"
 			};
 		},
-		getShadow:function(){
-			var
-				d=$b.msie&&$(this).data("shadow");
-			return d&&d.$?d:{};
-		},
-		andShadow:function(){
-			with(this)return add(getShadow().$);
-		},
 		transparent:function(b){
 			return this.css({visibility:b?"hidden":"visible"});
+		},
+		bubble:function(){
 		}
 	});
 
@@ -149,7 +143,7 @@
 				n=$.isNumber(y);
 			return this.each(function(z,o){
 				o=$(o);
-				z=o.position();
+				if(i)z=o.position();
 				if(m)o.css({
 					left:(i?z.left+x:x)+"px"
 				});
@@ -174,14 +168,6 @@
 		};
 	});
 
-	$.fn.bubble=(function(){
-		var
-			i=0;
-		return function(){
-			return i++;
-		}
-	})();
-	
 	window.Leko=window._=_;
 	_.html5Tag();
 
