@@ -58,7 +58,6 @@ $(function(){
 
 	var x=$("select").change(function(){
 		var
-			e=eval("("+$("#enabled option:selected").text()+")"),
 			d=Number($("#duration option:selected").text()),
 			a=$("#easing option:selected").text(),
 			c=$("#color option:selected").text(),
@@ -70,15 +69,13 @@ $(function(){
 				borderColor:b,
 				backgroundColor:k
 			},
-			enabled:e,		
 			duration:d,
 			easing:a
 		});
 		$("#code").html('$("#block").colorShade({properties:{color:<mark>'
 		               +c+'</mark>,borderColor:<mark>'
 					   +b+'</mark>,backgroundColor:<mark>'
-					   +k+'</mark>},enabled:<mark>'
-					   +e+'</mark>,duration:<mark>'
+					   +k+'</mark>},duration:<mark>'
 					   +d+'</mark>,easing:<mark>'
 					   +a+'</mark>});');
 	});
@@ -120,10 +117,6 @@ $(function(){
 <section><h4>例一：请尝试修改参数，然后将鼠标移入移出下面的块元素区域查看效果</h4>
 <div id="demo1" class="tr"><div class="td" id="box"><div id="block"><h3>标题</h3>这里有一些文本。</div></div>
 <div class="td" id="config"><ol>
-<li><label class="en" for="enabled">enabled:</a></label><select class="en" id="enabled">
-<option selected>true</option>
-<option>false</option>
-</select></li>
 <li><label class="en" for="duration">duration:</a></label><select class="en" id="duration">
 <option>200</option>
 <option>400</option>

@@ -56,42 +56,39 @@
 				l=v.live,
 				m=h?"focusin focusout":"mouseenter mouseleave",
 				f=function(e){
-					if(v.enabled){
-						var
-							t=e.type,
-							b=/(?:t|e)$/.test(t),
-							o=$(this),
-							q=l?o.leko(c):d,
-							w=l?$.extend(true,{},v,q):v,
-							g=w.properties,
-							j=g[$p[2]],
-							i=3;
-						if(j){
-							while(i<7)g[$p[i++]]=j;
-							delete g[$p[2]];
-							j=0;
-						}					
-						if(!q._){
-							q._={};
-							q.$={};
-							for(i in g){
-								q._[i]= o.css( i);
-								q.$[i]=$a(o[0],i);
-							}
+					var
+						t=e.type,
+						b=/(?:t|e)$/.test(t),
+						o=$(this),
+						q=l?o.leko(c):d,
+						w=l?$.extend(true,{},v,q):v,
+						g=w.properties,
+						j=g[$p[2]],
+						i=3;
+					if(j){
+						while(i<7)g[$p[i++]]=j;
+						delete g[$p[2]];
+						j=0;
+					}					
+					if(!q._){
+						q._={};
+						q.$={};
+						for(i in g){
+							q._[i]= o.css( i);
+							q.$[i]=$a(o[0],i);
 						}
-						o.stop(true).animate(b?q.$:g,w.duration,w.easing,b?function(){
-							if(q._){
-								for(var i in q._)o.css(i,q._[i]);
-								q._=q.$=0;
-							}
-						}:null);
 					}
+					o.stop(true).animate(b?q.$:g,w.duration,w.easing,b?function(){
+						if(q._){
+							for(var i in q._)o.css(i,q._[i]);
+							q._=q.$=0;
+						}
+					}:null);
 				};
 			if(l)o.undelegate(s,m,d[m]).delegate(s,m,d[m]=f);
 			else o.unbind(m,d[m]).bind(m,d[m]=f);
 		},
 		{
-			enabled:1,
 			duration:800,
 			easing:"swing"
 		}
