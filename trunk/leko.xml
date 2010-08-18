@@ -2118,11 +2118,24 @@ alert(x);</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="opacity" optional="1">
-					<default>0.3</default>
-					<vartype name="number" optional="1">
+				<param name="color" optional="1">
+					<default>rgba(0,0,0,0.3)</default>
+					<vartype name="string">
 						<varvalue>
-							<brief>透明度。取值范围为0-1之间最多两位有效数字的浮点数。0为完全透明。1为完全不透明。</brief>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -2136,7 +2149,7 @@ alert(x);</code>
     x:3,
     y:3,
     blur:5,
-    opacity:0.75
+    color:"red"
 });]]></code>
 			</method>
 			<method name="colorTo">
@@ -2692,7 +2705,12 @@ $("a").colorShade();
 					<default>null</default>
 					<vartype name="number">
 						<varvalue>
-							<brief>设置元素以像素为单位的左上角横坐标。如果不是有效的数字，则维持原有横坐标。</brief>
+							<brief>设置元素以像素为单位的左上角横坐标。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有横坐标。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -2700,7 +2718,12 @@ $("a").colorShade();
 					<default>null</default>
 					<vartype name="number">
 						<varvalue>
-							<brief>设置元素以像素为单位的左上角纵坐标。如果不是有效的数字，则维持原有纵坐标。</brief>
+							<brief>设置元素以像素为单位的左上角纵坐标。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有纵坐标。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -2739,6 +2762,71 @@ $("a").colorShade();
 				<code>$("#box").moveBy(30,20);</code>
 				<code>$("#box").shadow().andShadow().moveBy(30,20);</code>
 			</method>
+			<method name="layout">
+				<brief>以指定元素的尺寸为基础调整当前元素的尺寸。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="target">
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<brief>不为空的jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="w-set" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>维持原有宽度不变。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>在指定元素的宽度基础之上的附加调整值。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>目标宽度为符合指定元素的宽度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="h-set" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>维持原有高度不变。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>在指定元素的高度基础之上的附加调整值。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>目标高度为符合指定元素的高度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box1").layout($("#box2"));</code>
+				<code>$("#box1").layout("#box2",null,20);</code>
+			</method>
 			<method name="resizeTo">
 				<brief>改变元素的高宽。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -2747,7 +2835,12 @@ $("a").colorShade();
 					<default>null</default>
 					<vartype name="number">
 						<varvalue>
-							<brief>设置元素以像素为单位的数字宽度。如果不是有效的数字，则维持原有宽度。</brief>
+							<brief>设置元素以像素为单位的数字宽度。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有宽度。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -2755,7 +2848,12 @@ $("a").colorShade();
 					<default>null</default>
 					<vartype name="number">
 						<varvalue>
-							<brief>设置元素以像素为单位的数字高度。如果不是有效的数字，则维持原有高度。</brief>
+							<brief>设置元素以像素为单位的数字高度。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有高度。</brief>
 						</varvalue>
 					</vartype>
 				</param>

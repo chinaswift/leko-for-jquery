@@ -10,7 +10,7 @@
 	background:#efefef;width:800px;height:50px;padding:25px;
 }
 .shadow{
-	width:150px;height:40px;margin-right:25px;padding:5px;font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';font-size:10px;line-height:1.2;color:#fff;
+	width:150px;height:40px;margin-right:25px;padding:5px;font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';font-size:10px;line-height:1.2;color:#fff;background:#EC108D;
 	/*box-shadow:2px 2px 4px rgba(0,0,0,0.3);-moz-box-shadow:2px 2px 4px rgba(0,0,0,0.3);-webkit-box-shadow:2px 2px 4px rgba(0,0,0,0.3);*/
 }
 .shadow mark{color:#111;}
@@ -45,7 +45,7 @@ $(function(){
 			x=Number($("#x option:selected").text()),
 			y=Number($("#y option:selected").text()),
 			b=Number($("#blur option:selected").text()),
-			p=Number($("#opacity option:selected").text());
+			p=$("#color option:selected").text();
 
 		$("div.shadow").each(function(i,o){
 			o=$(o);
@@ -58,9 +58,9 @@ $(function(){
 			x:x,
 			y:y,
 			blur:b,
-			opacity:p
-		}).resetShadow();
-		$("#code").html('$("div.shadow").shadow({x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , opacity:<mark>'+p+'</mark>})');
+			color:p
+		});
+		$("#code").html('$("div.shadow").shadow({x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , color:"<mark>'+p+'</mark>"})');
 	});
 
 	x.first().change();
@@ -122,16 +122,11 @@ $(function(){
 <option>5</option>
 <option>6</option>
 </select>
-<label class="en" for="opacity">opacity:</a></label><select class="en" id="opacity">
-<option>0.2</option>
-<option>0.25</option>
-<option selected>0.3</option>
-<option>0.35</option>
-<option>0.4</option>
-<option>0.45</option>
-<option>0.5</option>
-<option>0.75</option>
-<option>1</option>
+<label class="en" for="color">color:</a></label><select class="en" id="color">
+<option>#000</option>
+<option>red</option>
+<option selected>rgba(0,0,0,0.3)</option>
+<option>blue</option>
 </select>
 </section>
 
@@ -140,5 +135,9 @@ $(function(){
 </section>
 
 <section><code id="code">&nbsp;</code></section>
+
+<section>
+<div class="box" style="position:relative"><div class="shadow" style="position:relative">&nbsp;</div></div>
+</section>
 
 <?php include 'leko.foot.inc'; ?>
