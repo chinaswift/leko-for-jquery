@@ -136,9 +136,26 @@
 			o=$(o).eq(0);
 			return o.length?this.resizeTo(w===0?"":o.outerWidth()+(w||0),h===0?"":o.outerHeight()+(h||0),1):this;
 		},
-		locate:function(o,z,x,y){
+		locate:function(o,z,x,y,a,b){
+			var
+				f=this;
 			o=$(o).eq(0);
-			return this["insert"+(z?"Before":"After")](o).moveTo();
+			if(o.length){
+				var
+					p=o.position(),
+					m=o.outerWidth( ),
+					n=o.outerHeight(),
+					w=f.outerWidth( ),
+					h=f.outerHeight(),
+					s=Math.round,
+					r=parseInt,
+					d="zIndex";
+				f["insert"+(z?"Before":"After")](o).moveTo(
+					p.left+[-m,0,s((w-m)/2),w-m,w][r(x)||0]+(r(a)||0),
+					p.top +[-n,0,s((h-n)/2),h-n,h][r(y)||0]+(r(b)||0)
+				).css(d,o.css(d));
+			}
+			return f;
 		},
 		bubble:function(){
 		}
