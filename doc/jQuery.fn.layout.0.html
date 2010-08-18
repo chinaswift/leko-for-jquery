@@ -34,19 +34,21 @@ select,button{margin-right:15px;}
 
 $(function(){
 
-	$("#button1").click(function(){
+	$("#button2").click(function(){
 		var
-			w=eval("("+$("#w option:selected").text()+")"),
-			h=eval("("+$("#h option:selected").text()+")"),
-			b=eval("("+$("#b option:selected").text()+")"),
-			o=$("#block1");
-		$("#code1").html('$("#block1").<mark>resizeTo</mark>('+w+','+h+','+b+')');
-		o.resizeTo(w,h,b).html('width :<mark>'+o.css('width')+'</mark><br />height:<mark>'+o.css('height')+'</mark><br />outerWidth :<mark>'+o.outerWidth()+'px</mark><br />outerHeight:<mark>'+o.outerHeight()+'px</mark>');
+			o=$("#src option:selected").text(),
+			e=$("#target option:selected").text(),
+			w=eval("("+$("#wset option:selected").text()+")"),
+			h=eval("("+$("#hset option:selected").text()+")");
+		$("#code2").html('$("#'+o+'").<mark>layout</mark>($("#'+e+'")'+(w!==null||h!==null?','+w+(h!==null?','+h:''):'')+')');
+		$("#"+o).layout($("#"+e),w,h);
 	}).click();
-	$("#button3").click(function(){
-		$("#block1").resizeTo(200,100);
-		$("#w,#h,#b").attr("selectedIndex",0);
-		$("#button1").click();
+	$("#button4").click(function(){
+		$("#box1").resizeTo(150,150);
+		$("#box2").resizeTo(100,100);
+		$("#box3").resizeTo( 50, 50);
+		$("#src,#target,#wset,#hset").attr("selectedIndex",0);
+		$("#button2").click();
 	});
 
 });
@@ -54,27 +56,37 @@ $(function(){
 </script>
 
 </head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
-<section><h4>例一</h4><div class="block en" id="block1">&nbsp;</div></section>
+<section><h4>例一</h4><div class="box">
+<div class="en" id="box1">box1</div>
+<div class="en" id="box2">box2</div>
+<div class="en" id="box3">box3</div>
+</div></section>
 
-<section><code id="code1"></code></section>
+<section><code id="code2"></code></section>
 
 <section>
-<label class="en" for="w">width:</a></label><select class="en" id="w">
-<option selected>null</option>
-<option>300</option>
-<option>250</option>
-<option>200</option>
+<label class="en" for="src">src:</a></label><select class="en" id="src">
+<option selected>box3</option>
+<option>box2</option>
+<option>box1</option>
 </select>
-<label class="en" for="h">height:</a></label><select class="en" id="h">
-<option selected>null</option>
-<option>200</option>
-<option>150</option>
-<option>100</option>
+<label class="en" for="target">target:</a></label><select class="en" id="target">
+<option selected>box3</option>
+<option>box2</option>
+<option>box1</option>
 </select>
-<label class="en" for="b">outer:</a></label><select class="en" id="b">
-<option selected>false</option>
-<option>true</option>
-</select><button class="en" id="button1">Resize !</button><button class="en" id="button3">Reset !</button>
+<label class="en" for="wset">width-set:</a></label><select class="en" id="wset">
+<option selected>null</option>
+<option>0</option>
+<option>20</option>
+<option>-20</option>
+</select>
+<label class="en" for="hset">height-set:</a></label><select class="en" id="hset">
+<option selected>null</option>
+<option>0</option>
+<option>20</option>
+<option>-20</option>
+</select><button class="en" id="button2">Resize !</button><button class="en" id="button4">Reset !</button>
 </section>
 
 <footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>

@@ -51,13 +51,14 @@ jQuery.fn.colorTo.0.html
 jQuery.fn.colorTo.1.html
 jQuery.fn.colorTo.html
 jQuery.fn.html
+jQuery.fn.layout.0.html
+jQuery.fn.layout.html
 jQuery.fn.leko.html
 jQuery.fn.moveBy.0.html
 jQuery.fn.moveBy.html
 jQuery.fn.moveTo.0.html
 jQuery.fn.moveTo.html
 jQuery.fn.outlineColorTo.html
-jQuery.fn.popup.0.html
 jQuery.fn.popup.html
 jQuery.fn.resizeBy.0.html
 jQuery.fn.resizeBy.html
@@ -104,12 +105,12 @@ Leko.ver.html
 Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
-Compile time: 0 minutes, 1 second
-89	Topics
-271	Local links
-88	Internet links
+Compile time: 0 minutes, 2 seconds
+90	Topics
+274	Local links
+89	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 286,999 bytes
-Compression decreased file by 644,910 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 288,463 bytes
+Compression decreased file by 648,283 bytes.

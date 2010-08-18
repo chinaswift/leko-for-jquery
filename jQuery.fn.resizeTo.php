@@ -2,17 +2,14 @@
 <?php include 'leko.demo.head.inc'; ?>
 
 <style>
-
-.box{
-	background:#efefef;padding:25px;
-}
-.block{
-	width:200px;height:100px;background:#EC108D;border:10px solid #00B8EE;padding:10px;color:#fff;
-}
-select{margin-right:15px;}
-.block mark{
-	color:#ff0;
-}
+.box{position:relative;width:100%;height:200px;z-index:0;}
+.box .en{position:absolute;left:0px;top:0px;text-align:right;padding:5px;opacity:0.75;filter:progid:DXImageTransform.Microsoft.alpha(opacity=75);}
+#box1{background:#00B8EE;width:150px;height:150px;border:20px solid #EC108D;}
+#box2{background:#F8A530;width:100px;height:100px;border:15px solid #000000;}
+#box3{background:#9CCD4A;width: 50px;height: 50px;border:10px solid #EC108D;}
+.block{width:200px;height:100px;background:#EC108D;border:10px solid #00B8EE;padding:10px;color:#fff;}
+select,button{margin-right:15px;}
+.block mark{color:#ff0;}
 </style>
 
 <script src="leko.color.js"></script>
@@ -22,19 +19,19 @@ select{margin-right:15px;}
 $(function(){
 
 	$("#button1").click(function(){
-
 		var
 			w=eval("("+$("#w option:selected").text()+")"),
 			h=eval("("+$("#h option:selected").text()+")"),
 			b=eval("("+$("#b option:selected").text()+")"),
 			o=$("#block1");
-
 		$("#code1").html('$("#block1").<mark>resizeTo</mark>('+w+','+h+','+b+')');
-
 		o.resizeTo(w,h,b).html('width :<mark>'+o.css('width')+'</mark><br />height:<mark>'+o.css('height')+'</mark><br />outerWidth :<mark>'+o.outerWidth()+'px</mark><br />outerHeight:<mark>'+o.outerHeight()+'px</mark>');
-
 	}).click();
-
+	$("#button3").click(function(){
+		$("#block1").resizeTo(200,100);
+		$("#w,#h,#b").attr("selectedIndex",0);
+		$("#button1").click();
+	});
 
 });
 
@@ -42,8 +39,6 @@ $(function(){
 
 <?php include 'leko.neck.inc'; ?>
 <?php include 'leko.demo.neck.inc'; ?>
-
-
 
 <section><h4>例一</h4><div class="block en" id="block1">&nbsp;</div></section>
 
@@ -63,9 +58,9 @@ $(function(){
 <option>100</option>
 </select>
 <label class="en" for="b">outer:</a></label><select class="en" id="b">
-<option>true</option>
 <option selected>false</option>
-</select><button class="en" id="button1">Click me to Resize it !</button>
+<option>true</option>
+</select><button class="en" id="button1">Resize !</button><button class="en" id="button3">Reset !</button>
 </section>
 
 <?php include 'leko.foot.inc'; ?>
