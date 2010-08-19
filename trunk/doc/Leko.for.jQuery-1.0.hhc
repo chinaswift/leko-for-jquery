@@ -63,6 +63,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="leko"><param name="Local" value="jQuery.fn.leko.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="moveTo"><param name="Local" value="jQuery.fn.moveTo.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="moveBy"><param name="Local" value="jQuery.fn.moveBy.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="locate"><param name="Local" value="jQuery.fn.locate.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="layout"><param name="Local" value="jQuery.fn.layout.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="resizeTo"><param name="Local" value="jQuery.fn.resizeTo.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="resizeBy"><param name="Local" value="jQuery.fn.resizeBy.html"></OBJECT>

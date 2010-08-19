@@ -54,6 +54,8 @@ jQuery.fn.html
 jQuery.fn.layout.0.html
 jQuery.fn.layout.html
 jQuery.fn.leko.html
+jQuery.fn.locate.0.html
+jQuery.fn.locate.html
 jQuery.fn.moveBy.0.html
 jQuery.fn.moveBy.html
 jQuery.fn.moveTo.0.html
@@ -106,11 +108,11 @@ Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 2 seconds
-90	Topics
-274	Local links
-89	Internet links
+92	Topics
+278	Local links
+91	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 288,463 bytes
-Compression decreased file by 648,283 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 289,519 bytes
+Compression decreased file by 655,714 bytes.

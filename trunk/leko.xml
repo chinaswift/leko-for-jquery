@@ -2762,6 +2762,101 @@ $("a").colorShade();
 				<code>$("#box").moveBy(30,20);</code>
 				<code>$("#box").shadow().andShadow().moveBy(30,20);</code>
 			</method>
+			<method name="locate">
+				<brief>基于指定元素的位置定位当前元素。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="target">
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<brief>不为空的jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="posX" optional="1">
+					<default>1</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>在指定元素的左外侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>在指定元素的左内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>在指定元素的横居中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>3</value>
+							<brief>在指定元素的右内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>4</value>
+							<brief>在指定元素的右外侧。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="posY" optional="1">
+					<default>4</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>在指定元素的上外侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>在指定元素的上内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>在指定元素的竖居中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>3</value>
+							<brief>在指定元素的下内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>4</value>
+							<brief>在指定元素的下外侧。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="offsetX" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>以像素为单位的水平位置调整值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="offsetY" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>以像素为单位的垂直位置调整值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#popup").locate($("#block"),2,2);</code>
+				<code>$("#popup").locate("#block",1,4,10,0);</code>
+			</method>
 			<method name="layout">
 				<brief>以指定元素的尺寸为基础调整当前元素的尺寸。</brief>
 				<srcfile>jquery.js</srcfile>
