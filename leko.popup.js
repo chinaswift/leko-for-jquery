@@ -76,14 +76,11 @@
 						b=o.visible(),
 						f=o.css("position"),
 						t=f=="static",
-						l=f=="relative",
-						q=o["position"]();
+						l=f=="relative";
 					if(!b.d)o.transparent(1).show();
-					if(t)o.css("position","relative");
 					e.css({
-						zIndex:o.css("zIndex"),
 						position:t||l?"absolute":f
-					}).insertBefore(o).layout(o).moveTo(q.left+x-r+(!r||!x?0:x>0?-1:1),q.top+y-r+(!r||!x?0:y>0?-1:1)).add(o).transparent(!b.v).toggle(b.d);
+					}).layout(o).locate(o,1,1,x-r+(!r||!x?0:x>0?-1:1),y-r+(!r||!x?0:y>0?-1:1)).bubble(o,1,1).add(o).transparent(!b.v).toggle(b.d);
 				};
 				d._();
 			}

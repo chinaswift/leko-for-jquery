@@ -15,7 +15,7 @@ define('COPYRIGHT','/*!'."\n".
 ' *'."\n".
 ' * 苏昱(苏小雨)作品'."\n".
 ' * Copyright 2010, Rainer Su'."\n".
-' * Dual licensed under the MIT or GPL Version 2 licenses.'."\n".
+/*' * Dual licensed under the MIT or GPL Version 2 licenses.'."\n".*/
 ' */'."\n");
 
 ?>

@@ -136,28 +136,34 @@
 			o=$(o).eq(0);
 			return o.length?this.resizeTo(w===0?"":o.outerWidth()+(w||0),h===0?"":o.outerHeight()+(h||0),1):this;
 		},
-		locate:function(o,z,x,y,a,b){
+		locate:function(o,x,y,a,b){
 			var
 				f=this;
 			o=$(o).eq(0);
 			if(o.length){
 				var
 					p=o.position(),
-					m=o.outerWidth( ),
-					n=o.outerHeight(),
-					w=f.outerWidth( ),
-					h=f.outerHeight(),
+					m=f.outerWidth( ),
+					n=f.outerHeight(),
+					w=o.outerWidth( ),
+					h=o.outerHeight(),
 					s=Math.round,
-					r=parseInt,
-					d="zIndex";
-				f["insert"+(z?"Before":"After")](o).moveTo(
-					p.left+[-m,0,s((w-m)/2),w-m,w][r(x)||0]+(r(a)||0),
-					p.top +[-n,0,s((h-n)/2),h-n,h][r(y)||0]+(r(b)||0)
-				).css(d,o.css(d));
+					r=parseInt;
+				f.moveTo(
+					p.left+[-m,0,s((w-m)/2),w-m,w][r(x)||1]+(r(a)||0),
+					p.top +[-n,0,s((h-n)/2),h-n,h][r(y)||4]+(r(b)||0)
+				);
 			}
 			return f;
 		},
-		bubble:function(){
+		bubble:function(o,b,s){
+			var
+				f=this,
+				d="zIndex";
+			o=$(o).eq(0).css("position",function(i,v){
+				return v=="static"?"relative":v;
+			});
+			return o.length?f["insert"+(b?"Before":"After")](b&&!s?o.andShadow():o).css(d,o.css(d)):f;
 		}
 	});
 
