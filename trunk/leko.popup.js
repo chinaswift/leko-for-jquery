@@ -3,13 +3,24 @@
 	var
 		B=$.support.shadow;
 
-	$.fn.andShadow=function(b){
-		var
-			o=this,
-			d=o.leko("shadow");
-		if(b&&d._)d._();
-		return $(d.$).add(o);
-	};
+	$.fn.extend({
+		andShadow:function(b){
+			var
+				o=this,
+				d=o.leko("shadow");
+			if(b&&d._)d._();
+			return $(d.$).add(o);
+		},
+		over:function(o,b,s){
+			var
+				f=this,
+				d="zIndex";
+			o=$(o).eq(0).css("position",function(i,v){
+				return v=="static"?"relative":v;
+			});
+			return o.length?f["insert"+(b?"Before":"After")](b&&!s?o.andShadow():o).css(d,o.css(d)):f;
+		}
+	});
 
 	_.fn(
 		"menu",
@@ -80,7 +91,7 @@
 					if(!b.d)o.transparent(1).show();
 					e.css({
 						position:t||l?"absolute":f
-					}).layout(o).locate(o,1,1,x-r+(!r||!x?0:x>0?-1:1),y-r+(!r||!x?0:y>0?-1:1)).bubble(o,1,1).add(o).transparent(!b.v).toggle(b.d);
+					}).layout(o).locate(o,1,1,x-r+(!r||!x?0:x>0?-1:1),y-r+(!r||!x?0:y>0?-1:1)).over(o,1,1).add(o).transparent(!b.v).toggle(b.d);
 				};
 				d._();
 			}
