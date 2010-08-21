@@ -31,7 +31,7 @@ $(function(){
 
 		$("#block").html('$("#popup").locate("#block",'+x+','+y+','+a+','+b+');').shadow();
 		
-		$("#popup").locate("#block",x,y,a,b).bubble("#block").shadow();
+		$("#popup").locate("#block",x,y,a,b).over("#block").shadow();
 
 	}).first().change();
 
