@@ -85,6 +85,7 @@ jQuery.fn.shadow.html
 jQuery.fn.transparent.html
 jQuery.fn.visible.html
 jQuery.html
+jQuery.html5Tags.html
 jQuery.isBoolean.html
 jQuery.isDate.html
 jQuery.isNumber.html
@@ -105,15 +106,12 @@ leko.effect.js
 Leko.fit.html
 Leko.fn.html
 Leko.html
-Leko.html5Tag.html
 leko.js
 Leko.mozilla.html
 Leko.msie.html
 Leko.noConflict.html
 Leko.opera.html
 leko.popup.js
-Leko.pseudoClass.0.html
-Leko.pseudoClass.html
 Leko.rgba.0.html
 Leko.rgba.html
 Leko.unique.html

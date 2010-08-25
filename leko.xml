@@ -141,12 +141,6 @@ $(function(){
     $("a").color();
 });</code>
 		</method>
-		<method name="html5Tag">
-			<brief>解决IE9(?)以下版本不支持HTML5新增标签的浏览器兼容性问题。在页面开始解析之前执行一次这个函数，一切都会自动解决。注意：此函数默认会自动执行。如果你不需要使用新增的HTML5标签，可以从脚本源文件中手工删除掉相应代码。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<code>_.html5Tag();</code>
-		</method>
 		<method name="mozilla">
 			<brief>检查当前用户浏览器是否是Mozilla Gecko内核，及版本号是否符合要求。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -288,14 +282,6 @@ alert(X.msie(5.5));</code>
 			</return>
 			<code>if(_.opera(10,1))alert("您当前使用的浏览器是Opera，版本低于10。");</code>
 			<code>if(_.opera(10))alert("您当前使用的浏览器是Opera，版本不低于10。");</code>
-		</method>
-		<method name="pseudoClass">
-			<brief>解决IE6不支持CSS伪类&lt;mark class="en"&gt; :hover &lt;/mark&gt;和IE7不支持&lt;mark class="en"&gt; :focus &lt;/mark&gt;定义的浏览器兼容性问题。在DOMReady之后执行一次这个函数，一切都会自动解决。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<code>$(function(){
-    _.pseudoClass();
-});</code>
 		</method>
 		<method name="rgba">
 			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[Red, Green, Blue, Alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
@@ -3084,6 +3070,12 @@ $("a").colorShade();
 				<srcfile within="">leko.js</srcfile>
 			</property>
 		</object>
+		<method name="html5Tags">
+			<brief>解决IE9(?)以下版本不支持HTML5新增标签的浏览器兼容性问题。在页面开始解析之前执行一次这个函数，一切都会自动解决。注意：此函数默认会自动执行。如果你不需要使用新增的HTML5标签，可以从脚本源文件中手工删除掉相应代码。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<code>$.html5Tags();</code>
+		</method>
 		<method name="isBoolean">
 			<brief>检查变量是否是布尔值。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -3149,6 +3141,8 @@ $("a").colorShade();
 					<brief>不是数字。</brief>
 				</varvalue>
 			</return>
+			<code canrun=""><![CDATA[alert($.isNumber(123));]]></code>
+			<code canrun=""><![CDATA[alert($.isNumber(123+"abc"));]]></code>
 		</method>
 		<method name="isObject">
 			<brief>检查变量是否是无类型对象。</brief>
@@ -3171,12 +3165,12 @@ $("a").colorShade();
 					<brief>不是无类型对象。</brief>
 				</varvalue>
 			</return>
-			<code canrun="">var a={};
-alert(isObject(a));</code>
-			<code canrun="">var a=[];
-alert(isObject(a));</code>
-			<code canrun="">var a=new Date();
-alert(isObject(a));</code>
+			<code canrun=""><![CDATA[var a={};
+alert($.isObject(a));]]></code>
+			<code canrun=""><![CDATA[var a=[];
+alert($.isObject(a));]]></code>
+			<code canrun=""><![CDATA[var a=new Date();
+alert($.isObject(a));]]></code>
 		</method>
 		<method name="isString">
 			<brief>检查变量是否是字符串。</brief>
@@ -3199,6 +3193,9 @@ alert(isObject(a));</code>
 					<brief>不是字符串。</brief>
 				</varvalue>
 			</return>
+			<code canrun=""><![CDATA[alert($.isString("abc"));]]></code>
+			<code canrun=""><![CDATA[var x="";
+alert($.isString(x));]]></code>
 		</method>
 	</object>
 </leko>
