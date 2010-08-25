@@ -20,6 +20,24 @@ select{margin-right:20px;}
 <script>
 
 $(function(){
+	
+	console.log($(window).height()+"+"+$(window).scrollTop());
+	console.log($(document).height()+"+"+$(document).scrollTop());
+	/*
+	console.log($.isFilledObject(window));
+	console.log($.isFilledObject(null));
+	console.log($.isFilledObject({}));
+	console.log($.isFilledObject($({})));
+	console.log($.isFilledObject($(window)));
+	
+	console.log($.isDomObject(window));
+	console.log($.isDomObject(document));
+	console.log($.isDomObject($("select")));
+	console.log($.isDomObject($({x:3})));
+	*/
+	console.log(_.rect(window));
+	console.log(_.rect(document));
+
 
 	$("select").change(function(){
 

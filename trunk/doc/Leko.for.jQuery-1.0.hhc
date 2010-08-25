@@ -6,12 +6,10 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="color"><param name="Local" value="Leko.color.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fit"><param name="Local" value="Leko.fit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="html5Tag"><param name="Local" value="Leko.html5Tag.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="mozilla"><param name="Local" value="Leko.mozilla.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="msie"><param name="Local" value="Leko.msie.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="noConflict"><param name="Local" value="Leko.noConflict.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="opera"><param name="Local" value="Leko.opera.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="pseudoClass"><param name="Local" value="Leko.pseudoClass.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rgba"><param name="Local" value="Leko.rgba.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="unique"><param name="Local" value="Leko.unique.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="ver"><param name="Local" value="Leko.ver.html"></OBJECT>
@@ -73,7 +71,8 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="support"><param name="Local" value="jQuery.support.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rgba"><param name="Local" value="jQuery.support.rgba.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="shadow"><param name="Local" value="jQuery.support.shadow.html"></OBJECT>
-<ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isBoolean"><param name="Local" value="jQuery.isBoolean.html"></OBJECT>
+<ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="html5Tags"><param name="Local" value="jQuery.html5Tags.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isBoolean"><param name="Local" value="jQuery.isBoolean.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isDate"><param name="Local" value="jQuery.isDate.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isNumber"><param name="Local" value="jQuery.isNumber.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isObject"><param name="Local" value="jQuery.isObject.html"></OBJECT>

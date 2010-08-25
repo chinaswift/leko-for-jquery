@@ -71,6 +71,7 @@ jQuery.fn.shadow.html
 jQuery.fn.transparent.html
 jQuery.fn.visible.html
 jQuery.html
+jQuery.html5Tags.html
 jQuery.isBoolean.html
 jQuery.isDate.html
 jQuery.isNumber.html
@@ -91,15 +92,12 @@ leko.effect.js
 Leko.fit.html
 Leko.fn.html
 Leko.html
-Leko.html5Tag.html
 leko.js
 Leko.mozilla.html
 Leko.msie.html
 Leko.noConflict.html
 Leko.opera.html
 leko.popup.js
-Leko.pseudoClass.0.html
-Leko.pseudoClass.html
 Leko.rgba.0.html
 Leko.rgba.html
 Leko.unique.html
@@ -107,12 +105,12 @@ Leko.ver.html
 Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
-Compile time: 0 minutes, 1 second
-92	Topics
-278	Local links
-91	Internet links
+Compile time: 0 minutes, 2 seconds
+90	Topics
+274	Local links
+89	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 289,379 bytes
-Compression decreased file by 655,858 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 288,961 bytes
+Compression decreased file by 653,385 bytes.
