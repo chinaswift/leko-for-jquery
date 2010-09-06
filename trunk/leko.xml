@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <leko>
 	<object name="Leko">
-		<brief>是Leko for jQuery的全局核心对象。可以简写为_。</brief>
+		<brief>是Leko for jQuery的全局核心对象。可以简写为&lt;mark class="en"&gt; _ &lt;/mark&gt;。</brief>
 		<method name="ver">
 			<brief>检查版本号是否满足最低兼容性要求。对于如 a.b.c.d 形式的多级版本号，将从高位向低位逐级比较。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -131,8 +131,7 @@ alert(x);</code>
 		<method name="color">
 			<brief>将CSS3语法的色彩定义值或RGBA数组转换为当前用户浏览器适用的色彩定义值。</brief>
 			<srcfile>jquery.js</srcfile>
-			<srcfile>leko.js</srcfile>
-			<srcfile within="">leko.color.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
 			<param name="color">
 				<vartype name="string">
 					<varvalue>
@@ -173,8 +172,7 @@ alert(x);</code>
 		<method name="rgba">
 			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[red, green, blue, alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
 			<srcfile>jquery.js</srcfile>
-			<srcfile>leko.js</srcfile>
-			<srcfile within="">leko.color.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
 			<param name="color">
 				<vartype name="string">
 					<varvalue>
@@ -550,9 +548,12 @@ $("body").shadow(1);</code>
 			<code canrun="">var X=Leko.noConflict();
 alert(X.msie(5.5));</code>
 		</method>
+		<object name="namedColors">
+			<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
+		</object>
 	</object>
 	<object name="jQuery">
-		<brief>是jQuery的全局核心对象。可以简写为$。</brief>
+		<brief>是jQuery的全局核心对象。可以简写为&lt;mark class="en"&gt; $ &lt;/mark&gt;。</brief>
 		<object name="easing">
 			<brief>用于为jQuery扩展缓动函数类型的接口对象。</brief>
 			<method name="inquad">
