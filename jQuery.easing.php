@@ -1,24 +1,5 @@
-<!doctype html><html><head><meta charset="utf-8" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
-<meta name="keywords" content="" /> 
-<meta name="description" content="" />
-<title>LEKO&trade;</title>
-<link rel="icon" type="image/ico" href="favicon.ico" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="stylesheet" type="text/css" href="leko.css" />
-<link rel="stylesheet" type="text/css" href="leko.demo.css" />
-<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
-<script src="jquery.js"></script><script src="leko.js"></script><script>
-
-if(!_.mozilla()){
-	document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
-}
-
-</script>
-<script src="leko.color.js"></script>
-<script src="leko.effect.js"></script>
+<?php include 'leko.head.inc'; ?>
+<?php include 'leko.demo.head.inc'; ?>
 
 <style>
 
@@ -49,7 +30,9 @@ $(function(){
 
 </script>
 
-</head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
+<?php include 'leko.neck.inc'; ?>
+<?php include 'leko.demo.neck.inc'; ?>
+
 <section><h4>例一：请选择缓动类型</h4><div id="box"><div id="block">&nbsp;</div></div></section><section><code id="code">&nbsp;</code></section>
 <section>
 <select class="en">
@@ -88,4 +71,4 @@ $(function(){
 </select><button>再来一次</button>
 </section>
 
-<footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>
+<?php include 'leko.foot.inc'; ?>

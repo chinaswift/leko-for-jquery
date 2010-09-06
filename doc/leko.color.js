@@ -3,7 +3,7 @@
  * http://www.lekolite.cn/
  *
  * 苏昱(苏小雨)作品
- * Copyright 2010, Rainer Su
+ * Copyright 2010, Rainer Su(rainersu@gmail.com)
  */
 
 (function(_,$){var
@@ -14,15 +14,16 @@ fx.elem.style[v]=_.color($.map(fx.start,function(v,i){return fx.pos*(fx.end[i]-v
 $.fn[v+"To"]=function(d,c,f){var
 o={};o[v]=c;return this.animate(o,d||800,f);}});_.color=function(v){v=v&&_.rgba(v);if(v&&v.length){var
 i=0,n=B?4:3,x="rgb";if(B)x+="a";for(;i<n;i++)x+=(i?",":"(")+v[i];return x+")";}}
-_.fn("colorShade",function(o,v,d,c){var
-h=v.focus,s=v.selector,l=v.live,m=h?"focusin focusout":"mouseenter mouseleave",f=function(e){var
-t=e.type,b=/(?:t|e)$/.test(t),o=$(this),q=l?o.leko(c):d,w=l?$.extend(true,{},v,q):v,g=w.properties,j=g[P[2]],i=3;if(j){while(i<7)g[P[i++]]=j;delete g[P[2]];j=0;}
-if(!q._){q._={};q.$={};for(i in g){q._[i]=o.css(i);q.$[i]=A(o[0],i);}}
-o.stop(true).animate(b?q.$:g,w.duration,w.easing,b?function(){if(q._){for(var i in q._)o.css(i,q._[i]);q._=q.$=0;}}:null);};if(l)o.undelegate(s,m,d[m]).delegate(s,m,d[m]=f);else o.unbind(m,d[m]).bind(m,d[m]=f);},{duration:800,easing:"swing"});_.rgba=function(v){var
+_.rgba=function(v){var
 a,b,r,i;if($.isArray(v))a=v;else if($.isString(v)){v=v.toLowerCase().replace(/\s/g,"");if(/^#/.test(v)){a=[];b=v.length>4;r=new RegExp("\\w{"+(b+1)+"}","g");while(i=r.exec(v))a.push(parseInt(b?i:i+i,16));}
 else if(i=/^(rgb|hsl)a?\(([^\)]+)\)/.exec(v)){r=RegExp;a=r.$2.split(",");b=r.$1=="rgb";i=a.length;while(i--){r=a[i];a[i]=(/%$/.test(r)?(b?2.55:0.01):1)*parseFloat(r);}
 if(!b){var
 h=a[0]/360,s=a[1],l=a[2],q,p;if(!s)a[0]=a[1]=a[2]=l*255;else{q=l<0.5?l*(1+s):l+s-l*s;p=2*l-q;$.each([h+1/3,h,h-1/3],function(i,v){if(v<0)v++;if(v>1)v--;a[i]=255*(6*v<1?p+(q-p)*v*6:2*v<1?q:3*v<2?p+(q-p)*(2/3-v)*6:p);});}}}
 else a=C[v];}
 if(a&&a.length){for(i=0;i<4;i++){b=i==3;r=a[i];a[i]=_.fit(b?(r||1).toFixed(2):Math.round(r),0,b?1:255);}
-return a;}}})(Leko,jQuery);
+return a;}}
+_.fn("colorShade",function(o,v,d,c){var
+h=v.focus,s=v.selector,l=v.live,m=h?"focusin focusout":"mouseenter mouseleave",f=function(e){var
+t=e.type,b=/(?:t|e)$/.test(t),o=$(this),q=l?o.leko(c):d,w=l?$.extend(true,{},v,q):v,g=w.properties,j=g[P[2]],i=3;if(j){while(i<7)g[P[i++]]=j;delete g[P[2]];j=0;}
+if(!q._){q._={};q.$={};for(i in g){q._[i]=o.css(i);q.$[i]=A(o[0],i);}}
+o.stop(true).animate(b?q.$:g,w.duration,w.easing,b?function(){if(q._){for(var i in q._)o.css(i,q._[i]);q._=q.$=0;}}:null);};if(l)o.undelegate(s,m,d[m]).delegate(s,m,d[m]=f);else o.unbind(m,d[m]).bind(m,d[m]=f);},{duration:800,easing:"swing"});})(Leko,jQuery);

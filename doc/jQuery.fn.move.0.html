@@ -17,18 +17,11 @@ if(!_.mozilla()){
 }
 
 </script><style>
-.box{
-	background:#efefef;width:800px;height:50px;padding:25px;
-}
-#popup{
-	width:50px;height:50px;background:#00B8EE;position:absolute;z-index:1;left:0px;top:0px;
-}
-#block{
-	background:#EC108D;color:#fff;height:30px;
-}
-#txt1 mark{
-	color:#ff0;
-}
+.box{background:#efefef;width:800px;height:50px;padding:25px;}
+#popup,#popup2{width:50px;height:50px;background:#00B8EE;position:absolute;z-index:1;left:0px;top:0px;display:none;}
+#block{background:#EC108D;color:#fff;display:block;height:30px;}
+#txt1 mark{color:#ff0;}
+#link{background:#9CCD4A;}
 select{margin-right:20px;}
 </style>
 <script src="leko.color.js"></script>
@@ -36,38 +29,31 @@ select{margin-right:20px;}
 <script>
 
 $(function(){
-	
-	console.log($(window).height()+"+"+$(window).scrollTop());
-	console.log($(document).height()+"+"+$(document).scrollTop());
-	/*
-	console.log($.isFilledObject(window));
-	console.log($.isFilledObject(null));
-	console.log($.isFilledObject({}));
-	console.log($.isFilledObject($({})));
-	console.log($.isFilledObject($(window)));
-	
-	console.log($.isDomObject(window));
-	console.log($.isDomObject(document));
-	console.log($.isDomObject($("select")));
-	console.log($.isDomObject($({x:3})));
-	*/
-	console.log(_.rect(window));
-	console.log(_.rect(document));
 
-
-	$("select").change(function(){
+	var
+		x,y,a,b;
+	
+	$("select").change(function(e){
 
 		var
-			x=Number($("#posX option:selected").text()),
-			y=Number($("#posY option:selected").text()),
-			a=Number($("#offsetX option:selected").text()),
-			b=Number($("#offsetY option:selected").text());
+			o=$("#o option:selected").text();
+		x=Number($("#posX option:selected").text());
+		y=Number($("#posY option:selected").text());
+		a=Number($("#offsetX option:selected").text());
+		b=Number($("#offsetY option:selected").text());
+		if(o=="window")o=window;
+		else if(o=="document")o=document;
+		else o="#"+o;
 
-		$("#block").html('$("#popup").locate("#block",'+x+','+y+','+a+','+b+');').shadow();
+		$("#link").html('$("#popup").move("'+o+'",'+x+','+y+','+a+','+b+');');
 		
-		$("#popup").locate("#block",x,y,a,b).over("#block").shadow();
+		$("#popup").move($(o),x,y,a,b).show();//.over("#block");
 
 	}).first().change();
+
+	$("#box2").click(function(e){
+		$("#popup2").move(e,x,y,a,b).show();
+	});
 
 });
 
@@ -75,11 +61,18 @@ $(function(){
 
 </head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
 <section><h4>例一：请选择参数并实时查看效果变化</h4>
-<div id="popup">&nbsp;</div><div class="box"><code id="block">&nbsp;</code></div>
+<div id="popup">&nbsp;</div><div id="box" class="box"><code id="block"><a href="#" id="link">&nbsp;</a></code></div>
 </section>
 
 <section>
-<label class="en" for="posX">posX:</a></label><select class="en" id="posX">
+<label class="en" for="o">target:</a></label><select class="en" id="o">
+<option>box</option>
+<option>block</option>
+<option selected>link</option>
+<option>window</option>
+<option>document</option>
+</select><label class="en" for="posX">posX:</a></label><select class="en" id="posX">
+<option>null</option>
 <option>0</option>
 <option selected>1</option>
 <option>2</option>
@@ -87,6 +80,7 @@ $(function(){
 <option>4</option>
 </select>
 <label class="en" for="posY">posY:</a></label><select class="en" id="posY">
+<option>null</option>
 <option>0</option>
 <option>1</option>
 <option>2</option>
@@ -123,6 +117,12 @@ $(function(){
 <option>5</option>
 <option>6</option>
 </select>
+</section>
+
+<hr />
+
+<section><h4>例二：请在灰色区域内任意处单击鼠标</h4>
+<div id="popup2">&nbsp;</div><div id="box2" class="box">&nbsp;</div>
 </section>
 
 <footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>

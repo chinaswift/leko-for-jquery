@@ -1,351 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <leko>
 	<object name="Leko">
 		<brief>是Leko for jQuery的全局核心对象。可以简写为_。</brief>
-		<method name="average">
-			<brief>计算多个数值的平均数。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="number...">
-				<vartype name="number">
-					<varvalue>
-						<brief>要计算平均值的各个数值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="number">
-				<varvalue>
-					<brief>计算出的平均值。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var x=_.average(3,4,5);
-alert(x);</code>
-			<code canrun="">var x=_.average(4,5);
-alert(x);</code>
-		</method>
-		<method name="color">
-			<brief>将CSS3语法的色彩定义值或RGBA数组转换为当前用户浏览器适用的色彩定义值。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile>leko.js</srcfile>
-			<srcfile within="">leko.color.js</srcfile>
-			<param name="color">
-				<vartype name="string">
-					<varvalue>
-						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="array">
-					<varvalue>
-						<brief>包含RGBA四个通道数值的数组。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="string">
-				<varvalue>
-					<value></value>
-					<brief>当前用户浏览器适用的色彩定义值。视当前浏览器的兼容性，可能是rgba()也可能是rgb()定义。</brief>
-				</varvalue>
-			</return>
-			<return name="undefined">
-				<varvalue>
-					<value></value>
-					<brief>转换失败。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var x=_.color([255,100,50,0.5]);
-alert(x);</code>
-			<code canrun="">var x=_.color("rgba(255,100,50,0.5)");
-alert(x);</code>
-		</method>
-		<method name="fit">
-			<brief>对指定数值进行上下边界范围检查。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<return name="number">
-				<varvalue>
-					<brief>边界校正后的数值。</brief>
-				</varvalue>
-			</return>
-			<param name="number">
-				<vartype name="number">
-					<varvalue>
-						<brief>要校正的数值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="min">
-				<vartype name="number">
-					<varvalue>
-						<brief>允许的最小值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="max">
-				<vartype name="number">
-					<varvalue>
-						<brief>允许的最大值。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<code canrun="">var x=_.fit(3.5,3,5);
-alert(x);</code>
-			<code canrun="">var x=_.fit(3,3.5,5);
-alert(x);</code>
-		</method>
-		<method name="fn">
-			<brief>基于特定规则用更简洁的语法为jQuery创建插件的内部函数。如果你不是对进一步扩展这个库感兴趣的脚本开发者，你完全不必关心这个函数怎么用，因为你永远用不着它。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="plugin-name">
-				<vartype name="string">
-					<varvalue>
-						<brief>插件名称。即将添加为jQuery.fn的子函数的字段名称。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="plugin-func">
-				<vartype name="function">
-					<varvalue>
-						<brief><![CDATA[实现插件功能的回调函数。这个函数将接受四个参数。<br />
-第一个是插件执行时使用this.each()循环到的每一个元素，已包装成jQuery对象。<br />
-第二个是已经使用$.extend递归合并插件参数和插件默认设置后的最终应用设置的键值对对象。<br />
-第三个是对每个要处理元素用jQuery的data方法绑定的键值对对象，供插件用来存取运行时的私有数据。<br />
-第四个是插件的字符串名称，即plugin-name。]]></brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="plugin-defs" optional="1">
-				<vartype name="object">
-					<varvalue>
-						<brief><![CDATA[插件的默认设置的字段集合。]]></brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<code>_.fn(
-    "color",
-    function(o,v,d,n){
-        o.css("color",v.color);
-    },
-    {color:"red"}
-);
-
-$(function(){
-    $("a").color();
-});</code>
-		</method>
-		<method name="mozilla">
-			<brief>检查当前用户浏览器是否是Mozilla Gecko内核，及版本号是否符合要求。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="ver" optional="1">
-				<default><![CDATA[0]]></default>
-				<vartype name="string">
-					<varvalue>
-						<brief>检查要求的版本号。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="number">
-					<varvalue>
-						<brief>会被自动转换为字符串。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="less-than" optional="1">
-				<default>false</default>
-				<vartype name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>内核版本号要求小于ver。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>内核版本号要求大于或等于ver。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>当前用户浏览器是Mozilla Gecko内核，且版本号符合要求。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>当前用户浏览器不是Mozilla Gecko内核，或版本号不符合要求。</brief>
-				</varvalue>
-			</return>
-			<code>if(_.mozilla(1.9,1))alert("您当前使用的浏览器是Mozilla Gecko内核，版本低于1.9。");</code>
-			<code>if(_.mozilla(1.9))alert("您当前使用的浏览器是Mozilla Gecko内核，版本不低于1.9。");</code>
-		</method>
-		<method name="msie">
-			<brief>检查当前用户浏览器是否是Microsoft Internet Explorer，及版本号是否符合要求。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="ver" optional="1">
-				<default><![CDATA[0]]></default>
-				<vartype name="string">
-					<varvalue>
-						<brief>检查要求的版本号。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="number">
-					<varvalue>
-						<brief>会被自动转换为字符串。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="less-than" optional="1">
-				<default>false</default>
-				<vartype name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>版本号要求小于ver。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>版本号要求大于或等于ver。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>当前用户浏览器是Microsoft Internet Explorer，且版本号符合要求。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>当前用户浏览器不是Microsoft Internet Explorer，或版本号不符合要求。</brief>
-				</varvalue>
-			</return>
-			<code>if(_.msie(9,1))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本低于9。");</code>
-			<code>if(_.msie(9))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本不低于9。");</code>
-		</method>
-		<method name="noConflict">
-			<brief>将Leko的缩写的变量引用名称"&lt;mark class="en"&gt; _ &lt;/mark&gt;(下划线)"的使用权交还给先前的脚本定义。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<return name="object">
-				<varvalue>
-					<value>Leko</value>
-					<brief>在转让变量名称的使用权之前返回对Leko的引用。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var X=Leko.noConflict();
-alert(X.msie(5.5));</code>
-		</method>
-		<method name="opera">
-			<brief>检查当前用户浏览器是否是Opera，及版本号是否符合要求。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<param name="ver" optional="1">
-				<default><![CDATA[0]]></default>
-				<vartype name="string">
-					<varvalue>
-						<brief>检查要求的版本号。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="number">
-					<varvalue>
-						<brief>会被自动转换为字符串。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<param name="less-than" optional="1">
-				<default>false</default>
-				<vartype name="boolean">
-					<varvalue>
-						<value>true</value>
-						<brief>版本号要求小于ver。</brief>
-					</varvalue>
-					<varvalue>
-						<value>false</value>
-						<brief>版本号要求大于或等于ver。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="boolean">
-				<varvalue>
-					<value>true</value>
-					<brief>当前用户浏览器是Opera，且版本号符合要求。</brief>
-				</varvalue>
-				<varvalue>
-					<value>false</value>
-					<brief>当前用户浏览器不是Opera，或版本号不符合要求。</brief>
-				</varvalue>
-			</return>
-			<code>if(_.opera(10,1))alert("您当前使用的浏览器是Opera，版本低于10。");</code>
-			<code>if(_.opera(10))alert("您当前使用的浏览器是Opera，版本不低于10。");</code>
-		</method>
-		<method name="rgba">
-			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[Red, Green, Blue, Alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile>leko.js</srcfile>
-			<srcfile within="">leko.color.js</srcfile>
-			<param name="color">
-				<vartype name="string">
-					<varvalue>
-						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
-					</varvalue>
-				</vartype>
-				<vartype name="array">
-					<varvalue>
-						<brief>要被校验元素取值范围的RGBA数组。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<return name="array">
-				<varvalue>
-					<value></value>
-					<brief>转换成功或数据校验完成。该返回的数组包含四个数字项，前三个为0-255之间的正整数，分别对应RGB通道，最后一个为0-1之间的浮点数，对应Alpha通道。</brief>
-				</varvalue>
-			</return>
-			<return name="undefined">
-				<varvalue>
-					<value></value>
-					<brief>转换失败。</brief>
-				</varvalue>
-			</return>
-			<code canrun="">var a=_.rgba("rgb(127,255,212)");
-alert(a);</code>
-		</method>
-		<method name="unique">
-			<brief>检查一个简单数据类型数组，去除掉所有重复元素。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-			<return name="array">
-				<varvalue>
-					<brief>处理后的数组。</brief>
-				</varvalue>
-			</return>
-			<param name="array">
-				<vartype name="array">
-					<varvalue>
-						<brief>要检查的数组。注意：该数组的项目只能是数字、字符串、布尔值，不可以有对象、函数、数组。</brief>
-					</varvalue>
-				</vartype>
-			</param>
-			<code canrun="">var x=[3,3,4,"x","X",4,5,5];
-x=_.unique(x);
-alert(x);</code>
-			<code canrun="">var x=[true,0,false,1,NaN];
-x=_.unique(x);
-alert(x);</code>
-		</method>
 		<method name="ver">
 			<brief>检查版本号是否满足最低兼容性要求。对于如 a.b.c.d 形式的多级版本号，将从高位向低位逐级比较。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -393,6 +49,408 @@ alert(x);</code>
 			<code canrun="">var x=_.ver("1.10.2","1.9.3");
 alert(x);</code>
 		</method>
+		<method name="unique">
+			<brief>检查一个简单数据类型数组，去除掉所有重复元素。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="array">
+				<varvalue>
+					<brief>处理后的数组。</brief>
+				</varvalue>
+			</return>
+			<param name="array">
+				<vartype name="array">
+					<varvalue>
+						<brief>要检查的数组。注意：该数组的项目只能是数字、字符串、布尔值，不可以有对象、函数、数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code canrun="">var x=[3,3,4,"x","X",4,5,5];
+x=_.unique(x);
+alert(x);</code>
+			<code canrun="">var x=[true,0,false,1,NaN];
+x=_.unique(x);
+alert(x);</code>
+		</method>
+		<method name="average">
+			<brief>计算多个数值的平均数。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="number...">
+				<vartype name="number">
+					<varvalue>
+						<brief>要计算平均值的各个数值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="number">
+				<varvalue>
+					<brief>计算出的平均值。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var x=_.average(3,4,5);
+alert(x);</code>
+			<code canrun="">var x=_.average(4,5);
+alert(x);</code>
+		</method>
+		<method name="fit">
+			<brief>对指定数值进行上下边界范围检查。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="number">
+				<varvalue>
+					<brief>边界校正后的数值。</brief>
+				</varvalue>
+			</return>
+			<param name="number">
+				<vartype name="number">
+					<varvalue>
+						<brief>要校正的数值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="min">
+				<vartype name="number">
+					<varvalue>
+						<brief>允许的最小值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="max">
+				<vartype name="number">
+					<varvalue>
+						<brief>允许的最大值。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code canrun="">var x=_.fit(3.5,3,5);
+alert(x);</code>
+			<code canrun="">var x=_.fit(3,3.5,5);
+alert(x);</code>
+		</method>
+		<method name="color">
+			<brief>将CSS3语法的色彩定义值或RGBA数组转换为当前用户浏览器适用的色彩定义值。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile>leko.js</srcfile>
+			<srcfile within="">leko.color.js</srcfile>
+			<param name="color">
+				<vartype name="string">
+					<varvalue>
+						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="array">
+					<varvalue>
+						<brief>包含RGBA四个通道数值的数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="string">
+				<varvalue>
+					<value></value>
+					<brief>当前用户浏览器适用的色彩定义值。视当前浏览器的兼容性，可能是rgba()也可能是rgb()定义。</brief>
+				</varvalue>
+			</return>
+			<return name="undefined">
+				<varvalue>
+					<value></value>
+					<brief>转换失败。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var x=_.color([255,100,50,0.5]);
+alert(x);</code>
+			<code canrun="">var x=_.color("rgba(255,100,50,0.5)");
+alert(x);</code>
+		</method>
+		<method name="rgba">
+			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[red, green, blue, alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile>leko.js</srcfile>
+			<srcfile within="">leko.color.js</srcfile>
+			<param name="color">
+				<vartype name="string">
+					<varvalue>
+						<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;&lt;br /&gt;详见实例。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="array">
+					<varvalue>
+						<brief>要被校验元素取值范围的RGBA数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="array">
+				<varvalue>
+					<value></value>
+					<brief>转换成功或数据校验完成。该返回的数组包含四个数字项，前三个为0-255之间的正整数，分别对应RGB通道，最后一个为0-1之间的浮点数，对应Alpha通道。</brief>
+				</varvalue>
+			</return>
+			<return name="undefined">
+				<varvalue>
+					<value></value>
+					<brief>转换失败。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var a=_.rgba("rgb(127,255,212)");
+alert(a);</code>
+		</method>
+		<method name="rect">
+			<brief>将各种输入值转换为如&lt;mark class="en"&gt;[top, right, bottom, left]&lt;/mark&gt;格式的存储矩形区域定义的数组。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="var" optional="1">
+				<default><![CDATA[[
+    -Number.MAX_VALUE,
+     Number.MAX_VALUE,
+     Number.MAX_VALUE,
+    -Number.MAX_VALUE
+]]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>合法的jQuery选择符。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="element">
+					<varvalue>
+						<brief>已存在的DOM元素。将被转换为jQuery对象。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="jQuery">
+					<varvalue>
+						<value>window</value>
+						<brief>返回视口区域定义。</brief>
+					</varvalue>
+					<varvalue>
+						<value>document</value>
+						<brief>返回文档全内容区域定义。</brief>
+					</varvalue>
+					<varvalue>
+						<value>event</value>
+						<brief>返回当前鼠标位置的区域定义。仅对鼠标类事件有效。</brief>
+					</varvalue>
+					<varvalue>
+						<value>others</value>
+						<brief>包含可访问DOM对象的jQuery对象。根据&lt;mark class="en"&gt;coordinate-system&lt;/mark&gt;参数决定以何种方式获取并返回DOM对象的占位区域定义。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="array">
+					<varvalue>
+						<brief>符合&lt;mark class="en"&gt;[top, right, bottom, left]&lt;/mark&gt;格式的数组。每个数组项会被尝试转换为整数，如果转换成功，会被加入到返回数组中，置换掉对应位置的默认返回项。否则忽略。多出的项也会被忽略。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="object">
+					<varvalue>
+						<brief>包含&lt;mark class="en"&gt;top, right, bottom, left&lt;/mark&gt;中的一个或多个字段，存在的字段，值会被尝试转换为整数，如果转换成功，会被加入到返回数组中，置换掉对应位置的默认返回项。否则忽略。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="coordinate-system" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="number">
+					<varvalue>
+						<value>1</value>
+						<brief>基于DOM对象相对于其offsetParent的定位偏移坐标返回rect数组。</brief>
+					</varvalue>
+					<varvalue>
+						<value>0</value>
+						<brief>返回DOM对象本身实际占位的rect数组。</brief>
+					</varvalue>
+					<varvalue>
+						<value>-1</value>
+						<brief>基于DOM对象相对于document的定位偏移坐标返回rect数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="array">
+				<varvalue>
+					<value></value>
+					<brief>获取到的rect数组。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">alert(_.rect(window));</code>
+			<code canrun="">alert(_.rect(document));</code>
+			<code canrun="">alert(_.rect($("body")));</code>
+			<code canrun="">alert(_.rect(["30px",300,300,30]));</code>
+			<code canrun="">alert(_.rect({left:30,bottom:"300px"}));</code>
+			<demo link="jQuery.fn.move"></demo>
+		</method>
+		<method name="overflow">
+			<brief>检查第一个rect数组定义的矩形是否超出了第二个rect数组定义的矩形之内。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="rect1">
+				<vartype name="array">
+					<varvalue>
+						<brief>第一个rect数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="rect2">
+				<vartype name="array">
+					<varvalue>
+						<brief>第二个rect数组。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>第一个rect数组定义的矩形溢出了第二个rect数组定义的矩形。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>第一个rect数组定义的矩形在第二个rect数组定义的矩形之内。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">alert(_.overflow([0,200,200,0],[0,300,300,0]));</code>
+			<code canrun="">alert(_.overflow(_.rect(window),_.rect(document)));</code>
+			<code canrun="">alert(_.overflow([0,300,300,0],_.rect([NaN,300,300,NaN])));</code>
+		</method>
+		<method name="mozilla">
+			<brief>检查当前用户浏览器是否是Mozilla Gecko内核，及版本号是否符合要求。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="ver" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>检查要求的版本号。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="number">
+					<varvalue>
+						<brief>会被自动转换为字符串。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="less-than" optional="1">
+				<default>false</default>
+				<vartype name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>内核版本号要求小于ver。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>内核版本号要求大于或等于ver。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>当前用户浏览器是Mozilla Gecko内核，且版本号符合要求。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>当前用户浏览器不是Mozilla Gecko内核，或版本号不符合要求。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">if(_.mozilla(1.9,1))alert("您当前使用的浏览器是Mozilla Gecko内核，版本低于1.9。");</code>
+			<code canrun="">if(_.mozilla(1.9))alert("您当前使用的浏览器是Mozilla Gecko内核，版本不低于1.9。");</code>
+		</method>
+		<method name="msie">
+			<brief>检查当前用户浏览器是否是Microsoft Internet Explorer，及版本号是否符合要求。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="ver" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>检查要求的版本号。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="number">
+					<varvalue>
+						<brief>会被自动转换为字符串。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="less-than" optional="1">
+				<default>false</default>
+				<vartype name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>版本号要求小于ver。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>版本号要求大于或等于ver。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>当前用户浏览器是Microsoft Internet Explorer，且版本号符合要求。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>当前用户浏览器不是Microsoft Internet Explorer，或版本号不符合要求。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">if(_.msie(9,1))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本低于9。");</code>
+			<code canrun="">if(_.msie(9))alert("您当前使用的浏览器是Microsoft Internet Explorer，版本不低于9。");</code>
+		</method>
+		<method name="opera">
+			<brief>检查当前用户浏览器是否是Opera，及版本号是否符合要求。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="ver" optional="1">
+				<default><![CDATA[0]]></default>
+				<vartype name="string">
+					<varvalue>
+						<brief>检查要求的版本号。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="number">
+					<varvalue>
+						<brief>会被自动转换为字符串。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="less-than" optional="1">
+				<default>false</default>
+				<vartype name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>版本号要求小于ver。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>版本号要求大于或等于ver。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>当前用户浏览器是Opera，且版本号符合要求。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>当前用户浏览器不是Opera，或版本号不符合要求。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">if(_.opera(10,1))alert("您当前使用的浏览器是Opera，版本低于10。");</code>
+			<code canrun="">if(_.opera(10))alert("您当前使用的浏览器是Opera，版本不低于10。");</code>
+		</method>
 		<method name="webkit">
 			<brief>检查当前用户浏览器是否是Webkit内核，及版本号是否符合要求。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -433,8 +491,64 @@ alert(x);</code>
 					<brief>当前用户浏览器不是Webkit内核，或版本号不符合要求。</brief>
 				</varvalue>
 			</return>
-			<code>if(_.webkit(525,1))alert("您当前使用的浏览器是Webkit内核，版本低于525。");</code>
-			<code>if(_.webkit(525))alert("您当前使用的浏览器是Webkit内核，版本不低于525。");</code>
+			<code canrun="">if(_.webkit(525,1))alert("您当前使用的浏览器是Webkit内核，版本低于525。");</code>
+			<code canrun="">if(_.webkit(525))alert("您当前使用的浏览器是Webkit内核，版本不低于525。");</code>
+		</method>
+		<method name="fn">
+			<brief>基于特定规则用更简洁的语法为jQuery创建插件的内部函数。如果你不是对进一步扩展这个库感兴趣的脚本开发者，你不必关心这个函数怎么用。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="plugin-name">
+				<vartype name="string">
+					<varvalue>
+						<brief>插件名称。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="plugin-func">
+				<vartype name="function">
+					<varvalue>
+						<brief>实现插件功能的回调函数。这个函数将接受四个参数。&lt;br /&gt;
+第一个是插件运行时使用this.each()循环到的每一个元素，已包装成jQuery对象。&lt;br /&gt;
+第二个是插件运行时更新的当前配置对象，使用$.extend递归合并插件的运行时参数、当前元素的私有默认设置、全局默认设置得到。&lt;br /&gt;
+第三个是插件最近一次运行时使用的当前配置对象。&lt;br /&gt;
+第四个是插件名称。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="plugin-defs" optional="1">
+				<vartype name="object">
+					<varvalue>
+						<brief>插件的全局默认设置。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<code canrun="">_.fn(
+    "shadow",
+    function(o,d,c,n){
+        console.log(d);
+        console.log(c);
+        console.log(n);
+    },
+    {x:3}
+);
+
+$("body").defaults("shadow",{y:3},1);
+$("body").shadow({z:3});
+$("body").shadow(1);</code>
+		</method>
+		<method name="noConflict">
+			<brief>将Leko的缩写的变量引用名称"&lt;mark class="en"&gt; _ &lt;/mark&gt;(下划线)"的使用权交还给先前的脚本定义。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<return name="object">
+				<varvalue>
+					<value>Leko</value>
+					<brief>在转让变量名称的使用权之前返回对Leko的引用。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">var X=Leko.noConflict();
+alert(X.msie(5.5));</code>
 		</method>
 	</object>
 	<object name="jQuery">
@@ -444,8 +558,7 @@ alert(x);</code>
 			<method name="inquad">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -488,13 +601,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outquad">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -537,13 +649,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutquad">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -586,13 +697,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="incubic">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -635,13 +745,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outcubic">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -684,13 +793,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutcubic">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -733,13 +841,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inquart">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -782,13 +889,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outquart">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -831,13 +937,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutquart">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -880,13 +985,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inquint">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -929,13 +1033,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outquint">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -978,13 +1081,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutquint">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1027,13 +1129,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="insine">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1076,13 +1177,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outsine">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1125,13 +1225,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutsine">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1174,13 +1273,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inexpo">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1223,13 +1321,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outexpo">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1272,13 +1369,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutexpo">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1321,13 +1417,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="incirc">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1370,13 +1465,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outcirc">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1419,13 +1513,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutcirc">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1468,13 +1561,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inelastic">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1517,13 +1609,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outelastic">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1566,13 +1657,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutelastic">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1615,13 +1705,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inback">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1664,13 +1753,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outback">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1713,13 +1801,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutback">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1762,13 +1849,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inbounce">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1811,13 +1897,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="outbounce">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1860,13 +1945,12 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 			<method name="inoutbounce">
 				<brief><![CDATA[扩展的缓动函数类型之一。详见实例演示页面。]]></brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.effect.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="extra">
 					<vartype name="">
 						<varvalue>
@@ -1909,7 +1993,7 @@ alert(x);</code>
 					</varvalue>
 				</return>
 				<code><![CDATA[$("#block").animate({"left":"+=700px"},1200,"inquad");]]></code>
-				<demo link="Leko.easing" name="全部缓动函数的效果演示"></demo>
+				<demo link="jQuery.easing" name="全部缓动函数的效果演示"></demo>
 			</method>
 		</object>
 		<object name="fn">
@@ -2137,6 +2221,814 @@ alert(x);</code>
     blur:5,
     color:"red"
 });]]></code>
+			</method>
+			<method name="rect">
+				<brief>获取当前元素的rect数组。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="coordinate-system" optional="1">
+					<default><![CDATA[0]]></default>
+					<vartype name="number">
+						<varvalue>
+							<value>1</value>
+							<brief>基于DOM对象相对于其offsetParent的定位偏移坐标返回rect数组。</brief>
+						</varvalue>
+						<varvalue>
+							<value>0</value>
+							<brief>返回DOM对象本身实际占位的rect数组。</brief>
+						</varvalue>
+						<varvalue>
+							<value>-1</value>
+							<brief>基于DOM对象相对于document的定位偏移坐标返回rect数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="array">
+					<varvalue>
+						<value></value>
+						<brief>获取到的rect数组。</brief>
+					</varvalue>
+				</return>
+				<code canrun="">alert($(window).rect());</code>
+			</method>
+			<method name="overflow">
+				<brief>检查当前元素的显示区域是否溢出了指定元素的显示区域。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="target" optional="1">
+					<default>window</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<value>window</value>
+							<brief>视口显示区域。</brief>
+						</varvalue>
+						<varvalue>
+							<value>document</value>
+							<brief>文档全内容显示区域。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>网页元素相对于document的rect数组。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>符合&lt;mark class="en"&gt;[top, right, bottom, left]&lt;/mark&gt;格式的rect数组。不需要限定的项，用&lt;mark class="en"&gt; null &lt;/mark&gt;或&lt;mark class="en"&gt; NaN &lt;/mark&gt;替换即可。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="object">
+						<varvalue>
+							<brief>包含&lt;mark class="en"&gt;top, right, bottom, left&lt;/mark&gt;中的一个或多个字段。将会被自动转换为rect数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>当前元素的显示区域溢出了指定的显示区域。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>当前元素的显示区域在指定的显示区域之内。</brief>
+					</varvalue>
+				</return>
+				<code canrun="">alert($("body").overflow());</code>
+				<code canrun="">alert($(window).overflow($("body")));</code>
+				<code canrun="">alert($(window).overflow($(document)));</code>
+			</method>
+			<method name="moveTo">
+				<brief>移动元素相对于其&lt;mark&gt; offsetParent &lt;/mark&gt;的位置。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="left" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角横坐标。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有横坐标。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="top" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角纵坐标。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有纵坐标。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="rect" optional="1">
+					<default>[ -Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE, -Number.MAX_VALUE ]</default>
+					<vartype name="array">
+						<varvalue>
+							<brief>如&lt;mark class="en"&gt;[top, right, bottom, left]&lt;/mark&gt;格式的rect数组，用于限定可移动边界范围。超出范围的将自动被限制到边界内。不需要限定的项，用&lt;mark class="en"&gt; null &lt;/mark&gt;或&lt;mark class="en"&gt; NaN &lt;/mark&gt;替换即可。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="coordinate-system" optional="1">
+					<default><![CDATA[0]]></default>
+					<vartype name="number">
+						<varvalue>
+							<value>1</value>
+							<brief>使用基于当前窗口视口的坐标系。</brief>
+						</varvalue>
+						<varvalue>
+							<value>0</value>
+							<brief>使用基于当前offsetParent的坐标系。</brief>
+						</varvalue>
+						<varvalue>
+							<value>-1</value>
+							<brief>使用基于当前文档全部内容区域的坐标系。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").moveTo(300,200);</code>
+				<code>$("#box").moveTo(300,null,_.rect(window));</code>
+				<code>$("#box").moveTo(300,null,[null,500,500,null],-1);</code>
+			</method>
+			<method name="moveBy">
+				<brief>以元素的当前位置为基础移动元素的位置。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="x-offset" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角横坐标移动增量。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="y-offset" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的左上角纵坐标移动增量。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="rect" optional="1">
+					<default>[ -Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE, -Number.MAX_VALUE ]</default>
+					<vartype name="array">
+						<varvalue>
+							<brief>如&lt;mark class="en"&gt;[top, right, bottom, left]&lt;/mark&gt;格式的rect数组，用于限定可移动边界范围。超出范围的将自动被限制到边界内。不需要限定的项，用&lt;mark class="en"&gt; null &lt;/mark&gt;或&lt;mark class="en"&gt; NaN &lt;/mark&gt;替换即可。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").moveBy(30,20);</code>
+				<code>$("#box").moveBy(30,null,"body");</code>
+				<code>$("#box").moveBy(30,null,_.rect(window));</code>
+			</method>
+			<method name="move">
+				<brief>基于网页元素、文档、窗口、鼠标等的布局或位置定位当前元素。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="target" optional="1">
+					<default>window</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<value>window</value>
+							<brief>基于视口定位。</brief>
+						</varvalue>
+						<varvalue>
+							<value>document</value>
+							<brief>基于文档全内容区域定位。</brief>
+						</varvalue>
+						<varvalue>
+							<value>event</value>
+							<brief>返回触发事件的鼠标位置定位。仅限鼠标类事件。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>基于所包含网页元素的位置和布局定位。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="x" optional="1">
+					<default>1</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>在指定元素的左外侧。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>在指定元素的左内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>在指定元素的横居中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>3</value>
+							<brief>在指定元素的右内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>4</value>
+							<brief>在指定元素的右外侧。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有横坐标。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="y" optional="1">
+					<default>4</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>在指定元素的上外侧。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>在指定元素的上内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>在指定元素的竖居中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>3</value>
+							<brief>在指定元素的下内侧。</brief>
+						</varvalue>
+						<varvalue>
+							<value>4</value>
+							<brief>在指定元素的下外侧。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有纵坐标。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="offset-x" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>以像素为单位的水平位置调整值。仅当参数&lt;mark class="en"&gt; x &lt;/mark&gt;指定了合法数字枚举值时才有效。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="offset-y" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>以像素为单位的垂直位置调整值。仅当参数&lt;mark class="en"&gt; y &lt;/mark&gt;指定了合法数字枚举值时才有效。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="rect" optional="1">
+					<default>[ -Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE, -Number.MAX_VALUE ]</default>
+					<vartype name="array">
+						<varvalue>
+							<brief>如&lt;mark class="en"&gt;[top, right, bottom, left]&lt;/mark&gt;格式的rect数组，用于限定可移动边界范围，基于文档全内容区域定义。超出范围的将自动被限制到边界内。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#popup").move($("#block"),1,4);</code>
+				<code>$("#popup").move(window,2,2,10,0);</code>
+				<code>$(document).click(function(e){
+    $("#popup").move(e,0,0);
+});</code>
+			</method>
+			<method name="resizeTo">
+				<brief>改变元素的高宽。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="width" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的数字宽度。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有宽度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="height" optional="1">
+					<default>null</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>设置元素以像素为单位的数字高度。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有高度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="rect" optional="1">
+					<default>[ -Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE, -Number.MAX_VALUE ]</default>
+					<vartype name="array">
+						<varvalue>
+							<brief>如&lt;mark class="en"&gt;[min-height, max-width, max-height, min-width]&lt;/mark&gt;格式的rect数组，用于限定可改变大小范围。不需要限定的项，用&lt;mark class="en"&gt; null &lt;/mark&gt;或&lt;mark class="en"&gt; NaN &lt;/mark&gt;替换即可。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="not-outer" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>设置元素的样式表定义的高宽。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>设置元素的最终实际占位高宽，也就是包含&lt;mark class="en"&gt; padding &lt;/mark&gt;和&lt;mark class="en"&gt; border &lt;/mark&gt;的尺寸。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").resizeTo(300,200);</code>
+				<code>$("#box").resizeTo(300,200,true);</code>
+				<code>$("#box").resizeTo(300,null,[50,250,150,50]);</code>
+			</method>
+			<method name="resizeBy">
+				<brief>以元素的当前尺寸为基础改变元素的高宽。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="inc-width" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>在元素当前的宽度上以像素为单位调整的数值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="inc-height" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>在元素当前的高度上以像素为单位调整的数值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="rect" optional="1">
+					<default>[ -Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE, -Number.MAX_VALUE ]</default>
+					<vartype name="array">
+						<varvalue>
+							<brief>如&lt;mark class="en"&gt;[min-height, max-width, max-height, min-width]&lt;/mark&gt;格式的rect数组，用于限定可改变大小范围。不需要限定的项，用&lt;mark class="en"&gt; null &lt;/mark&gt;或&lt;mark class="en"&gt; NaN &lt;/mark&gt;替换即可。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box").resizeBy(30,-20);</code>
+				<code>$("#box").resizeBy(0,-120);</code>
+			</method>
+			<method name="resize">
+				<brief>基于网页元素、文档、窗口的尺寸为基础调整当前元素的尺寸。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="target" optional="1">
+					<default>window</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<value>window</value>
+							<brief>基于视口尺寸。</brief>
+						</varvalue>
+						<varvalue>
+							<value>document</value>
+							<brief>基于文档全内容区域尺寸。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>基于所包含网页元素的位置和布局尺寸。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="w" optional="1">
+					<default>2</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>以指定元素的&lt;mark class="en"&gt; style.width &lt;/mark&gt;为目标宽度。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>以指定元素的&lt;mark class="en"&gt; innerWidth &lt;/mark&gt;为目标宽度。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>以指定元素的&lt;mark class="en"&gt; outerWidth &lt;/mark&gt;为目标宽度。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有宽度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="h" optional="1">
+					<default>2</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>以指定元素的&lt;mark class="en"&gt; style.height &lt;/mark&gt;为目标高度。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>以指定元素的&lt;mark class="en"&gt; innerHeight &lt;/mark&gt;为目标高度。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>以指定元素的&lt;mark class="en"&gt; outerHeight &lt;/mark&gt;为目标高度。当参数&lt;mark class="en"&gt; target &lt;/mark&gt;为&lt;mark class="en"&gt; window &lt;/mark&gt;或&lt;mark class="en"&gt; document &lt;/mark&gt;时无效。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="others">
+						<varvalue>
+							<brief>维持原有高度。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="offset-w" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>以像素为单位的宽度调整值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="offset-h" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>以像素为单位的高度调整值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="rect" optional="1">
+					<default>[ -Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE, -Number.MAX_VALUE ]</default>
+					<vartype name="array">
+						<varvalue>
+							<brief>如&lt;mark class="en"&gt;[min-height, max-width, max-height, min-width]&lt;/mark&gt;格式的rect数组，用于限定可改变大小范围。不需要限定的项，用null替换即可。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#box1").resize(document);</code>
+				<code>$("#box1").resize($("#box2"),0,2);</code>
+			</method>
+			<method name="pileTo">
+				<brief>通过将元素转移为指定元素的第一个子元素或最后一个子元素，并调整其&lt;mark class="en"&gt; zIndex &lt;/mark&gt;值，使其在指定元素的&lt;mark class="en"&gt; offsetParent &lt;/mark&gt;内沉到最底层或浮到最上层显示。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="new-parent" optional="1">
+					<default>body</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<brief>指定目标父元素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="prepend" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>插入到最后并在最上层显示。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>插入到最前并在最下层显示。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("#popup").pileTo();</code>
+				<code>$("#popup").pileTo($("menu"),1);</code>
+			</method>
+			<method name="pileBy">
+				<brief>通过将元素插入为指定元素的后置或前置相邻元素，并调整其&lt;mark class="en"&gt; zIndex &lt;/mark&gt;值，使其在指定元素之上或之下显示。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="new-sibling">
+					<vartype name="string">
+						<varvalue>
+							<brief>合法的jQuery选择符。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>已存在的DOM元素。将被转换为jQuery对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jQuery">
+						<varvalue>
+							<brief>指定目标相邻元素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="before" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>插入为指定元素的前置相邻元素。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>插入为指定元素的后置相邻元素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>var pops=$(".popup");
+pops.first().pileBy(pops.last());</code>
+			</method>
+			<method name="pile">
+				<brief>自动调整元素的&lt;mark class="en"&gt; zIndex &lt;/mark&gt;值，使其浮到其&lt;mark class="en"&gt; offsetParent &lt;/mark&gt;的最上层显示。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="re-calc" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>清除缓存，重新计算&lt;mark class="en"&gt; offsetParent &lt;/mark&gt;的&lt;mark class="en"&gt; maxZIndex &lt;/mark&gt;值。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>如果还没有为&lt;mark class="en"&gt; offsetParent &lt;/mark&gt;创建&lt;mark class="en"&gt; maxZIndex &lt;/mark&gt;缓存值，则创建。否则就在每次执行方法时持续在此值上累加。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="number">
+						<varvalue>
+							<brief>手动强制指定元素的&lt;mark class="en"&gt; zIndex &lt;/mark&gt;值。为避免IE计算&lt;mark class="en"&gt; zIndex &lt;/mark&gt;的bug，建议尽量不要使用负值。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$(".popup-menu").first().pile();</code>
+				<code>$(".popup-menu").last().pile(8);</code>
+			</method>
+			<method name="transparent">
+				<brief>切换元素的CSS属性&lt;mark class="en"&gt; visibility &lt;/mark&gt;的值。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="invisible">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;为&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;为&lt;mark class="en"&gt; visible &lt;/mark&gt;。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("a").transparent();</code>
+			</method>
+			<method name="visible">
+				<brief>判断第一个元素是否可见。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<return name="object">
+					<varvalue>
+						<value>{d,v}</value>
+						<brief>&lt;mark class="en"&gt; v &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; visibility &lt;/mark&gt;是否为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; d &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; display &lt;/mark&gt;是否为&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
+					</varvalue>
+				</return>
+				<code canrun=""><![CDATA[alert($("body").visible().d);]]></code>
+			</method>
+			<method name="defaults">
+				<brief>获取或设置相对于当前元素的指定名称LEKO插件的默认配置。这些默认配置可以在HTML源代码中用元素的行内自定义属性值指定。请参考下面的代码示例。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="plugin-name">
+					<vartype name="string">
+						<varvalue>
+							<brief>插件名称。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="plugin-config" optional="1">
+					<default>null</default>
+					<vartype name="object">
+						<varvalue>
+							<value>null</value>
+							<brief>获取现有配置。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>用于更新配置。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="merge-mode" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<value>-1</value>
+							<brief>将新的配置非递归地合并到现有配置。</brief>
+						</varvalue>
+						<varvalue>
+							<value>0</value>
+							<brief>用新的配置直接完全替换掉现有配置。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>将新配置以递归方式合并到现有配置。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="object">
+					<varvalue>
+						<value></value>
+						<brief>对获取到或修改后的配置对象的引用。如果获取失败，返回空对象。</brief>
+					</varvalue>
+				</return>
+				<code canrun=""><![CDATA[var d=$("body").defaults("shadow");
+console.log(d);
+d.x=3;
+console.log($("body").defaults("shadow",{y:6},1));
+d.z=9;
+console.log(d);]]></code>
+				<code canrun=""><![CDATA[$("body").append('<div id="test" shadow="color:\'red\',offset:{x:3,y:3}">test</div>');
+console.log($("#test").defaults("shadow"));
+]]></code>
+			</method>
+			<method name="currents">
+				<brief>获取或设置相对于当前元素的指定名称LEKO插件的当前配置。该配置对象除包含最近一次执行的参数外，还可用于暂存插件的运行时私有变量。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="plugin-name">
+					<vartype name="string">
+						<varvalue>
+							<brief>插件名称。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="plugin-config" optional="1">
+					<default>null</default>
+					<vartype name="object">
+						<varvalue>
+							<value>null</value>
+							<brief>获取现有配置。</brief>
+						</varvalue>
+						<varvalue>
+							<value>others</value>
+							<brief>用于更新配置。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="merge-mode" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<value>-1</value>
+							<brief>将新的配置非递归地合并到现有配置。</brief>
+						</varvalue>
+						<varvalue>
+							<value>0</value>
+							<brief>用新的配置直接完全替换掉现有配置。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>将新配置以递归方式合并到现有配置。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="object">
+					<varvalue>
+						<value></value>
+						<brief>对获取到或修改后的配置对象的引用。如果获取失败，返回空对象。</brief>
+					</varvalue>
+				</return>
+				<code canrun=""><![CDATA[var d=$("body").currents("shadow");
+console.log(d);
+d.x=3;
+console.log($("body").currents("shadow",{y:6},1));
+d.z=9;
+console.log(d);]]></code>
+				<code><![CDATA[$("#test").shadow({color:'red'});
+console.log($("#test").currents("shadow").color);
+]]></code>
+			</method>
+			<method name="leko">
+				<brief><![CDATA[获取某HTML Element对应于某插件的隐含对象。该隐含对象使用jQuery的data("plugin-name")方法创建，通过读取并解析该Element在HTML代码的Tag声明中使用JSON语法设置的对应于插件名称的自定义属性值，为插件的初始化提供该对象的私有默认设置(优先权高于插件的全局默认设置和插件的运行时参数设置)。此外，该隐含对象还用于插件在针对该Element的工作中存取私有变量。]]></brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="plugin-name">
+					<vartype name="string">
+						<varvalue>
+							<brief>插件名称。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="object">
+					<varvalue>
+						<brief>对获取到的对象的引用。</brief>
+					</varvalue>
+				</return>
+				<code>&lt;a colorShade="properties:{color:'red'}"&gt;Test&lt;/a&gt;
+
+&lt;script&gt;
+
+$("a").leko("colorShade").properties.color="blue";
+$("a").colorShade();
+
+&lt;/script&gt;</code>
 			</method>
 			<method name="colorTo">
 				<brief>以动态效果转变元素的颜色。</brief>
@@ -2658,371 +3550,6 @@ alert(x);</code>
 });]]></code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
-			<method name="leko">
-				<brief><![CDATA[获取某HTML Element对应于某插件的隐含对象。该隐含对象使用jQuery的data("plugin-name")方法创建，通过读取并解析该Element在HTML代码的Tag声明中使用JSON语法设置的对应于插件名称的自定义属性值，为插件的初始化提供该对象的私有默认设置(优先权高于插件的全局默认设置和插件的运行时参数设置)。此外，该隐含对象还用于插件在针对该Element的工作中存取私有变量。]]></brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="plugin-name">
-					<vartype name="string">
-						<varvalue>
-							<brief>插件名称。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="object">
-					<varvalue>
-						<brief>对获取到的对象的引用。</brief>
-					</varvalue>
-				</return>
-				<code>&lt;a colorShade="properties:{color:'red'}"&gt;Test&lt;/a&gt;
-
-&lt;script&gt;
-
-$("a").leko("colorShade").properties.color="blue";
-$("a").colorShade();
-
-&lt;/script&gt;</code>
-			</method>
-			<method name="moveTo">
-				<brief>移动元素相对于其&lt;mark&gt; offsetParent &lt;/mark&gt;的位置。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="left" optional="1">
-					<default>null</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>设置元素以像素为单位的左上角横坐标。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="others">
-						<varvalue>
-							<brief>维持原有横坐标。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="top" optional="1">
-					<default>null</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>设置元素以像素为单位的左上角纵坐标。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="others">
-						<varvalue>
-							<brief>维持原有纵坐标。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("#box").moveTo(300,200);</code>
-			</method>
-			<method name="moveBy">
-				<brief>以元素的当前位置为基础移动元素相对于其&lt;mark&gt; offsetParent &lt;/mark&gt;的位置。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="x-offset" optional="1">
-					<default>0</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>设置元素以像素为单位的左上角横坐标移动增量。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="y-offset" optional="1">
-					<default>0</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>设置元素以像素为单位的左上角纵坐标移动增量。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("#box").moveBy(30,20);</code>
-				<code>$("#box").shadow().andShadow().moveBy(30,20);</code>
-			</method>
-			<method name="locate">
-				<brief>基于指定元素的位置定位当前元素。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="target">
-					<vartype name="string">
-						<varvalue>
-							<brief>合法的jQuery选择符。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="element">
-						<varvalue>
-							<brief>已存在的DOM元素。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="jQuery">
-						<varvalue>
-							<brief>不为空的jQuery对象。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="posX" optional="1">
-					<default>1</default>
-					<vartype name="number">
-						<varvalue>
-							<value>0</value>
-							<brief>在指定元素的左外侧。</brief>
-						</varvalue>
-						<varvalue>
-							<value>1</value>
-							<brief>在指定元素的左内侧。</brief>
-						</varvalue>
-						<varvalue>
-							<value>2</value>
-							<brief>在指定元素的横居中。</brief>
-						</varvalue>
-						<varvalue>
-							<value>3</value>
-							<brief>在指定元素的右内侧。</brief>
-						</varvalue>
-						<varvalue>
-							<value>4</value>
-							<brief>在指定元素的右外侧。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="posY" optional="1">
-					<default>4</default>
-					<vartype name="number">
-						<varvalue>
-							<value>0</value>
-							<brief>在指定元素的上外侧。</brief>
-						</varvalue>
-						<varvalue>
-							<value>1</value>
-							<brief>在指定元素的上内侧。</brief>
-						</varvalue>
-						<varvalue>
-							<value>2</value>
-							<brief>在指定元素的竖居中。</brief>
-						</varvalue>
-						<varvalue>
-							<value>3</value>
-							<brief>在指定元素的下内侧。</brief>
-						</varvalue>
-						<varvalue>
-							<value>4</value>
-							<brief>在指定元素的下外侧。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="offsetX" optional="1">
-					<default>0</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>以像素为单位的水平位置调整值。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="offsetY" optional="1">
-					<default>0</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>以像素为单位的垂直位置调整值。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("#popup").locate($("#block"),2,2);</code>
-				<code>$("#popup").locate("#block",1,4,10,0);</code>
-			</method>
-			<method name="layout">
-				<brief>以指定元素的尺寸为基础调整当前元素的尺寸。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="target">
-					<vartype name="string">
-						<varvalue>
-							<brief>合法的jQuery选择符。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="element">
-						<varvalue>
-							<brief>已存在的DOM元素。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="jQuery">
-						<varvalue>
-							<brief>不为空的jQuery对象。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="w-set" optional="1">
-					<default>null</default>
-					<vartype name="number">
-						<varvalue>
-							<value>0</value>
-							<brief>维持原有宽度不变。</brief>
-						</varvalue>
-						<varvalue>
-							<value>others</value>
-							<brief>在指定元素的宽度基础之上的附加调整值。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="others">
-						<varvalue>
-							<brief>目标宽度为符合指定元素的宽度。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="h-set" optional="1">
-					<default>null</default>
-					<vartype name="number">
-						<varvalue>
-							<value>0</value>
-							<brief>维持原有高度不变。</brief>
-						</varvalue>
-						<varvalue>
-							<value>others</value>
-							<brief>在指定元素的高度基础之上的附加调整值。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="others">
-						<varvalue>
-							<brief>目标高度为符合指定元素的高度。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("#box1").layout($("#box2"));</code>
-				<code>$("#box1").layout("#box2",null,20);</code>
-			</method>
-			<method name="resizeTo">
-				<brief>改变元素的高宽。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="width" optional="1">
-					<default>null</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>设置元素以像素为单位的数字宽度。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="others">
-						<varvalue>
-							<brief>维持原有宽度。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="height" optional="1">
-					<default>null</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>设置元素以像素为单位的数字高度。</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="others">
-						<varvalue>
-							<brief>维持原有高度。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="outer" optional="1">
-					<default>false</default>
-					<vartype name="boolean">
-						<varvalue>
-							<value>true</value>
-							<brief>设置元素的最终实际占位高宽，也就是包含&lt;mark class="en"&gt; padding &lt;/mark&gt;和&lt;mark class="en"&gt; border &lt;/mark&gt;的尺寸。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>设置元素的样式表定义的高宽。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("#box").resizeTo(300,200);</code>
-				<code>$("#box").resizeTo(300,"",1);</code>
-			</method>
-			<method name="resizeBy">
-				<brief>以元素的当前尺寸为基础改变元素的高宽。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="x-offset" optional="1">
-					<default>0</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>在元素当前的宽度上以像素为单位调整的数值。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="y-offset" optional="1">
-					<default>0</default>
-					<vartype name="number">
-						<varvalue>
-							<brief>在元素当前的高度上以像素为单位调整的数值。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("#box").resizeBy(30,-20);</code>
-				<code>$("#box").resizeBy(0,-120);</code>
-			</method>
-			<method name="transparent">
-				<brief>切换元素的CSS属性&lt;mark class="en"&gt; visibility &lt;/mark&gt;的值。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="invisible">
-					<default>false</default>
-					<vartype name="boolean">
-						<varvalue>
-							<value>true</value>
-							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;为&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;为&lt;mark class="en"&gt; visible &lt;/mark&gt;。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("a").transparent();</code>
-			</method>
-			<method name="visible">
-				<brief>判断第一个元素是否可见。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<return name="object">
-					<varvalue>
-						<value>{d,v}</value>
-						<brief>&lt;mark class="en"&gt; v &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; visibility &lt;/mark&gt;是否为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; d &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; display &lt;/mark&gt;是否为&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
-					</varvalue>
-				</return>
-				<code canrun=""><![CDATA[alert($("body").visible().d);]]></code>
-			</method>
 		</object>
 		<object name="leko">
 			<brief>用于修改Leko为jQuery安装的功能扩展插件的全局默认设置的接口对象。</brief>
@@ -3070,11 +3597,128 @@ $("a").colorShade();
 				<srcfile within="">leko.js</srcfile>
 			</property>
 		</object>
-		<method name="html5Tags">
-			<brief>解决IE9(?)以下版本不支持HTML5新增标签的浏览器兼容性问题。在页面开始解析之前执行一次这个函数，一切都会自动解决。注意：此函数默认会自动执行。如果你不需要使用新增的HTML5标签，可以从脚本源文件中手工删除掉相应代码。</brief>
+		<method name="ieHtml5Tags">
+			<brief>解决IE9(?)以下版本不支持HTML5新增标签的浏览器兼容性问题。在页面开始解析之前执行一次这个函数，问题就会自动解决。注意：此函数默认会自动执行。如果你不需要使用新增的HTML5标签，可以从脚本源文件中手工删除掉相应代码。</brief>
 			<srcfile>jquery.js</srcfile>
 			<srcfile within="">leko.js</srcfile>
-			<code>$.html5Tags();</code>
+			<code>$.ieHtml5Tags();</code>
+		</method>
+		<method name="iePseudoClasses">
+			<brief>解决IE6除超链接外其他标签不支持&lt;mark class="en"&gt; :hover &lt;/mark&gt;和&lt;mark class="en"&gt; :focus &lt;/mark&gt;伪类及IE7不支持&lt;mark class="en"&gt; :focus &lt;/mark&gt;伪类的兼容性问题。在页面解析完成时执行一次这个函数，问题就会自动解决。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<code>$(function(){
+    $.iePseudoClasses();
+});</code>
+		</method>
+		<method name="defaults">
+			<brief>获取或设置指定名称LEKO插件的全局默认配置。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="plugin-name">
+				<vartype name="string">
+					<varvalue>
+						<brief>插件名称。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="plugin-config" optional="1">
+				<default>null</default>
+				<vartype name="object">
+					<varvalue>
+						<value>null</value>
+						<brief>获取现有配置。</brief>
+					</varvalue>
+					<varvalue>
+						<value>others</value>
+						<brief>用于更新配置。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="merge-mode" optional="1">
+				<default>0</default>
+				<vartype name="number">
+					<varvalue>
+						<value>-1</value>
+						<brief>将新的配置非递归地合并到现有配置。</brief>
+					</varvalue>
+					<varvalue>
+						<value>0</value>
+						<brief>用新的配置直接完全替换掉现有配置。</brief>
+					</varvalue>
+					<varvalue>
+						<value>1</value>
+						<brief>将新配置以递归方式合并到现有配置。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="object">
+				<varvalue>
+					<value></value>
+					<brief>对获取到或修改后的配置对象的引用。如果获取失败，返回空对象。</brief>
+				</varvalue>
+			</return>
+			<code canrun=""><![CDATA[console.log($.defaults("shadow"));]]></code>
+			<code canrun=""><![CDATA[$.defaults("shadow").offsetY=6;
+console.log($.defaults("shadow",{offsetX:3},1));]]></code>
+			<code canrun=""><![CDATA[$.defaults("shadow").offset={x:3};
+$.defaults("shadow",{offset:{z:9}},-1);
+console.log($.defaults("shadow").offset.x);]]></code>
+			<code canrun=""><![CDATA[$.defaults("shadow").offset={x:3};
+$.defaults("shadow",{offset:{z:9}}, 1);
+console.log($.defaults("shadow").offset.x);]]></code>
+		</method>
+		<method name="isConfigObject">
+			<brief>检查变量是否是有字段的自定义无类型对象，并且不是jQuery对象。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="var">
+				<vartype name="">
+					<varvalue>
+						<brief>要检查的变量。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>是有字段的自定义无类型对象。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>不是有字段的自定义无类型对象，或者是jQuery对象。</brief>
+				</varvalue>
+			</return>
+			<code canrun=""><![CDATA[alert($.isConfigObject({}));]]></code>
+			<code canrun=""><![CDATA[alert($.isConfigObject({x:3}));]]></code>
+			<code canrun=""><![CDATA[alert($.isConfigObject(window));]]></code>
+			<code canrun=""><![CDATA[alert($.isConfigObject($("body")));]]></code>
+			<code canrun=""><![CDATA[alert($.isConfigObject($("body")[0]));]]></code>
+		</method>
+		<method name="isJqueryObject">
+			<brief>检查变量是否是(或可以被转换为)包含有效DOM对象的jQuery对象。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="var">
+				<vartype name="">
+					<varvalue>
+						<brief>要检查的变量。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>可以被转换为包含有效DOM对象的jQuery对象。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>不可以被转换为包含有效DOM对象的jQuery对象。</brief>
+				</varvalue>
+			</return>
+			<code canrun=""><![CDATA[alert($.isJqueryObject({x:3}));]]></code>
+			<code canrun=""><![CDATA[alert($.isJqueryObject($("body")));]]></code>
+			<code canrun=""><![CDATA[alert($.isJqueryObject(window));]]></code>
 		</method>
 		<method name="isBoolean">
 			<brief>检查变量是否是布尔值。</brief>
