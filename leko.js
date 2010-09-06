@@ -436,6 +436,14 @@
 		}
 	});
 
+	_.fn(
+		"shadow",
+		function(o,d,c,n){
+
+		},
+		{}
+	);
+
 	$.each(_.colorProperties,function(i,v){
 		$.fx.step[v]=function(fx){
 			if(fx.state==0){
