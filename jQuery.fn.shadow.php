@@ -1,9 +1,6 @@
 <?php include 'leko.head.inc'; ?>
 <?php include 'leko.demo.head.inc'; ?>
 
-<script src="leko.color.js"></script>
-<script src="leko.popup.js"></script>
-
 <style>
 
 .box{
@@ -40,7 +37,6 @@ select{margin-right:20px;}
 
 $(function(){
 
-	/*
 	var x=$("select").change(function(){
 		var
 			x=Number($("#x option:selected").text()),
@@ -65,7 +61,6 @@ $(function(){
 	});
 
 	x.first().change();
-	*/
 
 });
 
