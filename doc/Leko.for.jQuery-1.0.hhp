@@ -116,6 +116,8 @@ jQuery.support.shadow.html
 Leko.average.html
 Leko.color.html
 leko.color.js
+Leko.colorKeywords.html
+Leko.colorProperties.html
 leko.css
 leko.demo.css
 Leko.fit.html
@@ -124,7 +126,6 @@ Leko.html
 leko.js
 Leko.mozilla.html
 Leko.msie.html
-Leko.namedColors.html
 Leko.noConflict.html
 Leko.opera.html
 Leko.overflow.html
@@ -132,6 +133,7 @@ leko.popup.js
 Leko.rect.html
 Leko.rgba.0.html
 Leko.rgba.html
+Leko.solidColor.html
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html

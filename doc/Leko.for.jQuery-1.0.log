@@ -102,6 +102,8 @@ jQuery.support.shadow.html
 Leko.average.html
 Leko.color.html
 leko.color.js
+Leko.colorKeywords.html
+Leko.colorProperties.html
 leko.css
 leko.demo.css
 Leko.fit.html
@@ -110,7 +112,6 @@ Leko.html
 leko.js
 Leko.mozilla.html
 Leko.msie.html
-Leko.namedColors.html
 Leko.noConflict.html
 Leko.opera.html
 Leko.overflow.html
@@ -118,17 +119,18 @@ leko.popup.js
 Leko.rect.html
 Leko.rgba.0.html
 Leko.rgba.html
+Leko.solidColor.html
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 2 seconds
-109	Topics
-323	Local links
-108	Internet links
+111	Topics
+330	Local links
+110	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 318,635 bytes
-Compression decreased file by 703,896 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 319,321 bytes
+Compression decreased file by 708,989 bytes.

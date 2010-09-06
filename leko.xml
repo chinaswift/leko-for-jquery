@@ -169,6 +169,32 @@ alert(x);</code>
 			<code canrun="">var x=_.color("rgba(255,100,50,0.5)");
 alert(x);</code>
 		</method>
+		<method name="solidColor">
+			<brief>强制获取元素的指定颜色属性的值。如果获取失败，则返回其父元素的背景色。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="element">
+				<vartype name="element">
+					<varvalue>
+						<brief>要获取颜色的元素。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="property-index">
+				<vartype name="number">
+					<varvalue>
+						<brief>颜色属性在&lt;a href="Leko.colorProperties.html" class="en"&gt; _.colorProperties &lt;/a&gt;中的索引编号。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="array">
+				<varvalue>
+					<value></value>
+					<brief>获取到的颜色值的rgba数组。</brief>
+				</varvalue>
+			</return>
+			<code canrun="">alert(_.solidColor(document.body,1));</code>
+		</method>
 		<method name="rgba">
 			<brief>将各种CSS3语法格式的颜色定义转换为如&lt;mark class="en"&gt;[red, green, blue, alpha]&lt;/mark&gt;格式的存储RGBA四个通道数值的数组。如果提供的参数已经是数组，则会将其包含内容校正为符合RGBA四个通道允许取值范围的四个数值项。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -548,9 +574,30 @@ $("body").shadow(1);</code>
 			<code canrun="">var X=Leko.noConflict();
 alert(X.msie(5.5));</code>
 		</method>
-		<object name="namedColors">
+		<object name="colorKeywords">
 			<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
 		</object>
+		<property name="colorProperties" readonly="1">
+			<brief>包含所有CSS3支持的颜色类属性。</brief>
+			<vartype name="array">
+				<varvalue>
+					<value><![CDATA[[<br />
+    'color',<br />
+    'backgroundColor',<br />
+    'borderColor',<br />
+    'borderBottomColor',<br />
+    'borderLeftColor',<br />
+    'borderRightColor',<br />
+    'borderTopColor',<br />
+    'outlineColor'<br />
+]]]></value>
+				</varvalue>
+			</vartype>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+		</property>
 	</object>
 	<object name="jQuery">
 		<brief>是jQuery的全局核心对象。可以简写为&lt;mark class="en"&gt; $ &lt;/mark&gt;。</brief>
@@ -3088,8 +3135,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").colorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").colorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3153,8 +3199,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").backgroundColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").backgroundColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3218,8 +3263,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").borderColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").borderColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3283,8 +3327,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").borderTopColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").borderTopColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3348,8 +3391,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").borderRightColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").borderRightColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3413,8 +3455,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").borderBottomColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").borderBottomColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3478,8 +3519,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").borderLeftColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").borderLeftColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
@@ -3543,8 +3583,7 @@ $("a").colorShade();
 					</varvalue>
 				</return>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<code><![CDATA[$("a").outlineColorTo(1000,"#f30");]]></code>
 				<code><![CDATA[$("a").outlineColorTo("slow",[255,0,0,0.25],function(){
     alert("Animation complete.");
