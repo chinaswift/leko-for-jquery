@@ -7,6 +7,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="average"><param name="Local" value="Leko.average.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fit"><param name="Local" value="Leko.fit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="color"><param name="Local" value="Leko.color.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="solidColor"><param name="Local" value="Leko.solidColor.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rgba"><param name="Local" value="Leko.rgba.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rect"><param name="Local" value="Leko.rect.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="overflow"><param name="Local" value="Leko.overflow.html"></OBJECT>
@@ -16,7 +17,8 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="webkit"><param name="Local" value="Leko.webkit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="noConflict"><param name="Local" value="Leko.noConflict.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="namedColors"><param name="Local" value="Leko.namedColors.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorKeywords"><param name="Local" value="Leko.colorKeywords.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorProperties"><param name="Local" value="Leko.colorProperties.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="jQuery"><param name="Local" value="jQuery.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="easing"><param name="Local" value="jQuery.easing.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inquad"><param name="Local" value="jQuery.easing.inquad.html"></OBJECT>
