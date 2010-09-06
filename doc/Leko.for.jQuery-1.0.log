@@ -110,6 +110,7 @@ Leko.html
 leko.js
 Leko.mozilla.html
 Leko.msie.html
+Leko.namedColors.html
 Leko.noConflict.html
 Leko.opera.html
 Leko.overflow.html
@@ -122,12 +123,12 @@ Leko.ver.html
 Leko.webkit.html
 Leko.for.jQuery-1.0.hhc
 
-Compile time: 0 minutes, 1 second
-108	Topics
-320	Local links
-107	Internet links
+Compile time: 0 minutes, 2 seconds
+109	Topics
+323	Local links
+108	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 318,013 bytes
-Compression decreased file by 699,320 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 318,635 bytes
+Compression decreased file by 703,896 bytes.

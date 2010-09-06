@@ -16,6 +16,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="webkit"><param name="Local" value="Leko.webkit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="noConflict"><param name="Local" value="Leko.noConflict.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="namedColors"><param name="Local" value="Leko.namedColors.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="jQuery"><param name="Local" value="jQuery.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="easing"><param name="Local" value="jQuery.easing.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inquad"><param name="Local" value="jQuery.easing.inquad.html"></OBJECT>
