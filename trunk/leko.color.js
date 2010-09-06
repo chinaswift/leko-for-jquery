@@ -47,53 +47,6 @@
 		}
 	}
 
-	_.fn(
-		"colorShade",
-		function(o,v,d,c){
-			var
-				h=v.focus,
-				s=v.selector,
-				l=v.live,
-				m=h?"focusin focusout":"mouseenter mouseleave",
-				f=function(e){
-					var
-						t=e.type,
-						b=/(?:t|e)$/.test(t),
-						o=$(this),
-						q=l?o.leko(c):d,
-						w=l?$.extend(true,{},v,q):v,
-						g=w.properties,
-						j=g[P[2]],
-						i=3;
-					if(j){
-						while(i<7)g[P[i++]]=j;
-						delete g[P[2]];
-						j=0;
-					}					
-					if(!q._){
-						q._={};
-						q.$={};
-						for(i in g){
-							q._[i]= o.css( i);
-							q.$[i]=A(o[0],i);
-						}
-					}
-					o.stop(true).animate(b?q.$:g,w.duration,w.easing,b?function(){
-						if(q._){
-							for(var i in q._)o.css(i,q._[i]);
-							q._=q.$=0;
-						}
-					}:null);
-				};
-			if(l)o.undelegate(s,m,d[m]).delegate(s,m,d[m]=f);
-			else o.unbind(m,d[m]).bind(m,d[m]=f);
-		},
-		{
-			duration:800,
-			easing:"swing"
-		}
-	);
-
 	_.rgba=function(v){		
 		var
 			a,b,r,i;
@@ -144,5 +97,52 @@
 			return a;
 		}
 	}
+
+	_.fn(
+		"colorShade",
+		function(o,v,d,c){
+			var
+				h=v.focus,
+				s=v.selector,
+				l=v.live,
+				m=h?"focusin focusout":"mouseenter mouseleave",
+				f=function(e){
+					var
+						t=e.type,
+						b=/(?:t|e)$/.test(t),
+						o=$(this),
+						q=l?o.leko(c):d,
+						w=l?$.extend(true,{},v,q):v,
+						g=w.properties,
+						j=g[P[2]],
+						i=3;
+					if(j){
+						while(i<7)g[P[i++]]=j;
+						delete g[P[2]];
+						j=0;
+					}					
+					if(!q._){
+						q._={};
+						q.$={};
+						for(i in g){
+							q._[i]= o.css( i);
+							q.$[i]=A(o[0],i);
+						}
+					}
+					o.stop(true).animate(b?q.$:g,w.duration,w.easing,b?function(){
+						if(q._){
+							for(var i in q._)o.css(i,q._[i]);
+							q._=q.$=0;
+						}
+					}:null);
+				};
+			if(l)o.undelegate(s,m,d[m]).delegate(s,m,d[m]=f);
+			else o.unbind(m,d[m]).bind(m,d[m]=f);
+		},
+		{
+			duration:800,
+			easing:"swing"
+		}
+	);
 
 })(Leko,jQuery);

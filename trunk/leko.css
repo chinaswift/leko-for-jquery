@@ -36,7 +36,7 @@ button,.btn{
 	box-shadow:0 1px 3px rgba(0,0,0,0.5);-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);-moz-border-radius:5px;-webkit-border-radius:5px;	
 	background:#222 url("btn.png") repeat-x;_background:#222;color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,0.25);border:0;border-bottom:1px solid rgba(0,0,0,0.25);
 }
-button:hover,.btn:hover,button:focus,.btn:focus{background-color:#a9014b;}
+button:hover,.btn:hover,button:focus,.btn:focus,button:active,.btn:active{background-color:#a9014b;}
 blockquote,q{quotes:"" "";}
 blockquote:before,blockquote:after,q:before,q:after{content:"";}
 

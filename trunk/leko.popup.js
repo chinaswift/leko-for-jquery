@@ -10,15 +10,6 @@
 				d=o.leko("shadow");
 			if(b&&d._)d._();
 			return $(d.$).add(o);
-		},
-		over:function(o,b,s){
-			var
-				f=this,
-				d="zIndex";
-			o=$(o).eq(0).css("position",function(i,v){
-				return v=="static"?"relative":v;
-			});
-			return o.length?f["insert"+(b?"Before":"After")](b&&!s?o.andShadow():o).css(d,o.css(d)):f;
 		}
 	});
 

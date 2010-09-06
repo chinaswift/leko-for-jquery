@@ -144,11 +144,11 @@ function run($i,$n){
 
 					foreach($params  as $x=>$param ){
 						$css=$x%2?' class="odd"':'';
-						$van=$param->getAttribute('name');
-						$opt=$param->hasAttribute('optional');
-						$html.=($x?' , ':'').($opt?'[':'').'<i>'.$van.'</i>'.($opt?']':'');						
 						$vars=$xsl->query('vartype',$param);
 						$vdef=$xsl->query('default',$param);
+						$van=$param->getAttribute('name');
+						$opt=$param->hasAttribute('optional')||$vdef->length;
+						$html.=($x?' , ':'').($opt?'[':'').'<i>'.$van.'</i>'.($opt?']':'');						
 						$varn=$vars->length;	
 						$ph='';
 						$pi=0;						

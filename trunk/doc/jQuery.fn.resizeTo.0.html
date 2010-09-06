@@ -39,13 +39,17 @@ $(function(){
 			w=eval("("+$("#w option:selected").text()+")"),
 			h=eval("("+$("#h option:selected").text()+")"),
 			b=eval("("+$("#b option:selected").text()+")"),
+			r=eval("("+$("#r option:selected").text()+")"),
 			o=$("#block1");
-		$("#code1").html('$("#block1").<mark>resizeTo</mark>('+w+','+h+','+b+')');
-		o.resizeTo(w,h,b).html('width :<mark>'+o.css('width')+'</mark><br />height:<mark>'+o.css('height')+'</mark><br />outerWidth :<mark>'+o.outerWidth()+'px</mark><br />outerHeight:<mark>'+o.outerHeight()+'px</mark>');
+		
+		
+		$("#code1").html('$("#block1").<mark>resizeTo</mark>('+w+','+h+','+(r?'['+r+']':r)+','+b+')');
+		o.resizeTo(w,h,r,b).html('width :<mark>'+o.css('width')+'</mark><br />height:<mark>'+o.css('height')+'</mark><br />outerWidth :<mark>'+o.outerWidth()+'px</mark><br />outerHeight:<mark>'+o.outerHeight()+'px</mark>');
+
 	}).click();
 	$("#button3").click(function(){
-		$("#block1").resizeTo(200,100);
-		$("#w,#h,#b").attr("selectedIndex",0);
+		$("#block1").resizeTo(200,100,0,1);
+		$("#w,#h,#b,#r").attr("selectedIndex",0);
 		$("#button1").click();
 	});
 
@@ -67,11 +71,15 @@ $(function(){
 </select>
 <label class="en" for="h">height:</a></label><select class="en" id="h">
 <option selected>null</option>
+<option>250</option>
 <option>200</option>
 <option>150</option>
-<option>100</option>
 </select>
-<label class="en" for="b">outer:</a></label><select class="en" id="b">
+<label class="en" for="r">bound:</a></label><select class="en" id="r">
+<option selected>null</option>
+<option>[50,250,150,50]</option>
+</select>
+<label class="en" for="b">not-outer:</a></label><select class="en" id="b">
 <option selected>false</option>
 <option>true</option>
 </select><button class="en" id="button1">Resize !</button><button class="en" id="button3">Reset !</button>

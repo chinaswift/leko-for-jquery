@@ -40,6 +40,7 @@ select{margin-right:20px;}
 
 $(function(){
 
+	/*
 	var x=$("select").change(function(){
 		var
 			x=Number($("#x option:selected").text()),
@@ -64,6 +65,7 @@ $(function(){
 	});
 
 	x.first().change();
+	*/
 
 });
 
