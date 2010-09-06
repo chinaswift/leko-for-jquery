@@ -273,12 +273,11 @@
 		S.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);
 		D=_.msie(9)&&1||_.mozilla("1.9.1")&&2||_.webkit(522)&&3||_.opera(10.5)&&1;
 		S.shadow=D&&["b","MozB","WebkitB"][D-1]+"oxShadow";
-
-		$.ieHtml5Tags();
 	
 	})();
 
 	window.Leko=window._=_;
+	$.ieHtml5Tags();
 
 	$.fn.extend({
 		visible:function(){
@@ -435,14 +434,6 @@
 			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
 		}
 	});
-
-	_.fn(
-		"shadow",
-		function(o,d,c,n){
-
-		},
-		{}
-	);
 
 	$.each(_.colorProperties,function(i,v){
 		$.fx.step[v]=function(fx){
