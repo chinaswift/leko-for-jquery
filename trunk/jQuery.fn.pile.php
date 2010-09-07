@@ -1,9 +1,6 @@
 <?php include 'leko.head.inc'; ?>
 <?php include 'leko.demo.head.inc'; ?>
 
-<script src="leko.color.js"></script>
-<script src="leko.popup.js"></script>
-
 <style>
 
 .box{

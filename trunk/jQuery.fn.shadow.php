@@ -41,9 +41,9 @@ $(function(){
 
 	var x=$("select").change(function(){
 		var
-			x=Number($("#x option:selected").text()),
-			y=Number($("#y option:selected").text()),
-			b=Number($("#blur option:selected").text()),
+			x=parseInt($("#x option:selected").text()),
+			y=parseInt($("#y option:selected").text()),
+			b=parseInt($("#blur option:selected").text()),
 			p=$("#color option:selected").text(),
 			d=eval("("+$("#d option:selected").text()+")");
 
@@ -61,7 +61,7 @@ $(function(){
 			color:p,
 			disabled:d
 		});//.shadow(0).shadow(1);
-		$("#code").html('$("div.shadow").shadow({x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , color:"<mark>'+p+'</mark>" , disabled:"<mark>'+d+'</mark>})');
+		$("#code").html('$("div.shadow").shadow({x:<mark>'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , color:"<mark>'+p+'</mark>" , disabled:<mark>'+d+'</mark>})');
 	});
 
 	x.first().change();
@@ -132,14 +132,15 @@ $(function(){
 </select>
 </section>
 
+<!--
 <section>
 <div class="box tr"><div id="block1" class="td shadow">&nbsp;</div><div id="block2" class="td shadow">&nbsp;</div><div id="block3" class="td shadow">&nbsp;</div><div id="block4" class="td shadow">&nbsp;</div></div>
 </section>
-
+-->
 <section><code id="code">&nbsp;</code></section>
-
+<!--
 <section>
 <div class="box" style="position:relative"><div class="shadow" style="position:relative">&nbsp;</div></div>
 </section>
-
+-->
 <?php include 'leko.foot.inc'; ?>
