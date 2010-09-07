@@ -2964,7 +2964,14 @@ pops.first().pileBy(pops.last());</code>
 				<code canrun=""><![CDATA[console.log($([document,"body",{},88,true,window]).elements());]]></code>
 				<return name="jQuery">
 					<varvalue>
-						<value>新建的集合。</value>
+						<value></value>
+						<brief>新建的集合。</brief>
+					</varvalue>
+				</return>
+				<return name="undefined">
+					<varvalue>
+						<value></value>
+						<brief>没有提取到任何元素。</brief>
 					</varvalue>
 				</return>
 			</method>
