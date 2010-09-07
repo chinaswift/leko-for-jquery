@@ -8,8 +8,6 @@
 #link{background:#9CCD4A;}
 select{margin-right:20px;}
 </style>
-<script src="leko.color.js"></script>
-<script src="leko.popup.js"></script>
 <script>
 
 $(function(){

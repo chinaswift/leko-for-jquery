@@ -11,8 +11,6 @@ select{margin-right:15px;}
 .block mark{color:#ff0;}
 </style>
 
-<script src="leko.color.js"></script>
-<script src="leko.popup.js"></script>
 <script>
 
 $(function(){
