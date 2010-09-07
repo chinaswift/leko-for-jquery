@@ -2160,8 +2160,7 @@ alert(X.msie(5.5));</code>
 			<method name="popup" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.popup.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="x">
 					<default>2</default>
 					<vartype name="number" optional="1">
@@ -2210,8 +2209,7 @@ alert(X.msie(5.5));</code>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.popup.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="x" optional="1">
 					<default>2</default>
 					<vartype name="number" optional="1">
@@ -2903,20 +2901,20 @@ pops.first().pileBy(pops.last());</code>
 				<code>$(".popup-menu").first().pile();</code>
 				<code>$(".popup-menu").last().pile(8);</code>
 			</method>
-			<method name="transparent">
+			<method name="appear">
 				<brief>切换元素的CSS属性&lt;mark class="en"&gt; visibility &lt;/mark&gt;的值。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<param name="invisible">
+				<param name="solid" optional="1">
 					<default>false</default>
 					<vartype name="boolean">
 						<varvalue>
 							<value>true</value>
-							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;为&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
+							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;属性为&lt;mark class="en"&gt; visible &lt;/mark&gt;。</brief>
 						</varvalue>
 						<varvalue>
 							<value>false</value>
-							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;为&lt;mark class="en"&gt; visible &lt;/mark&gt;。</brief>
+							<brief>设置&lt;mark class="en"&gt; visibility &lt;/mark&gt;属性为&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -2925,19 +2923,39 @@ pops.first().pileBy(pops.last());</code>
 						<value>this</value>
 					</varvalue>
 				</return>
-				<code>$("a").transparent();</code>
+				<code>$("#menu").appear(false).toggle(true);</code>
 			</method>
-			<method name="visible">
-				<brief>判断第一个元素是否可见。</brief>
+			<method name="solid">
+				<brief>判断第一个元素的&lt;mark class="en"&gt; visibility &lt;/mark&gt;属性是否不为&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<return name="object">
+				<return name="boolean">
 					<varvalue>
-						<value>{d,v}</value>
-						<brief>&lt;mark class="en"&gt; v &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; visibility &lt;/mark&gt;是否为&lt;mark class="en"&gt; hidden &lt;/mark&gt;，&lt;mark class="en"&gt; d &lt;/mark&gt;是否为&lt;mark class="en"&gt; false &lt;/mark&gt;决定于&lt;mark class="en"&gt; display &lt;/mark&gt;是否为&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
+						<value>true</value>
+						<brief>&lt;mark class="en"&gt; visibility &lt;/mark&gt;属性非&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>&lt;mark class="en"&gt; visibility &lt;/mark&gt;属性为&lt;mark class="en"&gt; hidden &lt;/mark&gt;。</brief>
 					</varvalue>
 				</return>
-				<code canrun=""><![CDATA[alert($("body").visible().d);]]></code>
+				<code canrun=""><![CDATA[alert($("body").solid());]]></code>
+			</method>
+			<method name="visible">
+				<brief>判断第一个元素的&lt;mark class="en"&gt; display &lt;/mark&gt;属性是否不为&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<return name="boolean">
+					<varvalue>
+						<value>true</value>
+						<brief>&lt;mark class="en"&gt; display &lt;/mark&gt;属性非&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
+					</varvalue>
+					<varvalue>
+						<value>false</value>
+						<brief>&lt;mark class="en"&gt; display &lt;/mark&gt;属性为&lt;mark class="en"&gt; none &lt;/mark&gt;。</brief>
+					</varvalue>
+				</return>
+				<code canrun=""><![CDATA[alert($("body").visible());]]></code>
 			</method>
 			<method name="defaults">
 				<brief>获取或设置相对于当前元素的指定名称LEKO插件的默认配置。这些默认配置可以在HTML源代码中用元素的行内自定义属性值指定。请参考下面的代码示例。</brief>
