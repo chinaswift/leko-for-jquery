@@ -5,17 +5,19 @@
 		function(o,v,d,c){
 			var
 				b=$.support.shadow,
+				l=v.disabled||!o.visible(),
 				g=_.rgba(v.color),
 				a=g[3],
 				x=v.x,
 				y=v.y,
 				r=v.blur,
-				l=v.disabled||!o.visible(),
+				p=o.css("position"),
 				e=d.$,
-				p=o.css("position");
+				j=$.isJqueryObject(v.src);
 			g=_.color(g);
-			if(b)o.css(b,l?"none":x+"px "+y+"px "+r+"px "+g);
+			if(b&&!j)o.css(b,l?"none":x+"px "+y+"px "+r+"px "+g);
 			else{
+
 				if(!e)e=$("<div>&nbsp;</div>").css({
 					border :0,
 					margin :0,
