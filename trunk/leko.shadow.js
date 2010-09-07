@@ -13,7 +13,8 @@
 				r=v.blur,
 				p=o.css("position"),
 				e=d.$,
-				j=v.src;
+				j=$(v.src).$();
+			console.log(j);
 			g=_.color(g);
 			if(b&&!j)o.css(b,l?"none":x+"px "+y+"px "+r+"px "+g);
 			else{

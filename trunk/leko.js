@@ -281,9 +281,11 @@
 
 	$.fn.extend({
 		elements:function(){
-			return this.map(function(i,e){
-				if($.isJqueryObject(e))return e;
-			});
+			var
+				x=this.map(function(i,e){
+					if($.isJqueryObject(e))return e;
+				});
+			if(x.length)return x;
 		},
 		visible:function(){
 			return this.css("display")!="none";
@@ -436,6 +438,8 @@
 			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
 		}
 	});
+
+	$.fn.$=$.fn.elements;
 
 	$.each(_.colorProperties,function(i,v){
 		$.fx.step[v]=function(fx){
