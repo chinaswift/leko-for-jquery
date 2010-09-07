@@ -280,6 +280,11 @@
 	$.ieHtml5Tags();
 
 	$.fn.extend({
+		elements:function(){
+			return this.map(function(i,e){
+				if($.isJqueryObject(e))return e;
+			});
+		},
 		visible:function(){
 			return this.css("display")!="none";
 		},
@@ -293,7 +298,7 @@
 			return _.rect(this,b);
 		},
 		overflow:function(o){
-			return _.overflow(this.rect(-1),$($.isJqueryObject(o)?o:window).rect(-1));
+			return _.overflow(this.rect(-1),$(o||window).rect(-1));
 		},
 		moveTo:function(x,y,r,b){
 			r=_.rect(r);
@@ -384,7 +389,7 @@
 			});
 		},
 		resize:function(o,w,h,a,b,t){
-			o=$($.isJqueryObject(o)?o:window);
+			o=$(o||window);
 			var
 				p=parseInt;
 			w=p(w===void(0)?2:w);
@@ -410,13 +415,10 @@
 			return this.css(a,z);
 		},
 		pileTo:function(o,b){
-			return this[b?"prependTo":"appendTo"]($($.isJqueryObject(o)?o:"body")).pile(b?0:void 0);
+			return this[b?"prependTo":"appendTo"]($(o||"body")).pile(b?0:void 0);
 		},
 		pileBy:function(o,b){
-			if($.isJqueryObject(o)){
-				o=$(o);
-				return this["insert"+(b?"Before":"After")](o).css("zIndex",o.css("zIndex"));
-			}
+			return this["insert"+(b?"Before":"After")]($(o)).css("zIndex",o.css("zIndex"));
 		},
 		defaults:function(n,v,b){
 			var
