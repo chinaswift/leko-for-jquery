@@ -33,6 +33,8 @@
 select{margin-right:20px;}
 #x,#y,#blur{width:60px;}
 </style>
+
+<script src="leko.shadow.js"></script>
 <script>
 
 $(function(){
@@ -42,7 +44,8 @@ $(function(){
 			x=Number($("#x option:selected").text()),
 			y=Number($("#y option:selected").text()),
 			b=Number($("#blur option:selected").text()),
-			p=$("#color option:selected").text();
+			p=$("#color option:selected").text(),
+			d=eval("("+$("#d option:selected").text()+")");
 
 		$("div.shadow").each(function(i,o){
 			o=$(o);
@@ -55,9 +58,10 @@ $(function(){
 			x:x,
 			y:y,
 			blur:b,
-			color:p
-		});
-		$("#code").html('$("div.shadow").shadow({x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , color:"<mark>'+p+'</mark>"})');
+			color:p,
+			disabled:d
+		});//.shadow(0).shadow(1);
+		$("#code").html('$("div.shadow").shadow({x:'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , color:"<mark>'+p+'</mark>" , disabled:"<mark>'+d+'</mark>})');
 	});
 
 	x.first().change();
@@ -105,12 +109,6 @@ $(function(){
 <option>6</option>
 </select>
 <label class="en" for="blur">blur:</a></label><select class="en" id="blur">
-<option>-6</option>
-<option>-5</option>
-<option>-4</option>
-<option>-3</option>
-<option>-2</option>
-<option>-1</option>
 <option>0</option>
 <option>1</option>
 <option>2</option>
@@ -118,12 +116,19 @@ $(function(){
 <option>4</option>
 <option>5</option>
 <option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
 </select>
 <label class="en" for="color">color:</a></label><select class="en" id="color">
 <option>#000</option>
 <option>red</option>
 <option selected>rgba(0,0,0,0.3)</option>
 <option>blue</option>
+</select>
+<label class="en" for="d">disabled:</a></label><select class="en" id="d">
+<option selected>false</option>
+<option>true</option>
 </select>
 </section>
 

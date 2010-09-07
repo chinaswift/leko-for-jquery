@@ -55,6 +55,7 @@ jQuery.easing.outquad.html
 jQuery.easing.outquart.html
 jQuery.easing.outquint.html
 jQuery.easing.outsine.html
+jQuery.fn.appear.html
 jQuery.fn.backgroundColorTo.html
 jQuery.fn.borderBottomColorTo.html
 jQuery.fn.borderColorTo.html
@@ -95,7 +96,7 @@ jQuery.fn.resizeTo.0.html
 jQuery.fn.resizeTo.html
 jQuery.fn.shadow.0.html
 jQuery.fn.shadow.html
-jQuery.fn.transparent.html
+jQuery.fn.solid.html
 jQuery.fn.visible.html
 jQuery.html
 jQuery.ieHtml5Tags.html
@@ -124,15 +125,16 @@ Leko.fit.html
 Leko.fn.html
 Leko.html
 leko.js
+leko.menu.js
 Leko.mozilla.html
 Leko.msie.html
 Leko.noConflict.html
 Leko.opera.html
 Leko.overflow.html
-leko.popup.js
 Leko.rect.html
 Leko.rgba.0.html
 Leko.rgba.html
+leko.shadow.js
 Leko.solidColor.html
 Leko.unique.html
 Leko.ver.html

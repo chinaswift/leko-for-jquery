@@ -247,7 +247,7 @@
 							return this.each(function(i,o){
 								o=$(o);
 								i=o.currents(n);
-								return f(o,o.currents(n,b?$.extend(true,{},d,o.defaults(n),a):i),i,n)!==false;
+								return f(o,o.currents(n,b?$.extend(true,{},d,o.defaults(n),a):$.extend(i,{disabled:!a})),i,n)!==false;
 							});
 						}
 					})(a[m+1]);
@@ -281,13 +281,13 @@
 
 	$.fn.extend({
 		visible:function(){
-			with(this)return{
-				d:css("display")!="none",
-				v:css("visibility")!="hidden"
-			};
+			return this.css("display")!="none";
 		},
-		transparent:function(b){
-			return this.css({visibility:b?"hidden":"visible"});
+		solid:function(){
+			return this.css("visibility")!="hidden";
+		},
+		appear:function(b){
+			return this.css("visibility",b?"visible":"hidden");
 		},
 		rect:function(b){
 			return _.rect(this,b);

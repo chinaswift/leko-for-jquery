@@ -2,7 +2,6 @@
 <?php include 'leko.demo.head.inc'; ?>
 
 <script src="leko.color.js"></script>
-<script src="leko.effect.js"></script>
 
 <style>
 
