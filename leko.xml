@@ -2957,6 +2957,17 @@ pops.first().pileBy(pops.last());</code>
 				</return>
 				<code canrun=""><![CDATA[alert($("body").visible());]]></code>
 			</method>
+			<method name="elements">
+				<brief>将当前jQuery集合中的DOMElement(包括window和document)提取出来成为一个新的jQuery集合。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<code canrun=""><![CDATA[console.log($([document,"body",{},88,true,window]).elements());]]></code>
+				<return name="jQuery">
+					<varvalue>
+						<value>新建的集合。</value>
+					</varvalue>
+				</return>
+			</method>
 			<method name="defaults">
 				<brief>获取或设置相对于当前元素的指定名称LEKO插件的默认配置。这些默认配置可以在HTML源代码中用元素的行内自定义属性值指定。请参考下面的代码示例。</brief>
 				<srcfile>jquery.js</srcfile>

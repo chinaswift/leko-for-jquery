@@ -39,6 +39,8 @@ select{margin-right:20px;}
 
 $(function(){
 
+	//$($([window,document,$("body"),{},true,88])).elements().each(function(i,v){console.log($(v));});
+
 	var x=$("select").change(function(){
 		var
 			x=parseInt($("#x option:selected").text()),
