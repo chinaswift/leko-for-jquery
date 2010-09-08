@@ -4,6 +4,7 @@ Compiling e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm
 
 apple-touch-icon.png
 bk01.gif
+blank.gif
 btn.png
 favicon.ico
 firebug-lite.js
@@ -58,6 +59,8 @@ jQuery.fn.currents.html
 jQuery.fn.defaults.html
 jQuery.fn.elements.html
 jQuery.fn.html
+jQuery.fn.ie6Png24.0.html
+jQuery.fn.ie6Png24.html
 jQuery.fn.leko.html
 jQuery.fn.move.0.html
 jQuery.fn.move.html
@@ -74,7 +77,6 @@ jQuery.fn.pileBy.0.html
 jQuery.fn.pileBy.html
 jQuery.fn.pileTo.0.html
 jQuery.fn.pileTo.html
-jQuery.fn.png.html
 jQuery.fn.rect.html
 jQuery.fn.resize.0.html
 jQuery.fn.resize.html
@@ -103,6 +105,7 @@ jQuery.support.html
 jQuery.support.rgba.html
 jQuery.support.shadow.html
 Leko.average.html
+Leko.blankImage.html
 Leko.color.html
 leko.color.js
 Leko.colorKeywords.html
@@ -127,14 +130,16 @@ Leko.solidColor.html
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
+twitter-128.128-1.png
+twitter-128.128-2.png
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 2 seconds
-113	Topics
-336	Local links
-112	Internet links
+115	Topics
+340	Local links
+114	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 353,523 bytes
-Compression decreased file by 781,789 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 391,497 bytes
+Compression decreased file by 784,926 bytes.

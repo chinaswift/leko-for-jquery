@@ -579,6 +579,16 @@ alert(X.msie(5.5));</code>
 			<srcfile>jquery.js</srcfile>
 			<srcfile within="">leko.js</srcfile>
 		</object>
+		<property name="blankImage">
+			<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
+			<vartype name="string">
+				<varvalue>
+					<value>'blank.gif'</value>
+				</varvalue>
+			</vartype>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+		</property>
 		<property name="colorProperties" readonly="1">
 			<brief>包含所有CSS3支持的颜色类属性。</brief>
 			<vartype name="array">
@@ -2046,55 +2056,6 @@ alert(X.msie(5.5));</code>
 		</object>
 		<object name="fn">
 			<brief>用于为jQuery安装功能扩展插件的接口对象。</brief>
-			<method name="png" fn="1">
-				<brief>为元素创建阴影效果。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="x">
-					<default>2</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>相对元素左上角的横坐标偏移量。单位为像素。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="x">
-					<default>2</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>相对元素左上角的纵坐标偏移量。单位为像素。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="blur">
-					<default>3</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>模糊级别。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="opacity">
-					<default>0.3</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>透明度。取值范围为0-1之间最多两位有效数字的浮点数。0为完全透明。1为完全不透明。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code><![CDATA[$(".shadow").shadow();]]></code>
-				<code><![CDATA[$(".shadow").shadow({
-    x:3,
-    y:3,
-    blur:5,
-    opacity:0.75
-});]]></code>
-			</method>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -2293,6 +2254,17 @@ alert(X.msie(5.5));</code>
         borderColor:"green"
     }
 });]]></code>
+			</method>
+			<method name="ie6Png24">
+				<brief>解决IE6不支持PNG24格式图片的Alpha通道的浏览器兼容性问题。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("img[src$=.png]").ie6Png24();</code>
 			</method>
 			<method name="rect">
 				<brief>获取当前元素的rect数组。</brief>
