@@ -18,6 +18,7 @@ Handbook="Leko 1.0 - The Best User Interface Library for jQuery","Leko.for.jQuer
 [FILES]
 apple-touch-icon.png
 bk01.gif
+blank.gif
 btn.png
 favicon.ico
 firebug-lite.js
@@ -72,6 +73,8 @@ jQuery.fn.currents.html
 jQuery.fn.defaults.html
 jQuery.fn.elements.html
 jQuery.fn.html
+jQuery.fn.ie6Png24.0.html
+jQuery.fn.ie6Png24.html
 jQuery.fn.leko.html
 jQuery.fn.move.0.html
 jQuery.fn.move.html
@@ -88,7 +91,6 @@ jQuery.fn.pileBy.0.html
 jQuery.fn.pileBy.html
 jQuery.fn.pileTo.0.html
 jQuery.fn.pileTo.html
-jQuery.fn.png.html
 jQuery.fn.rect.html
 jQuery.fn.resize.0.html
 jQuery.fn.resize.html
@@ -117,6 +119,7 @@ jQuery.support.html
 jQuery.support.rgba.html
 jQuery.support.shadow.html
 Leko.average.html
+Leko.blankImage.html
 Leko.color.html
 leko.color.js
 Leko.colorKeywords.html
@@ -141,5 +144,7 @@ Leko.solidColor.html
 Leko.unique.html
 Leko.ver.html
 Leko.webkit.html
+twitter-128.128-1.png
+twitter-128.128-2.png
 
 [INFOTYPES]

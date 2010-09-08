@@ -18,6 +18,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="noConflict"><param name="Local" value="Leko.noConflict.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorKeywords"><param name="Local" value="Leko.colorKeywords.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="blankImage"><param name="Local" value="Leko.blankImage.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorProperties"><param name="Local" value="Leko.colorProperties.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="jQuery"><param name="Local" value="jQuery.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="easing"><param name="Local" value="jQuery.easing.html"></OBJECT>
@@ -52,9 +53,9 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="outbounce"><param name="Local" value="jQuery.easing.outbounce.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inoutbounce"><param name="Local" value="jQuery.easing.inoutbounce.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="jQuery.fn.html"></OBJECT>
-<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="png"><param name="Local" value="jQuery.fn.png.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="shadow"><param name="Local" value="jQuery.fn.shadow.html"></OBJECT>
+<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="shadow"><param name="Local" value="jQuery.fn.shadow.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorShade"><param name="Local" value="jQuery.fn.colorShade.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="ie6Png24"><param name="Local" value="jQuery.fn.ie6Png24.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rect"><param name="Local" value="jQuery.fn.rect.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="overflow"><param name="Local" value="jQuery.fn.overflow.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="moveTo"><param name="Local" value="jQuery.fn.moveTo.html"></OBJECT>
