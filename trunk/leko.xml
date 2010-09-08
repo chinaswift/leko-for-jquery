@@ -2046,6 +2046,143 @@ alert(X.msie(5.5));</code>
 		</object>
 		<object name="fn">
 			<brief>用于为jQuery安装功能扩展插件的接口对象。</brief>
+			<method name="png" fn="1">
+				<brief>为元素创建阴影效果。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="x">
+					<default>2</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>相对元素左上角的横坐标偏移量。单位为像素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="x">
+					<default>2</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>相对元素左上角的纵坐标偏移量。单位为像素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="blur">
+					<default>3</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>模糊级别。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="opacity">
+					<default>0.3</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>透明度。取值范围为0-1之间最多两位有效数字的浮点数。0为完全透明。1为完全不透明。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code><![CDATA[$(".shadow").shadow();]]></code>
+				<code><![CDATA[$(".shadow").shadow({
+    x:3,
+    y:3,
+    blur:5,
+    opacity:0.75
+});]]></code>
+			</method>
+			<method name="shadow" fn="1">
+				<brief>为元素创建阴影效果。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="src" optional="1">
+					<default>undefined</default>
+					<vartype name="jquery">
+						<varvalue>
+							<brief>手工指定要被用作阴影的元素。此种情况下，&lt;mark class="en"&gt; blur &lt;/mark&gt;和&lt;mark class="en"&gt; color &lt;/mark&gt;参数都将被忽略。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="undefined">
+						<varvalue>
+							<brief>由程序根据客户端浏览器的支持情况，自动选择合适的方法根据其他参数创建阴影。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="x" optional="1">
+					<default>2</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>相对元素左上角的横坐标偏移量。单位为像素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="y" optional="1">
+					<default>2</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>相对元素左上角的纵坐标偏移量。单位为像素。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="blur" optional="1">
+					<default>3</default>
+					<vartype name="number" optional="1">
+						<varvalue>
+							<brief>模糊级别。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="color" optional="1">
+					<default>rgba(0,0,0,0.3)</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="disabled" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>禁用当前插件效果。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>启用当前插件效果。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code><![CDATA[$(".shadow").shadow();]]></code>
+				<code><![CDATA[$(".shadow").shadow({
+    x:3,
+    y:3,
+    blur:5,
+    color:"red"
+});]]></code>
+			</method>
 			<method name="colorShade" fn="1">
 				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -2155,117 +2292,6 @@ alert(X.msie(5.5));</code>
     properties:{
         borderColor:"green"
     }
-});]]></code>
-			</method>
-			<method name="popup" fn="1">
-				<brief>为元素创建阴影效果。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="x">
-					<default>2</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>相对元素左上角的横坐标偏移量。单位为像素。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="x">
-					<default>2</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>相对元素左上角的纵坐标偏移量。单位为像素。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="blur">
-					<default>3</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>模糊级别。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="opacity">
-					<default>0.3</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>透明度。取值范围为0-1之间最多两位有效数字的浮点数。0为完全透明。1为完全不透明。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code><![CDATA[$(".shadow").shadow();]]></code>
-				<code><![CDATA[$(".shadow").shadow({
-    x:3,
-    y:3,
-    blur:5,
-    opacity:0.75
-});]]></code>
-			</method>
-			<method name="shadow" fn="1">
-				<brief>为元素创建阴影效果。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-				<param name="x" optional="1">
-					<default>2</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>相对元素左上角的横坐标偏移量。单位为像素。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="y" optional="1">
-					<default>2</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>相对元素左上角的纵坐标偏移量。单位为像素。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="blur" optional="1">
-					<default>3</default>
-					<vartype name="number" optional="1">
-						<varvalue>
-							<brief>模糊级别。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="color" optional="1">
-					<default>rgba(0,0,0,0.3)</default>
-					<vartype name="string">
-						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code><![CDATA[$(".shadow").shadow();]]></code>
-				<code><![CDATA[$(".shadow").shadow({
-    x:3,
-    y:3,
-    blur:5,
-    color:"red"
 });]]></code>
 			</method>
 			<method name="rect">

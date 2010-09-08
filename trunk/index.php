@@ -4,6 +4,7 @@ include 'leko.head.inc';
 include 'leko.neck.inc';
 include 'cssmin.php';
 include 'jsmin.php';
+include 'jspacker.php';
 include 'define.php';
 
 echo '<br /><hr />开始发布内核：<br /><br /><pre>';
@@ -21,7 +22,11 @@ if($dir=opendir('.')){
 			$ext=$info['extension'];
 			if($ext=='js'){
 				if($file=='jquery.js'||$file=='firebug-lite.js')copy($file,DOC_PATH.$file);
-				else file_put_contents(DOC_PATH.$file, COPYRIGHT.(jsmin::minify(file_get_contents($file))));
+				else{
+					file_put_contents(DOC_PATH.$file,COPYRIGHT.(jsmin::minify(file_get_contents($file))));
+					//$packer=new JavaScriptPacker(file_get_contents($file),'Normal',true,false);
+					//file_put_contents(DOC_PATH.$file,COPYRIGHT.$packer->pack());
+				}
 				echo DOC_PATH.$file.'(<mark>'.sprintf("%01.2f",filesize(DOC_PATH.$file)/1024).'KB</mark>/'.sprintf("%01.2f",filesize($file)/1024).'KB'.')<br />';
 			}
 			else if($ext=='css'){

@@ -52,9 +52,9 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="outbounce"><param name="Local" value="jQuery.easing.outbounce.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inoutbounce"><param name="Local" value="jQuery.easing.inoutbounce.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="jQuery.fn.html"></OBJECT>
-<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorShade"><param name="Local" value="jQuery.fn.colorShade.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="popup"><param name="Local" value="jQuery.fn.popup.html"></OBJECT>
+<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="png"><param name="Local" value="jQuery.fn.png.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="shadow"><param name="Local" value="jQuery.fn.shadow.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorShade"><param name="Local" value="jQuery.fn.colorShade.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rect"><param name="Local" value="jQuery.fn.rect.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="overflow"><param name="Local" value="jQuery.fn.overflow.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="moveTo"><param name="Local" value="jQuery.fn.moveTo.html"></OBJECT>
