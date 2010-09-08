@@ -2,7 +2,7 @@
 
 	_.fn(
 		"shadow",
-		function(o,v,d,c){
+		function(o,v,d){
 			var
 				b=$.support.shadow,
 				l=v.disabled||!o.visible(),
@@ -12,14 +12,12 @@
 				y=v.y,
 				r=v.blur,
 				p=o.css("position"),
-				e=d.$,
-				j=$(v.src).$();
-			console.log(j);
+				e=d.src,
+				j=v.src;
 			g=_.color(g);
 			if(b&&!j)o.css(b,l?"none":x+"px "+y+"px "+r+"px "+g);
 			else{
-
-				if(!e)e=$("<div>&nbsp;</div>").css({
+				if(!e)e=j?$(j):$("<div>&nbsp;</div>").css({
 					border :0,
 					margin :0,
 					padding:0,
@@ -28,14 +26,18 @@
 					left:0,
 					top:0
 				});
-				v.$=e;
+				v.src=e;
 				e.appear(o.solid()).toggle(!l);
-				if(!l)e.css({
-					position:p=="static"||p=="relative"?"absolute":p,
-					filter:_.msie()?"progid:DXImageTransform.Microsoft.alpha(opacity="+a*100+") progid:DXImageTransform.Microsoft.blur(pixelradius="+r+")":"",
-					backgroundColor:g,
-					opacity:a
-				}).pileBy(o,1).resize(o).move(o,1,1,x-r+(!r||!x?0:x>0?-1:1),y-r+(!r||!x?0:y>0?-1:1));
+				if(!l){
+					if(!j)e.css({
+						position:p=="static"||p=="relative"?"absolute":p
+					}).resize(o);
+					e.css({
+						filter:_.msie()?"progid:DXImageTransform.Microsoft.alpha(opacity="+a*100+") progid:DXImageTransform.Microsoft.blur(pixelradius="+r+")":"",
+						backgroundColor:g,
+						opacity:a
+					}).pileBy(o,1).move(o,1,1,j?x:x-r+(!r||!x?0:x>0?-1:1),j?y:y-r+(!r||!x?0:y>0?-1:1));
+				}
 			}
 		},
 		{

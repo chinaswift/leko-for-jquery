@@ -1,4 +1,4 @@
-(function(window,document,$,undefined){
+(function(window,document,$){
 	
 	$.each(["String","Number","Object","Date","Boolean"],function(i,v){
 		$["is"+v]=new Function("v","return v==v&&v!==null&&v!==void(0)&&v.constructor=="+v);
@@ -237,17 +237,16 @@
 				for(var m=0,a=arguments,x=a.length,n,f;m<x;m+=3){
 					n=a[m];					
 					f=(function(f){
-						return function(){
+						return function(a,v,b){
 							var
 								l=arguments.callee,
 								n=l.fn,
-								d=$.defaults (n),
-								a=l.arguments[0],
-								b=a===void 0||$.isConfigObject(a);
+								d=$.defaults(n),
+								c=a===void 0||$.isConfigObject(a);
 							return this.each(function(i,o){
 								o=$(o);
 								i=o.currents(n);
-								return f(o,o.currents(n,b?$.extend(true,{},d,o.defaults(n),a):$.extend(i,{disabled:!a})),i,n)!==false;
+								if(c||i)return f(o,o.currents(n,c?$.extend(true,{},d,o.defaults(n),a):$.extend(!b,i,v,{disabled:!a})),i||{},n)!==false;
 							});
 						}
 					})(a[m+1]);
@@ -434,7 +433,7 @@
 			var
 				e=this,
 				o=e.data(),
-				d=o[n]||e.defaults(n,v,b);
+				d=o[n];
 			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
 		}
 	});
