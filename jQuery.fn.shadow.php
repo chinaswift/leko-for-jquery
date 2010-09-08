@@ -134,15 +134,14 @@ $(function(){
 </select>
 </section>
 
-<!--
 <section>
 <div class="box tr"><div id="block1" class="td shadow">&nbsp;</div><div id="block2" class="td shadow">&nbsp;</div><div id="block3" class="td shadow">&nbsp;</div><div id="block4" class="td shadow">&nbsp;</div></div>
 </section>
--->
+
 <section><code id="code">&nbsp;</code></section>
-<!--
+
 <section>
 <div class="box" style="position:relative"><div class="shadow" style="position:relative">&nbsp;</div></div>
 </section>
--->
+
 <?php include 'leko.foot.inc'; ?>

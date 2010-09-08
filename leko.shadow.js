@@ -10,13 +10,18 @@
 				a=g[3],
 				x=v.x,
 				y=v.y,
-				r=v.blur,
-				p=o.css("position"),
 				e=d.src,
-				j=v.src;
+				j=v.src,
+				r=v.blur,
+				q="position",
+				k="relative",
+				p;
 			g=_.color(g);
 			if(b&&!j)o.css(b,l?"none":x+"px "+y+"px "+r+"px "+g);
 			else{
+				o.css(q,function(i,v){
+					return p=v=="static"?k:v;
+				});
 				if(!e)e=j?$(j):$("<div>&nbsp;</div>").css({
 					border :0,
 					margin :0,
@@ -29,9 +34,7 @@
 				v.src=e;
 				e.appear(o.solid()).toggle(!l);
 				if(!l){
-					if(!j)e.css({
-						position:p=="static"||p=="relative"?"absolute":p
-					}).resize(o);
+					if(!j)e.css(q,p==k?"absolute":p).resize(o);
 					e.css({
 						filter:_.msie()?"progid:DXImageTransform.Microsoft.alpha(opacity="+a*100+") progid:DXImageTransform.Microsoft.blur(pixelradius="+r+")":"",
 						backgroundColor:g,

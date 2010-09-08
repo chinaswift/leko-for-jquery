@@ -8,6 +8,7 @@ btn.png
 favicon.ico
 firebug-lite.js
 index.html
+jquery-1.4.2.js
 jQuery.defaults.html
 jQuery.easing.0.html
 jQuery.easing.html
@@ -73,7 +74,7 @@ jQuery.fn.pileBy.0.html
 jQuery.fn.pileBy.html
 jQuery.fn.pileTo.0.html
 jQuery.fn.pileTo.html
-jQuery.fn.popup.html
+jQuery.fn.png.html
 jQuery.fn.rect.html
 jQuery.fn.resize.0.html
 jQuery.fn.resize.html
@@ -135,5 +136,5 @@ Compile time: 0 minutes, 2 seconds
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 321,563 bytes
-Compression decreased file by 712,582 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 353,523 bytes
+Compression decreased file by 781,789 bytes.
