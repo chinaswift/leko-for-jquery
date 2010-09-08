@@ -62,7 +62,7 @@ $(function(){
 			blur:b,
 			color:p,
 			disabled:d
-		});//.shadow(0).shadow(1);
+		});
 		$("#code").html('$("div.shadow").shadow({x:<mark>'+x+'</mark> , y:<mark>'+y+'</mark> , blur:<mark>'+b+'</mark> , color:"<mark>'+p+'</mark>" , disabled:<mark>'+d+'</mark>})');
 	});
 
