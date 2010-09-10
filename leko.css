@@ -46,6 +46,8 @@ blockquote:before,blockquote:after,q:before,q:after{content:"";}
 .tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
 .td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
 .tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
+.dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.dt{word-wrap:break-word;word-break:break-all;overflow:hidden;text-align:justify;text-justify:inter-cluster;}
 
 /*
 color  : red\9; <=IE8

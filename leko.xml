@@ -181,6 +181,11 @@ alert(x);</code>
 				</vartype>
 			</param>
 			<param name="property-index">
+				<vartype name="string">
+					<varvalue>
+						<brief>颜色属性名称。</brief>
+					</varvalue>
+				</vartype>
 				<vartype name="number">
 					<varvalue>
 						<brief>颜色属性在&lt;a href="Leko.colorProperties.html" class="en"&gt; _.colorProperties &lt;/a&gt;中的索引编号。</brief>
@@ -2059,7 +2064,8 @@ alert(X.msie(5.5));</code>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.shadow.js</srcfile>
 				<param name="src" optional="1">
 					<default>undefined</default>
 					<vartype name="jquery">
@@ -2144,11 +2150,11 @@ alert(X.msie(5.5));</code>
     color:"red"
 });]]></code>
 			</method>
-			<method name="colorShade" fn="1">
-				<brief>为元素提供当鼠标移入移出(mouseenter|mouseleave)或焦点获得失去(focusin|focusout)时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
+			<method name="colorful" fn="1">
+				<brief>为元素提供当鼠标移入移出&lt;span class="en"&gt;(mouseenter|mouseleave)&lt;/span&gt;或焦点获得失去&lt;span class="en"&gt;(focusin|focusout)&lt;/span&gt;时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.color.js</srcfile>
+				<srcfile within="">leko.colorful.js</srcfile>
 				<param name="properties">
 					<vartype name="object">
 						<varvalue>
@@ -2166,22 +2172,15 @@ alert(X.msie(5.5));</code>
 					</vartype>
 				</param>
 				<param name="live" optional="1">
-					<default>false</default>
-					<vartype name="boolean">
-						<varvalue>
-							<value>true</value>
-							<brief>效果将以jQuery的live方式绑定到当前序列对象的由selector指定的子对象————包括当前已有的和未来创建的。</brief>
-						</varvalue>
-						<varvalue>
-							<value>false</value>
-							<brief>效果将绑定到当前序列对象。</brief>
-						</varvalue>
-					</vartype>
-				</param>
-				<param name="selector" optional="1">
+					<default>undefined</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>对当前序列对象的子对象进行筛选的选择符。仅当live为true时才有效。</brief>
+							<brief>效果将以jQuery的live方式绑定到当前序列元素的由此selector指定的内部元素————包括当前已有的和未来创建的。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="undefined">
+						<varvalue>
+							<brief>效果将绑定到当前元素。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -2233,22 +2232,20 @@ alert(X.msie(5.5));</code>
 						<value>this</value>
 					</varvalue>
 				</return>
-				<code><![CDATA[$("div#me").colorShade({
+				<code><![CDATA[$("div#me").colorful({
     properties:{
         color:"green"
     }
 });]]></code>
-				<code><![CDATA[$("body").colorShade({
-    live:true,
-    selector:"a",
+				<code><![CDATA[$("body").colorful({
+    live:"a",
     properties:{
         color:"red",
         backgroundColor:"blue"
     }
 });]]></code>
-				<code><![CDATA[$("form").colorShade({
-    live:true,
-    selector:"input:text",
+				<code><![CDATA[$("form").colorful({
+    live:"input:text",
     focus:true,
     properties:{
         borderColor:"green"
@@ -2265,6 +2262,38 @@ alert(X.msie(5.5));</code>
 					</varvalue>
 				</return>
 				<code>$("img[src$=.png]").ie6Png24();</code>
+			</method>
+			<method name="msFilter">
+				<brief>在IE上设置或获取&lt;mark class="en"&gt; -ms-filter &lt;/mark&gt;扩展CSS属性。非IE浏览器则会自动忽略。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<param name="filters" optional="1">
+					<default><![CDATA[undefined]]></default>
+					<vartype name="object">
+						<varvalue>
+							<brief>要设置的滤镜及参数配置。参见下面的代码示例。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="undefined">
+						<varvalue>
+							<brief>获取当前滤镜及参数配置。参见下面的代码示例。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<return name="object">
+					<varvalue>
+						<brief>获取到的设置。</brief>
+					</varvalue>
+				</return>
+				<code canrun="">$("body").msFilter({
+    BasicImage:{Invert:1,Opacity:1.00},
+    Gradient:{gradientType:0,startColorStr:'#ff00ff',endColorStr:'#00ff99'}
+});</code>
 			</method>
 			<method name="rect">
 				<brief>获取当前元素的rect数组。</brief>
@@ -3031,7 +3060,7 @@ console.log($("#test").defaults("shadow"));
 ]]></code>
 			</method>
 			<method name="currents">
-				<brief>获取或设置相对于当前元素的指定名称LEKO插件的当前配置。该配置对象除包含最近一次执行的参数外，还可用于暂存插件的运行时私有变量。</brief>
+				<brief>获取或设置相对于当前元素的指定名称LEKO插件的当前配置。该配置对象包含最近一次执行的参数。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
 				<param name="plugin-name">
@@ -3074,21 +3103,21 @@ console.log($("#test").defaults("shadow"));
 				<return name="object">
 					<varvalue>
 						<value></value>
-						<brief>对获取到或修改后的配置对象的引用。如果获取失败，返回空对象。</brief>
+						<brief>对获取到或修改后的配置对象的引用。</brief>
 					</varvalue>
 				</return>
-				<code canrun=""><![CDATA[var d=$("body").currents("shadow");
-console.log(d);
-d.x=3;
-console.log($("body").currents("shadow",{y:6},1));
-d.z=9;
-console.log(d);]]></code>
+				<return name="undefined">
+					<varvalue>
+						<value></value>
+						<brief>获取失败。当前元素尚未执行过插件。</brief>
+					</varvalue>
+				</return>
 				<code><![CDATA[$("#test").shadow({color:'red'});
 console.log($("#test").currents("shadow").color);
 ]]></code>
 			</method>
-			<method name="leko">
-				<brief><![CDATA[获取某HTML Element对应于某插件的隐含对象。该隐含对象使用jQuery的data("plugin-name")方法创建，通过读取并解析该Element在HTML代码的Tag声明中使用JSON语法设置的对应于插件名称的自定义属性值，为插件的初始化提供该对象的私有默认设置(优先权高于插件的全局默认设置和插件的运行时参数设置)。此外，该隐含对象还用于插件在针对该Element的工作中存取私有变量。]]></brief>
+			<method name="runtimes">
+				<brief>获取相对于当前元素的指定名称LEKO插件的用于暂存插件运行时私有变量的对象。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
 				<param name="plugin-name">
@@ -3100,17 +3129,9 @@ console.log($("#test").currents("shadow").color);
 				</param>
 				<return name="object">
 					<varvalue>
-						<brief>对获取到的对象的引用。</brief>
+						<brief>对获取到的对象的引用。如果配置对象尚不存在，则初始化为一个空对象并返回。</brief>
 					</varvalue>
 				</return>
-				<code>&lt;a colorShade="properties:{color:'red'}"&gt;Test&lt;/a&gt;
-
-&lt;script&gt;
-
-$("a").leko("colorShade").properties.color="blue";
-$("a").colorShade();
-
-&lt;/script&gt;</code>
 			</method>
 			<method name="colorTo">
 				<brief>以动态效果转变元素的颜色。</brief>

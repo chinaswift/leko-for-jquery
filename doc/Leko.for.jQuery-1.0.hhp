@@ -64,8 +64,8 @@ jQuery.fn.borderColorTo.html
 jQuery.fn.borderLeftColorTo.html
 jQuery.fn.borderRightColorTo.html
 jQuery.fn.borderTopColorTo.html
-jQuery.fn.colorShade.0.html
-jQuery.fn.colorShade.html
+jQuery.fn.colorful.0.html
+jQuery.fn.colorful.html
 jQuery.fn.colorTo.0.html
 jQuery.fn.colorTo.1.html
 jQuery.fn.colorTo.html
@@ -75,13 +75,14 @@ jQuery.fn.elements.html
 jQuery.fn.html
 jQuery.fn.ie6Png24.0.html
 jQuery.fn.ie6Png24.html
-jQuery.fn.leko.html
 jQuery.fn.move.0.html
 jQuery.fn.move.html
 jQuery.fn.moveBy.0.html
 jQuery.fn.moveBy.html
 jQuery.fn.moveTo.0.html
 jQuery.fn.moveTo.html
+jQuery.fn.msFilter.0.html
+jQuery.fn.msFilter.html
 jQuery.fn.outlineColorTo.html
 jQuery.fn.overflow.0.html
 jQuery.fn.overflow.html
@@ -98,6 +99,7 @@ jQuery.fn.resizeBy.0.html
 jQuery.fn.resizeBy.html
 jQuery.fn.resizeTo.0.html
 jQuery.fn.resizeTo.html
+jQuery.fn.runtimes.html
 jQuery.fn.shadow.0.html
 jQuery.fn.shadow.html
 jQuery.fn.solid.html
@@ -121,7 +123,7 @@ jQuery.support.shadow.html
 Leko.average.html
 Leko.blankImage.html
 Leko.color.html
-leko.color.js
+leko.colorful.js
 Leko.colorKeywords.html
 Leko.colorProperties.html
 leko.css
