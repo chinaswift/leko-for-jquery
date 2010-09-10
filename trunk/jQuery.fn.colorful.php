@@ -1,23 +1,5 @@
-<!doctype html><html><head><meta charset="utf-8" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
-<meta name="keywords" content="" /> 
-<meta name="description" content="" />
-<title>LEKO&trade;</title>
-<link rel="icon" type="image/ico" href="favicon.ico" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="stylesheet" type="text/css" href="leko.css" />
-<link rel="stylesheet" type="text/css" href="leko.demo.css" />
-<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
-<script src="jquery.js"></script><script src="leko.js"></script><script>
-
-if(!_.mozilla()){
-	document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
-}
-
-</script>
-<script src="leko.color.js"></script>
+<?php include 'leko.head.inc'; ?>
+<?php include 'leko.demo.head.inc'; ?>
 
 <style>
 
@@ -51,6 +33,7 @@ if(!_.mozilla()){
 
 </style>
 
+<script src="leko.colorful.js"></script>
 <script>
 
 $(function(){
@@ -62,7 +45,7 @@ $(function(){
 			c=$("#color option:selected").text(),
 			b=$("#borderColor option:selected").text(),
 			k=$("#backgroundColor option:selected").text();
-		$("#block").colorShade({
+		$("#block").colorful({
 			properties:{
 				color:c,
 				borderColor:b,
@@ -71,7 +54,7 @@ $(function(){
 			duration:d,
 			easing:a
 		});
-		$("#code").html('$("#block").colorShade({properties:{color:<mark>'
+		$("#code").html('$("#block").colorful({properties:{color:<mark>'
 		               +c+'</mark>,borderColor:<mark>'
 					   +b+'</mark>,backgroundColor:<mark>'
 					   +k+'</mark>},duration:<mark>'
@@ -81,9 +64,8 @@ $(function(){
 	
 	x.first().change();
 
-	$("#demo2").colorShade({
-		live:1,
-		selector:"a",
+	$("#demo2").colorful({
+		live:"a",
 		properties:{
 			color:"#EC108D",
 			backgroundColor:'#FEEF26'
@@ -94,10 +76,9 @@ $(function(){
 		$('<a href="#">新建的一些文本</a><br /><br />').appendTo("#demo2");
 	});
 
-	$("#demo3").colorShade({
-		live:1,
+	$("#demo3").colorful({
+		live:"input:text",
 		focus:1,
-		selector:"input:text",
 		properties:{
 			borderColor:"#EC108D",
 			backgroundColor:'#FEEE69'
@@ -112,7 +93,9 @@ $(function(){
 
 </script>
 
-</head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
+<?php include 'leko.neck.inc'; ?>
+<?php include 'leko.demo.neck.inc'; ?>
+
 <section><h4>例一：请尝试修改参数，然后将鼠标移入移出下面的块元素区域查看效果</h4>
 <div id="demo1" class="tr"><div class="td" id="box"><div id="block"><h3>标题</h3>这里有一些文本。</div></div>
 <div class="td" id="config"><ol>
@@ -185,7 +168,7 @@ $(function(){
 
 <section><h4>例二：尝试将鼠标移到下面的超链接文本之上，然后再创建一些新的，继续尝试</h4><div id="demo2">
 <a href="#">文本</a><br /><br />
-<a href="#" style="color:#632C91;" colorShade="properties:{backgroundColor:'#9CCD4A'}">还是一些文本</a><br /><br />
+<a href="#" style="color:#632C91;" colorful="properties:{color:'#000',backgroundColor:'#9CCD4A'}">还是一些文本</a><br /><br />
 </div><br /><button id="button1">创建新的文本链接</button></section>
 
 <hr />
@@ -195,4 +178,4 @@ $(function(){
 <input style="background:#C4E9FB" /><br /><br />
 </div><br /><button id="button2">创建新文本输入框</button></section>
 
-<footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>
+<?php include 'leko.foot.inc'; ?>

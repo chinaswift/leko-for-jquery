@@ -22,7 +22,7 @@
 				o.css(q,function(i,v){
 					return p=v=="static"?k:v;
 				});
-				if(!e)e=j?$(j):$("<div>&nbsp;</div>").css({
+				if(!e)e=(d.src=j?$(j):$("<div>&nbsp;</div>").css({
 					border :0,
 					margin :0,
 					padding:0,
@@ -30,15 +30,17 @@
 					float:"none",
 					left:0,
 					top:0
-				});
-				v.src=e;
+				}));
 				e.appear(o.solid()).toggle(!l);
 				if(!l){
 					if(!j)e.css(q,p==k?"absolute":p).resize(o);
 					e.css({
-						filter:_.msie()?"progid:DXImageTransform.Microsoft.alpha(opacity="+a*100+") progid:DXImageTransform.Microsoft.blur(pixelradius="+r+")":"",
 						backgroundColor:g,
 						opacity:a
+					}).msFilter({
+						Blur:{
+							pixelradius:r
+						}
 					}).pileBy(o,1).move(o,1,1,j?x:x-r+(!r||!x?0:x>0?-1:1),j?y:y-r+(!r||!x?0:y>0?-1:1));
 				}
 			}
