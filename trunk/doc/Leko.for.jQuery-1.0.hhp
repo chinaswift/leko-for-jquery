@@ -73,8 +73,6 @@ jQuery.fn.currents.html
 jQuery.fn.defaults.html
 jQuery.fn.elements.html
 jQuery.fn.html
-jQuery.fn.ie6Png24.0.html
-jQuery.fn.ie6Png24.html
 jQuery.fn.move.0.html
 jQuery.fn.move.html
 jQuery.fn.moveBy.0.html
@@ -92,6 +90,8 @@ jQuery.fn.pileBy.0.html
 jQuery.fn.pileBy.html
 jQuery.fn.pileTo.0.html
 jQuery.fn.pileTo.html
+jQuery.fn.png.0.html
+jQuery.fn.png.html
 jQuery.fn.rect.html
 jQuery.fn.resize.0.html
 jQuery.fn.resize.html
@@ -138,10 +138,10 @@ Leko.msie.html
 Leko.noConflict.html
 Leko.opera.html
 Leko.overflow.html
+leko.popup.js
 Leko.rect.html
 Leko.rgba.0.html
 Leko.rgba.html
-leko.shadow.js
 Leko.solidColor.html
 Leko.unique.html
 Leko.ver.html

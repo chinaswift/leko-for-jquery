@@ -2064,8 +2064,7 @@ alert(X.msie(5.5));</code>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
-				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.shadow.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
 				<param name="src" optional="1">
 					<default>undefined</default>
 					<vartype name="jquery">
@@ -2198,7 +2197,7 @@ alert(X.msie(5.5));</code>
 					</vartype>
 				</param>
 				<param name="duration" optional="1">
-					<default>800</default>
+					<default>1000</default>
 					<vartype name="string">
 						<varvalue>
 							<value>slow</value>
@@ -2227,6 +2226,19 @@ alert(X.msie(5.5));</code>
 						</varvalue>
 					</vartype>
 				</param>
+				<param name="disabled" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>禁用当前插件效果。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>启用当前插件效果。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<return name="jQuery">
 					<varvalue>
 						<value>this</value>
@@ -2252,7 +2264,7 @@ alert(X.msie(5.5));</code>
     }
 });]]></code>
 			</method>
-			<method name="ie6Png24">
+			<method name="png">
 				<brief>解决IE6不支持PNG24格式图片的Alpha通道的浏览器兼容性问题。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
@@ -2261,7 +2273,7 @@ alert(X.msie(5.5));</code>
 						<value>this</value>
 					</varvalue>
 				</return>
-				<code>$("img[src$=.png]").ie6Png24();</code>
+				<code>$("img[src$=.png]").png();</code>
 			</method>
 			<method name="msFilter">
 				<brief>在IE上设置或获取&lt;mark class="en"&gt; -ms-filter &lt;/mark&gt;扩展CSS属性。非IE浏览器则会自动忽略。</brief>
