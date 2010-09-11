@@ -60,7 +60,8 @@ $(function(){
 			a=$("#easing option:selected").text(),
 			c=$("#color option:selected").text(),
 			b=$("#borderColor option:selected").text(),
-			k=$("#backgroundColor option:selected").text();
+			k=$("#backgroundColor option:selected").text(),
+			n=eval("("+$("#n option:selected").text()+")");
 		$("#block").colorful({
 			properties:{
 				color:c,
@@ -68,14 +69,15 @@ $(function(){
 				backgroundColor:k
 			},
 			duration:d,
-			easing:a
+			easing:a,
+			disabled:n
 		});
-		$("#code").html('$("#block").colorful({properties:{color:<mark>'
-		               +c+'</mark>,borderColor:<mark>'
-					   +b+'</mark>,backgroundColor:<mark>'
-					   +k+'</mark>},duration:<mark>'
-					   +d+'</mark>,easing:<mark>'
-					   +a+'</mark>});');
+		$("#code").html('$("#block").colorful({properties:{color:<mark>"'
+		               +c+'"</mark>,borderColor:<mark>"'
+					   +b+'"</mark>,backgroundColor:<mark>"'
+					   +k+'"</mark>},duration:<mark>'
+					   +d+'</mark>,easing:<mark>"'
+					   +a+'"</mark>,disabled:<mark>'+n+'</mark>});');
 	});
 	
 	x.first().change();
@@ -173,6 +175,10 @@ $(function(){
 <option>#F8A530</option>
 <option selected>rgba(245,206,222,0.5)</option>
 <option>#EC108D</option>
+</select></li>
+<li><label class="en" for="n">disabled:</a></label><select class="en" id="n">
+<option selected>false</option>
+<option>true</option>
 </select></li>
 </ol></div></div></section>
 
