@@ -49,42 +49,42 @@ if(!_.mozilla()){
 
 </style>
 
-<script src="leko.colorful.js"></script>
+<script src="leko.gradient.js"></script>
 <script>
 
 $(function(){
 
 	var x=$("select").change(function(){
 		var
-			d=Number($("#duration option:selected").text()),
-			a=$("#easing option:selected").text(),
+			d=Number($("#speed option:selected").text()),
+			a=$("#fx option:selected").text(),
 			c=$("#color option:selected").text(),
 			b=$("#borderColor option:selected").text(),
 			k=$("#backgroundColor option:selected").text(),
 			n=eval("("+$("#n option:selected").text()+")");
-		$("#block").colorful({
-			properties:{
+		$("#block").gradient({
+			css:{
 				color:c,
 				borderColor:b,
 				backgroundColor:k
 			},
-			duration:d,
-			easing:a,
+			speed:d,
+			fx:a,
 			disabled:n
 		});
-		$("#code").html('$("#block").colorful({properties:{color:<mark>"'
+		$("#code").html('$("#block").gradient({css:{color:<mark>"'
 		               +c+'"</mark>,borderColor:<mark>"'
 					   +b+'"</mark>,backgroundColor:<mark>"'
-					   +k+'"</mark>},duration:<mark>'
-					   +d+'</mark>,easing:<mark>"'
+					   +k+'"</mark>},speed:<mark>'
+					   +d+'</mark>,fx:<mark>"'
 					   +a+'"</mark>,disabled:<mark>'+n+'</mark>});');
 	});
 	
 	x.first().change();
 
-	$("#demo2").colorful({
+	$("#demo2").gradient({
 		live:"a",
-		properties:{
+		css:{
 			color:"#EC108D",
 			backgroundColor:'#FEEF26'
 		}
@@ -94,10 +94,10 @@ $(function(){
 		$('<a href="#">新建的一些文本</a><br /><br />').appendTo("#demo2");
 	});
 
-	$("#demo3").colorful({
+	$("#demo3").gradient({
 		live:"input:text",
 		focus:1,
-		properties:{
+		css:{
 			borderColor:"#EC108D",
 			backgroundColor:'#FEEE69'
 		}
@@ -115,7 +115,7 @@ $(function(){
 <section><h4>例一：请尝试修改参数，然后将鼠标移入移出下面的块元素区域查看效果</h4>
 <div id="demo1" class="tr"><div class="td" id="box"><div id="block"><h3>标题</h3>这里有一些文本。</div></div>
 <div class="td" id="config"><ol>
-<li><label class="en" for="duration">duration:</a></label><select class="en" id="duration">
+<li><label class="en" for="speed">speed:</a></label><select class="en" id="speed">
 <option>200</option>
 <option>400</option>
 <option>600</option>
@@ -123,7 +123,7 @@ $(function(){
 <option>1000</option>
 <option>2000</option>
 </select></li>
-<li><label class="en" for="easing">easing:</a></label><select class="en" id="easing">
+<li><label class="en" for="fx">fx:</a></label><select class="en" id="fx">
 <option selected>swing</option>
 <option>inquad</option>
 <option>outquad</option>
@@ -188,7 +188,7 @@ $(function(){
 
 <section><h4>例二：尝试将鼠标移到下面的超链接文本之上，然后再创建一些新的，继续尝试</h4><div id="demo2">
 <a href="#">文本</a><br /><br />
-<a href="#" style="color:#632C91;" colorful="properties:{color:'#000',backgroundColor:'#9CCD4A'}">还是一些文本</a><br /><br />
+<a href="#" style="color:#632C91;" gradient="css:{color:'#000',backgroundColor:'#9CCD4A'}">还是一些文本</a><br /><br />
 </div><br /><button id="button1">创建新的文本链接</button></section>
 
 <hr />

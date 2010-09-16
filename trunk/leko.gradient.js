@@ -1,7 +1,7 @@
 (function(_,$){
 
 	_.fn(
-		"colorful",
+		"gradient",
 		function(o,v,d,n){
 			var
 				l=v.live,
@@ -14,9 +14,9 @@
 							b=l?o.runtimes(n):d,
 							w=l?o.currents(n,$.extend(true,{},v,o.defaults(n))):v,
 							t=/(?:t|e)$/.test(e.type),
-							g=w.properties,
+							g=w.css,
 							q=b.$,
-							p=_.colorProperties,
+							p=_.colors.properties,
 							j=g[p[2]],
 							i=3;					
 						if(!q){
@@ -30,17 +30,17 @@
 							}
 							b.$=q;
 						}
-						o.stop().animate(t?q:g,w.duration,w.easing,t?function(){
+						o.stop().animate(t?q:g,w.speed,w.fx,t?function(){
 							for(var i in b._)o.css(i,b._[i]);						
 						}:void 0);
 					}
 				};
-			if(l)o.undelegate(l,m,d[m]).delegate(l,m,v[m]=f);
-			else o.unbind(m,d[m]).bind(m,v[m]=f);
+			if(l)o.undelegate(l,m,d[m]).delegate(l,m,d[m]=f);
+			else o.unbind(m,d[m]).bind(m,d[m]=f);
 		},
 		{
-			duration:1000,
-			easing:"swing"
+			fx:"swing",
+			speed:1000
 		}
 	);
 

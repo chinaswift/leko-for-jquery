@@ -579,26 +579,17 @@ $("body").shadow(1);</code>
 			<code canrun="">var X=Leko.noConflict();
 alert(X.msie(5.5));</code>
 		</method>
-		<object name="colorKeywords">
-			<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-		</object>
-		<property name="blankImage">
-			<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
-			<vartype name="string">
-				<varvalue>
-					<value>'blank.gif'</value>
-				</varvalue>
-			</vartype>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-		</property>
-		<property name="colorProperties" readonly="1">
-			<brief>包含所有CSS3支持的颜色类属性。</brief>
-			<vartype name="array">
-				<varvalue>
-					<value><![CDATA[[<br />
+		<object name="colors">
+			<property name="names">
+				<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+			</property>
+			<property name="properties" readonly="1">
+				<brief>包含所有CSS3支持的颜色类属性。</brief>
+				<vartype name="array">
+					<varvalue>
+						<value><![CDATA[[<br />
     'color',<br />
     'backgroundColor',<br />
     'borderColor',<br />
@@ -608,6 +599,23 @@ alert(X.msie(5.5));</code>
     'borderTopColor',<br />
     'outlineColor'<br />
 ]]]></value>
+					</varvalue>
+				</vartype>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+			</property>
+			<brief>存储色彩相关常量的对象。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+		</object>
+		<object name="fx">
+			<brief>用于存储Leko为jQuery安装的功能扩展插件的个性化效果设置的接口对象。</brief>
+		</object>
+		<property name="blankImage">
+			<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
+			<vartype name="string">
+				<varvalue>
+					<value>'blank.gif'</value>
 				</varvalue>
 			</vartype>
 			<srcfile>jquery.js</srcfile>
@@ -2149,12 +2157,12 @@ alert(X.msie(5.5));</code>
     color:"red"
 });]]></code>
 			</method>
-			<method name="colorful" fn="1">
+			<method name="gradient" fn="1">
 				<brief>为元素提供当鼠标移入移出&lt;span class="en"&gt;(mouseenter|mouseleave)&lt;/span&gt;或焦点获得失去&lt;span class="en"&gt;(focusin|focusout)&lt;/span&gt;时的由一个或一组CSS属性指定的颜色逐渐变换的动态效果。完整支持CSS3色彩定义。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
-				<srcfile within="">leko.colorful.js</srcfile>
-				<param name="properties">
+				<srcfile within="">leko.gradient.js</srcfile>
+				<param name="css">
 					<vartype name="object">
 						<varvalue>
 							<brief>要应用动态转换效果的样式表属性及其目标值的键值对。支持下列属性：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
@@ -2196,7 +2204,7 @@ alert(X.msie(5.5));</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="duration" optional="1">
+				<param name="speed" optional="1">
 					<default>1000</default>
 					<vartype name="string">
 						<varvalue>
@@ -2218,7 +2226,7 @@ alert(X.msie(5.5));</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="easing" optional="1">
+				<param name="fx" optional="1">
 					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
@@ -2244,25 +2252,25 @@ alert(X.msie(5.5));</code>
 						<value>this</value>
 					</varvalue>
 				</return>
-				<code><![CDATA[$("div#me").colorful({
-    properties:{
+				<code>$("div#me").gradient({
+    css:{
         color:"green"
     }
-});]]></code>
-				<code><![CDATA[$("body").colorful({
+});</code>
+				<code>$("body").gradient({
     live:"a",
-    properties:{
+    css:{
         color:"red",
         backgroundColor:"blue"
     }
-});]]></code>
-				<code><![CDATA[$("form").colorful({
+});</code>
+				<code>$("form").gradient({
     live:"input:text",
     focus:true,
-    properties:{
+    css:{
         borderColor:"green"
     }
-});]]></code>
+});</code>
 			</method>
 			<method name="png">
 				<brief>解决IE6不支持PNG24格式图片的Alpha通道的浏览器兼容性问题。</brief>
