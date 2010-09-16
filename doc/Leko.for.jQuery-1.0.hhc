@@ -17,9 +17,11 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="webkit"><param name="Local" value="Leko.webkit.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="Leko.fn.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="noConflict"><param name="Local" value="Leko.noConflict.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorKeywords"><param name="Local" value="Leko.colorKeywords.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colors"><param name="Local" value="Leko.colors.html"></OBJECT>
+<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="names"><param name="Local" value="Leko.colors.names.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="properties"><param name="Local" value="Leko.colors.properties.html"></OBJECT>
+<ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fx"><param name="Local" value="Leko.fx.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="blankImage"><param name="Local" value="Leko.blankImage.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorProperties"><param name="Local" value="Leko.colorProperties.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="jQuery"><param name="Local" value="jQuery.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="easing"><param name="Local" value="jQuery.easing.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inquad"><param name="Local" value="jQuery.easing.inquad.html"></OBJECT>
@@ -54,7 +56,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inoutbounce"><param name="Local" value="jQuery.easing.inoutbounce.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="jQuery.fn.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="shadow"><param name="Local" value="jQuery.fn.shadow.html"></OBJECT>
-<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="colorful"><param name="Local" value="jQuery.fn.colorful.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="gradient"><param name="Local" value="jQuery.fn.gradient.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="png"><param name="Local" value="jQuery.fn.png.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="msFilter"><param name="Local" value="jQuery.fn.msFilter.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rect"><param name="Local" value="jQuery.fn.rect.html"></OBJECT>
