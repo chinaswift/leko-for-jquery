@@ -92,6 +92,8 @@ jQuery.fn.pileBy.0.html
 jQuery.fn.pileBy.html
 jQuery.fn.pileTo.0.html
 jQuery.fn.pileTo.html
+jQuery.fn.play.0.html
+jQuery.fn.play.html
 jQuery.fn.png.0.html
 jQuery.fn.png.html
 jQuery.fn.rect.html
@@ -113,6 +115,7 @@ jQuery.iePseudoClasses.html
 jQuery.isBoolean.html
 jQuery.isConfigObject.html
 jQuery.isDate.html
+jQuery.isFunction.html
 jQuery.isJqueryObject.html
 jQuery.isNumber.html
 jQuery.isObject.html

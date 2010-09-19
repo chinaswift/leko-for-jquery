@@ -78,6 +78,8 @@ jQuery.fn.pileBy.0.html
 jQuery.fn.pileBy.html
 jQuery.fn.pileTo.0.html
 jQuery.fn.pileTo.html
+jQuery.fn.play.0.html
+jQuery.fn.play.html
 jQuery.fn.png.0.html
 jQuery.fn.png.html
 jQuery.fn.rect.html
@@ -99,6 +101,7 @@ jQuery.iePseudoClasses.html
 jQuery.isBoolean.html
 jQuery.isConfigObject.html
 jQuery.isDate.html
+jQuery.isFunction.html
 jQuery.isJqueryObject.html
 jQuery.isNumber.html
 jQuery.isObject.html
@@ -142,11 +145,11 @@ twitter-128.128-2.png
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 2 seconds
-119	Topics
-350	Local links
-118	Internet links
+122	Topics
+357	Local links
+121	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 396,975 bytes
-Compression decreased file by 791,370 bytes.
+Created e:\Develop\Projects\Leko\trunk\doc\Leko.for.jQuery-1.0.chm, 397,607 bytes
+Compression decreased file by 798,933 bytes.
