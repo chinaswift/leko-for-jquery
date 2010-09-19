@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="" />
+<title>LEKO&trade;</title>
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" type="text/css" href="leko.css" />
+<link rel="stylesheet" type="text/css" href="leko.demo.css" />
+<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
+<script src="jquery.js"></script><script src="leko.js"></script><script>
+
+if(!_.mozilla()){
+	document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
+}
+
+</script>
+<style>
+
+#box{background:#efefef;width:800px;height:100px;position:relative;}
+#block{position:absolute;width:80px;height:40px;top:25px;left:25px;background:#00B8EE;color:#fff;display:block;padding:5px;letter-spacing:1px;}
+
+</style>
+
+<script>
+
+$(function(){
+
+	$("#box").hover(
+		function(){
+			$("#block").stop().play({
+				left:"700px",
+				background:"#EC108D"
+			},2000,"outbounce",function(){
+				$("#block").text("完成动画");
+			});
+		},
+		function(){
+			$("#block").stop().play(function(){
+				$("#block").text("完成还原");
+			});
+		}
+	);
+
+});
+
+</script>
+
+</head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
+<section><h4>例一：将鼠标移到下方区域内开始动画，移出则还原</h4><div id="box"><h6 id="block">准备开始</h6></div></section><section></section>
+
+<footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>

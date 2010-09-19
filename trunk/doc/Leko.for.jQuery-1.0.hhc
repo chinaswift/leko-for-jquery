@@ -59,6 +59,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="gradient"><param name="Local" value="jQuery.fn.gradient.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="png"><param name="Local" value="jQuery.fn.png.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="msFilter"><param name="Local" value="jQuery.fn.msFilter.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="play"><param name="Local" value="jQuery.fn.play.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="rect"><param name="Local" value="jQuery.fn.rect.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="overflow"><param name="Local" value="jQuery.fn.overflow.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="moveTo"><param name="Local" value="jQuery.fn.moveTo.html"></OBJECT>
@@ -97,6 +98,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isBoolean"><param name="Local" value="jQuery.isBoolean.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isDate"><param name="Local" value="jQuery.isDate.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isNumber"><param name="Local" value="jQuery.isNumber.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isFunction"><param name="Local" value="jQuery.isFunction.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isObject"><param name="Local" value="jQuery.isObject.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="isString"><param name="Local" value="jQuery.isString.html"></OBJECT>
 <ul></ul></ul></ul></BODY></HTML>

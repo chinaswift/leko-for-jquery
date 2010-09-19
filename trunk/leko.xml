@@ -2315,6 +2315,17 @@ alert(X.msie(5.5));</code>
     Gradient:{gradientType:0,startColorStr:'#ff00ff',endColorStr:'#00ff99'}
 });</code>
 			</method>
+			<method name="play">
+				<brief>开始或复原一段动画。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("img[src$=.png]").png();</code>
+			</method>
 			<method name="rect">
 				<brief>获取当前元素的rect数组。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -3902,6 +3913,29 @@ console.log($.defaults("shadow").offset.x);]]></code>
 			</return>
 			<code canrun=""><![CDATA[alert($.isNumber(123));]]></code>
 			<code canrun=""><![CDATA[alert($.isNumber(123+"abc"));]]></code>
+		</method>
+		<method name="isFunction">
+			<brief>检查变量是否是函数。</brief>
+			<srcfile within="">jquery.js</srcfile>
+			<param name="var">
+				<vartype name="">
+					<varvalue>
+						<brief>要检查的变量。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="boolean">
+				<varvalue>
+					<value>true</value>
+					<brief>是函数。</brief>
+				</varvalue>
+				<varvalue>
+					<value>false</value>
+					<brief>不是函数。</brief>
+				</varvalue>
+			</return>
+			<code canrun=""><![CDATA[alert($.isFunction(function(){}));]]></code>
+			<code canrun=""><![CDATA[alert($.isFunction(new Function("x")));]]></code>
 		</method>
 		<method name="isObject">
 			<brief>检查变量是否是无类型对象。</brief>

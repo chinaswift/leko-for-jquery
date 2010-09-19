@@ -81,7 +81,7 @@
 			var
 				o=_.fx,
 				d=(o[n]=o[n]||{});
-			return(d[m]=d[m]||$.noop);
+			return $.isFunction(m)?m:(d[m]=d[m]||$.noop);
 		},
 		leko:{}		
 	});
@@ -289,6 +289,69 @@
 	$.ieHtml5Tags();
 
 	$.fn.extend({
+		play:function(d,t,e,f){
+			var
+				i,
+				m,
+				o,
+				n=3,
+				v={},
+				a="animate",
+				b=$.isObject(d),
+				x=_.colors.properties;
+			if(b){
+				for(i in d){
+					m=d[i];
+					if(i==x[2])while(n<7)v[x[n++]]=m;
+					else v[i=="background"?x[1]:i]=m;					
+				}
+			}
+			return this.each(function(x,p){
+				o=$(p);
+				x=o.currents(a);				
+				if(!x&&b){
+					x={
+						v:{},
+						w:{},
+						t:t,
+						e:e					
+					};
+					for(i in v){
+						m=o.css(i);
+						x.w[i]=m;
+						x.v[i]=/color/i.test(i)?_.solidColor(p,i):m;
+					}
+					x=o.currents(a,x);					
+				}					
+				o.animate(b?v:x.v,b?t:x.t,b?e:x.e,b?f:function(){
+					for(var i in x.w)o.css(i,x.w[i]);
+					o.removeData(a);
+					if(d)d();
+				});
+			});
+		},
+		defaults:function(n,v,b){
+			var
+				e=this,
+				d="leko",
+				o=(e.data()[d]=e.data(d)||{});
+			d=o[n]||eval("({"+(e.attr(n)||"")+"})");
+			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
+		},
+		runtimes:function(n){
+			var
+				e=this,
+				d="suyu",
+				o=(e.data()[d]=e.data(d)||{});
+			return(o[n]=o[n]||{});
+		},
+		currents:function(n,v,b){
+			var
+				e=this,
+				o=e.data(),
+				d=o[n];
+			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
+		},
 		elements:function(){
 			var
 				x=this.map(function(i,e){
@@ -430,28 +493,6 @@
 		},
 		pileBy:function(o,b){
 			return this["insert"+(b?"Before":"After")]($(o)).css("zIndex",o.css("zIndex"));
-		},
-		defaults:function(n,v,b){
-			var
-				e=this,
-				d="leko",
-				o=(e.data()[d]=e.data(d)||{});
-			d=o[n]||eval("({"+(e.attr(n)||"")+"})");
-			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
-		},
-		runtimes:function(n){
-			var
-				e=this,
-				d="suyu",
-				o=(e.data()[d]=e.data(d)||{});
-			return(o[n]=o[n]||{});
-		},
-		currents:function(n,v,b){
-			var
-				e=this,
-				o=e.data(),
-				d=o[n];
-			return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;
 		},
 		msFilter:function(v){
 			var
