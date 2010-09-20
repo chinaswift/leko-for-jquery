@@ -33,9 +33,9 @@ while(e=e.parentNode);return r;},overflow:function(a,b){return a[0]<b[0]||a[1]>b
 l=arguments.callee,n=l.fn,d=$.defaults(n),c=a===void 0||$.isConfigObject(a);return this.each(function(i,o){o=$(o);i=o.currents(n);if(c||i)return f(o,o.currents(n,c?$.extend(true,{},d,a,o.defaults(n)):$.extend(!b,i,v,{disabled:!a})),o.runtimes(n),n)!==false;});}})(a[m+1]);f.fn=n;$.fn[n]=f;_.fx[n]=a[m+3];$.defaults(n,$.extend({},a[m+2]));}},fx:{}};(function(){var
 B=$.browser,S=$.support,D;$.each(["webkit","opera","msie","mozilla"],function(i,v){_[v]=function(n,m){return!!(B[v]&&_.ver(B.version,n)!=(m||0));}});S.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);D=_.msie(9)&&1||_.mozilla("1.9.1")&&2||_.webkit(522)&&3||_.opera(10.5)&&1;S.shadow=D&&["b","MozB","WebkitB"][D-1]+"oxShadow";})();window.Leko=window._=_;$.ieHtml5Tags();$.fn.extend({play:function(d,t,e,f){var
 i,m,o,n=3,v={},a="animate",b=$.isObject(d),x=_.colors.properties;if(b){for(i in d){m=d[i];if(i==x[2])while(n<7)v[x[n++]]=m;else v[i=="background"?x[1]:i]=m;}}
-return this.each(function(x,p){o=$(p);x=o.currents(a);if(!x&&b){x={v:{},w:{},t:t,e:e};for(i in v){m=o.css(i);x.w[i]=m;x.v[i]=/color/i.test(i)?_.solidColor(p,i):m;}
+else if($.isFunction(d))f=d;return this.each(function(x,p){o=$(p);x=o.currents(a);if(!x){if(!b)return;x={v:{},w:{},t:t,e:e};for(i in v){m=o.css(i);x.w[i]=m;x.v[i]=/color/i.test(i)?_.solidColor(p,i):m;}
 x=o.currents(a,x);}
-o.animate(b?v:x.v,b?t:x.t,b?e:x.e,b?f:function(){for(var i in x.w)o.css(i,x.w[i]);o.removeData(a);if(d)d();});});},defaults:function(n,v,b){var
+o.animate(b?v:x.v,t||x.t,e||x.e,b?f:function(){for(var i in x.w)o.css(i,x.w[i]);o.removeData(a);if(f)f();});});},defaults:function(n,v,b){var
 e=this,d="leko",o=(e.data()[d]=e.data(d)||{});d=o[n]||eval("({"+(e.attr(n)||"")+"})");return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;},runtimes:function(n){var
 e=this,d="suyu",o=(e.data()[d]=e.data(d)||{});return(o[n]=o[n]||{});},currents:function(n,v,b){var
 e=this,o=e.data(),d=o[n];return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;},elements:function(){var
@@ -56,8 +56,8 @@ else{x=f;return false;}});return x;},png:function(){return _.msie(7,1)?this.each
 e=$(o),h=o.src,a="backgroundImage",k=e.css(a),r=/\.png/i,b=h&&r.test(h),d=k&&r.test(k);if(b||d){if(!e.is("img")||o.complete){r=b?h:k.split(/[\(\)\"\']+/)[1];if(d)e.css(a,"none");else e.resize(e).attr("src",_.blankImage);e.msFilter({AlphaImageLoader:{src:r,sizingMethod:'crop'}});}
 else e.load(function(){$(this).png();});}}):this;}});$.each(_.colors.properties,function(i,v){$.fx.step[v]=function(fx){if(fx.state==0){fx.start=_.rgba(_.solidColor(fx.elem,v));fx.end=_.rgba(fx.end);}
 fx.elem.style[v]=_.color($.map(fx.start,function(v,i){return fx.pos*(fx.end[i]-v)+v;}));}
-$.fn[v+"To"]=function(d,c,f){var
-o={};o[v]=c;return this.animate(o,parseInt(d)||800,f);}});(function(){var
+$.fn[v+"To"]=function(c,d,e,f){var
+o={};o[v]=c;return this.animate(o,d||800,e,f);}});(function(){var
 m=Math,C=m.cos,W=m.pow,S=m.sin,A=m.abs,I=m.PI,N=m.asin,Q=m.sqrt,e=$.easing,f=function(i){return function(x,t,b,c,d){var
 s=1.70158,p=0,a=c,v=-1;switch(i){case 0:return c*(t/=d)*t+b;case 1:return-c*(t/=d)*(t-2)+b;case 2:return(t/=d/2)<1?c/2*t*t+b:-c/2*((--t)*(t-2)-1)+b;case 3:return c*(t/=d)*t*t+b;case 4:return c*((t=t/d-1)*t*t+1)+b;case 5:return(t/=d/2)<1?c/2*t*t*t+b:c/2*((t-=2)*t*t+2)+b;case 6:return c*(t/=d)*t*t*t+b;case 7:return-c*((t=t/d-1)*t*t*t-1)+b;case 8:return(t/=d/2)<1?c/2*t*t*t*t+b:-c/2*((t-=2)*t*t*t-2)+b;case 9:return c*(t/=d)*t*t*t*t+b;case 10:return c*((t=t/d-1)*t*t*t*t+1)+b;case 11:return(t/=d/2)<1?c/2*t*t*t*t*t+b:c/2*((t-=2)*t*t*t*t+2)+b;case 12:return-c*C(t/d*(I/2))+c+b;case 13:return c*S(t/d*(I/2))+b;case 14:return-c/2*(C(I*t/d)-1)+b;case 15:return t==0?b:c*W(2,10*(t/d-1))+b;case 16:return t==d?b+c:c*(-W(2,-10*t/d)+1)+b;case 17:return t==0?b:t==d?b+c:(t/=d/2)<1?c/2*W(2,10*(t-1))+b:c/2*(-W(2,-10*--t)+2)+b;case 18:return-c*(Q(1-(t/=d)*t)-1)+b;case 19:return c*Q(1-(t=t/d-1)*t)+b;case 20:return(t/=d/2)<1?-c/2*(Q(1-t*t)-1)+b:c/2*(Q(1-(t-=2)*t)+1)+b;case 21:v++;case 22:v++;if(!t)return b;if((t/=d)==1)return b+c;if(!p)p=d*.3;if(a<A(c)){a=c;s=p/4;}
 else s=p/(2*I)*N(c/a);return v?a*W(2,-10*t)*S((t*d-s)*(2*I)/p)+c+b:-(a*W(2,10*(t-=1))*S((t*d-s)*(2*I)/p))+b;case 23:if(!t)return b;if((t/=d/2)==2)return b+c;if(!p)p=d*.3*1.5;if(a<A(c)){a=c;s=p/4;}

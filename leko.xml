@@ -2,6 +2,48 @@
 <leko>
 	<object name="Leko">
 		<brief>是Leko for jQuery的全局核心对象。可以简写为&lt;mark class="en"&gt; _ &lt;/mark&gt;。</brief>
+		<object name="colors">
+			<property name="names">
+				<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+			</property>
+			<property name="properties" readonly="1">
+				<brief>包含所有CSS3支持的颜色类属性。</brief>
+				<vartype name="array">
+					<varvalue>
+						<value><![CDATA[[<br />
+    'color',<br />
+    'backgroundColor',<br />
+    'borderColor',<br />
+    'borderBottomColor',<br />
+    'borderLeftColor',<br />
+    'borderRightColor',<br />
+    'borderTopColor',<br />
+    'outlineColor'<br />
+]]]></value>
+					</varvalue>
+				</vartype>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+			</property>
+			<brief>存储色彩相关常量的对象。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+		</object>
+		<object name="fx">
+			<brief>用于存储Leko为jQuery安装的功能扩展插件的个性化效果设置的接口对象。</brief>
+		</object>
+		<property name="blankImage">
+			<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
+			<vartype name="string">
+				<varvalue>
+					<value>'blank.gif'</value>
+				</varvalue>
+			</vartype>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+		</property>
 		<method name="ver">
 			<brief>检查版本号是否满足最低兼容性要求。对于如 a.b.c.d 形式的多级版本号，将从高位向低位逐级比较。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -579,48 +621,6 @@ $("body").shadow(1);</code>
 			<code canrun="">var X=Leko.noConflict();
 alert(X.msie(5.5));</code>
 		</method>
-		<object name="colors">
-			<property name="names">
-				<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-			</property>
-			<property name="properties" readonly="1">
-				<brief>包含所有CSS3支持的颜色类属性。</brief>
-				<vartype name="array">
-					<varvalue>
-						<value><![CDATA[[<br />
-    'color',<br />
-    'backgroundColor',<br />
-    'borderColor',<br />
-    'borderBottomColor',<br />
-    'borderLeftColor',<br />
-    'borderRightColor',<br />
-    'borderTopColor',<br />
-    'outlineColor'<br />
-]]]></value>
-					</varvalue>
-				</vartype>
-				<srcfile>jquery.js</srcfile>
-				<srcfile within="">leko.js</srcfile>
-			</property>
-			<brief>存储色彩相关常量的对象。</brief>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-		</object>
-		<object name="fx">
-			<brief>用于存储Leko为jQuery安装的功能扩展插件的个性化效果设置的接口对象。</brief>
-		</object>
-		<property name="blankImage">
-			<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
-			<vartype name="string">
-				<varvalue>
-					<value>'blank.gif'</value>
-				</varvalue>
-			</vartype>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-		</property>
 	</object>
 	<object name="jQuery">
 		<brief>是jQuery的全局核心对象。可以简写为&lt;mark class="en"&gt; $ &lt;/mark&gt;。</brief>
@@ -2205,7 +2205,7 @@ alert(X.msie(5.5));</code>
 					</vartype>
 				</param>
 				<param name="speed" optional="1">
-					<default>1000</default>
+					<default>800</default>
 					<vartype name="string">
 						<varvalue>
 							<value>slow</value>
@@ -2324,7 +2324,66 @@ alert(X.msie(5.5));</code>
 						<value>this</value>
 					</varvalue>
 				</return>
-				<code>$("img[src$=.png]").png();</code>
+				<param name="properties">
+					<default>undefined</default>
+					<vartype name="object">
+						<varvalue>
+							<brief>要应用动态转换效果的样式表属性及其目标值的键值对。注意，不同于直接调用&lt;mark class="en"&gt; animate &lt;/mark&gt;方法的地方在于不可以为属性使用如&lt;mark class="en"&gt; width:"+=200px" &lt;/mark&gt;这样的相对值。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="function">
+						<varvalue>
+							<brief>以此作为结束时的回调函数，对最近一次执行的动画开始还原。如果尚未执行过动画，则自动忽略。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="undefined">
+						<varvalue>
+							<brief>对最近一次执行的动画开始还原。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="duration">
+					<default>normal</default>
+					<vartype name="string">
+						<varvalue>
+							<value>slow</value>
+							<brief>预设的速度级别。相当于600ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>normal</value>
+							<brief>预设的速度级别。相当于400ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>fast</value>
+							<brief>预设的速度级别。相当于200ms</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="number">
+						<varvalue>
+							<brief>精确指定速度的整数数值。单位为毫秒。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="easing" optional="1">
+					<default>swing</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>要应用的缓动函数名称。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="callback" optional="1">
+					<vartype name="function">
+						<varvalue>
+							<brief>动画完成后的回调函数。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<code>$("div#box").play({color:"red"},2000,"swing",function(){
+    $("div#box").play(function(){
+        alert("done!");
+    });
+});</code>
 			</method>
 			<method name="rect">
 				<brief>获取当前元素的rect数组。</brief>
@@ -3166,6 +3225,26 @@ console.log($("#test").currents("shadow").color);
 			</method>
 			<method name="colorTo">
 				<brief>以动态效果转变元素的颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3188,23 +3267,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3222,14 +3289,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").colorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").colorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").colorTo("#f30",1000);</code>
+				<code>$("a").colorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="backgroundColorTo">
 				<brief>以动态效果转变元素的背景颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3252,23 +3339,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3286,14 +3361,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").backgroundColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").backgroundColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").backgroundColorTo("#f30",1000);</code>
+				<code>$("a").backgroundColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="borderColorTo">
 				<brief>以动态效果转变元素的边框颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3316,23 +3411,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3350,14 +3433,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").borderColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").borderColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").borderColorTo("#f30",1000);</code>
+				<code>$("a").borderColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="borderTopColorTo">
 				<brief>以动态效果转变元素的上边框颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3380,23 +3483,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3414,14 +3505,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").borderTopColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").borderTopColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").borderTopColorTo("#f30",1000);</code>
+				<code>$("a").borderTopColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="borderRightColorTo">
 				<brief>以动态效果转变元素的右边框颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3444,23 +3555,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3478,14 +3577,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").borderRightColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").borderRightColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").borderRightColorTo("#f30",1000);</code>
+				<code>$("a").borderRightColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="borderBottomColorTo">
 				<brief>以动态效果转变元素的下边框颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3508,23 +3627,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3542,14 +3649,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").borderBottomColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").borderBottomColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").borderBottomColorTo("#f30",1000);</code>
+				<code>$("a").borderBottomColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="borderLeftColorTo">
 				<brief>以动态效果转变元素的左边框颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3572,23 +3699,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3606,14 +3721,34 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").borderLeftColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").borderLeftColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").borderLeftColorTo("#f30",1000);</code>
+				<code>$("a").borderLeftColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
 			<method name="outlineColorTo">
 				<brief>以动态效果转变元素的轮廓颜色。</brief>
+				<param name="color">
+					<vartype name="string">
+						<varvalue>
+							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
+&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
+&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
+&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
+&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
+&lt;li&gt;#RGB&lt;/li&gt;
+&lt;li&gt;#RRGGBB&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="duration">
 					<default>800</default>
 					<vartype name="string">
@@ -3636,23 +3771,11 @@ console.log($("#test").currents("shadow").color);
 						</varvalue>
 					</vartype>
 				</param>
-				<param name="color">
+				<param name="easing" optional="1">
+					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>各种符合CSS3语法格式的颜色定义。包括：&lt;br /&gt;&lt;br /&gt;&lt;ol class="en"&gt;
-&lt;li&gt;rgb (R,G,B)&lt;/li&gt;
-&lt;li&gt;rgba(R,G,B,A)&lt;/li&gt;
-&lt;li&gt;hsl (H,S,L)&lt;/li&gt;
-&lt;li&gt;hsla(H,S,L,A)&lt;/li&gt;
-&lt;li&gt;#RGB&lt;/li&gt;
-&lt;li&gt;#RRGGBB&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;</brief>
-						</varvalue>
-					</vartype>
-					<vartype name="array">
-						<varvalue>
-							<brief>包含分别对应RGBA四个通道数值的数组。</brief>
+							<brief>要应用的缓动函数名称。</brief>
 						</varvalue>
 					</vartype>
 				</param>
@@ -3670,15 +3793,12 @@ console.log($("#test").currents("shadow").color);
 				</return>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-				<code><![CDATA[$("a").outlineColorTo(1000,"#f30");]]></code>
-				<code><![CDATA[$("a").outlineColorTo("slow",[255,0,0,0.25],function(){
+				<code>$("a").outlineColorTo("#f30",1000);</code>
+				<code>$("a").outlineColorTo([255,0,0,0.25],"slow",null,function(){
     alert("Animation complete.");
-});]]></code>
+});</code>
 				<demo link="jQuery.fn.colorTo" name="全部颜色渐变动画效果的演示"></demo>
 			</method>
-		</object>
-		<object name="leko">
-			<brief>用于修改Leko为jQuery安装的功能扩展插件的全局默认设置的接口对象。</brief>
 		</object>
 		<object name="support">
 			<brief>反映当前用户浏览器内核特性的一系列属性的集合。</brief>
@@ -3722,6 +3842,9 @@ console.log($("#test").currents("shadow").color);
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
 			</property>
+		</object>
+		<object name="leko">
+			<brief>用于修改Leko为jQuery安装的功能扩展插件的全局默认设置的接口对象。</brief>
 		</object>
 		<method name="ieHtml5Tags">
 			<brief>解决IE9(?)以下版本不支持HTML5新增标签的浏览器兼容性问题。在页面开始解析之前执行一次这个函数，问题就会自动解决。注意：此函数默认会自动执行。如果你不需要使用新增的HTML5标签，可以从脚本源文件中手工删除掉相应代码。</brief>

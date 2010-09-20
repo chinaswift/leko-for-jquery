@@ -19,12 +19,12 @@ $(function(){
 				background:"#EC108D"
 			},2000,"outbounce",function(){
 				$("#block").text("完成动画");
-			});
+			}).text("开始动画");
 		},
 		function(){
 			$("#block").stop().play(function(){
 				$("#block").text("完成还原");
-			});
+			}).text("开始还原");
 		}
 	);
 

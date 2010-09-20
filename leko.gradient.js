@@ -39,8 +39,7 @@
 			else o.unbind(m,d[m]).bind(m,d[m]=f);
 		},
 		{
-			fx:"swing",
-			speed:1000
+			speed:800
 		}
 	);
 
