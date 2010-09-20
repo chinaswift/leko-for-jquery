@@ -12,6 +12,9 @@
 				});
 			}
 		},
+		
+		/*placeholder,,required,autofocus,pattern,input type=range,input type=email*/
+
 		iePseudoClasses:function(){
 			var
 				a=document.styleSheets,
@@ -306,10 +309,12 @@
 					else v[i=="background"?x[1]:i]=m;					
 				}
 			}
+			else if($.isFunction(d))f=d;
 			return this.each(function(x,p){
 				o=$(p);
 				x=o.currents(a);				
-				if(!x&&b){
+				if(!x){
+					if(!b)return;
 					x={
 						v:{},
 						w:{},
@@ -321,12 +326,12 @@
 						x.w[i]=m;
 						x.v[i]=/color/i.test(i)?_.solidColor(p,i):m;
 					}
-					x=o.currents(a,x);					
+					x=o.currents(a,x);
 				}					
-				o.animate(b?v:x.v,b?t:x.t,b?e:x.e,b?f:function(){
+				o.animate(b?v:x.v,t||x.t,e||x.e,b?f:function(){
 					for(var i in x.w)o.css(i,x.w[i]);
 					o.removeData(a);
-					if(d)d();
+					if(f)f();
 				});
 			});
 		},
@@ -375,6 +380,7 @@
 			return _.overflow(this.rect(-1),$(o||window).rect(-1));
 		},
 		moveTo:function(x,y,r,b){
+			b=!!b;
 			r=_.rect(r);
 			x=parseInt(x);
 			y=parseInt(y);
@@ -395,6 +401,7 @@
 			});
 		},
 		resizeTo:function(w,h,r,b){
+			b=!!b;
 			r=_.rect(r);
 			w=parseInt(w);
 			h=parseInt(h);
@@ -575,11 +582,11 @@
 					return fx.pos*(fx.end[i]-v)+v;
 			}));
 		}
-		$.fn[v+"To"]=function(d,c,f){
+		$.fn[v+"To"]=function(c,d,e,f){
 			var
 				o={};
 			o[v]=c;
-			return this.animate(o,parseInt(d)||800,f);
+			return this.animate(o,d||800,e,f);
 		}
 	});
 
