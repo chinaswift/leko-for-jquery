@@ -3,7 +3,7 @@
 
 <style>
 
-ul.nav{margin:10px 0;}
+ul.nav{margin:15px 0;}
 ul.nav a:hover,ul.nav a:active,ul.nav a:focus{text-decoration:none;}
 
 #list0{border:1px solid #dfdfdf;padding:15px 0 15px 30px;width:550px;}
@@ -18,7 +18,7 @@ ul.nav a:hover,ul.nav a:active,ul.nav a:focus{text-decoration:none;}
 
 #list2{border:1px solid #dfdfdf;padding:15px 0 15px 30px;width:550px;}
 #list2 li a{font-size:14px;font-weight:bold;letter-spacing:1px;padding:5px 30px 5px 0;color:#333;}
-#list2 li.deco{border-bottom:5px solid #000;}
+#list2 li.deco{border-bottom:4px solid #000;}
 
 #list3{background:url("bk02.gif") no-repeat;height:29px;width:550px;padding:15px 0 15px 30px;}
 #list3 li,#list3 li a{height:29px;}
