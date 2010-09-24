@@ -2,14 +2,28 @@
 <leko>
 	<object name="Leko">
 		<brief>是Leko for jQuery的全局核心对象。可以简写为&lt;mark class="en"&gt; _ &lt;/mark&gt;。</brief>
-		<object name="colors">
-			<property name="names">
+		<object name="constants">
+			<object name="colorNames" readonly="1">
 				<brief>包含所有CSS3支持的预定义颜色名称与&lt;mark class="en"&gt; rgba() &lt;/mark&gt;值的键值对。</brief>
+				<vartype name="array">
+					<varvalue>
+						<value><![CDATA[[<br />
+    'color',<br />
+    'backgroundColor',<br />
+    'borderColor',<br />
+    'borderBottomColor',<br />
+    'borderLeftColor',<br />
+    'borderRightColor',<br />
+    'borderTopColor',<br />
+    'outlineColor'<br />
+]]]></value>
+					</varvalue>
+				</vartype>
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
-			</property>
-			<property name="properties" readonly="1">
-				<brief>包含所有CSS3支持的颜色类属性。</brief>
+			</object>
+			<property name="colorProps" readonly="1">
+				<brief>包含所有CSS3支持的颜色类属性名称。</brief>
 				<vartype name="array">
 					<varvalue>
 						<value><![CDATA[[<br />
@@ -27,23 +41,23 @@
 				<srcfile>jquery.js</srcfile>
 				<srcfile within="">leko.js</srcfile>
 			</property>
-			<brief>存储色彩相关常量的对象。</brief>
+			<property name="blankImage">
+				<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
+				<vartype name="string">
+					<varvalue>
+						<value>'blank.gif'</value>
+					</varvalue>
+				</vartype>
+				<srcfile>jquery.js</srcfile>
+				<srcfile within="">leko.js</srcfile>
+			</property>
+			<brief>存储各种常量的接口。</brief>
 			<srcfile>jquery.js</srcfile>
 			<srcfile within="">leko.js</srcfile>
 		</object>
-		<object name="fx">
+		<object name="effects">
 			<brief>用于存储Leko为jQuery安装的功能扩展插件的个性化效果设置的接口对象。</brief>
 		</object>
-		<property name="blankImage">
-			<brief>用于设置供程序使用的空白图片的全局默认&lt;span class="en"&gt;URL&lt;/span&gt;地址。该图片是&lt;span class="en"&gt;1×1&lt;/span&gt;像素的全透明&lt;span class="en"&gt;GIF&lt;/span&gt;格式。建议使用绝对路径。</brief>
-			<vartype name="string">
-				<varvalue>
-					<value>'blank.gif'</value>
-				</varvalue>
-			</vartype>
-			<srcfile>jquery.js</srcfile>
-			<srcfile within="">leko.js</srcfile>
-		</property>
 		<method name="ver">
 			<brief>检查版本号是否满足最低兼容性要求。对于如 a.b.c.d 形式的多级版本号，将从高位向低位逐级比较。</brief>
 			<srcfile>jquery.js</srcfile>
@@ -3859,6 +3873,40 @@ console.log($("#test").currents("shadow").color);
 			<code>$(function(){
     $.iePseudoClasses();
 });</code>
+		</method>
+		<method name="effect">
+			<brief>从&lt;mark class="en"&gt; Leko.effects &lt;/mark&gt;中获取已注册名称的LEKO插件的效果函数。</brief>
+			<srcfile>jquery.js</srcfile>
+			<srcfile within="">leko.js</srcfile>
+			<param name="plugin-name">
+				<vartype name="string">
+					<varvalue>
+						<brief>插件名称。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<param name="effect-name">
+				<vartype name="string">
+					<varvalue>
+						<brief>效果名称。</brief>
+					</varvalue>
+				</vartype>
+				<vartype name="function">
+					<varvalue>
+						<brief>原样返回。</brief>
+					</varvalue>
+				</vartype>
+			</param>
+			<return name="function">
+				<varvalue>
+					<brief>对获取到的效果函数的引用。</brief>
+				</varvalue>
+			</return>
+			<return name="undefined">
+				<varvalue>
+					<brief>指定名称的效果函数不存在。</brief>
+				</varvalue>
+			</return>
 		</method>
 		<method name="defaults">
 			<brief>获取或设置指定名称LEKO插件的全局默认配置。</brief>
