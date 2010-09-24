@@ -18,7 +18,7 @@ ul.nav a:hover,ul.nav a:active,ul.nav a:focus{text-decoration:none;}
 
 </style>
 
-<script src="leko.list.js"></script>
+<script src="leko.nav.js"></script>
 
 <script>
 
