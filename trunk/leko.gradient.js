@@ -16,7 +16,7 @@
 							t=/(?:t|e)$/.test(e.type),
 							g=w.css,
 							q=b.$,
-							p=_.colors.properties,
+							p=_.constants.colorProps,
 							j=g[p[2]],
 							i=3;					
 						if(!q){

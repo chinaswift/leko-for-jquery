@@ -13,7 +13,7 @@
 				k="."+q,
 				s=["hovered",q],
 				c=[/er$/,/ck$/],
-				g="effects",
+				g="fn",
 				f=v[g],
 				x=$.noop,
 				w=function(t){
@@ -26,7 +26,7 @@
 				};
 			if(f){
 				f=$.map($.makeArray(f),function(f){
-					return $[g](n,f);
+					return $.effect(n,f);
 				});
 				x=function(){
 					$(l,o).each(function(i,e){
@@ -61,7 +61,7 @@
 			o[e]( );
 		},
 		{
-			speed:700,
+			speed:1000,
 			fx:"outback"
 		},
 		{
@@ -77,9 +77,12 @@
 						position:"absolute"
 					}).height(e.height()).prependTo(o).moveTo(NaN,p.top)).stop().animate($.extend({
 						left :p.left,
-						width:$("a",e).width()
+						width:(v.inner?$("a",e):e).width()
 					},v.lava),v.speed,v.fx);	
 				}
+			},
+			lamp:function(o,e,v,d,h,s){
+				$("a",e).stop().play(h||s?v.lamp:null,v.speed,v.fx);
 			}
 		}
 	);
