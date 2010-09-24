@@ -55,7 +55,7 @@
 			}
 			if(x.length)$.each(x,function(i,v){
 				$(v[0]).live(v[2],function(e){
-					$(this)[(/over|in/.test(e.type)?"add":"remove")+"Class"](v[1]);
+					$(this)[(/(?:er|in)$/.test(e.type)?"add":"remove")+"Class"](v[1]);
 				});
 			});		
 		},		
@@ -84,7 +84,7 @@
 			var
 				o=_.fx,
 				d=(o[n]=o[n]||{});
-			return $.isFunction(m)?m:(d[m]=d[m]||$.noop);
+			return $.isFunction(m)?m:d[m];
 		},
 		leko:{}		
 	});
