@@ -380,7 +380,7 @@
 			return _.overflow(this.rect(-1),$(o||window).rect(-1));
 		},
 		moveTo:function(x,y,r,b){
-			b=!!b;
+			b=b||!!b;
 			r=_.rect(r);
 			x=parseInt(x);
 			y=parseInt(y);
@@ -401,7 +401,7 @@
 			});
 		},
 		resizeTo:function(w,h,r,b){
-			b=!!b;
+			b=b||!!b;
 			r=_.rect(r);
 			w=parseInt(w);
 			h=parseInt(h);
