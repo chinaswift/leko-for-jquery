@@ -32,7 +32,7 @@
 					$(l,o).each(function(i,e){
 						e=$(e);
 						var
-							z=[o,e,e.currents(a,$.extend(true,{},v,e.defaults(a))),d];
+							z=[o,e,e.currents(a,$.extend(true,{},v,e.defaults(a))),d,e.runtimes(a)];
 						for(i in s)z.push(e.hasClass(s[i]));
 						$.each(f,function(k,f){
 							f.apply(o,z);
@@ -61,11 +61,12 @@
 			o[e]( );
 		},
 		{
+			inner:{},
 			speed:1000,
-			fx:"outback"
+			fx:"outback"			
 		},
 		{
-			lava:function(o,e,v,d,h,s){
+			lava:function(o,e,v,d,r,h,s){
 				if(h){
 					var
 						a="position",
@@ -77,12 +78,22 @@
 						position:"absolute"
 					}).height(e.height()).prependTo(o).moveTo(NaN,p.top)).stop().animate($.extend({
 						left :p.left,
-						width:(v.inner?$("a",e):e).width()
+						width:(v.inner.w?$("a",e):e).width()
 					},v.lava),v.speed,v.fx);	
 				}
 			},
-			lamp:function(o,e,v,d,h,s){
-				$("a",e).stop().play(h||s?v.lamp:null,v.speed,v.fx);
+			lamp:function(o,e,v,d,r,h,s){
+				$("a",e).stop().play((v.allwaysShowSelect?h||s:h)?v.lamp:null,v.speed,v.fx);
+			},
+			lade:function(o,e,v,d,r,h,s){
+				e.css("position",function(i,v){
+					return v=="static"?"relative":v;
+				});
+				(r.b=r.b||($("<li />").addClass("deco").append("<a href='#'>&nbsp;</a>").css({
+					float:"none",
+					position:"absolute"
+				}).resize(e,0,2).prependTo(o).move(e,1,1))).stop().play((v.allwaysShowSelect?h||s:h)?v.lade:null,v.speed,v.fx);
+				
 			}
 		}
 	);
