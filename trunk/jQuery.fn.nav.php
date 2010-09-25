@@ -89,7 +89,7 @@ $(function(){
 <li><a href="#">奢侈品</a></li>
 </ul>
 
-<ul id="list4" class="nav" nav="fn:['lamp','lade'],hover:1,fx:'swing',allwaysShowSelect:1,speed:800,lamp:{color:'#fff'},lade:{opacity:1,background:'#000'}">
+<ul id="list4" class="nav" nav="fn:['lamp','lade'],hover:1,fx:'swing',allwaysShowSelect:1,speed:800,lamp:{color:'#fff'},lade:{opacity:1,background:'#aaa'}">
 <li><a href="#">新闻</a></li>
 <li li="lade:{backgroundColor:'#00B8EE'}"><a href="#">房地产</a></li>
 <li li="lade:{backgroundColor:'#EC108D'}" class="selected"><a href="#">欧洲进口洁具</a></li>
