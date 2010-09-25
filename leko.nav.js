@@ -1,5 +1,13 @@
 (function(_,$){
 
+	var
+		D=function(o){
+			return $("<li />").addClass("deco").append("<a href='#'>&nbsp;</a>").css({
+				float:"none",
+				position:"absolute"
+			}).prependTo(o);
+		};
+
 	_.fn(
 		"nav",
 		function(o,v,d,n){
@@ -73,10 +81,7 @@
 						p=e.css(a,function(i,v){
 							return v=="static"?"relative":v;
 						})[a]();
-					(d.b=d.b||$("<li />").addClass("deco").append("<a href='#'>&nbsp;</a>").css({
-						float:"none",
-						position:"absolute"
-					}).height(e.height()).prependTo(o).moveTo(NaN,p.top)).stop().animate($.extend({
+					(d.b=d.b||D(o).height(e.height()).moveTo(NaN,p.top)).stop().animate($.extend({
 						left :p.left,
 						width:(v.inner.w?$("a",e):e).width()
 					},v.lava),v.speed,v.fx);	
@@ -89,10 +94,7 @@
 				e.css("position",function(i,v){
 					return v=="static"?"relative":v;
 				});
-				(r.b=r.b||($("<li />").addClass("deco").append("<a href='#'>&nbsp;</a>").css({
-					float:"none",
-					position:"absolute"
-				}).resize(e,0,2).prependTo(o).move(e,1,1))).stop().play((v.allwaysShowSelect?h||s:h)?v.lade:null,v.speed,v.fx);
+				(r.b=r.b||(D(o).resize(e,0,2).move(e,1,1))).stop().play((v.allwaysShowSelect?h||s:h)?v.lade:null,v.speed,v.fx);
 				
 			}
 		}
