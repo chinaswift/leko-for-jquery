@@ -59,11 +59,11 @@
 				}
 				x();
 			}).unbind(e,d[e]).bind(e,d[e]=function(){
-				var
+				/*x();var
 					n=s[0];
 					e=$(k,o).addClass(n);
-				x();
-				e.removeClass(n);
+				
+				e.removeClass(n);*/
 			});
 			w(v[q]);
 			o[e]( );
@@ -88,7 +88,7 @@
 				}
 			},
 			lamp:function(o,e,v,d,r,h,s){
-				$("a",e).stop().play((v.allwaysShowSelect?h||s:h)?v.lamp:null,v.speed,v.fx);
+				$("a",e).stop().play(h?v.lamp:null,v.speed,v.fx);
 			},
 			lade:function(o,e,v,d,r,h,s){
 				e.css("position",function(i,v){

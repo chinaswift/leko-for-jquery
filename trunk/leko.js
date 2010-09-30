@@ -83,8 +83,10 @@
 		effect:function(n,m){
 			var
 				o=_.effects,
-				d=(o[n]=o[n]||{});
-			return $.isFunction(m)?m:d[m];
+				d=(o[n]=o[n]||{}),
+				r=$.isString(m)?d[m]:m;
+			if($.isFunction(r)) r.fn=m;
+			return r;
 		},
 		leko:{}		
 	});

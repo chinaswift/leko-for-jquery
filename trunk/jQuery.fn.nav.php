@@ -71,7 +71,7 @@ $(function(){
 
 <section><h4>例二：内置效果</h4>
 
-<ul id="list2" class="nav" nav="selected:4,fn:['lava','lamp'],inner:{w:1},speed:1000,lava:{borderBottomColor:'#999'},lamp:{color:'#999'}">
+<ul id="list2" class="nav" nav="selected:4,allwaysShowSelect:1,fn:['lava','lamp'],inner:{w:1},speed:1000,lava:{borderBottomColor:'#999'},lamp:{color:'#999'}">
 <li><a href="#">新闻</a></li>
 <li li="lamp:{color:'#00B8EE'},lava:{borderBottomColor:'#00B8EE'}"><a href="#">房地产</a></li>
 <li li="lamp:{color:'#EC108D'},lava:{borderBottomColor:'#EC108D'}" class="selected"><a href="#">欧洲进口洁具</a></li>

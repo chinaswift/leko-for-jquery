@@ -127,6 +127,7 @@ Leko.fn.html
 leko.gradient.js
 Leko.html
 leko.js
+leko.list.js
 leko.menu.js
 Leko.mozilla.html
 Leko.msie.html
@@ -146,12 +147,12 @@ twitter-128.128-1.png
 twitter-128.128-2.png
 Leko.for.jQuery-1.0.hhc
 
-Compile time: 0 minutes, 2 seconds
+Compile time: 0 minutes, 3 seconds
 123	Topics
 360	Local links
 122	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko-for-jquery\trunk\doc\Leko.for.jQuery-1.0.chm, 401,055 bytes
-Compression decreased file by 809,358 bytes.
+Created e:\Develop\Projects\Leko-for-jquery\trunk\doc\Leko.for.jQuery-1.0.chm, 401,508 bytes
+Compression decreased file by 810,196 bytes.
