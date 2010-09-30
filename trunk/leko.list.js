@@ -37,8 +37,8 @@
 			var
 				l=v.live||L,
 				i=W.length,
-				m=v.event||0,
-				a=v.fn||P[0];
+				a=v.fn||P[0],
+				m;
 			while(i--){
 				d[i]=(function(i){
 					return function(s){
@@ -55,8 +55,6 @@
 						if(h)h=$.map($.makeArray(h),function(h){
 							return ((($.effect(n,h)||$.noop)(o,v,d,n))||{})[i];
 						});
-						
-
 						if(s===void 0||$.isString(s))r=c.filter(s=="all"?"*":(s=="inverse"?":not("+x+")":x));
 						else{
 							s=[].concat(s);
@@ -79,6 +77,8 @@
 						d[y]=r.length&&r;						
 					};
 				})(i);
+				m=v[Y[i]];
+				if(m)d[i](m);				
 			}
 			if(a==P[0])o.undelegate(l,T,d.f).delegate(l,T,d.f=function(e){
 				var
@@ -90,17 +90,23 @@
 				while(i--)if(W[i]==t)break;
 				b=(i==1||i==2||i==5||i==6)?1:(i==3||i==4||i==7||i==8)?2:0;
 				if(b)d[b](R.test(t)?x:s);
-				if(!b||b==m)d[0](x);				
+				if(!b||b==(v.event||0))d[0](x);				
 			});
+			d[1]($(l+X[0],o));
 		},
 		{
 			speed:1000,
 			fx:"outback"
 		},
 		{
+			lamp:function(o,v,d,n){
+				return{
+					1:function(e,b,c,r){
+						$(":first-child",e).stop().play(b?c.lamp:null,v.speed,v.fx);
+					}
+				};
+			},
 			lava:function(o,v,d,n){
-				var
-					x={};
 				return{
 					1:function(e,b,c,r){
 						if(b){
