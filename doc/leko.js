@@ -11,7 +11,7 @@ a=document.styleSheets,x=[],u=["focus","hover"],y=[/:(focus|active)/,/:hover/],v
 if(x.length)$.each(x,function(i,v){$(v[0]).live(v[2],function(e){$(this)[(/(?:er|in)$/.test(e.type)?"add":"remove")+"Class"](v[1]);});});},isJqueryObject:function(v){try{v=$(v);if(v.length){v=v.width();if(v==v)return true;}}
 catch(o){};return false;},isConfigObject:function(v){if($.isObject(v)&&!v.jquery)for(var i in v)return true;return false;},defaults:function(n,v,b){var
 o=$.leko,d=o[n]||{};return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;},effect:function(n,m){var
-o=_.effects,d=(o[n]=o[n]||{});return $.isFunction(m)?m:d[m];},leko:{}});var
+o=_.effects,d=(o[n]=o[n]||{}),r=$.isString(m)?d[m]:m;if($.isFunction(r))r.fn=m;return r;},leko:{}});var
 _$=window._,_={noConflict:function(){window._=_$;return this;},ver:function(a,b){a=String(a||0).split('.');b=String(b||0).split('.');for(var c,i=0,x=Math.max(a.length,b.length);i<x;i++){c=(parseInt(a[i])||0)-(parseInt(b[i])||0);if(c)return c>0;}
 return true;},unique:function(a){var
 n,x={},i=a.length;while(i--)if(x[n=a[i]])a.splice(i,1);else x[n]=1;return a;},average:function(){var
