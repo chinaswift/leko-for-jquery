@@ -6,7 +6,10 @@
 		D="deco",
 		U="."+D,
 		P=["nav"],
-		C=[{}],
+		C=[{
+			speed:1000,
+			fx:"outback"
+		}],
 		W=["check","hover","focus"],
 		R=/(?:er|in|us)$/i,
 		X=[],
@@ -26,8 +29,9 @@
 	T=I.join(" ");
 
 	$.each(P,function(i,n){
+		$.defaults(n,C[i]);
 		$.fn[n]=function(v){
-			return this[N]($.extend(true,v,{fn:n},C[i]));
+			return this[N]($.extend(true,v,{fn:n}));
 		}
 	});
 
@@ -37,7 +41,7 @@
 			var
 				l=v.live||L,
 				i=W.length,
-				a=v.fn||P[0],
+				a=v.fn,
 				m;
 			while(i--){
 				d[i]=(function(i){
@@ -78,8 +82,13 @@
 					};
 				})(i);
 				m=v[Y[i]];
-				if(m)d[i](m);				
+				if(a==P[0]&&!i&&m===void 0){
+					m=$(l+X[0],o);
+					if(!m.length) m=0;
+				}
+				if(m!==void 0)d[i](m);		
 			}
+			d[1]($(l+X[0],o));
 			if(a==P[0])o.undelegate(l,T,d.f).delegate(l,T,d.f=function(e){
 				var
 					t=e.type,
@@ -92,11 +101,8 @@
 				if(b)d[b](R.test(t)?x:s);
 				if(!b||b==(v.event||0))d[0](x);				
 			});
-			d[1]($(l+X[0],o));
 		},
 		{
-			speed:1000,
-			fx:"outback"
 		},
 		{
 			lamp:function(o,v,d,n){
