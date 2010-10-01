@@ -259,7 +259,13 @@
 							return this.each(function(i,o){
 								o=$(o);
 								i=o.currents(n);
-								if(c||i)return f(o,o.currents(n,c?$.extend(true,{},d,a,o.defaults(n)):$.extend(!b,i,v,{disabled:!a})),o.runtimes(n),n)!==false;
+								if(c){
+									var
+										x=$.extend(true,{},d,a,o.defaults(n)),
+										z=x.fn;
+									if(z)x=$.extend(true,{},d,$.defaults(z),a,o.defaults(n));
+								}
+								if(c||i)return f(o,o.currents(n,c?x:$.extend(!b,i,v,{disabled:!a})),o.runtimes(n),n)!==false;
 							});
 						}
 					})(a[m+1]);
