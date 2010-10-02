@@ -35,7 +35,7 @@ x=$.extend(true,{},d,a,o.defaults(n)),z=x.fn;if(z)x=$.extend(true,{},d,$.default
 if(c||i)return f(o,o.currents(n,c?x:$.extend(!b,i,v,{disabled:!a})),o.runtimes(n),n)!==false;});}})(a[m+1]);f.fn=n;$.fn[n]=f;_.effects[n]=a[m+3];$.defaults(n,$.extend({},a[m+2]));}},effects:{}};(function(){var
 B=$.browser,S=$.support,D;$.each(["webkit","opera","msie","mozilla"],function(i,v){_[v]=function(n,m){return!!(B[v]&&_.ver(B.version,n)!=(m||0));}});S.rgba=_.msie(9)||_.mozilla(1.9)||_.webkit(525)||_.opera(10);D=_.msie(9)&&1||_.mozilla("1.9.1")&&2||_.webkit(522)&&3||_.opera(10.5)&&1;S.shadow=D&&["b","MozB","WebkitB"][D-1]+"oxShadow";})();window.Leko=window._=_;$.ieHtml5Tags();$.fn.extend({play:function(d,t,e,f){var
 i,m,o,n=3,v={},a="animate",b=$.isObject(d),x=_.constants.colorProps;if(b){for(i in d){m=d[i];if(i==x[2])while(n<7)v[x[n++]]=m;else v[i=="background"?x[1]:i]=m;}}
-else if($.isFunction(d))f=d;return this.each(function(x,p){o=$(p);x=o.currents(a);if(!x){if(!b)return;x={v:{},w:{},t:t,e:e};for(i in v){m=o.css(i);x.w[i]=m;x.v[i]=/color/i.test(i)?_.solidColor(p,i):m;}
+else if($.isFunction(d))f=d;return this.each(function(x,p){o=$(p);x=o.currents(a);if(!x){if(!b)return;x={v:{},w:{},t:t,e:e};for(i in v){m=o.css(i);x.w[i]=m;x.v[i]=/color/i.test(i)?_.color(_.solidColor(p,i)):m;}
 x=o.currents(a,x);}
 o.animate(b?v:x.v,t||x.t,e||x.e,b?f:function(){for(var i in x.w)o.css(i,x.w[i]);o.removeData(a);if(f)f();});});},defaults:function(n,v,b){var
 e=this,d="leko",o=(e.data()[d]=e.data(d)||{});d=o[n]||eval("({"+(e.attr(n)||"")+"})");return o[n]=$.isObject(v)?(!b?v:$.extend(!!(b+1),d,v)):d;},runtimes:function(n){var
