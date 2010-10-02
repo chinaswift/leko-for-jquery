@@ -26,13 +26,14 @@
 #list3 li.deco{background:url("bk03.gif") no-repeat top left;position:relative;}
 #list3 li.deco a{background:url("bk03.gif") no-repeat right -30px;position:absolute;right:-1px;}
 
+#list4{border:1px solid #dfdfdf;padding:15px;width:300px;}
+#list4 li{display:block;height:30px;}
+#list4 li a{height:30px;line-height:30px;padding:0 15px;color:#333;}
+#list4 li.deco{background:#dfdfdf;}
+
 #list5{border:1px solid #dfdfdf;padding:15px;width:300px;}
 #list5 li{display:block;height:30px;}
-#list5 li a{font-size:13px;height:30px;line-height:30px;padding:0 15px;color:#333;background:#fff;}
-
-#list4{border:1px solid #dfdfdf;padding:15px 0 15px 30px;width:550px;}
-#list4 li a{font-size:14px;font-weight:bold;letter-spacing:1px;padding:5px 15px;color:#333;}
-#list4 li.deco{opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);background:#fff;}
+#list5 li a{height:30px;line-height:30px;padding:0 15px;color:#333;background:#fff;}
 
 </style>
 
@@ -51,16 +52,25 @@ $(function(){
 <?php include 'leko.neck.inc'; ?>
 <?php include 'leko.demo.neck.inc'; ?>
 
-<section><h4>例三：竖导航栏</h4>
+<section><h4>例一：基本功能</h4>
 
-<ol id="list5" class="nav" list="vertical:1,effect:'lamp',fx:'linear',speed:400,lamp:{background:'#999',borderColor:'#dfdfdf'}">
+<ul id="list0" class="nav">
 <li><a href="#">新闻</a></li>
-<li li="lamp:{background:'#00B8EE'}"><a href="#">房地产</a></li>
-<li li="lamp:{background:'#EC108D'}"><a href="#">欧洲进口洁具</a></li>
-<li li="lamp:{background:'#F8A530'}"><a href="#">美食</a></li>
-<li li="lamp:{background:'#9CCD4A'}"><a href="#">妇幼保健</a></li>
-<li li="lamp:{background:'#FF8800'}"><a href="#">奢侈品</a></li>
-</ol>
+<li><a href="#">房地产</a></li>
+<li class="checked"><a href="#">欧洲进口洁具</a></li>
+<li><a href="#">美食</a></li>
+<li><a href="#">妇幼保健</a></li>
+<li><a href="#">奢侈品</a></li>
+</ul>
+
+<ul id="list1" class="nav" list="event:1">
+<li><a href="#">新闻</a></li>
+<li><a href="#">房地产</a></li>
+<li class="checked"><a href="#">欧洲进口洁具</a></li>
+<li><a href="#">美食</a></li>
+<li><a href="#">妇幼保健</a></li>
+<li><a href="#">奢侈品</a></li>
+</ul>
 
 </section>
 
@@ -87,25 +97,25 @@ $(function(){
 
 </section>
 
-<section><h4>例一：基本功能</h4>
+<section><h4>例三：竖导航栏</h4>
 
-<ul id="list0" class="nav">
+<ol id="list4" class="nav" list="vertical:1,effect:'lava',lava:{background:'#dfdfdf',color:'#000'}">
 <li><a href="#">新闻</a></li>
-<li><a href="#">房地产</a></li>
-<li class="checked"><a href="#">欧洲进口洁具</a></li>
-<li><a href="#">美食</a></li>
-<li><a href="#">妇幼保健</a></li>
-<li><a href="#">奢侈品</a></li>
-</ul>
+<li li="lava:{background:'#00B8EE'}"><a href="#">房地产</a></li>
+<li class="checked" li="lava:{background:'#EC108D'}"><a href="#">欧洲进口洁具</a></li>
+<li li="lava:{background:'#F8A530'}"><a href="#">美食</a></li>
+<li li="lava:{background:'#9CCD4A'}"><a href="#">妇幼保健</a></li>
+<li li="lava:{background:'#FF8800'}"><a href="#">奢侈品</a></li>
+</ol>
 
-<ul id="list1" class="nav" list="event:1">
+<ol id="list5" class="nav" list="vertical:1,effect:'lamp',fx:'linear',speed:400,lamp:{backgroundColor:'#dfdfdf',color:'#000'}">
 <li><a href="#">新闻</a></li>
-<li><a href="#">房地产</a></li>
-<li class="checked"><a href="#">欧洲进口洁具</a></li>
-<li><a href="#">美食</a></li>
-<li><a href="#">妇幼保健</a></li>
-<li><a href="#">奢侈品</a></li>
-</ul>
+<li li="lamp:{backgroundColor:'#00B8EE'}"><a href="#">房地产</a></li>
+<li li="lamp:{backgroundColor:'#EC108D'}"><a href="#">欧洲进口洁具</a></li>
+<li li="lamp:{backgroundColor:'#F8A530'}"><a href="#">美食</a></li>
+<li class="checked" li="lamp:{backgroundColor:'#9CCD4A'}"><a href="#">妇幼保健</a></li>
+<li li="lamp:{backgroundColor:'#FF8800'}"><a href="#">奢侈品</a></li>
+</ol>
 
 </section>
 

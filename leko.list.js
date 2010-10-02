@@ -126,7 +126,7 @@
 							d.b=(d.b||($(U,o).elements()||$("<li />").addClass(D).append("<a href='#'>&nbsp;</a>")).css({
 								float:"none",
 								position:"absolute"
-							}).prependTo(o).show()).stop().animate($.extend({
+							}).prependTo(o).show()).stop().play($.extend({
 								top  :p.top,
 								left :p.left,
 								width :(!h&&i?$(":first-child",e):e).width(),
