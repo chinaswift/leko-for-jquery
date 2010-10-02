@@ -120,13 +120,17 @@
 								a="position",
 								p=e.css(a,function(i,v){
 									return v=="static"?"relative":v;
-								})[a]();
+								})[a](),
+								i=v.inner,
+								h=v.vertical;
 							d.b=(d.b||($(U,o).elements()||$("<li />").addClass(D).append("<a href='#'>&nbsp;</a>")).css({
 								float:"none",
 								position:"absolute"
-							}).prependTo(o).show().height(e.height()).moveTo(NaN,p.top)).stop().animate($.extend({
+							}).prependTo(o).show()).stop().animate($.extend({
+								top  :p.top,
 								left :p.left,
-								width:$(":first-child",e)[(v.inner?"w":"outerW")+"idth"]()
+								width :(!h&&i?$(":first-child",e):e).width(),
+								height:( h&&i?$(":first-child",e):e).height()
 							},c.lava),c.speed,c.fx);
 						}
 					}

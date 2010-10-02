@@ -41,8 +41,8 @@ hr{background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:1px;margin
 hr.space{background:#fff;color:#fff;visibility:hidden;}
 ol,ul,li{list-style:none;position:relative;}
 ul:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
-ul.nav li a,ul li,.td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
-ul.nav li a,ul li,ul,.tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
+ul.nav li a,ul.nav li,.td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
+ul.nav li a,ul.nav li,ol.nav li a,ol.nav li,ul,.tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
 li.deco{display:none;}
 
 .dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}

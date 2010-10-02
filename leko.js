@@ -332,10 +332,10 @@
 					for(i in v){
 						m=o.css(i);
 						x.w[i]=m;
-						x.v[i]=/color/i.test(i)?_.solidColor(p,i):m;
-					}
+						x.v[i]=/color/i.test(i)?_.color(_.solidColor(p,i)):m;
+					}					
 					x=o.currents(a,x);
-				}					
+				}
 				o.animate(b?v:x.v,t||x.t,e||x.e,b?f:function(){
 					for(var i in x.w)o.css(i,x.w[i]);
 					o.removeData(a);
@@ -585,6 +585,7 @@
 			if(fx.state==0){
 				fx.start=_.rgba(_.solidColor(fx.elem,v));
 				fx.end=_.rgba(fx.end);
+				//console.log(fx.start);console.log(fx.end);
 			}
 			fx.elem.style[v]=_.color($.map(fx.start,function(v,i){
 					return fx.pos*(fx.end[i]-v)+v;
