@@ -57,6 +57,9 @@
 		</object>
 		<object name="effects">
 			<brief>用于存储Leko为jQuery安装的功能扩展插件的个性化效果设置的接口对象。</brief>
+			<object name="list">
+				<brief>为&lt;a class="en" href="jQuery.fn.list.htm"&gt; list &lt;/a&gt;及其衍生部件注册效果函数的接口对象。</brief>
+			</object>
 		</object>
 		<method name="ver">
 			<brief>检查版本号是否满足最低兼容性要求。对于如 a.b.c.d 形式的多级版本号，将从高位向低位逐级比较。</brief>
@@ -2083,6 +2086,72 @@ alert(X.msie(5.5));</code>
 		</object>
 		<object name="fn">
 			<brief>用于为jQuery安装功能扩展插件的接口对象。</brief>
+			<method name="nav" fn="1">
+				<brief>创建横向或纵向的导航菜单。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.list.js</srcfile>
+				<param name="effect" optional="1">
+					<default>undefined</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>预注册的效果函数的名称。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="function">
+						<varvalue>
+							<brief>自定义的效果函数。该回调函数将被用来遍历处理列表的每一项。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>要同时应用的多个组合效果。包含的项目既可以是已注册的函数名称，也可以是自定义函数体。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="undefined">
+						<varvalue>
+							<brief>不应用任何附加效果。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("ul.nav").nav();</code>
+				<code>$("ol.nav").nav({vertical:true,effect:['lava','lamp'],lava:{borderBottomColor:'#999'},lamp:{color:'#999'}});</code>
+				<param name="speed" optional="1">
+					<default>1000</default>
+					<vartype name="string">
+						<varvalue>
+							<value>slow</value>
+							<brief>预设的速度级别。相当于600ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>normal</value>
+							<brief>预设的速度级别。相当于400ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>fast</value>
+							<brief>预设的速度级别。相当于200ms</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="number">
+						<varvalue>
+							<brief>精确指定速度的整数数值。单位为毫秒。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="fx" optional="1">
+					<default>outback</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>要应用的缓动函数名称。参见&lt;a class="en" href="jQuery.easing.html"&gt; jQuery.easing &lt;/a&gt;对象。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+			</method>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>
 				<srcfile>jquery.js</srcfile>
@@ -2244,7 +2313,7 @@ alert(X.msie(5.5));</code>
 					<default>swing</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>要应用的缓动函数名称。</brief>
+							<brief>要应用的缓动函数名称。参见&lt;a class="en" href="jQuery.easing.html"&gt; jQuery.easing &lt;/a&gt;对象。</brief>
 						</varvalue>
 					</vartype>
 				</param>
