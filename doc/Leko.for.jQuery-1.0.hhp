@@ -85,6 +85,8 @@ jQuery.fn.moveTo.0.html
 jQuery.fn.moveTo.html
 jQuery.fn.msFilter.0.html
 jQuery.fn.msFilter.html
+jQuery.fn.nav.0.html
+jQuery.fn.nav.html
 jQuery.fn.outlineColorTo.html
 jQuery.fn.overflow.0.html
 jQuery.fn.overflow.html
@@ -136,6 +138,7 @@ Leko.constants.html
 leko.css
 leko.demo.css
 Leko.effects.html
+Leko.effects.list.html
 Leko.fit.html
 Leko.fn.html
 leko.gradient.js
@@ -145,7 +148,6 @@ leko.list.js
 leko.menu.js
 Leko.mozilla.html
 Leko.msie.html
-leko.nav.js
 Leko.noConflict.html
 Leko.opera.html
 Leko.overflow.html
