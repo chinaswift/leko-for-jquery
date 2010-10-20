@@ -16,7 +16,28 @@
 		Y=[],
 		Z=[],
 		I=W.length,
-		T;
+		T,
+		K=function(e,v){
+			return(e[0]&&e||$("<"+v.l+" />").append("<a href='#'>&nbsp;</a>")).addClass(D).css({
+				float:"none",
+				position:"absolute"
+			}).show();		
+		},
+		G=function(e,v,c){
+			var
+				a="position",
+				p=e.css(a,function(i,v){
+					return v=="static"?"relative":v;
+				})[a](),
+				i=v.inner,
+				h=v.vertical;
+			return{
+				top  :p.top,
+				left :p.left,
+				width :(!h&&i?c.$:e).width(),
+				height:( h&&i?c.$:e).height()
+			};
+		};
 
 	while(I--){
 		T=W[I];
@@ -39,10 +60,12 @@
 		N,
 		function(o,v,d,n){
 			var
-				l=v.live||L,
-				i=W.length,
+				l=(v.l=v.live||L),
+				i=P.length,
 				a=v.fn,
 				m;
+			while(i--)v[i]=v.fn==P[i];
+			i=X.length;
 			while(i--){
 				d[i]=(function(i){
 					return function(s){
@@ -68,12 +91,12 @@
 								r=r.add($.isNumber(e)?c.eq(e):e);
 							}
 						}
-						if(i||!v.multi)r=r.eq(0);
+						r=r.slice(0,Math.min(r.length,i||v[0]?1:(v.maxLength||1)));
 						c.each(function(m,e){
 							e=$(e);
 							b=!!(r.index(e)+1);
 							if(h)$.each(h,function(l,h){
-								h(e,b,e.currents(L,$.extend(true,{},v,e.defaults(L))),e.runtimes(L));
+								h(e,b,e.currents(L,$.extend(true,{$:$(":first-child",e)},v,e.defaults(L))),e.runtimes(L));
 							});
 							if(z&&b!=e.hasClass(y))z.call(o,m,e);							
 							e.toggleClass(y,b);
@@ -82,14 +105,14 @@
 					};
 				})(i);
 				m=v[Y[i]];
-				if(a==P[0]&&!i&&m===void 0){
+				if(v[0]&&!i&&m===void 0){
 					m=$(l+X[0],o);
 					if(!m.length) m=0;
 				}
 				if(m!==void 0)d[i](m);		
 			}
 			d[1]($(l+X[0],o));
-			if(a==P[0])o.undelegate(l,T,d.f).delegate(l,T,d.f=function(e){
+			if(v[0])o.undelegate(l,T,d.f).delegate(l,T,d.f=function(e){
 				var
 					t=e.type,
 					i=W.length,
@@ -108,31 +131,21 @@
 			lamp:function(o,v,d,n){
 				return{
 					1:function(e,b,c,r){
-						$(":first-child",e).stop().play(b?c.lamp:null,v.speed,v.fx);
+						c.$.stop().play(b?c.lamp:null,c.speed,c.fx);
 					}
 				};
 			},
 			lava:function(o,v,d,n){
 				return{
 					1:function(e,b,c,r){
-						if(b){
-							var
-								a="position",
-								p=e.css(a,function(i,v){
-									return v=="static"?"relative":v;
-								})[a](),
-								i=v.inner,
-								h=v.vertical;
-							d.b=(d.b||($(U,o).elements()||$("<li />").addClass(D).append("<a href='#'>&nbsp;</a>")).css({
-								float:"none",
-								position:"absolute"
-							}).prependTo(o).show()).stop().play($.extend({
-								top  :p.top,
-								left :p.left,
-								width :(!h&&i?$(":first-child",e):e).width(),
-								height:( h&&i?$(":first-child",e):e).height()
-							},c.lava),c.speed,c.fx);
-						}
+						if(b)d.b=(d.b||K($(U,o),v).prependTo(o)).stop().play($.extend(G(e,v,c),c.lava),c.speed,c.fx);
+					}
+				};
+			},
+			lace:function(o,v,d,n){
+				return{
+					1:function(e,b,c,r){
+						r.b=(r.b||K(e.prev(U),v).css(G(e,v,c)).insertBefore(e)).stop().play(b?c.lace:null,c.speed,c.fx);
 					}
 				};
 			}

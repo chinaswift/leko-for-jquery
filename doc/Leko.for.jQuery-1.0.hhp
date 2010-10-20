@@ -18,9 +18,12 @@ Handbook="Leko 1.0 - The Best User Interface Library for jQuery","Leko.for.jQuer
 [FILES]
 apple-touch-icon.png
 bk01.gif
+bk01.jpg
 bk02.gif
 bk02.png
 bk03.gif
+bk03.png
+bk04.png
 blank.gif
 btn.png
 favicon.ico
@@ -77,6 +80,7 @@ jQuery.fn.elements.html
 jQuery.fn.gradient.0.html
 jQuery.fn.gradient.html
 jQuery.fn.html
+jQuery.fn.list.html
 jQuery.fn.move.0.html
 jQuery.fn.move.html
 jQuery.fn.moveBy.0.html
@@ -139,6 +143,12 @@ leko.css
 leko.demo.css
 Leko.effects.html
 Leko.effects.list.html
+Leko.effects.list.lace.0.html
+Leko.effects.list.lace.html
+Leko.effects.list.lamp.0.html
+Leko.effects.list.lamp.html
+Leko.effects.list.lava.0.html
+Leko.effects.list.lava.html
 Leko.fit.html
 Leko.fn.html
 leko.gradient.js

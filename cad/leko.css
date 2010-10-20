@@ -1,0 +1,92 @@
+html,body,div,span,object,iframe,p,blockquote,pre,a,abbr,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,dialog,figure,footer,header,hgroup,nav,section{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:inherit;font-family:inherit;vertical-align:baseline;}
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
+*:focus{outline:0;}
+*::-moz-focus-inner{border:0;}
+img{-ms-interpolation-mode:bicubic;}
+html{-webkit-text-size-adjust:none;background:#2f2f2f url('img/bk001.png') repeat-x top;}
+html,textarea{overflow-y:scroll;}
+body{line-height:1.5;color:#111;text-align:center;position:relative;height:100%;}
+body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","LiHei Pro","Helvetica Neue",Helvetica,Arial;}
+button,input,select{vertical-align:middle;}
+pre{white-space:pre;}
+pre,code{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';padding:0.5em 1em;}
+blockquote,q{quotes:"" "";}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+a{text-decoration:none;zoom:1;}
+
+ol,ul,li{list-style:none;position:relative;}
+ul.nav:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
+ul.nav li a,ul.nav li,.td{float:left;}
+ul.nav li a,ul.nav li,ul,.tr,.td,.th{display:block;zoom:1;_display:inline-block;_height:1%;}
+ol.nav li a,ol.nav li{display:block;zoom:1;}
+li.deco{display:none;position:absolute;}
+.th{float:right;}
+
+.dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.dt,article,aside{word-wrap:break-word;word-break:break-all;overflow:hidden;text-align:justify;text-justify:inter-cluster;}
+
+article,aside{line-height:2;}
+article{font-size:13px;line-height:1.7;}
+
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;}
+h1{font-size:24px;}
+h2{font-size:20px;}
+h3{font-size:16px;}
+h4{font-size:14px;}
+h5{font-size:12px;}
+h6{font-size:11px;font-family:"微软雅黑",PMingLiU,MingLiU;}
+h6 .en{font-family:"small fonts";font-size:10px;}
+
+.hr{border-top:   1px solid #ccc;}
+.br{border-bottom:1px solid #ccc;}
+
+mark{color:#ac0f12;font-weight:bold;}
+
+textarea{width:377px;height:102px;line-height:normal;_line-height:1.4;}
+button,.btn,label,a{cursor:pointer;}
+label{margin-right:5px;}
+td,th{background:#fff;border:1px solid #ddd;}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%;}
+table,td,th{vertical-align:middle;}
+th,caption{text-align:left;font-weight:bold;}
+button,.btn{display:inline-block;padding:3px 12px;*padding:2px 6px;}
+
+.en,.en *{font-family:"Helvetica Neue",Helvetica,Arial;}
+
+#htm{margin:0 auto;width:980px;text-align:left;}
+#top{height:111px;padding-top:18px;}
+#top_logo{width:252px;height:90px;}
+#top_banner{width:728px;height:90px;}
+#nav{height:32px;padding:1px 0;}
+#top_nav{height:32px;background:url("img/bk001.gif") no-repeat left;padding-left:2px;width:780px;}
+#top_nav li,#top_nav li a{height:32px;cursor:pointer;}
+#top_nav li a{font-weight:bold;letter-spacing:1px;color:#fff;padding:0 20px;line-height:32px;background:url("img/bk001.gif") no-repeat right;}
+#top_nav li.deco{background:url("img/bk002.gif") repeat-x;position:relative;opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
+#top_sign{height:29px;background:url("img/bk001.gif") no-repeat right;padding:3px 6px 0 0;}
+#top_sign img{width:83px;height:27px;margin:0 3px;}
+#sub{height:46px;}
+#sub_nav{height:46px;background:url("img/bk005.gif") no-repeat right;}
+#sub_nav li,#sub_nav li a{height:46px;cursor:pointer;}
+#sub_nav li a{letter-spacing:1px;color:#f5f5f5;padding:0 16px;line-height:32px;background:url("img/bk003.gif") no-repeat left;}
+#sub_nav li.deco{background:url("img/bk003.png") no-repeat left;position:relative;opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);}
+#sub_nav li.checked{font-weight:bold;}
+#sub_nav li.first a{background-image:url("img/bk005.gif");}
+#top_nav li.deco a,#sub_nav li.deco a{background-image:none;}
+
+#main{padding-left:1px;}
+
+.col-3{width:300px;padding-left:9px;}
+.col-4{width:670px;background:#fff;}
+
+.banner_1{width:300px;height:250px;}
+.banner_2{width:300px;height:120px;}
+
+/*
+color  : red\9; <=IE8
+*color : green; <=IE7
+_color : green; <=IE6
+
+IE6 unsupported *:hover,*:focus
+IE7 unsupported *:focus
+*/

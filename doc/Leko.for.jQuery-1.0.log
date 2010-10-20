@@ -4,9 +4,12 @@ Compiling e:\Develop\Projects\Leko-for-jquery\trunk\doc\Leko.for.jQuery-1.0.chm
 
 apple-touch-icon.png
 bk01.gif
+bk01.jpg
 bk02.gif
 bk02.png
 bk03.gif
+bk03.png
+bk04.png
 blank.gif
 btn.png
 favicon.ico
@@ -63,6 +66,7 @@ jQuery.fn.elements.html
 jQuery.fn.gradient.0.html
 jQuery.fn.gradient.html
 jQuery.fn.html
+jQuery.fn.list.html
 jQuery.fn.move.0.html
 jQuery.fn.move.html
 jQuery.fn.moveBy.0.html
@@ -125,6 +129,12 @@ leko.css
 leko.demo.css
 Leko.effects.html
 Leko.effects.list.html
+Leko.effects.list.lace.0.html
+Leko.effects.list.lace.html
+Leko.effects.list.lamp.0.html
+Leko.effects.list.lamp.html
+Leko.effects.list.lava.0.html
+Leko.effects.list.lava.html
 Leko.fit.html
 Leko.fn.html
 leko.gradient.js
@@ -150,11 +160,11 @@ twitter-128.128-2.png
 Leko.for.jQuery-1.0.hhc
 
 Compile time: 0 minutes, 2 seconds
-126	Topics
-367	Local links
-125	Internet links
+133	Topics
+382	Local links
+132	Internet links
 0	Graphics
 
 
-Created e:\Develop\Projects\Leko-for-jquery\trunk\doc\Leko.for.jQuery-1.0.chm, 404,889 bytes
-Compression decreased file by 818,842 bytes.
+Created e:\Develop\Projects\Leko-for-jquery\trunk\doc\Leko.for.jQuery-1.0.chm, 415,441 bytes
+Compression decreased file by 848,528 bytes.
