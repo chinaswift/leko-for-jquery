@@ -5,19 +5,93 @@
 <title>名车志-首页</title>
 <link rel="stylesheet" type="text/css" href="leko.css" />
 <link rel="stylesheet" type="text/css" href="article.css" />
-<script src="jquery.js"></script><script src="leko.js"></script><script src="leko.list.js"></script>
+<script src="jquery.js"></script><script src="leko.js"></script><script src="leko.list.js"></script><script src="leko.popup.js"></script>
 
 <script>
 
 $(function(){
 
 	$(".nav").nav();
+	$(".png").png();
+	$("#top_nav>li:not(.deco),.popup").popup();
 
 });
 
 </script>
 
 </head><body><div id="htm">
+
+<!----|menu------------------------>
+
+<div id="nav_001" class="menu"><div id="nav_101" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>HOME</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_002" class="menu"><div id="nav_102" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>AUTO先锋谈</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_003" class="menu"><div id="nav_103" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>新闻</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_004" class="menu"><div id="nav_104" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>评测</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_005" class="menu"><div id="nav_105" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>改装</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_006" class="menu"><div id="nav_106" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>名车库</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_007" class="menu"><div id="nav_107" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>生活</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_008" class="menu"><div id="nav_108" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>图库</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_009" class="menu"><div id="nav_109" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>社区</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_010" class="menu"><div id="nav_110" class="png nav-menu"><div class="nav-menu-head"><a href="#"><strong>摩登快闻</strong></a></div><ol class="nav">
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+<li><a href="#">汽车图库</a></li>
+</ol></div></div>
+
+<div id="nav_011" class="menu"><div id="nav_111" class="png"><div class="nav-menu-head"><a href="#"><strong>登录</strong></a></div><form><ol class="nav">
+<li><label for="sign_name">账号:</label></li>
+<li><input id="sign_name" type="text" /></li>
+<li><label for="sign_word">密码:</label></li>
+<li><input id="sign_word" type="text" /></li>
+</ol><a href="#">忘了密码？</a><input type="image" src="img/bn003.png" /></form>
+</div></div>
+
+<!----menu|------------------------>
 
 <!----|head------------------------>
 
@@ -26,17 +100,17 @@ $(function(){
 <nav id="top" class="tr"><div class="td"><a href="#"><img src="img/lg001.png" id="top_logo" /></a></div><div class="td"><a href="#"><img src="img/bn001.png" id="top_banner" /></a></div></nav>
 
 <nav id="nav" class="tr"><div class="td"><ul id="top_nav" class="nav" list="effect:['lace','lamp'],speed:600,fx:'linear',lace:{opacity:0.9},lamp:{color:'#fe6'}">
-<li><a href="#">HOME</a></li>
-<li><a href="#">AUTO先锋谈</a></li>
-<li><a href="#">新闻</a></li>
-<li><a href="#">评测</a></li>
-<li><a href="#">改装</a></li>
-<li><a href="#">名车库</a></li>
-<li><a href="#">生活</a></li>
-<li class="checked"><a href="#">图库</a></li>
-<li><a href="#">社区</a></li>
-<li><a href="#">摩登快闻</a></li>
-</ul></div><div id="top_sign" class="th"><a href="#"><img src="img/bn001.gif" /></a><a href="#"><img src="img/bn002.gif" /></a></div></nav>
+<li popup="menu:'#nav_001'"><a href="#">HOME</a></li>
+<li popup="menu:'#nav_002'"><a href="#">AUTO先锋谈</a></li>
+<li popup="menu:'#nav_003'"><a href="#">新闻</a></li>
+<li popup="menu:'#nav_004'"><a href="#">评测</a></li>
+<li popup="menu:'#nav_005'"><a href="#">改装</a></li>
+<li popup="menu:'#nav_006'"><a href="#">名车库</a></li>
+<li popup="menu:'#nav_007'"><a href="#">生活</a></li>
+<li popup="menu:'#nav_008'" class="checked"><a href="#">图库</a></li>
+<li popup="menu:'#nav_009'"><a href="#">社区</a></li>
+<li popup="menu:'#nav_010'"><a href="#">摩登快闻</a></li>
+</ul></div><div id="top_sign" class="th"><a href="#"><img class="popup" popup="menu:'#nav_011',offy:-3" src="img/bn001.gif" /></a><a href="#"><img src="img/bn002.gif" /></a></div></nav>
 
 <nav id="sub"><ul id="sub_nav" class="nav" list="effect:['lace','lamp'],speed:600,fx:'linear',lace:{opacity:0.9},lamp:{color:'#fff'}">
 <li class="first checked"><a href="#">热门车库</a></li>
