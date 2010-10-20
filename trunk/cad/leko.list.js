@@ -1,11 +1,3 @@
-/*!
- * Leko for jQuery v1.0
- * http://www.lekolite.cn/
- *
- * 苏昱(苏小雨)作品
- * Copyright 2010, Rainer Su(rainersu@gmail.com)
- */
-
 (function(_,$){var
 N="list",L="li",D="deco",U="."+D,P=["nav"],C=[{speed:1000,fx:"outback"}],W=["check","hover","focus"],R=/(?:er|in|us)$/i,X=[],Y=[],Z=[],I=W.length,T,K=function(e,v){return(e[0]&&e||$("<"+v.l+" />").append("<a href='#'>&nbsp;</a>")).addClass(D).css({float:"none",position:"absolute"}).show();},G=function(e,v,c){var
 a="position",p=e.css(a,function(i,v){return v=="static"?"relative":v;})[a](),i=v.inner,h=v.vertical;return{top:p.top,left:p.left,width:(!h&&i?c.$:e).width(),height:(h&&i?c.$:e).height()};};while(I--){T=W[I];Z[I]="on"+T;X[I]="."+(Y[I]=T+"ed");};I=["click","mouseleave","mouseenter","focusin","focusout"];W=I.concat(["mouseout","mouseover","focus","blur"]);T=I.join(" ");$.each(P,function(i,n){$.defaults(n,C[i]);$.fn[n]=function(v){return this[N]($.extend(true,v,{fn:n}));}});_.fn(N,function(o,v,d,n){var

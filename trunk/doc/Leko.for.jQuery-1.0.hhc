@@ -8,7 +8,10 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="blankImage"><param name="Local" value="Leko.constants.blankImage.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="effects"><param name="Local" value="Leko.effects.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="list"><param name="Local" value="Leko.effects.list.html"></OBJECT>
-<ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="ver"><param name="Local" value="Leko.ver.html"></OBJECT>
+<ul><LI><OBJECT type="text/sitemap"><param name="Name" value="lava"><param name="Local" value="Leko.effects.list.lava.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="lamp"><param name="Local" value="Leko.effects.list.lamp.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="lace"><param name="Local" value="Leko.effects.list.lace.html"></OBJECT>
+<ul></ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="ver"><param name="Local" value="Leko.ver.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="unique"><param name="Local" value="Leko.unique.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="average"><param name="Local" value="Leko.average.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fit"><param name="Local" value="Leko.fit.html"></OBJECT>
@@ -57,6 +60,7 @@
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="inoutbounce"><param name="Local" value="jQuery.easing.inoutbounce.html"></OBJECT>
 <ul></ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="fn"><param name="Local" value="jQuery.fn.html"></OBJECT>
 <ul><LI><OBJECT type="text/sitemap"><param name="Name" value="nav"><param name="Local" value="jQuery.fn.nav.html"></OBJECT>
+<ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="list"><param name="Local" value="jQuery.fn.list.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="shadow"><param name="Local" value="jQuery.fn.shadow.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="gradient"><param name="Local" value="jQuery.fn.gradient.html"></OBJECT>
 <ul></ul><LI><OBJECT type="text/sitemap"><param name="Name" value="png"><param name="Local" value="jQuery.fn.png.html"></OBJECT>

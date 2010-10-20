@@ -59,6 +59,129 @@
 			<brief>用于存储Leko为jQuery安装的功能扩展插件的个性化效果设置的接口对象。</brief>
 			<object name="list">
 				<brief>为&lt;a class="en" href="jQuery.fn.list.htm"&gt; list &lt;/a&gt;及其衍生部件注册效果函数的接口对象。</brief>
+				<method name="lava">
+					<brief>适用于&lt;a class="en" href="jQuery.fn.nav.htm"&gt; nav &lt;/a&gt;组件的扩展效果。详见实例演示页面。</brief>
+					<srcfile>jquery.js</srcfile>
+					<srcfile within="">leko.js</srcfile>
+					<param name="list-object">
+						<vartype name="jquery">
+							<varvalue>
+								<brief>应用效果的列表对象。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="current-list-config">
+						<vartype name="object">
+							<varvalue>
+								<brief>列表组件的当前配置。参见&lt;a class="en" href="jQuery.fn.currents.htm"&gt; jQuery.fn.currents &lt;/a&gt;函数。
+</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="runtime-list-config">
+						<vartype name="object">
+							<varvalue>
+								<brief>列表组件运行时接口。参见&lt;a class="en" href="jQuery.fn.runtimes.htm"&gt; jQuery.fn.runtimes &lt;/a&gt;函数。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="plugin-name">
+						<vartype name="string">
+							<varvalue>
+								<value>list</value>
+								<brief>组件名称。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<return name="object">
+						<varvalue>
+							<brief>包含三个字段名称依次为0-2的分别对应于选中、鼠标进入、获得焦点状态的回调函数。如果不需要处理的状态，省略相应函数定义即可。每个声明的回调函数会接受到四个参数，分别是：当前列表项，当前是获得还是失去相应状态，当前列表项的最终当前配置，当前列表项的运行时接口。</brief>
+						</varvalue>
+					</return>
+					<code><![CDATA[$(".nav").nav(effect:'lava',lava:{borderBottomColor:'#999',backgroundColor:'#000'});]]></code>
+				</method>
+				<method name="lamp">
+					<brief>适用于&lt;a class="en" href="jQuery.fn.nav.htm"&gt; nav &lt;/a&gt;组件的扩展效果。详见实例演示页面。</brief>
+					<srcfile>jquery.js</srcfile>
+					<srcfile within="">leko.js</srcfile>
+					<param name="list-object">
+						<vartype name="jquery">
+							<varvalue>
+								<brief>应用效果的列表对象。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="current-list-config">
+						<vartype name="object">
+							<varvalue>
+								<brief>列表组件的当前配置。参见&lt;a class="en" href="jQuery.fn.currents.htm"&gt; jQuery.fn.currents &lt;/a&gt;函数。
+</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="runtime-list-config">
+						<vartype name="object">
+							<varvalue>
+								<brief>列表组件运行时接口。参见&lt;a class="en" href="jQuery.fn.runtimes.htm"&gt; jQuery.fn.runtimes &lt;/a&gt;函数。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="plugin-name">
+						<vartype name="string">
+							<varvalue>
+								<value>list</value>
+								<brief>组件名称。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<return name="object">
+						<varvalue>
+							<brief>包含三个字段名称依次为0-2的分别对应于选中、鼠标进入、获得焦点状态的回调函数。如果不需要处理的状态，省略相应函数定义即可。每个声明的回调函数会接受到四个参数，分别是：当前列表项，当前是获得还是失去相应状态，当前列表项的最终当前配置，当前列表项的运行时接口。</brief>
+						</varvalue>
+					</return>
+					<code><![CDATA[$(".nav").nav(effect:'lamp',lamp:{color:'#999',background:'#000'});]]></code>
+				</method>
+				<method name="lace">
+					<brief>适用于&lt;a class="en" href="jQuery.fn.nav.htm"&gt; nav &lt;/a&gt;组件的扩展效果。详见实例演示页面。</brief>
+					<srcfile>jquery.js</srcfile>
+					<srcfile within="">leko.js</srcfile>
+					<param name="list-object">
+						<vartype name="jquery">
+							<varvalue>
+								<brief>应用效果的列表对象。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="current-list-config">
+						<vartype name="object">
+							<varvalue>
+								<brief>列表组件的当前配置。参见&lt;a class="en" href="jQuery.fn.currents.htm"&gt; jQuery.fn.currents &lt;/a&gt;函数。
+</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="runtime-list-config">
+						<vartype name="object">
+							<varvalue>
+								<brief>列表组件运行时接口。参见&lt;a class="en" href="jQuery.fn.runtimes.htm"&gt; jQuery.fn.runtimes &lt;/a&gt;函数。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<param name="plugin-name">
+						<vartype name="string">
+							<varvalue>
+								<value>list</value>
+								<brief>组件名称。</brief>
+							</varvalue>
+						</vartype>
+					</param>
+					<return name="object">
+						<varvalue>
+							<brief>包含三个字段名称依次为0-2的分别对应于选中、鼠标进入、获得焦点状态的回调函数。如果不需要处理的状态，省略相应函数定义即可。每个声明的回调函数会接受到四个参数，分别是：当前列表项，当前是获得还是失去相应状态，当前列表项的最终当前配置，当前列表项的运行时接口。</brief>
+						</varvalue>
+					</return>
+					<code><![CDATA[$(".nav").nav(effect:'lamp',lamp:{color:'#999',background:'#000'});]]></code>
+				</method>
 			</object>
 		</object>
 		<method name="ver">
@@ -2087,20 +2210,28 @@ alert(X.msie(5.5));</code>
 		<object name="fn">
 			<brief>用于为jQuery安装功能扩展插件的接口对象。</brief>
 			<method name="nav" fn="1">
-				<brief>创建横向或纵向的导航菜单。</brief>
+				<brief>对&lt;a class="en" href="jQuery.fn.list.html"&gt; list &lt;/a&gt;组件的再封装组件，创建横向或纵向的导航菜单。</brief>
 				<srcfile>jquery.js</srcfile>
 				<srcfile>leko.js</srcfile>
 				<srcfile within="">leko.list.js</srcfile>
+				<param name="live" optional="1">
+					<default>li</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>确定列表项的选择符。</brief>
+						</varvalue>
+					</vartype>
+				</param>
 				<param name="effect" optional="1">
 					<default>undefined</default>
 					<vartype name="string">
 						<varvalue>
-							<brief>预注册的效果函数的名称。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;对象。</brief>
+							<brief>预注册的效果函数的名称。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;接口对象。</brief>
 						</varvalue>
 					</vartype>
 					<vartype name="function">
 						<varvalue>
-							<brief>自定义的效果函数。该回调函数将被用来遍历处理列表的每一项。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;对象。</brief>
+							<brief>自定义的效果函数。该回调函数将被用来遍历处理列表的每一项。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;接口对象。</brief>
 						</varvalue>
 					</vartype>
 					<vartype name="array">
@@ -2114,13 +2245,6 @@ alert(X.msie(5.5));</code>
 						</varvalue>
 					</vartype>
 				</param>
-				<return name="jQuery">
-					<varvalue>
-						<value>this</value>
-					</varvalue>
-				</return>
-				<code>$("ul.nav").nav();</code>
-				<code>$("ol.nav").nav({vertical:true,effect:['lava','lamp'],lava:{borderBottomColor:'#999'},lamp:{color:'#999'}});</code>
 				<param name="speed" optional="1">
 					<default>1000</default>
 					<vartype name="string">
@@ -2151,6 +2275,183 @@ alert(X.msie(5.5));</code>
 						</varvalue>
 					</vartype>
 				</param>
+				<param name="event" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>列表项在&lt;mark class="en"&gt; onclick &lt;/mark&gt;时被选中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>列表项在&lt;mark class="en"&gt; onmouseenter &lt;/mark&gt;时被选中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>列表项在&lt;mark class="en"&gt; onfocus &lt;/mark&gt;时被选中。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="vertical" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>竖列表。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>横列表。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="inner" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>基于列表项的内容尺寸创建附加效果。仅当指定了扩展效果函数时有效。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>基于列表项的占位尺寸创建附加效果。仅当指定了扩展效果函数时有效。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="checked" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<brief>选定第几个列表项。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="jquery">
+						<varvalue>
+							<brief>选定哪一个列表项。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="element">
+						<varvalue>
+							<brief>选定哪一个列表项。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("ul.nav").nav();</code>
+				<code>$("ol.nav").nav({vertical:true,effect:['lava','lamp'],lava:{borderBottomColor:'#999'},lamp:{color:'#999'}});</code>
+			</method>
+			<method name="list" fn="1">
+				<brief>各种列表组件的基本原型。</brief>
+				<srcfile>jquery.js</srcfile>
+				<srcfile>leko.js</srcfile>
+				<srcfile within="">leko.list.js</srcfile>
+				<param name="effect" optional="1">
+					<default>undefined</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>预注册的效果函数的名称。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;接口对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="function">
+						<varvalue>
+							<brief>自定义的效果函数。该回调函数将被用来遍历处理列表的每一项。参见&lt;a class="en" href="Leko.effects.list.html"&gt; Leko.effects.list &lt;/a&gt;接口对象。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="array">
+						<varvalue>
+							<brief>要同时应用的多个组合效果。包含的项目既可以是已注册的函数名称，也可以是自定义函数体。</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="undefined">
+						<varvalue>
+							<brief>不应用任何附加效果。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="speed" optional="1">
+					<default>1000</default>
+					<vartype name="string">
+						<varvalue>
+							<value>slow</value>
+							<brief>预设的速度级别。相当于600ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>normal</value>
+							<brief>预设的速度级别。相当于400ms</brief>
+						</varvalue>
+						<varvalue>
+							<value>fast</value>
+							<brief>预设的速度级别。相当于200ms</brief>
+						</varvalue>
+					</vartype>
+					<vartype name="number">
+						<varvalue>
+							<brief>精确指定速度的整数数值。单位为毫秒。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="fx" optional="1">
+					<default>outback</default>
+					<vartype name="string">
+						<varvalue>
+							<brief>要应用的缓动函数名称。参见&lt;a class="en" href="jQuery.easing.html"&gt; jQuery.easing &lt;/a&gt;对象。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="event" optional="1">
+					<default>0</default>
+					<vartype name="number">
+						<varvalue>
+							<value>0</value>
+							<brief>列表项在&lt;mark class="en"&gt; onclick &lt;/mark&gt;时被选中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>1</value>
+							<brief>列表项在&lt;mark class="en"&gt; onmouseenter &lt;/mark&gt;时被选中。</brief>
+						</varvalue>
+						<varvalue>
+							<value>2</value>
+							<brief>列表项在&lt;mark class="en"&gt; onfocus &lt;/mark&gt;时被选中。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="vertical" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>竖列表。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>横列表。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<param name="inner" optional="1">
+					<default>false</default>
+					<vartype name="boolean">
+						<varvalue>
+							<value>true</value>
+							<brief>基于列表项的内容尺寸创建附加效果。仅当指定了扩展效果函数时有效。</brief>
+						</varvalue>
+						<varvalue>
+							<value>false</value>
+							<brief>基于列表项的占位尺寸创建附加效果。仅当指定了扩展效果函数时有效。</brief>
+						</varvalue>
+					</vartype>
+				</param>
+				<return name="jQuery">
+					<varvalue>
+						<value>this</value>
+					</varvalue>
+				</return>
+				<code>$("ul.nav").nav();</code>
+				<code>$("ol.nav").nav({vertical:true,effect:['lava','lamp'],lava:{borderBottomColor:'#999'},lamp:{color:'#999'}});</code>
 			</method>
 			<method name="shadow" fn="1">
 				<brief>为元素创建阴影效果。</brief>
