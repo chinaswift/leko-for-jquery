@@ -70,7 +70,6 @@
 				k=!!v.vertical+0,
 				w,rev,fwd,tmp,att;
 			while(i--)v[i]=v.fn==P[i];
-			i=X.length;
 			if(r[0]){
 				att="outer"+A[k];
 				w=o.children(j)[att]();
@@ -95,6 +94,8 @@
 					$(this).toggleClass("hovered",/er$/.test(e.type));
 				});
 			}
+			if(v[1])v.effect=v.effect||"tabs";
+			i=X.length;
 			while(i--){
 				d[i]=(function(i){
 					return function(s){
@@ -136,7 +137,7 @@
 				m=v[Y[i]];
 				if(v[1]&&!i&&m===void 0){
 					m=$(l+X[0],o);
-					if(!m.length) m=0;console.log(m);
+					if(!m.length) m=0;
 				}
 				if(m!==void 0)d[i](m);		
 			}
@@ -157,6 +158,21 @@
 		{
 		},
 		{
+			tabs:function(o,v,d,n){
+				return{
+					0:function(e,b,c,r){
+						e.toggle(b);
+					}
+				};
+			},
+			fade:function(o,v,d,n){
+				return{
+					0:function(e,b,c,r){
+						if(b&&!r.b)e.hide().appendTo(o).fadeIn(c.speed,c.fx);
+						r.b=b;
+					}
+				};
+			},
 			lamp:function(o,v,d,n){
 				return{
 					1:function(e,b,c,r){
