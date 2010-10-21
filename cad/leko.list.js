@@ -105,10 +105,10 @@
 					};
 				})(i);
 				m=v[Y[i]];
-				if(v[0]&&!i&&m===void 0){
+				/*if(v[0]&&!i&&m===void 0){
 					m=$(l+X[0],o);
 					if(!m.length) m=0;
-				}
+				}*/
 				if(m!==void 0)d[i](m);		
 			}
 			d[1]($(l+X[0],o));
@@ -153,3 +153,11 @@
 	);
 
 })(Leko,jQuery);
+
+$(function(){
+
+	$(".nav").nav();
+	$(".png").png();
+	$("#top_nav>li:not(.deco),.popup").popup();
+
+});
