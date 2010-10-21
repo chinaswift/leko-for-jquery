@@ -8,7 +8,7 @@ html{-webkit-text-size-adjust:none;background:#2f2f2f url('img/bk001.png') repea
 html,textarea{overflow-y:scroll;}
 body{line-height:1.5;color:#111;text-align:center;position:relative;height:100%;}
 body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","LiHei Pro","Helvetica Neue",Helvetica,Arial;}
-button,input,select{vertical-align:middle;}
+button,input,select,a img{vertical-align:middle;_padding:0;}
 pre{white-space:pre;}
 pre,code{font-family:Monaco,Menlo,Consolas,"lucida console",'Courier New';padding:0.5em 1em;}
 blockquote,q{quotes:"" "";}
@@ -27,13 +27,13 @@ article,aside{line-height:2;}
 article{font-size:13px;line-height:1.7;}
 
 ol,ul,li{list-style:none;position:relative;}
-ul.nav:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
-ul.nav li a,ul.nav li,.td{float:left;}
-ul.nav li a,ul.nav li,ul,.tr,.td,.th{display:block;zoom:1;_display:inline-block;_height:1%;}
-ol.nav li a,ol.nav li{display:block;zoom:1;}
+ul.rol:after,ul.nav:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
+ul.rol li a,ul.rol li,ul.nav li a,ul.nav li,.td{float:left;}
+ul.rol li a,ul.rol li,ul.nav li a,ul.nav li,ul,.tr,.td,.th{display:block;zoom:1;_display:inline-block;_height:1%;}
+ol.rol li a,ol.rol li,ol.nav li a,ol.nav li{display:block;zoom:1;}
 li.deco{display:none;position:absolute;}
-ol.tab li{position:absolute;left:0;top:0;z-index:2;}
-ul.rol{}
+nav.carousel{position:relative;z-index:33;}
+ol.rol,ul.rol,ol.tab li{position:absolute;left:0;top:0;z-index:22;}
 
 .th{float:right;}
 .dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
