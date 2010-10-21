@@ -55,10 +55,10 @@
 #sec_6 header a{height:31px;width:150px;color:#fff;text-align:center;line-height:31px;background:url("img/bk006.png") no-repeat 0px -31px;}
 #sec_6 header li.checked a{background-position:0px 0px;}
 #sec_6 .tab,#sec_6 .li{height:200px;}
-#sec_6 ol{padding:15px;width:270px;}
+#sec_6 ol{padding:15px;width:270px;background:#ebebeb;}
 #sec_6 ol li{background:url("img/bk007.gif") repeat-y top;}
 #sec_6 ol a{width:255px;padding-left:15px;color:#333;line-height:30px;height:30px;}
-#sec_6 ol a:hover{color:#0066a0;background-color:#fff;}
+#sec_6 ol a:hover{color:#0066a0;}
 
 #sec_5,#sec_6{background:#ebebeb;}
 #sec_3,#sec_4,#sec_5,#sec_6,#sec_7,#sec_8{margin-bottom:10px;}
