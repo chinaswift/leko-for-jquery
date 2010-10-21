@@ -77,7 +77,7 @@
 							x=X[i],
 							y=Y[i],
 							z=v[Z[i]],
-							c=$(l+":not("+U+")",o),
+							c=o.children(l+":not("+U+")"),
 							h=v.effect;
 						if(h)h=$.map($.makeArray(h),function(h){
 							return ((($.effect(n,h)||$.noop)(o,v,d,n))||{})[i];
