@@ -58,6 +58,23 @@
 	});
 
 	_.fn(
+		"listlink",
+		function(o,v,d,n){
+			var
+				t=$(v.linkTo),
+				f;
+			if(t[0]){
+				f=function(i,e){
+					var
+						x=$(e.defaults("lilink").linkTo);
+					t.runtimes(N)[0](x[0]||i);
+				}
+				o.currents(N).oncheck=f;
+				f(0,o.children(".checked"));
+			}
+		},
+		{},
+		{},
 		N,
 		function(o,v,d,n){
 			var
@@ -68,6 +85,7 @@
 				r=$(v.carousel),
 				j=l+":not("+U+")",
 				k=!!v.vertical+0,
+				t=$(v.link),
 				w,rev,fwd,tmp,att;
 			while(i--)v[i]=v.fn==P[i];
 			if(r[0]){
@@ -122,15 +140,17 @@
 							}
 						}
 						r=r.slice(0,Math.min(r.length,i||v[0]?1:(v.maxLength||1)));
+						
 						c.each(function(m,e){
 							e=$(e);
 							b=!!(r.index(e)+1);
 							if(h)$.each(h,function(l,h){
 								h(e,b,e.currents(L,$.extend(true,{$:$(":first-child",e)},v,e.defaults(L))),e.runtimes(L));
 							});
-							if(z&&b!=e.hasClass(y))z.call(o,m,e);							
+							if(b&&z&&b!=e.hasClass(y))z.call(o,m,e);							
 							e.toggleClass(y,b);
 						});
+
 						d[y]=r.length&&r;						
 					};
 				})(i);
@@ -201,8 +221,14 @@
 
 $(function(){
 
-	$(".nav").nav();
-	$(".tab").tab();
+	var
+		a=$(".nav"),
+		b=$(".tab");
+	
+	a.nav();
+	b.tab();
+	a.add(b).listlink();
+
 	$(".png").png();
 	$("#top_nav>li:not(.deco),.popup").popup();
 
