@@ -550,6 +550,15 @@
 			});
 			return x;
 		},
+		iframe:function(){
+			return _.msie(7,1)?this.each(function(i,o){
+				o=$(o);
+				i=$("<iframe frameborder='0' hspace='0' src=''></iframe>").css({
+					zIndex:-1,
+					position:"absolute"
+				}).insertBefore(o).resize(o).move(o,1,1);
+			}):this;
+		},
 		png:function(){
 			return _.msie(7,1)?this.each(function(i,o){
 				var

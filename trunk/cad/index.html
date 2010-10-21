@@ -6,6 +6,12 @@
 <link rel="stylesheet" type="text/css" href="leko.css" />
 <link rel="stylesheet" type="text/css" href="article.css" />
 <script src="jquery.js"></script><script src="leko.js"></script><script src="leko.list.js"></script><script src="leko.popup.js"></script>
+<script>
+if(!_.mozilla()){
+	document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
+}
+
+</script>
 
 <script>
 
@@ -83,7 +89,7 @@ $(function(){
 <li><a href="#">汽车图库</a></li>
 </ol></div></div>
 
-<div id="nav_011" class="menu"><div id="nav_111" class="png"><div class="nav-menu-head"><a href="#"><strong>登录</strong></a></div><form><ol class="nav">
+<div id="nav_011" class="menu"><div id="nav_111" class="png"><div class="nav-menu-head"><a href="#"><strong>登录</strong></a></div><form class="iframe"><ol class="nav">
 <li><label for="sign_name">账号:</label></li>
 <li><input id="sign_name" type="text" /></li>
 <li><label for="sign_word">密码:</label></li>
@@ -100,16 +106,16 @@ $(function(){
 <nav id="top" class="tr"><div class="td"><a href="#"><img src="img/lg001.png" id="top_logo" /></a></div><div class="td"><a href="#"><img src="img/bn001.png" id="top_banner" /></a></div></nav>
 
 <nav id="nav" class="tr"><div class="td"><ul id="top_nav" class="nav" list="effect:['lace','lamp'],speed:600,fx:'linear',lace:{opacity:0.9},lamp:{color:'#fe6'}">
-<li popup="menu:'#nav_001'"><a href="#">HOME</a></li>
-<li popup="menu:'#nav_002'"><a href="#">AUTO先锋谈</a></li>
-<li popup="menu:'#nav_003'"><a href="#">新闻</a></li>
-<li popup="menu:'#nav_004'"><a href="#">评测</a></li>
-<li popup="menu:'#nav_005'"><a href="#">改装</a></li>
-<li popup="menu:'#nav_006'"><a href="#">名车库</a></li>
-<li popup="menu:'#nav_007'"><a href="#">生活</a></li>
-<li popup="menu:'#nav_008'" class="checked"><a href="#">图库</a></li>
-<li popup="menu:'#nav_009'"><a href="#">社区</a></li>
-<li popup="menu:'#nav_010'"><a href="#">摩登快闻</a></li>
+<li popup="menu:'#nav_001',offx:-2"><a href="#">HOME</a></li>
+<li popup="menu:'#nav_002',offx:-2"><a href="#">AUTO先锋谈</a></li>
+<li popup="menu:'#nav_003',offx:-2"><a href="#">新闻</a></li>
+<li popup="menu:'#nav_004',offx:-2"><a href="#">评测</a></li>
+<li popup="menu:'#nav_005',offx:-2"><a href="#">改装</a></li>
+<li popup="menu:'#nav_006',offx:-2"><a href="#">名车库</a></li>
+<li popup="menu:'#nav_007',offx:-2"><a href="#">生活</a></li>
+<li popup="menu:'#nav_008',offx:-2" class="checked"><a href="#">图库</a></li>
+<li popup="menu:'#nav_009',offx:-2"><a href="#">社区</a></li>
+<li popup="menu:'#nav_010',offx:-2"><a href="#">摩登快闻</a></li>
 </ul></div><div id="top_sign" class="th"><a href="#"><img class="popup" popup="menu:'#nav_011',offy:-3" src="img/bn001.gif" /></a><a href="#"><img src="img/bn002.gif" /></a></div></nav>
 
 <nav id="sub"><ul id="sub_nav" class="nav" list="effect:['lace','lamp'],speed:600,fx:'linear',lace:{opacity:0.9},lamp:{color:'#fff'}">
