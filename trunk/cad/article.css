@@ -38,12 +38,17 @@
 #sec_5 header img{width:300px;height:35px;}
 #sec_5 .tr{width:280px;padding:10px;background:url(img/bk005.png) repeat-x top;}
 #sec_5 .td1{width:180px;}
-#sec_5 .td2{width: 90px;}
-#sec_5 nav{width:80px;height:290px;overflow:hidden;background:#fff;border:5px solid #fff;}
+#sec_5 .td2{width: 90px;padding-top:5px;}
+#sec_5 .carousel{width:80px;height:270px;overflow:hidden;background:#fff;border:5px solid #fff;}
+#sec_5_rev,#sec_5_fwd{width:90px;height:5px;display:block;font-size:1px;}
+#sec_5_rev{background:url("img/ar_001.gif") no-repeat 0px -5px;}
+#sec_5_fwd{background:url("img/ar_002.gif") no-repeat 0px -5px;}
+#sec_5_rev.hovered,#sec_5_fwd.hovered{background-position:0px 0px;}
+#sec_5_rev.disabled,#sec_5_fwd.disabled{background-position:0px -10px;}
 #sec_5 ol{}
 #sec_5 ol a{width:70px;height:80px;display:block;text-align:center;font-weight:bold;padding:5px;overflow:hidden;color:#666;}
 #sec_5 ol a img{width:60px;height:60px;display:block;margin:0 auto 3px auto;}
-#sec_5 ol a:hover{background:#999;color:#fff;}
+/*#sec_5 ol a:hover{background:#999;color:#fff;}*/
 #sec_5 h5,#sec_5 h6{font-weight:bold;margin-bottom:1em;}
 #sec_5 ol h5{margin:0;}
 
