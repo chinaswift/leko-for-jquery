@@ -66,6 +66,9 @@
 				m;
 			while(i--)v[i]=v.fn==P[i];
 			i=X.length;
+			d.=function(){
+
+			}
 			while(i--){
 				d[i]=(function(i){
 					return function(s){
