@@ -37,7 +37,8 @@
 				width :(!h&&i?c.$:e).width(),
 				height:( h&&i?c.$:e).height()
 			};
-		};
+		},
+		A=["Width","Height"];
 
 	while(I--){
 		T=W[I];
@@ -63,11 +64,36 @@
 				l=(v.l=v.live||L),
 				i=P.length,
 				a=v.fn,
-				m;
+				m,
+				r=$(v.carousel),
+				j=l+":not("+U+")",
+				k=!!v.vertical+0,
+				w,rev,fwd,tmp,att;
 			while(i--)v[i]=v.fn==P[i];
 			i=X.length;
-			d.=function(){
-
+			if(r[0]){
+				att="outer"+A[k];
+				w=o.children(j)[att]();
+				d.r=function(b){
+					o.stop(true,true);
+					var
+						a=k?"top":"left",
+						x=o.position()[a],
+						q={};
+					q[a]=(b?"+":"-")+"="+w;
+					if(!b&&x<0)o.append(o.children(j).first()).css(a,x+w+"px");
+					if(b&&(x+o[att]())>r[att]())o.prepend(o.children(j).last()).css(a,x-w+"px");
+					
+					o.animate(q,v.carouselSpeed,v.carouselFx);
+				}
+				rev=$(v.rev);
+				fwd=$(v.fwd);
+				tmp=o[att]()<=r[att]();				
+				rev.add(fwd).toggleClass("disabled",tmp).unbind("click",d.rol).bind("click",d.rol=tmp?$.noop:function(e){
+					d.r(this==fwd[0]);
+				}).unbind("mouseenter mouseleave",d.rok).bind("mouseenter mouseleave",d.rok=tmp?$.noop:function(e){
+					$(this).toggleClass("hovered",/er$/.test(e.type));
+				});
 			}
 			while(i--){
 				d[i]=(function(i){
@@ -80,7 +106,7 @@
 							x=X[i],
 							y=Y[i],
 							z=v[Z[i]],
-							c=o.children(l+":not("+U+")"),
+							c=o.children(j),
 							h=v.effect;
 						if(h)h=$.map($.makeArray(h),function(h){
 							return ((($.effect(n,h)||$.noop)(o,v,d,n))||{})[i];
