@@ -5,7 +5,7 @@
 		L="li",
 		D="deco",
 		U="."+D,
-		P=["nav"],
+		P=["nav","tab"],
 		C=[{
 			speed:1000,
 			fx:"outback"
@@ -134,10 +134,10 @@
 					};
 				})(i);
 				m=v[Y[i]];
-				/*if(v[0]&&!i&&m===void 0){
+				if(v[1]&&!i&&m===void 0){
 					m=$(l+X[0],o);
-					if(!m.length) m=0;
-				}*/
+					if(!m.length) m=0;console.log(m);
+				}
 				if(m!==void 0)d[i](m);		
 			}
 			d[1]($(l+X[0],o));
@@ -186,6 +186,7 @@
 $(function(){
 
 	$(".nav").nav();
+	$(".tab").tab();
 	$(".png").png();
 	$("#top_nav>li:not(.deco),.popup").popup();
 
