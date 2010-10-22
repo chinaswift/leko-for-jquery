@@ -76,6 +76,9 @@ h6 .en{font-family:"small fonts";font-size:10px;}
 .col-3{width:300px;padding-left:9px;}
 .col-4{width:670px;background:#fff;}
 
+.pic-1{width:149px;height:149px;background:#ebebeb;text-align:center;overflow:hidden;line-height:149px;}
+.pic-1 img{margin:auto;vertical-align:middle;}
+
 .banner_1{width:300px;height:250px;}
 .banner_2{width:300px;height:120px;}
 
