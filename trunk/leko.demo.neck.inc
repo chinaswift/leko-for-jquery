@@ -1,1 +1,0 @@
-<h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
