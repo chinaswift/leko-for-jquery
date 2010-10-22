@@ -74,10 +74,12 @@ h6 .en{font-family:"small fonts";font-size:10px;}
 #main{padding-left:1px;}
 
 .col-3{width:300px;padding-left:9px;}
-.col-4{width:670px;background:#fff;}
+.col-4{width:670px;}
 
-.pic-1{width:149px;height:149px;background:#ebebeb;text-align:center;overflow:hidden;line-height:149px;}
-.pic-1 img{margin:auto;vertical-align:middle;}
+.pic-1{width:149px;height:149px;line-height:149px;}
+.pic-2{width:119px;height:119px;line-height:119px;}
+.pic-1,.pic-2{background:#ebebeb;text-align:center;overflow:hidden;vertical-align:middle;}
+.pic-1 img,.pic-2 img{margin:auto;}
 
 .banner_1{width:300px;height:250px;}
 .banner_2{width:300px;height:120px;}
