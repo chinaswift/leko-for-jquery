@@ -1,3 +1,6 @@
+
+/*----|left-----*/
+
 #sel_1,#sel_2{background:#fff;}
 
 #sec_1{padding:20px;}
@@ -18,14 +21,28 @@
 #sec_1 footer a,#sec_1 footer span{color:#666;border:1px solid #d9d9d9;height:16px;line-height:16px;padding:0 6px;margin:0 1px;}
 #sec_1 footer span{border-color:#fff;}
 #sec_1 footer a.checked,#sec_1 footer a:hover{background:#b80f13;border-color:#b80f13;color:#fff;}
+#sec_1 table{background:#ddd;margin-top:20px;}
+#sec_1 th,#sec_1 td{background:#eee;vertical-align:top;padding:15px 10px;}
+#sec_1 th{font-size:13px;padding:5px 10px;}
+#sec_1 tr a{color:#333;line-height:2;}
+#sec_1 tr a:hover,#sec_1 tr a.checked{color:#0066a0;}
 
-#sec_2{padding:15px 20px;}
-#sec_2 table{background:#ddd;}
-#sec_2 th,#sec_2 td{background:#eee;vertical-align:top;padding:15px 10px;}
-#sec_2 th{font-size:13px;padding:5px 10px;}
-#sec_2 a{color:#333;line-height:2;}
-#sec_2 a:hover,#sec_2 a.checked{color:#0066a0;}
+#sec_2{padding:0 13px;}
+#sec_2 h4{color:#ac0f12;padding:20px 0;font-weight:bold;}
+#sec_2_main{position:relative;}
+#sec_2_rev,#sec_2_fwd{position:absolute;z-index:99;top:0px;display:block;width:13px;height:149px;}
+#sec_2_fwd{background:url("img/ar003.png") no-repeat;left :-13px;}
+#sec_2_rev{background:url("img/ar004.png") no-repeat;right:-14px;}
+#sec_2_main,#sec_2 .carousel{height:190px;}
 
+/*
+#sec_7 ol{padding-top:10px;width:260px;}
+#sec_7 ol a{width:260px;padding:10px 0;color:#333;background:url("img/bk006.gif") repeat-x bottom;}
+#sec_7 ol a:hover{color:#0066a0;}
+#sec_7 span{color:#0066a0;}
+#sec_7 h4{color:#666;font-size:12px;}*/
+
+/*----|right----*/
 
 #sec_3 form{padding:7px 0 0 10px;width:288px;height:32px;border:1px solid #464646;background:url("img/bk004.png") repeat-x top;}
 #form_find_txt{width:135px;}
@@ -43,7 +60,7 @@
 #sec_5_rev,#sec_5_fwd{width:90px;height:5px;display:block;font-size:1px;}
 #sec_5_rev{background:url("img/ar_001.gif") no-repeat 0px -5px;}
 #sec_5_fwd{background:url("img/ar_002.gif") no-repeat 0px -5px;}
-#sec_5_rev.hovered,#sec_5_fwd.hovered{background-position:0px 0px;}
+#sec_5_rev.hovered,#sec_5_fwd.hovered{background-position:0px 0px;background-color:#fff;}
 #sec_5_rev.disabled,#sec_5_fwd.disabled{background-position:0px -10px;}
 #sec_5 ul{width:180px;}
 #sec_5 ol a{width:70px;height:80px;display:block;text-align:center;font-weight:bold;padding:5px;overflow:hidden;color:#666;}
