@@ -93,7 +93,7 @@
 #sec_5_rev.hovered,#sec_5_fwd.hovered{background-position:0px 0px;background-color:#fff;}
 #sec_5_rev.disabled,#sec_5_fwd.disabled{background-position:0px -10px;}
 #sec_5 ul{width:180px;}
-#sec_5 ol a{width:70px;height:80px;display:block;text-align:center;font-weight:bold;padding:5px;overflow:hidden;color:#666;}
+#sec_5 ol a{width:70px;height:80px;display:block;text-align:center;font-weight:bold;padding:5px;overflow:hidden;color:#666;background:#fff;}
 #sec_5 ol a img{width:60px;height:60px;display:block;margin:0 auto 3px auto;}
 /*#sec_5 ol a:hover{background:#999;color:#fff;}*/
 #sec_5 h5,#sec_5 h6{font-weight:bold;margin-bottom:1em;}
