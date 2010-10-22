@@ -12,8 +12,6 @@
 				});
 			}
 		},
-		
-		/*placeholder,,required,autofocus,pattern,input type=range,input type=email*/
 
 		iePseudoClasses:function(){
 			var
@@ -906,7 +904,7 @@
 				rev=$(v.rev);
 				fwd=$(v.fwd);
 				tmp=o[att]()<=r[att]();				
-				rev.add(fwd).toggleClass("disabled",tmp).unbind("click",d.rol).bind("click",d.rol=tmp?$.noop:function(e){
+				rev.add(fwd)./*toggleClass("disabled",tmp).*/unbind("click",d.rol).bind("click",d.rol=tmp?$.noop:function(e){
 					d.r(this==fwd[0]);
 				}).unbind("mouseenter mouseleave",d.rok).bind("mouseenter mouseleave",d.rok=tmp?$.noop:function(e){
 					$(this).toggleClass("hovered",/er$/.test(e.type));
