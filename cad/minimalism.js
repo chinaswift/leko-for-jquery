@@ -1033,3 +1033,5 @@ $(function(){
 	$("#top_nav>li:not(.deco),.popup").popup();
 
 });
+
+//if(!_.mozilla())document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
