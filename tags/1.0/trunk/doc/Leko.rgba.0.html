@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="" />
+<title>LEKO&trade;</title>
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" type="text/css" href="leko.css" />
+<link rel="stylesheet" type="text/css" href="leko.demo.css" />
+<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
+<script src="jquery.js"></script><script src="leko.js"></script><script>
+
+if(!_.mozilla()){
+	document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
+}
+
+</script>
+<style>
+
+input{width:24px;}
+pre{width:250px;}
+.frame{width:64px;height:64px;padding:3px;}
+
+.td1{width:300px;}
+
+</style>
+
+<script>
+
+$(function(){
+	$("select").change(function(){
+		var
+			v=$("select option:selected").text(),
+			a=_.rgba(v),
+			b=$.support.rgba,
+			t="rgb";
+		$("input").each(function(i,v){
+			$(v).val(a[i]);
+		});
+		if(b)t+="a";else a.pop();
+		b=b||!(/^(?:rgba|hsl)/.test(v));
+		with($("pre")){
+			eq(0).html("Leko.rgba(\""+v+"\");");
+			eq(1).html("background-color:"+t+"("+a+");");
+		}
+		with($(".frame")){
+			eq(0).css("background-color",b?v:"#fff").children("h6").html(b?"":"当前浏览器不支持此种CSS3语法");
+			eq(1).css("background-color",t+"("+a+")");
+		}
+	}).change();
+});
+
+</script>
+
+</head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
+<section><h4>请选择颜色：</h4>
+<div class="tr"><div class="td en td1"><select class="en">
+<option>#FC3</option>
+<option>#cc66ff</option>
+<option>rgb(127,255,212)</option>
+<option>rgba(127,255,212,0.5)</option>
+<option>hsl(240,90%,50%)</option>
+<option>hsla(240,90%,50%,0.5)</option>
+<option>tan</option>
+<option>rgb(40% ,50% ,60%)</option>
+</select><hr class="space" /><pre>&nbsp;</pre></div>
+<div class="td frame"><h6></h6></div></div></section>
+
+<section><h4>转换为数组：</h4>
+<div class="tr"><div class="td en td1">R&nbsp;<input class="txt" />&nbsp;G&nbsp;<input class="txt" />&nbsp;B&nbsp;<input class="txt" />&nbsp;A&nbsp;<input class="txt" /><hr class="space" /><pre>&nbsp;</pre></div><div class="td frame"></div></div></section>
+
+<footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>

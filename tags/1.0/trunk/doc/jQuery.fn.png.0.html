@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=false" />
+<meta name="keywords" content="" /> 
+<meta name="description" content="" />
+<title>LEKO&trade;</title>
+<link rel="icon" type="image/ico" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" type="text/css" href="leko.css" />
+<link rel="stylesheet" type="text/css" href="leko.demo.css" />
+<link rel="alternate" type="application/rss+xml" title="" href="leko.xml" />
+<script src="jquery.js"></script><script src="leko.js"></script><script>
+
+if(!_.mozilla()){
+	document.write('<script src="firebug-lite.js#startOpened"></'+'script>');
+}
+
+</script>
+<style>
+
+.box{background:#00B8EE;width:800px;padding:25px;}
+.box img,.box a{width:128px;height:128px;display:block;}
+.box a{background:#9CCD4A url("twitter-128.128-2.png") no-repeat center center;margin-left:25px;}
+.box a:hover{background-color:#EC108D;color:#fff;}
+</style>
+
+<script>
+
+$(function(){
+
+	$("button").text(_.msie(7,1)?"应用补丁":"当前浏览器不需要应用此补丁").attr("disabled",_.msie(7)).click(function(){
+
+		$(".box *").png();
+
+	});
+
+});
+
+</script>
+
+</head><body><div id="page" class="table"><header><nav></nav></header><h4><a href="#" onclick="window.history.back();return false;">返回前页</a></h4><hr />
+<section><h4>例一</h4><div class="box tr">
+
+<img src="twitter-128.128-1.png" class="td" /><a href="#" class="td"><h3>&nbsp;囧鸟</h3></a>
+
+</div></section>
+
+<section><button class="en">Fix All !</button></section>
+
+<footer><section id="foot"><hr /><h6>苏昱(苏小雨)作品<br />灵镭信息科技，创造代码之美</h6><a class="en" href="http://www.lekolite.cn" target="_blank">Copyright © 2010 lekolite.cn , All rights reserved</a></section></footer></div></body></html>
