@@ -22,7 +22,7 @@ table,td,th{vertical-align:middle;}
 th,caption{text-align:left;font-weight:bold;}
 button,.btn{display:inline-block;padding:3px 12px;*padding:2px 6px;}
 a{text-decoration:none;zoom:1;}
-mark{color:#ac0f12;font-weight:bold;}
+mark{color:#ac0f12;font-weight:bold;background:transparent;}
 article,aside{line-height:2;}
 article{font-size:13px;line-height:1.7;}
 
