@@ -38,7 +38,5 @@
 				g&&g[A](v[H]);
 			};
 		})();
-		
-		//console.log(b);
 
 })(jQuery);
