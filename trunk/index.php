@@ -16,14 +16,25 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="leko.xml">
 
+<!--||额外的样式表开始-------->
+
+
+<!--------额外的样式表结束||-->
+
 <script src="firebug-lite.js#saveCookies,enableTrace"></script>
 
 <script src="jquery-1.4.2.js"></script>
-<script src="leko.core.js"></script>
 <script src="leko.compatibility.js"></script>
+<script src="leko.core.js"></script>
 
-</head><body>
+</head><body><div id="container">
+
 
 <nav style="display:block;width:300px;height:500px;background:red;">123</nav>
 
-<script src="leko.ga.js"></script></body></html>
+
+<!--||额外的脚本开始---------->
+
+<!----------额外的脚本结束||-->
+
+<script src="leko.ga.js"></script></div></body></html>
