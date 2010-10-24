@@ -122,15 +122,17 @@ var Animal = _.extend({
 });
 
 var Cat = Animal.extend({
-  eat: function(food) {
-    if (food instanceof Mouse) this._();
+  eat: function(food){
+    if(food instanceof Mouse)this._();
       else this.say("Yuk! I only eat mice.");
     }
 });
-
-var Mouse = Animal.extend();
-
-
+var Mouse =  Animal.extend({
+  eat: function(food){
+    if(food instanceof Cat)this.say("Shit!");
+      else this._();
+    }
+});
 var xxx=new Animal("xxx");
 var aaa=new Cat("aaa");
 var yyy=new Mouse("yyy");
@@ -139,4 +141,4 @@ xxx.say(1);
 aaa.say(2);
 yyy.say(3);
 zzz.say(4);
-aaa.eat(xxx);aaa.eat(aaa);aaa.eat(yyy);aaa.eat(zzz);
+aaa.eat(xxx);aaa.eat(zzz);zzz.eat(aaa);zzz.eat(yyy);
