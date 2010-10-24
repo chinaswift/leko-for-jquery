@@ -16,10 +16,9 @@
 
 <link rel="alternate" type="application/rss+xml" title="" href="leko.xml">
 
-<!--||额外的样式表开始-------->
+<!--额外的样式表开始((((((((-->
 
-
-<!--------额外的样式表结束||-->
+<!--))))))))额外的样式表结束-->
 
 <script src="firebug-lite.js#saveCookies,enableTrace"></script>
 
@@ -29,12 +28,17 @@
 
 </head><body><div id="container">
 
+<!--交互界面内容开始((((((((-->
 
-<nav style="display:block;width:300px;height:500px;background:red;">123</nav>
+<ol class="en">
+<li><a href="tab.php">tab</a></li>
+</ol>
+
+<!--))))))))交互界面内容结束-->
 
 
-<!--||额外的脚本开始---------->
+<!--额外的脚本开始((((((((((-->
 
-<!----------额外的脚本结束||-->
+<!--))))))))))额外的脚本结束-->
 
 <script src="leko.ga.js"></script></div></body></html>
