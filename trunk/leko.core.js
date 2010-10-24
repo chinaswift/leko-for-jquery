@@ -103,7 +103,7 @@
 		}
 	});
 	
-})(jQuery,window);
+})(jQuery,window,undefined);
 
 var Animal = _.extend({
   constructor: function(name) {
