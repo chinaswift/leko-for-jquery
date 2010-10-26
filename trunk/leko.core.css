@@ -38,13 +38,11 @@ table{border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%;}
 th,caption{text-align:left;font-weight:bold;}
 td,th{vertical-align:top;}
 
-ol,ul,li{list-style:none;position:relative;}
-
-.th{float:right;}
-.td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
-.tr,.td,ul{display:block;zoom:1;_display:inline-block;_height:1%;}
-.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
-* html .tr{height:1%;}
+ul,ol,li{list-style:none;position:relative;text-indent:0;}
+ul.list li,.td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
+ul.list li.th,.th{float:right;}
+ul.list,ul.list li,.tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
+ul.list:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
 
 .en,.en *{font-family:"sans-serif",Arial;}
 .dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
@@ -53,9 +51,17 @@ ol,ul,li{list-style:none;position:relative;}
 .hidden{display:none;} 
 .hidden,.invisible{visibility:hidden;}
 
-a{text-decoration:none;zoom:1;}
-a:hover{color:#FF5E99;}
-a:link{-webkit-tap-highlight-color:#FF5E99;}
+a{text-decoration:none;zoom:1;color:#00b8ee;}
+a:hover{color:#ff436f;}
+a:link{-webkit-tap-highlight-color:#ff436f;}
 
 #container{margin:0 auto;width:960px;text-align:left;}
- 
+
+/*
+color  : red\9; <=IE8
+*color : green; <=IE7
+_color : green; <=IE6
+
+IE6 unsupported *:hover,*:focus
+IE7 unsupported *:focus
+*/
