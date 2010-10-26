@@ -734,7 +734,7 @@
 				o.css(q,function(i,v){
 					return p=v=="static"?k:v;
 				});
-				if(!e)e=(d.src=j?$(j):$("<div class='popshadow'>&nbsp;</div>").css({
+				if(!e)e=(d.src=j?$(j):$("<div>&nbsp;</div>").css({
 					border :0,
 					margin :0,
 					padding:0,
