@@ -9,11 +9,13 @@
 
 </style>
 
+<script src="leko.list.js"></script>
+
 <?php include 'leko.body.php'; ?>
 
 <br><br>
 
-<ul class="list" id="list-01">
+<ul class="list" id="list-01" list="x:3">
 <li><a href="#">新闻</a></li>
 <li><a href="#">每周星座运程</a></li>
 <li class="selected"><a href="#">股票行情</a></li>

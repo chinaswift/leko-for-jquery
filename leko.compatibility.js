@@ -26,7 +26,6 @@
 				t=b.documentElement,
 				x=b.createDocumentFragment,
 				g=x&&x(),
-				o={},
 				w="abbr|article|aside|audio|canvas|command|datalist|details|figure|figcaption|footer|header|hgroup|keygen|mark|meter|nav|output|progress|section|source|summary|time|video",
 				v=w.split("|"),
 				p=[],
@@ -35,7 +34,7 @@
 				A="createElement";
 				++H<v.length;){
 				b[A](v[H]);
-				//g&&g[A](v[H]);
+				g&&g[A](v[H]);
 			};
 		})();
 

@@ -2,7 +2,9 @@
 (function($,window){
 
 	var
-		_=function(){};
+		_=function(){},
+		__,
+		$$;
 
 	_.extend=function(i,s){
 		var
@@ -81,7 +83,7 @@
 		}
 	};
 
-	window.Leko=window._=_=_.extend({
+	_=_.extend({
 		constructor:function(){
 			this.extend(arguments[0]);
 		}
@@ -102,5 +104,29 @@
 			return String(this.valueOf());
 		}
 	});
+	
+	__=_.extend({
+		constructor:function(n,e){
+			this.extend(eval("({"+(e.attr(n)||"")+"})"));
+			this.$=e;
+		}
+	});
+	
+	$$=function(n,f,c,m){
+		$.fn[n]=function(v){
+			return this.each(function(i,e){
+				e=$(e);
+				i=e.data(n)||new _[n](n,e);
+				e.data(n,i.extend(v));				
+				f(i);
+			});	
+		}
+		_[n]=(m||__).extend(c);
+	};
+	
+	$.fn._=$.fn.data;
+	
+	window.Leko=window._=_;
+	window.LekoPlugin=window.$$=$$;
 	
 })(jQuery,window,undefined);

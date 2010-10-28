@@ -15,7 +15,6 @@
 
 <link rel="stylesheet" href="leko.core.css?v=1">
 
-<script src="firebug-lite.js#saveCookies,enableTrace"></script>
-<script src="jquery-1.4.2.js"></script>
+<script src="firebug-lite.js#saveCookies,enableTrace,startOpened"></script>
+<script src="jquery-1.4.2.js"></script><script src="leko.core.js"></script>
 <script src="leko.compatibility.js"></script>
-<script src="leko.core.js"></script>
