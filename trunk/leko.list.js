@@ -15,21 +15,27 @@
 			max:Number.MAX_VALUE,
 			min:Number.MIN_VALUE,
 			selector:">li:not(.alone)",
+			count:0,
 			all:function(){
 				return $(this.selector,this.$);
 			},
-			add:function(){
-				
+			add:function(e){
+								
+			},
+			initItem:function(e){
+				var
+					c=this;
+				return $(e).li({
+					list:c,
+					index:c.count++	
+				});				
 			},
 			constructor:function(n,e){
 				var
 					c=this;
-				c._(n,e);
-				c.count=0;
+				c._(n,e);				
 				c.all().each(function(i,e){
-					c["_"+i]=$(e).li({
-						index:c.count++
-					});
+					c["_"+i]=c.initItem(e);
 					console.log($(e).data("li").index);
 				});
 				
