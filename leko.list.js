@@ -7,6 +7,7 @@
 		min:Number.MIN_VALUE,
 		tag:"li",
 		count:0,
+		event:0,
 		all:function(){
 			return $(this.selector,this.$);
 		},
@@ -63,7 +64,8 @@
 			c.all().each(function(i,e){
 				c.initItem(e);
 			});
-			c.update();	
+			c.update();
+				
 		}
 	});
 	
