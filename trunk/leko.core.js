@@ -107,8 +107,8 @@
 	
 	__=_.extend({
 		constructor:function(n,e){
-			this.extend(eval("({"+(e.attr(n)||"")+"})"));
 			this.$=e;
+			this.extend(eval("({"+(e.attr("data-leko-"+n)||"")+"})"));
 		}
 	});
 	
@@ -121,10 +121,27 @@
 				f(i);
 			});	
 		}
-		_[n]=(m||__).extend(c);
+		_[n]=(_[m]||__).extend(c);
 	};
 	
-	$.fn._=$.fn.data;
+	$.fn.extend({
+		_:$.fn.data,
+		dimension:function(b,m,v){
+			b=!!b+0;			
+			v=parseInt(v);
+			var
+				e=this,
+				x=["idth","eight"][b];
+				c=["outer","outer","inner",""],
+				a=[],
+				i=4;
+			while(i--){
+				c[i]=c[i]+(i<3?["W","H"]:["w","h"])[b]+x;
+				a[i]=e[c[i]](c<2?c>0:void 0);
+			}	
+			return isNaN(v)?a[m]:e[c[3]](v+a[3]-a[m]);
+		}
+	});
 	
 	window.Leko=window._=_;
 	window.LekoPlugin=window.$$=$$;

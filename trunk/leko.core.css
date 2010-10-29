@@ -38,11 +38,13 @@ table{border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%;}
 th,caption{text-align:left;font-weight:bold;}
 td,th{vertical-align:top;}
 
-ul,ol,li{list-style:none;position:relative;text-indent:0;}
-ul.list li,.td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
-ul.list li.th,.th{float:right;}
-ul.list,ul.list li,.tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
-ul.list:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
+.nav a,li{display:block;}
+.list-z,ul,ol,li{list-style:none;position:relative;text-indent:0;}
+.list-z li{position:absolute;z-index:2;background:#fff;left:0;top:0;}
+.list-h li,.td{float:left;/*_overflow-x:hidden;overflow:hidden;*/}
+.list-h li.th,.th{float:right;}
+.list-h,.list-h li,.tr,.td{display:block;zoom:1;_display:inline-block;_height:1%;}
+.list-h:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
 
 .en,.en *{font-family:"sans-serif",Arial;}
 .dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
