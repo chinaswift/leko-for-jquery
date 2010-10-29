@@ -4,6 +4,7 @@ var
 	_gaq.push(['_trackPageview']);
 
 (function(){
+	
 	var
 		d=document,
 		g=d.createElement('script'),
@@ -12,4 +13,5 @@ var
 	g.async=true;
 	g.src=('https:'==d.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s);
+	
 })();
