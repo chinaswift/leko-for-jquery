@@ -8,45 +8,80 @@
 	
 	$$(
 		"list",
-		function(c){
-			//console.log(c);	
-		},
+		function(c){},
 		{
 			max:Number.MAX_VALUE,
 			min:Number.MIN_VALUE,
-			selector:">li:not(.alone)",
+			tag:"li",
 			count:0,
 			all:function(){
 				return $(this.selector,this.$);
 			},
-			add:function(e){
-								
+			add:function(e,b){				
+				e=this.initItem(e)[b?"prependTo":"appendTo"](this.$);
+				c.update();
+				return e;	
+			},
+			item:function(){
+				
 			},
 			initItem:function(e){
 				var
-					c=this;
-				return $(e).li({
+					c=this,
+					i=c.count++;
+				return c[i]=$(e).li({
 					list:c,
-					index:c.count++	
+					index:i	
 				});				
+			},
+			update:function(){
+				if(this.autoSize)this.autoSize();				
 			},
 			constructor:function(n,e){
 				var
-					c=this;
-				c._(n,e);				
+					c=this,
+					d=["h","v","z"],
+					i=d.length;
+				c._(n,e);
+				c.selector=">"+this.tag+":not(.alone)";
+				while(i--)if(e.hasClass("list-"+d[i])){
+					c.dir=i;
+					break;
+				}
 				c.all().each(function(i,e){
-					c["_"+i]=c.initItem(e);
-					console.log($(e).data("li").index);
+					c.initItem(e);
 				});
-				
+				c.update();	
 			}
 		}
-	);	
+	);
+	
+	$$(
+		"nav",
+		function(c){},
+		{
+			autoSize:function(){
+				var
+					c=this,
+					d=c.dir,
+					o=c.$,
+					w=0;
+				c.all().each(function(i,e){
+					e=$(e);
+					if(d==2)e.dimension(0,1,o.width());
+					else w+=e.dimension(0,1);
+				});
+				if(!d)o.width(w+9);
+			}
+		},
+		"list"	
+	);
 	
 	
 	$(function(){
-		$("#list-01").list({y:6});
-		console.log($("#list-01")._("list").all());
+		$(".nav").nav({y:6});
+		//console.log($("#nav-1")._("nav").add("<li><a href='#'>新增的</a></li>"));		
+		//console.log($("#nav-2")._("nav").add("<li><a href='#'>新增的</a></li>",true));
 	});
 	
 })(jQuery,Leko);
