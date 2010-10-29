@@ -1,9 +1,8 @@
 
-(function($){
+(function($,d){
 	var
 		b=$.browser,
 		s=$.support,
-		v=b.version,
 		f=function(n,w){
 			var
 				d,
@@ -18,13 +17,17 @@
 				}				
 				return a;	
 			}));			
-		};
+		},
+		v=f(b.version,3),
+		e=b.msie;
 		
-		if(b.msie&&v<9)(function(){
-			for(var
-				b=document,
-				t=b.documentElement,
-				x=b.createDocumentFragment,
+		s.dashedHtml5Tag=e&&v<9;
+		s.doubleFloatPadding=e&&v<8;
+		
+		if(s.dashedHtml5Tag)(function(){
+			for(var				
+				t=d.documentElement,
+				x=d.createDocumentFragment,
 				g=x&&x(),
 				w="abbr|article|aside|audio|canvas|command|datalist|details|figure|figcaption|footer|header|hgroup|keygen|mark|meter|nav|output|progress|section|source|summary|time|video",
 				v=w.split("|"),
@@ -33,9 +36,9 @@
 				G="firstChild",
 				A="createElement";
 				++H<v.length;){
-				b[A](v[H]);
+				d[A](v[H]);
 				g&&g[A](v[H]);
 			};
 		})();
 
-})(jQuery);
+})(jQuery,document);

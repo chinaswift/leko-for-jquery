@@ -71,13 +71,12 @@
 					if(d==2)e.dimension(0,1,o.width());
 					else w+=e.dimension(0,1);
 				});
-				if(!d)o.width(w+9);
+				if(!d)o.width(w+($.support.doubleFloatPadding?parseInt(o.css("paddingRight")):0));
 			}
 		},
 		"list"	
 	);
-	
-	
+		
 	$(function(){
 		$(".nav").nav({y:6});
 		//console.log($("#nav-1")._("nav").add("<li><a href='#'>新增的</a></li>"));		

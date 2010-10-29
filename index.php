@@ -3,18 +3,18 @@
 <style>
 
 .list-h{width:520px;border:1px solid #d2d3ce;padding:10px;}
-.list-h a{display:block;padding:10px 20px;color:#7b7b71;_display:inline-block;_height:1%;_float:left;}
+.list-h a{padding:10px 20px;color:#7b7b71;}
 .list-h li.selected a{color:#ff436f;background:#efefef;}
 .list-h a:hover{color:#00b8ee;}
 
 .list-v{width:260px;border:1px solid #d2d3ce;padding:10px;}
-.list-v a{display:block;padding:10px 20px;color:#7b7b71;}
+.list-v a{padding:10px 20px;color:#7b7b71;}
 .list-v li.selected a{color:#ff436f;background:#efefef;}
 .list-v a:hover{color:#00b8ee;}
 
 .list-z{width:260px;border:1px solid #d2d3ce;padding:10px;height:20px;}
 .list-z li{left:10px;top:10px;background:#efefef;}
-.list-z a{display:block;padding:10px 20px;color:#7b7b71;}
+.list-z a{padding:10px 20px;color:#7b7b71;}
 .list-z li.selected a{color:#ff436f;background:#efefef;}
 .list-z a:hover{color:#00b8ee;}
 

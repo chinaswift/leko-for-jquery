@@ -131,7 +131,7 @@
 			v=parseInt(v);
 			var
 				e=this,
-				x=["idth","eight"][b];
+				x=["idth","eight"][b],
 				c=["outer","outer","inner",""],
 				a=[],
 				i=4;
