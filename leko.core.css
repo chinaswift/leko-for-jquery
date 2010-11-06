@@ -45,7 +45,7 @@ td,th{vertical-align:top;}
 .list-h li.th,.th{float:right;}
 .list-h,.list-h li,.list-h a,.tr,.td{display:block;zoom:1;*display:inline-block;*height:1%;}
 .list-h:after,.tr:after,br.clear{content:"\0020";display:block;height:0;font-size:1px;line-height:0px;clear:both;visibility:hidden;overflow:hidden;}
-.nav a{}
+.list-z li.selected{z-index:3;}
 
 .en,.en *{font-family:"sans-serif",Arial;}
 .dd{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}

@@ -1,6 +1,8 @@
 (function($,_){
 	
-	$$("li",{});
+	$$("li",{
+		
+	});
 	
 	$$("list",{
 		max:Number.MAX_VALUE,
@@ -9,7 +11,7 @@
 		count:0,
 		event:0,
 		all:function(){
-			return $(this.selector,this.$);
+			return $(">"+this.exp,this.$);
 		},
 		items:function(){
 			var
@@ -50,13 +52,41 @@
 		update:function(){
 			if(this.autoSize&&this.resize)this.resize();				
 		},
+		select:function(){
+			var
+				c=this,
+				w="selected",
+				n="."+w,
+				m=":not("+n+")",
+				f=$.makeArray,
+				s=c.items.apply(c,arguments).filter(m),
+				r=c.items(n),
+				
+				
+				g=s.add(r),
+				
+				
+				t=g.length||!c.min?void 0:c.all().not(s.add(r)),
+				a=f(s).concat(f(r)).concat(f(t)),
+				l=a.length,
+				x=Math.min(Math.max(l,c.min),c.max),
+				e,z,b;
+			while(l--){
+				e=$(a[l]);
+				b=l<x;
+				z=b?w:m;
+				e.toggleClass(w,!e.is(z)&&b);
+				//if(!e.is(z))e.toggleClass(w,b);
+			}
+		},
 		constructor:function(n,e){
 			var
 				c=this,
 				d=["h","v","z"],
 				i=d.length;
 			c._(n,e);
-			c.selector=">"+this.tag+":not(.alone)";
+			c.event=!!c.event+0;
+			c.exp=this.tag+":not(.alone)";
 			while(i--)if(e.hasClass("list-"+d[i])){
 				c.dir=i;
 				break;
@@ -65,7 +95,19 @@
 				c.initItem(e);
 			});
 			c.update();
-				
+			e.delegate(c.exp,"click mouseenter mouseleave",function(v){
+				var
+					o=$(this),
+					t=["click","hover"],
+					r=[/k$/,/([ret])$/],
+					i=2,
+					b;
+				if(o.parent()[0]==e[0])while(i--)if(r[i].test(v.type)){
+					b=RegExp.$1=="r";
+					if(i==c.event&&(!i||b))c.select(o);
+					if(c[t])c[t](o,b);
+				}				
+			});	
 		}
 	});
 	

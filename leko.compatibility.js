@@ -37,7 +37,7 @@
 			A="createElement";
 			++H<v.length;){
 			d[A](v[H]);
-			g&&g[A](v[H]);
+			if(g)g[A](v[H]);
 		};
 	})();
 	
