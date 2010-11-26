@@ -2,7 +2,7 @@
 <meta charset="utf-8"><meta http-equiv="content-type" content="text/html; charset=utf-8"><!--[if IE]><![endif]-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>LEKO&trade;</title>
+<title>Leko&trade; for jQuery</title>
 
 <meta name="keywords" content=""> 
 <meta name="description" content="">
@@ -17,4 +17,5 @@
 
 <script src="firebug-lite.js#saveCookies,enableTrace,startOpened"></script>
 <script src="jquery.js"></script><script src="leko.core.js"></script>
+<script src="leko.animation.js"></script>
 <script src="leko.compatibility.js"></script>
