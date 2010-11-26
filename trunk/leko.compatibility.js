@@ -1,30 +1,7 @@
 
 (function($,d){
-	var
-		b=$.browser,
-		s=$.support,
-		f=function(n,w){
-			var
-				d,
-				l;
-			return parseFloat(n.replace(/\.|\d+/g,function(a){
-				if(a=="."){
-					if(d)a="";else d=a;
-				}
-				else if(w){
-					l=w-a.length;
-					if(l>0)while(l--)a="0"+a;
-				}				
-				return a;	
-			}));			
-		},
-		v=f(b.version,3),
-		e=b.msie;
-		
-	s.dashedHtml5Tag=e&&v<9;
-	s.doubleFloatPadding=e&&v<8;
-	
-	if(s.dashedHtml5Tag)(function(){
+
+	if(!$.support.html5Tag)(function(){
 		for(var				
 			t=d.documentElement,
 			x=d.createDocumentFragment,
