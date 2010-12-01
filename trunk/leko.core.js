@@ -392,13 +392,41 @@
 	});
 
 	/**
-	* 重载jquery的css()和style()方法
+	* 重载jquery.css,jquery.style方法
 	*/			
 	(function(){
 		
 		var
 			h=$.css,
 			f=$.style,
+			t=function(p){
+				var
+					i,
+					b={},
+					a=["backgroundPosition","borderColor","borderWidth","margin","padding"],
+					x={Bottom:0,Left:0,Right:0,Top:0},
+					w,
+					n,
+					m,
+					v;
+				for(i in p){
+					m=p[i];
+					v=$.inArray(i,a);
+					if(v+1){						
+						if(v){
+							w=i.match(/[A-Z]?[a-z]+/g);
+							for(n in x)b[w[0]+n+(w[1]||"")]=m;
+						}
+						else{
+							m=m.split(/\s+/);
+							b[i+"X"]=m[0]||0;
+							b[i+"Y"]=m[1]||0;
+						}
+						delete p[i];
+					}
+				}
+				return $.extend(p,b);
+			},
 			l=function(d,e,n,v,x){
 				if(!e||e.nodeType===3||e.nodeType===8||!e.style)return;
 				n=$.camelCase(n);
@@ -437,7 +465,7 @@
 				b=r===void 0;
 				return d?f(e,n,b?v:r,x):(b?h(e,n,x):r);								
 			};
-
+		
 		$.style=function(e,n,v,x){
 			return l(1,e,n,v,x);
 		};
@@ -528,25 +556,6 @@
 	};
 	
 	$.fn.extend({
-		ani:function(p,g){
-			var
-				i,
-				b={},
-				x={borderBottomColor:0,borderLeftColor:0,borderRightColor:0,borderTopColor:0},
-				a="backgroundPosition",
-				n,
-				v;
-			for(i in p){
-				m=p[i];
-				if(i=="borderColor")for(n in x)b[n]=m;
-				else if(i==a){
-					m=m.split(/\s+/);
-					b[a+"X"]=m[0]||0;
-					b[a+"Y"]=m[1]||0;
-				}
-			}
-			
-		},
 		/**
 		* 获取当前第一个元素的当前不透明色。也就是说，如果当前是透明色(alpha=0)，则会尝试获取其父元素的背景色，直到获取到为止
 		* @param	{color,string}			[color]
