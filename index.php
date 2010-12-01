@@ -40,13 +40,15 @@ mark{color:#f30;}
 		<li><a href="leko.jquery.fn.animate.demo.clip.php">clipLeft</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">color</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">backgroundColor</a></li>
+		<li><a href="leko.jquery.fn.animate.demo.color.php">borderColor</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">borderBottomColor</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">borderLeftColor</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">borderRightColor</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">borderTopColor</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.color.php">outlineColor</a></li>
-		<li><a href="leko.jquery.fn.animate.demo.php">backgroundPositionX</a></li>
-		<li><a href="leko.jquery.fn.animate.demo.php">backgroundPositionY</a></li>
+		<li><a href="leko.jquery.fn.animate.demo.backgroundPosition.php">backgroundPosition</a></li>
+		<li><a href="leko.jquery.fn.animate.demo.backgroundPosition.php">backgroundPositionX</a></li>
+		<li><a href="leko.jquery.fn.animate.demo.backgroundPosition.php">backgroundPositionY</a></li>
 	</ol></li>
 </ol></li>
 <li>类<ol class="nav-v nav">
