@@ -83,7 +83,7 @@
 				t;
 			if(x.state==0){
 				x.start=$(e).bgc(a);
-				x.end=$(e).bgc(x.options.curAnim[a],1);
+				x.end=$(e).bgc(x.options.curAnim[a],1);	
 			}
 			b=x.start;			
 			while(i--){
@@ -91,7 +91,7 @@
 				t=parseInt((m*(x.end[n]-b[n]))+b[n]);	
 				if(isNaN(t))return;
 				c.setValue(n,t);
-			}			
+			}					
 			e.style[a]=c.toString();		
 		}
 	});

@@ -49,6 +49,17 @@ mark{color:#f30;}
 		<li><a href="leko.jquery.fn.animate.demo.php">backgroundPositionY</a></li>
 	</ol></li>
 </ol></li>
+<li>类<ol class="nav-v nav">
+	<li>Color</li>
+	<li>Rect</li>
+</ol></li>
+<li>属性<ol class="nav-v nav">
+	<li>jquery.support.html5Tag</li>
+	<li>jquery.support.doubleFloatPadding</li>
+	<li>jquery.support.css3Color</li>
+	<li>jquery.support.blackTransparent</li>
+	<li>jquery.support.wrongBackgroundPosition</li>
+</ol></li>
 </ol>
 
 <?php include 'leko.foot.php'; ?>

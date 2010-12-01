@@ -54,9 +54,9 @@
 		*/
 		s.css3Color=e&&v>=9||m&&v>=1.9||w&&v>=525||o&&v>=10;
 		/**
-		* 当元素的默认背景色为transparent时，在webkit内核上，jQuery目前版本的css()和curCSS()函数会获得错误的black值
+		* 在webkit内核上，transparent的机器值是rgba(0,0,0,0)
 		*/
-		s.blackBackground=w;
+		s.blackTransparent=w;
 		/**
 		* 当元素的backgroundPosition为百分比值时，在ie上，jQuery目前版本的css()和curCSS()函数会获得错误的实数px值
 		*/
@@ -528,13 +528,42 @@
 	};
 	
 	$.fn.extend({
+		ani:function(p,g){
+			var
+				i,
+				b={},
+				x={borderBottomColor:0,borderLeftColor:0,borderRightColor:0,borderTopColor:0},
+				a="backgroundPosition",
+				n,
+				v;
+			for(i in p){
+				m=p[i];
+				if(i=="borderColor")for(n in x)b[n]=m;
+				else if(i==a){
+					m=m.split(/\s+/);
+					b[a+"X"]=m[0]||0;
+					b[a+"Y"]=m[1]||0;
+				}
+			}
+			
+		},
+		/**
+		* 获取当前第一个元素的当前不透明色。也就是说，如果当前是透明色(alpha=0)，则会尝试获取其父元素的背景色，直到获取到为止
+		* @param	{color,string}			[color]
+		* 		颜色定义，或属性名称
+		* @param	{boolean}			[isColor]
+		* 		0|false*	:	前一个参数是属性名称
+		* 		1|true		:	前一个参数是颜色定义
+		* @return	{color}
+		*/
 		bgc:function(c,b){
 			var
 				e=this;
 			do{
 				c=new Color(b?c:e.css(c));
 				if($.nodeName(e[0],"body")||c.a)break;
-				c="backgroundColor";				
+				c="backgroundColor";
+				b=0;				
 			}
 			while(e=e.parent());
 			return c;
