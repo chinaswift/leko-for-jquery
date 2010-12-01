@@ -39,15 +39,15 @@ a#banner-5 nav{clip:rect(auto auto 0px  auto);background-color:#FF8800;}
 
 <script>(function($,_,$$){$(function(){
 
-	$("#banner-1 nav").animate({clip:"rect(auto auto auto auto)"},3000);
+	$("#banner-1 nav").animate({clip:"rect(auto auto auto auto)"},5000);
 	
-	$("#banner-2 nav").animate({clipLeft:"auto"},3000);
+	$("#banner-2 nav").animate({clipLeft:"auto"},5000);
 	
-	$("#banner-3 nav").animate({clipRight:"50px"},3000);
+	$("#banner-3 nav").animate({clipRight:"50px"},5000);
 	
-	$("#banner-4 nav").animate({clipTop:"0px"},3000);
+	$("#banner-4 nav").animate({clipTop:"0px"},5000);
 	
-	$("#banner-5 nav").animate({clipBottom:"auto"},3000);
+	$("#banner-5 nav").animate({clipBottom:"auto"},5000);
 	
 });})(jQuery,Leko,lekoPlugin);</script>
 
