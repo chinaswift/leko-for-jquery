@@ -60,7 +60,7 @@ div#paragraph-2 a{color:#10B4EC;}
 	}).mouseleave(function(){
 		$(this).stop(true).animate({backgroundColor:"transparent",color:"#10B4EC"},1000);
 	});
-	
+
 	$("#paragraph-2 a").mouseenter(function(){
 		$(this).stop(true).animate({backgroundColor:"#000",color:"#EC108D"},1000);
 	}).mouseleave(function(){

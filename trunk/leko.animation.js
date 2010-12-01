@@ -82,8 +82,8 @@
 				m=parseFloat(x.pos),
 				t;
 			if(x.state==0){
-				x.start=new Color(a,e);
-				x.end=new Color(x.options.curAnim[a]);
+				x.start=$(e).bgc(a);
+				x.end=$(e).bgc(x.options.curAnim[a],1);
 			}
 			b=x.start;			
 			while(i--){

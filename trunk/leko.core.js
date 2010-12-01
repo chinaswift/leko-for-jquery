@@ -202,22 +202,13 @@
 				b=$.support.css3Color?"a":"",
 				r=[c.r,c.g,c.b];
 			if(b)r.push(c.a);				
-			return "rgb"+b+"("+r.join(",")+")";
+			return c.a?"rgb"+b+"("+r.join(",")+")":"transparent";
 		},
-		constructor:function(v,e){
+		constructor:function(v){
 			var
 				c=this,
 				a,b,r,i,h,s,l,q,p;
 			if($.isString(v)){
-				if(e){
-					e=$(e)[0];
-					do{
-						v=$.css(e,v);
-						if($.nodeName(e,"body")||v!=""&&v!="transparent")break;
-						v="backgroundColor";
-					}
-					while(e=e.parentNode);
-				}
 				v=(v||"").toLowerCase().replace(/\s/g,"");
 				if(/^#/.test(v)){
 					a=[];
@@ -250,7 +241,7 @@
 						}
 					}
 				}
-				else a=Color.names[v];
+				else a=Color.names[v]||[0,0,0,0];
 				a=a||[];
 				b=Color.attrs;
 				i=4;
@@ -427,7 +418,7 @@
 					}
 				}
 				else if((i=$.inArray(n,(a=Color.props)))+1){
-					r=b?(i==1&&$.support.blackBackground?e.style[n]:void 0):new Color(v).toString();
+					if(!b)r=new Color(v).toString();
 				}
 				else if((i=$.inArray(n,(a=["backgroundPositionX","backgroundPositionY","backgroundPosition"])))+1){
 					if($.isNumber(v))v+="px";
@@ -537,6 +528,17 @@
 	};
 	
 	$.fn.extend({
+		bgc:function(c,b){
+			var
+				e=this;
+			do{
+				c=new Color(b?c:e.css(c));
+				if($.nodeName(e[0],"body")||c.a)break;
+				c="backgroundColor";				
+			}
+			while(e=e.parent());
+			return c;
+		},
 		/**
 		* 设置或获取当前第一个元素的各种高度宽度值
 		* @param	{boolean,number}	[isHeight]
