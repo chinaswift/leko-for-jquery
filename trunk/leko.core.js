@@ -7,6 +7,44 @@
 	
 	$.extend({
 		/**
+		* 从当前样式表中获取指定名称选择符对应的样式表规则集合
+		* @param	{string}			[selector]
+		* 		选择符
+		* @return	{object}
+		*/
+		cssRule:function(n){
+			var
+				d=document.styleSheets,
+				m=d.length,
+				o={},
+				c,
+				s,
+				x,
+				r,
+				z,
+				p;
+			while(m--){
+				s=d[m];
+				c=s.rules||s.cssRules;
+				x=c.length;
+				while(x--){
+					r=c[x];
+					if(r.selectorText.toLowerCase()==n){
+						r=r.style.cssText.split(/\s*[\{\};]\s*/);
+						z=r.length;
+						while(z--){
+							p=r[z];
+							if(p){
+								p=p.split(/\s*:\s*/);
+								o[$.camelCase(p[0].toLowerCase())]=p[1];
+							}
+						}
+						return o;
+					}
+				}
+			}
+		},
+		/**
 		* 将一个字符串传唤为浮点数。它会过滤掉所有非数字的字符，如果包含小数点，则仅保留第一个小数点
 		* @param	{string}			[str]
 		* 		要被转换的字符串
@@ -399,34 +437,6 @@
 		var
 			h=$.css,
 			f=$.style,
-			t=function(p){
-				var
-					i,
-					b={},
-					a=["backgroundPosition","borderColor","borderWidth","margin","padding"],
-					x={Bottom:0,Left:0,Right:0,Top:0},
-					w,
-					n,
-					m,
-					v;
-				for(i in p){
-					m=p[i];
-					v=$.inArray(i,a);
-					if(v+1){						
-						if(v){
-							w=i.match(/[A-Z]?[a-z]+/g);
-							for(n in x)b[w[0]+n+(w[1]||"")]=m;
-						}
-						else{
-							m=m.split(/\s+/);
-							b[i+"X"]=m[0]||0;
-							b[i+"Y"]=m[1]||0;
-						}
-						delete p[i];
-					}
-				}
-				return $.extend(p,b);
-			},
 			l=function(d,e,n,v,x){
 				if(!e||e.nodeType===3||e.nodeType===8||!e.style)return;
 				n=$.camelCase(n);

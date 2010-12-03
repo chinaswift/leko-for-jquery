@@ -1,4 +1,76 @@
 (function($){
+	
+	/**
+	* 重载jquery.fn.animate方法
+	*/			
+	(function(){
+		
+		var
+			f=$.fn.animate;
+		
+		leko("ui",{
+			constructor:function(n,e){
+				this._(n,e);
+				this.css={};
+				this.src={};
+			},
+			theme:function(t,p,s,g,l){
+				var
+					c=this,
+					e=c.$,
+					i,
+					b={},
+					a=["backgroundPosition","borderColor"],
+					x={Bottom:0,Left:0,Right:0,Top:0},
+					w,
+					n,
+					m,
+					v,
+					h;
+				e.stop(true);
+				if($.isString(p))p=$.cssRule(p);
+				if(p){
+					for(i in p){
+						m=p[i];
+						v=$.inArray(i,a);
+						if(v+1){						
+							if(v){
+								w=i.match(/[A-Z]?[a-z]+/g);
+								for(n in x)b[w[0]+n+(w[1]||"")]=m;
+							}
+							else{
+								m=m.split(/\s+/);
+								b[i+"X"]=m[0]||0;
+								b[i+"Y"]=m[1]||0;
+							}
+							delete p[i];
+						}
+						
+					}
+					p=$.extend(c.css,p,b);
+				}
+				else p=c.src;
+				
+				if(t)$.fn.css.call(e,p);
+				else{
+					c.inop=1;
+					h=l||s&&s.complete||$.noop;
+					l=function(){
+						c.css={};
+						delete c.inop;
+					}
+					if($.isObject(s))s.complete=l;				
+					f.call(e,p,s,g,l);
+				}
+				return e;
+			}
+		});
+	
+		$.fn.animate=function(p,s,g,l){
+			return $$(this,"ui").theme(0,p,s,g,l);
+		};
+	
+	})();
 
 	/**
 	* backgroundPositionX,backgroundPositionY
