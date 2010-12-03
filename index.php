@@ -16,10 +16,6 @@ mark{color:#f30;}
 		<li><a href="leko.nav.demo.classic.php">基本功能</a></li>
 		<li><a href="leko.nav.demo.effect.leko.php">内置的动态效果 - leko</a></li>
 	</ol></li>
-	<li>ui<ol class="nav-v nav">
-		<li><a href="leko.ui.demo.css-animation.php">更多支持动画效果的样式表属性</a></li>
-		<li><a href="leko.ui.demo.class-animation.php">创建组件</a></li>
-	</ol></li>
 </ol></li>
 <li>方法<ol class="nav-v nav">
 	<li>jquery.parseFloat<ol class="nav-v nav">
@@ -32,7 +28,9 @@ mark{color:#f30;}
 	<li>jquery.isObject</li>
 	<li>jquery.isDate</li>
 	<li>jquery.isBoolean</li>
+	<li>jquery.fn.css<mark>*</mark></li>
 	<li>jquery.fn.animate<mark>*</mark><ol class="nav-v nav">
+		<li><a href="leko.jquery.fn.animate.demo.cssSelector.php">CSS Selector(className,ID,etc.)</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.clip.php">clip</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.clip.php">clipTop</a></li>
 		<li><a href="leko.jquery.fn.animate.demo.clip.php">clipRight</a></li>

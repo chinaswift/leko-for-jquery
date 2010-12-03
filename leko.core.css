@@ -5,7 +5,7 @@ article,aside,dialog,figure,footer,header,hgroup,nav,section{
 article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
 html{-webkit-text-size-adjust:none;-ms-text-size-adjust:none;-webkit-font-smoothing:antialiased;background:#fff;}
 html,textarea{overflow-y:scroll;}
-body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","苹果俪黑","AppleGothic","LiHei Pro","新宋体","sans-serif";}
+body,textarea,button,input,select{font-size:12px;font-family:"微软雅黑","苹果俪黑","AppleGothic","LiHei Pro","新宋体","sans-serif";color:#222;}
 body{line-height:1.22;color:#111;text-align:center;position:relative;height:100%;}
 body,mark{background:transparent;}
 *:focus{outline:0;}
@@ -17,6 +17,11 @@ button{width:auto;overflow:visible;}
 button,label,a,.button,.submit{cursor:pointer;}
 button,textarea,input,select{font-size:99%;vertical-align:middle;}
 label{vertical-align:middle;}
+input.text,textarea{
+	border:1px solid #bbb;background:url("input-01.png") #fff no-repeat 0px 0px;line-height:1.5;resize:none;
+	border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-appearance:textField;padding-left:6px;
+}
+input.text{height:22px;line-height:22px;}
 
 img{-ms-interpolation-mode:bicubic;}
 pre,code,kbd,samp,.monospaced-font{font-family:Menlo,Consolas,monospace,'Courier New',Monaco;}
