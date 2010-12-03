@@ -3,7 +3,11 @@
 
 <style>
 
-#input-text-hover{border-color:#FF8800;background-position:-5px -5px;}
+input.text,textarea{
+	border:1px solid #9CCD4A;color:#F80;background:url("input-01.png") #fff no-repeat -5px -5px;line-height:1.5;
+	border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;-webkit-appearance:textField;padding-left:6px;resize:none;
+}
+#input-text-hover{border-color:#bbb;background-position:0px 0px;color:#333;}
 
 </style>
 
@@ -15,9 +19,7 @@
 
 <script>(function($,_,$$){$(function(){
 
-	$("#input-text").animate("#input-text-hover",3000);
-	
-	//$$("#input-text","ui").theme(1,"#input-text-hover");
+	$("#input-text,textarea").animate("#input-text-hover",3000);
 	
 });})(jQuery,Leko,lekoPlugin);</script>
 
